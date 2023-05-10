@@ -1,0 +1,12 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node server/app.js",
+        "dev": "nodemon server/app.js"
+    },
+    "author": "pdm",
+    "license": "ISC"
+}
