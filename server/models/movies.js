@@ -11,7 +11,6 @@ const movie = new mongoose.Schema(
     country: String,
     duration: String,
     type: String,
-    languages: String,
     type_sub: Array,
     trailer: String,
     episodes: Array,
@@ -20,10 +19,12 @@ const movie = new mongoose.Schema(
     cover_image: String,
     rating: Array,
     comment: Array,
+    views_3days: Number,
     views_week: Number,
     views_month: Number,
     views_year: Number,
     views_all: Number,
+    number_favourited: Number,
   },
   { versionKey: null }
 );

@@ -9,7 +9,6 @@ const user = new mongoose.Schema(
     user_displayName: String,
     user_gender: String,
     user_favoriteMovies: Array,
-    user_followedMovies: Array,
     user_purchasedMovies: Array,
     user_watchedMovies: Array,
     user_rating: Array,

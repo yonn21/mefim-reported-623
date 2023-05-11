@@ -61,18 +61,18 @@ router.get(
   "/movie-management/page-:page",
   adminController.getMovieManagerAtPage
 );
-router.post(
-  "/movie-management/add",
-  uploadSingle.single("movie_thumbnail"),
-  adminController.postAddMovie
-);
-router.get("/movie-management/add", adminController.getAddMoviePage);
-router.post(
-  "/movie-management/edit/:id",
-  uploadSingle.single("movie_thumbnail"),
-  adminController.postUpdateMoviePage
-);
-router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
+// router.post(
+//   "/movie-management/add",
+//   uploadSingle.single("movie_thumbnail"),
+//   adminController.postAddMovie
+// );
+// router.get("/movie-management/add", adminController.getAddMoviePage);
+// router.post(
+//   "/movie-management/edit/:id",
+//   uploadSingle.single("movie_thumbnail"),
+//   adminController.postUpdateMoviePage
+// );
+// router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
 router.get("/movie-management/remove/:id", adminController.getDeleteMovieInfo);
 
 // Director manager

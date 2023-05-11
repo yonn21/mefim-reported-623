@@ -19,7 +19,6 @@ user:
     user_displayName: String,
     user_gender: String,
     user_favoriteMovies: Array,
-    user_followedMovies: Array,
     user_purchasedMovies: Array,
     user_watchedMovies: Array,
     user_rating: Array,
@@ -30,28 +29,29 @@ user:
 
 
 movie:
-    primary_title: String,
-    secondary_title: String,
-    directors: Array,
-    actor: Array,
-    genres: Array,
-    year: String,
-    country: String,
-    duration: String,
-    type: String,
-    languages: String,
-    type_sub: Array,
-    trailer: String,
-    episodes: Array,
-    summary: String,
-    thumbnail: String,
-    cover_image: String,
-    rating: Array,
-    comment: Array,
-    views_week: Number,
-    views_month: Number,
-    views_year: Number,
-    views_all: Number,
+    primary_title: String, (tựa đề chính)
+    secondary_title: String, (tựa đề phụ)
+    directors: Array, (đạo diễn, có thể chọn nhiều từ database)
+    actor: Array,  (diễn viên, có thể chọn nhiều từ database)
+    genres: Array, (thể loại, có thể chọn nhiều từ database)
+    year: String, (năm phát hành, chọn từ form html)
+    country: String, (quốc gia phát hành, chọn từ form html)
+    type: String, (phim lẻ hoặc phim bộ, chọn từ form html)
+    duration: String, (chọn từ form html, thời lượng phút nếu là phim lẻ, số tập nếu là phim bộ)
+    type_sub: Array, (phụ đề, có thể chọn nhiều hoặc để trống là không phụ đề, thêm dần từ form html)
+    trailer: String, (link trailer)
+    episodes: Array, (chuỗi các link đến xem phim, có thể thêm nhiều, 1 nếu là phim lẻ, nhiều là phim bộ, thêm dần từ form html)
+    summary: String, (giới thiệu tổng quan phim)
+    thumbnail: String, (upload path ảnh thumbnail)
+    cover_image: String, (upload path ảnh cover)
+    rating: Array, (tự động cập nhật)
+    comment: Array, (tự động cập nhật)
+    views_3days: Number, (tự động cập nhật)
+    views_week: Number, (tự động cập nhật)
+    views_month: Number, (tự động cập nhật)
+    views_year: Number, (tự động cập nhật)
+    views_all: Number, (tự động cập nhật)
+    number_favourited: Number, (tự động cập nhật)
 
 director:
     director_name: String,

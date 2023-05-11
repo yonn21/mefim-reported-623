@@ -1,6 +1,3 @@
-const path = require("path");
-const view_path = path.join(__dirname, "../views");
-
 const actors = require("../models/actors");
 const admins = require("../models/admins");
 const comments = require("../models/comments");
@@ -12,7 +9,7 @@ const users = require("../models/users");
 
 class AdminController {
   getLoginPage(req, res, next) {
-    res.render(path.join(view_path, "login"), { message: req.flash("error") });
+    res.render("login", { message: req.flash("error") });
   }
 
   getLogout(req, res, next) {
@@ -26,7 +23,7 @@ class AdminController {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
-            res.render(path.join(view_path, "dashboard"), {
+            res.render("dashboard", {
               message: req.flash("success"),
               admin: adminResult,
               movies: movieResult,
@@ -40,80 +37,159 @@ class AdminController {
   }
 
   // Movie manager
-  // getMovieManagerPage(req, res, next) {
-  //     if (req.isAuthenticated()) {
-  //         var numberItemPerPage = 12
-  //         movies.find({}, (err, movieResult) => {
-  //             admins.findOne(
-  //                 { 'loginInformation.username': req.session.passport.user.username },
-  //                 (err, adminResult) => {
-  //                     directors.find({}, (err, directorResult) => {
-  //                         actors.find({}, (err, actorResult) => {
-  //                             genres.find({}, (err, genreResult) => {
-  //                                 ratings.find({}, (err, ratingResult) => {
-  //                                     comments.find({}, (err, commentResult) => {
-  //                                         res.render('quan-ly-phim', {
-  //                                             message: req.flash('success'),
-  //                                             page: 1,
-  //                                             numberItemPerPage: numberItemPerPage,
-  //                                             admin: adminResult,
-  //                                             movies: movieResult,
-  //                                             directors: directorResult,
-  //                                             actors: actorResult,
-  //                                             genres: genreResult,
-  //                                             ratings: ratingResult,
-  //                                             comments: commentResult,
-  //                                         })
-  //                                     })
-  //                                 })
-  //                             })
-  //                         })
-  //                     })
-  //                 }
-  //             )
-  //         })
-  //     } else {
-  //         res.redirect('/admin/login')
-  //     }
+  getMovieManagerPage(req, res, next) {
+    if (req.isAuthenticated()) {
+      var numberItemPerPage = 10;
+      movies.find({}, (err, movieResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            directors.find({}, (err, directorResult) => {
+              actors.find({}, (err, actorResult) => {
+                genres.find({}, (err, genreResult) => {
+                  ratings.find({}, (err, ratingResult) => {
+                    comments.find({}, (err, commentResult) => {
+                      res.render("movie-management", {
+                        message: req.flash("success"),
+                        page: 1,
+                        numberItemPerPage: numberItemPerPage,
+                        admin: adminResult,
+                        movies: movieResult,
+                        directors: directorResult,
+                        actors: actorResult,
+                        genres: genreResult,
+                        ratings: ratingResult,
+                        comments: commentResult,
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getMovieManagerAtPage(req, res, next) {
+    if (req.isAuthenticated()) {
+      var numberItemPerPage = 10;
+      var page = req.params.page;
+      movies.find({}, (err, movieResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            directors.find({}, (err, directorResult) => {
+              actors.find({}, (err, actorResult) => {
+                genres.find({}, (err, genreResult) => {
+                  ratings.find({}, (err, ratingResult) => {
+                    comments.find({}, (err, commentResult) => {
+                      res.render("movie-management", {
+                        message: req.flash("success"),
+                        page: page,
+                        numberItemPerPage: numberItemPerPage,
+                        admin: adminResult,
+                        movies: movieResult,
+                        directors: directorResult,
+                        actors: actorResult,
+                        genres: genreResult,
+                        ratings: ratingResult,
+                        comments: commentResult,
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  // getAddMoviePage(req, res, next) {
+  //   if (req.isAuthenticated()) {
+  //     directors.find({}, (err, directorResult) => {
+  //       actors.find({}, (err, actorResult) => {
+  //         genres.find({}, (err, genreResult) => {
+  //           res.render("movie-add", {
+  //             message: req.flash("success"),
+  //             directorOptions: directorResult,
+  //             actorOptions: actorResult,
+  //             genreOptions: genreResult,
+  //           });
+  //         });
+  //       });
+  //     });
+  //   } else {
+  //     res.redirect("/admin/login");
+  //   }
   // }
 
-  // getMovieManagerAtPage(req, res, next) {
-  //     if (req.isAuthenticated()) {
-  //         var numberItemPerPage = 12
-  //         var page = req.params.page
-  //         movies.find({}, (err, movieResult) => {
-  //             admins.findOne(
-  //                 { 'loginInformation.username': req.session.passport.user.username },
-  //                 (err, adminResult) => {
-  //                     directors.find({}, (err, directorResult) => {
-  //                         actors.find({}, (err, actorResult) => {
-  //                             genres.find({}, (err, genreResult) => {
-  //                                 ratings.find({}, (err, ratingResult) => {
-  //                                     comments.find({}, (err, commentResult) => {
-  //                                         res.render('quan-ly-phim', {
-  //                                             message: req.flash('success'),
-  //                                             page: page,
-  //                                             numberItemPerPage: numberItemPerPage,
-  //                                             admin: adminResult,
-  //                                             movies: movieResult,
-  //                                             directors: directorResult,
-  //                                             actors: actorResult,
-  //                                             genres: genreResult,
-  //                                             ratings: ratingResult,
-  //                                             comments: commentResult,
-  //                                         })
-  //                                     })
-  //                                 })
-  //                             })
-  //                         })
-  //                     })
-  //                 }
-  //             )
-  //         })
-  //     } else {
-  //         res.redirect('/admin/login')
-  //     }
+  // postAddMovie(req, res, next) {
+  //   if (req.isAuthenticated()) {
+  //     var data = {
+  //       primary_title: req.body.primary_title,
+  //       secondary_title: req.body.secondary_title,
+  //       directors: req.body.directors,
+  //       actors: req.body.actors,
+  //       genres: req.body.genres,
+  //       year: req.body.year,
+  //       country: req.body.country,
+  //       type: req.body.type,
+  //       duration: req.body.duration,
+  //       type_sub: req.body.type_sub,
+  //       trailer: req.body.trailer,
+  //       episodes: req.body.episodes,
+  //       summary: req.body.summary,
+  //       thumbnail: req.body.thumbnail,
+  //       cover_image: req.body.cover_image,
+  //       rating: [],
+  //       comment: [],
+  //       views_week: 0,
+  //       views_month: 0,
+  //       views_year: 0,
+  //       views_all: 0,
+  //       number_favourited: 0,
+  //     };
+  //     var newMovie = new movies(data);
+  //     newMovie
+  //       .save()
+  //       .then(() => {
+  //         req.flash("success", "Thêm phim thành công!");
+  //         res.redirect("/admin/movie-management/page-1");
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //         req.flash("error", "Thêm phim không thành công! Có lỗi xảy ra!");
+  //         res.redirect("/admin/movie-management/page-1");
+  //       });
+  //   } else {
+  //     res.redirect("/admin/login");
+  //   }
   // }
+
+  getDeleteMovieInfo(req, res, next) {
+    if (req.isAuthenticated()) {
+      var id = req.params.id;
+      movies.findOneAndRemove({ _id: id }, (err, result) => {
+        if (err) {
+          console.log(err);
+          req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
+          next();
+        }
+        req.flash("success", "Xóa phim thành công!");
+        res.redirect("/admin/movie-management/page-1");
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
 
   // Director manager
   getDirectorManagerPage(req, res, next) {
@@ -124,7 +200,7 @@ class AdminController {
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
             movies.find({}, (err, movieResult) => {
-              res.render(path.join(view_path, "director-management"), {
+              res.render("director-management", {
                 message: req.flash("success"),
                 page: 1,
                 numberItemPerPage: numberItemPerPage,
@@ -172,7 +248,7 @@ class AdminController {
       admins.findOne(
         { "loginInformation.username": req.session.passport.user.username },
         (err, adminResult) => {
-          res.render(path.join(view_path, "director-add"), {
+          res.render("director-add", {
             admin: adminResult,
           });
         }
@@ -212,7 +288,7 @@ class AdminController {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
-            res.render(path.join(view_path, "director-edit"), {
+            res.render("director-edit", {
               director: directorResult,
               admin: adminResult,
             });
@@ -280,7 +356,7 @@ class AdminController {
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
             movies.find({}, (err, movieResult) => {
-              res.render(path.join(view_path, "actor-management"), {
+              res.render("actor-management", {
                 message: req.flash("success"),
                 page: 1,
                 numberItemPerPage: numberItemPerPage,
@@ -328,7 +404,7 @@ class AdminController {
       admins.findOne(
         { "loginInformation.username": req.session.passport.user.username },
         (err, adminResult) => {
-          res.render(path.join(view_path, "actor-add"), {
+          res.render("actor-add", {
             admin: adminResult,
           });
         }
@@ -368,7 +444,7 @@ class AdminController {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
-            res.render(path.join(view_path, "actor-edit"), {
+            res.render("actor-edit", {
               actor: actorResult,
               admin: adminResult,
             });
@@ -436,7 +512,7 @@ class AdminController {
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
             movies.find({}, (err, movieResult) => {
-              res.render(path.join(view_path, "genre-management"), {
+              res.render("genre-management", {
                 message: req.flash("success"),
                 page: 1,
                 numberItemPerPage: numberItemPerPage,
@@ -484,7 +560,7 @@ class AdminController {
       admins.findOne(
         { "loginInformation.username": req.session.passport.user.username },
         (err, adminResult) => {
-          res.render(path.join(view_path, "genre-add"), {
+          res.render("genre-add", {
             admin: adminResult,
           });
         }
@@ -523,7 +599,7 @@ class AdminController {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
-            res.render(path.join(view_path, "genre-edit"), {
+            res.render("genre-edit", {
               genre: genreResult,
               admin: adminResult,
             });
