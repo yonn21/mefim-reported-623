@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Quản lý diễn viên</title>
+  <title>Mefim - Sửa thể loại</title>
   <link rel="icon" href="/public/img/core-img/favicon.png" />
 </head>
 
@@ -125,7 +125,7 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                <h2 class="pageheader-title">Quản lý diễn viên</h2>
+                <h2 class="pageheader-title">Sửa thể loại</h2>
                 <div class="page-breadcrumb">
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -133,10 +133,10 @@
                         <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
                       </li>
                       <li class="breadcrumb-item">
-                        <a href="/admin/actor-management/page-1" class="breadcrumb-link">Quản lý diễn viên</a>
+                        <a href="/admin/genre-management/page-1" class="breadcrumb-link">Quản lý thể loại</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Trang <%= page %>
+                        Sửa thể loại
                       </li>
                     </ol>
                   </nav>
@@ -144,85 +144,35 @@
               </div>
             </div>
           </div>
-
-          <div class="ecommerce-widget">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <div class="card">
-                <div class="header-product">
-                  <h5 class="card-header">Quản lý diễn viên</h5>
-                  <a class="button" href="/admin/actor-management/add">Thêm diễn viên</a>
+          <div class="content" style="width: 100%; height: 100vh">
+            <div class="container-fluid">
+              <form class="row g-3" accept-charset="utf-8" spellcheck="false"
+                action="/admin/genre-management/edit/<%= genre._id %>" method="POST">
+                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                  <label for="validationServer01" class="form-label">Tên thể loại</label>
+                  <input type="text" name="genre_name" class="form-control" id="validationServer01"
+                    value="<%= genre.genre_name %>" required />
                 </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class="bg-light">
-                        <tr class="border-0">
-                          <th class="border-0">#</th>
-                          <th class="border-0">Thumbnail</th>
-                          <th class="border-0">Tên diễn viên</th>
-                          <th class="border-0">Mô tả</th>
-                          <th class="border-0" width="90px">Thao tác</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% listActor=actors.length> numberItemPerPage ?
-                          actors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page): actors %>
-                          <% var index=(page - 1) * numberItemPerPage + 1 %>
-                            <% listActor.forEach(element=> {%>
-                              <tr>
-                                <td>
-                                  <%= index %>
-                                </td>
-                                <td>
-                                  <div class="m-r-10">
-                                    <img src="<%= element.actor_thumbnail %> " alt="user" class="rounded" width="70"
-                                      height="100" />
-                                  </div>
-                                </td>
-                                <td>
-                                  <%= element.actor_name %>
-                                </td>
-                                <td>
-                                  <%= element.actor_description %>
-                                </td>
-                                <td>
-                                  <a style="margin-right: 5px" href="/admin/actor-management/edit/<%= element._id %>"><i
-                                      class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa diễn viên này?',event)" style="margin-right: 5px"
-                                    href="/admin/actor-management/remove/<%= element._id %>"><i
-                                      class="fas fa-trash"></i></a>
-                                </td>
-                                <% index++ %>
-                              </tr>
-                              <%}) %>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                  <label for="validationServer01" class="form-label">Mô tả</label>
+                  <textarea name="genre_description" class="form-control" id="validationServer01"
+                    required><%= genre.genre_description %></textarea>
                 </div>
-              </div>
+                <div class="col-12">
+                  <button class="btn btn-primary mt-3" type="submit">
+                    Cập nhât thể loại
+                  </button>
+                </div>
+              </form>
             </div>
-            <nav aria-label="Page navigation example" style="margin-right: 15px">
-              <ul class="pagination justify-content-end">
-                <% numberPage=0 %>
-                  <% actors.length % numberItemPerPage==0 ? numberPage=parseInt(actors.length/numberItemPerPage) :
-                    numberPage=parseInt(actors.length/numberItemPerPage) + 1 %>
-                    <% for(var i=1; i <=numberPage; i++) {%>
-                      <li class="page-item <%= i == page ? 'active' : '' %>">
-                        <a class="page-link" href="/admin/actor-management/page-<%= i %>">
-                          <%= i %>
-                        </a>
-                      </li>
-                      <% } %>
-              </ul>
-            </nav>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Optional JavaScript -->
   <!-- jquery 3.3.1 -->
+
   <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
   <!-- bootstap bundle js -->
   <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
@@ -230,27 +180,7 @@
   <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
   <!-- main js -->
   <script src="/public/assets/libs/js/main-js.js"></script>
-  <script>
-    function comfirmDelete(msg, event) {
-      if (window.confirm(msg) == true) {
-        return true;
-      }
-      event.preventDefault();
-      return false;
-    }
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-  <% if(message && message.length> 0){%>
-    <script>
-      toastr.success("<%= message %>", "Thông báo", {
-        timeOut: 1500,
-        progressBar: true,
-        closeButton: true,
-      });
-    </script>
-    <%} %>
-
 </body>
 
 </html>

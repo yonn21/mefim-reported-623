@@ -45,11 +45,11 @@
 				<form method="POST" action="/admin/login">
 					<div class="form-group">
 						<input class="form-control form-control-lg" name="username" id="username" type="text"
-							placeholder="Tên người dùng" autocomplete="off" required>
+							placeholder="Nhập mật khẩu 1" autocomplete="off" required>
 					</div>
 					<div class="form-group">
 						<input class="form-control form-control-lg" name="password" id="password" type="password"
-							placeholder="Mật khẩu" required>
+							placeholder="Nhập mật khẩu 2" required>
 					</div>
 					<button type="submit" class="btn btn-primary btn-lg btn-block">Đăng nhập</button>
 				</form>
@@ -71,7 +71,7 @@
 			toastr.error('<%= message %>', 'Thông báo', { timeOut: 1500, progressBar: true, closeButton: true });
 		</script>
 		<%} %>
-		
+
 </body>
 
 </html>

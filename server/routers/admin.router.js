@@ -56,8 +56,24 @@ router.get("/dashboard/logout", adminController.getLogout);
 router.get("/dashboard", adminController.getDashboardPage);
 
 // Movie manager
-// router.get('/quan-ly-phim/trang-1', adminController.getMovieManagerPage)
-// router.get('/quan-ly-phim/trang-:page', adminController.getMovieManagerAtPage)
+router.get("/movie-management/page-1", adminController.getMovieManagerPage);
+router.get(
+  "/movie-management/page-:page",
+  adminController.getMovieManagerAtPage
+);
+router.post(
+  "/movie-management/add",
+  uploadSingle.single("movie_thumbnail"),
+  adminController.postAddMovie
+);
+router.get("/movie-management/add", adminController.getAddMoviePage);
+router.post(
+  "/movie-management/edit/:id",
+  uploadSingle.single("movie_thumbnail"),
+  adminController.postUpdateMoviePage
+);
+router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
+router.get("/movie-management/remove/:id", adminController.getDeleteMovieInfo);
 
 // Director manager
 router.get(
@@ -107,5 +123,17 @@ router.post(
 );
 router.get("/actor-management/edit/:id", adminController.getUpdateActorPage);
 router.get("/actor-management/remove/:id", adminController.getDeleteActorInfo);
+
+// Genre manager
+router.get("/genre-management/page-1", adminController.getGenreManagerPage);
+router.get(
+  "/genre-management/page-:page",
+  adminController.getGenreManagerAtPage
+);
+router.post("/genre-management/add", adminController.postAddGenre);
+router.get("/genre-management/add", adminController.getAddGenrePage);
+router.post("/genre-management/edit/:id", adminController.postUpdateGenrePage);
+router.get("/genre-management/edit/:id", adminController.getUpdateGenrePage);
+router.get("/genre-management/remove/:id", adminController.getDeleteGenreInfo);
 
 module.exports = router;

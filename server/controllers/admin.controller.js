@@ -188,7 +188,6 @@ class AdminController {
         director_name: req.body.director_name,
         director_thumbnail: `/${req.file.path}`,
         director_description: req.body.director_description,
-        status: true,
       };
       var newDirector = new directors(data);
       newDirector
@@ -345,7 +344,6 @@ class AdminController {
         actor_name: req.body.actor_name,
         actor_thumbnail: `/${req.file.path}`,
         actor_description: req.body.actor_description,
-        status: true,
       };
       var newActor = new actors(data);
       newActor
@@ -423,6 +421,158 @@ class AdminController {
         }
         req.flash("success", "Xóa diễn viên thành công!");
         res.redirect("/admin/actor-management/page-1");
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  // Genre manager
+  getGenreManagerPage(req, res, next) {
+    if (req.isAuthenticated()) {
+      var numberItemPerPage = 20;
+      genres.find({}, (err, genreResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            movies.find({}, (err, movieResult) => {
+              res.render(path.join(view_path, "genre-management"), {
+                message: req.flash("success"),
+                page: 1,
+                numberItemPerPage: numberItemPerPage,
+                admin: adminResult,
+                movies: movieResult,
+                genres: genreResult,
+              });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getGenreManagerAtPage(req, res, next) {
+    if (req.isAuthenticated()) {
+      var numberItemPerPage = 20;
+      var page = req.params.page;
+      genres.find({}, (err, genreResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            movies.find({}, (err, movieResult) => {
+              res.render("genre-management", {
+                message: req.flash("success"),
+                page: page,
+                numberItemPerPage: numberItemPerPage,
+                admin: adminResult,
+                movies: movieResult,
+                genres: genreResult,
+              });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getAddGenrePage(req, res, next) {
+    if (req.isAuthenticated()) {
+      admins.findOne(
+        { "loginInformation.username": req.session.passport.user.username },
+        (err, adminResult) => {
+          res.render(path.join(view_path, "genre-add"), {
+            admin: adminResult,
+          });
+        }
+      );
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  postAddGenre(req, res, next) {
+    if (req.isAuthenticated()) {
+      var data = {
+        genre_name: req.body.genre_name,
+        genre_description: req.body.genre_description,
+      };
+      var newGenre = new genres(data);
+      newGenre
+        .save()
+        .then(() => {
+          req.flash("success", "Thêm thể loại thành công!");
+          res.redirect("/admin/genre-management/page-1");
+        })
+        .catch((err) => {
+          console.log(err);
+          req.flash("error", "Thêm thể loại không thành công! Có lỗi xảy ra!");
+        });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getUpdateGenrePage(req, res, next) {
+    if (req.isAuthenticated()) {
+      var id = req.params.id;
+      genres.findOne({ _id: id }, (err, genreResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            res.render(path.join(view_path, "genre-edit"), {
+              genre: genreResult,
+              admin: adminResult,
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  postUpdateGenrePage(req, res, next) {
+    if (req.isAuthenticated()) {
+      var id = req.params.id;
+      genres.findOne({ _id: id }, (err, genreResult) => {
+        var data = {
+          genre_name: req.body.genre_name,
+          genre_description: req.body.genre_description,
+        };
+        genres
+          .findOneAndUpdate({ _id: id }, data, { new: true })
+          .then(() => {
+            req.flash("success", "Cập nhật thông tin thể loại thành công!");
+            res.redirect("/admin/genre-management/page-1");
+          })
+          .catch((err) => {
+            req.flash(
+              "error",
+              "Cập nhật thông tin thể loại không thành công! Có lỗi xảy ra!"
+            );
+            next();
+          });
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getDeleteGenreInfo(req, res, next) {
+    if (req.isAuthenticated()) {
+      var id = req.params.id;
+      genres.findOneAndRemove({ _id: id }, (err, result) => {
+        if (err) {
+          console.log(err);
+          req.flash("error", "Xóa thể loại không thành công! Có lỗi xảy ra!");
+          next();
+        }
+        req.flash("success", "Xóa thể loại thành công!");
+        res.redirect("/admin/genre-management/page-1");
       });
     } else {
       res.redirect("/admin/login");

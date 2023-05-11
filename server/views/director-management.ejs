@@ -166,14 +166,12 @@
                       </thead>
                       <tbody>
                         <% listDirector=directors.length> numberItemPerPage ?
-                          directors.slice((page - 1) * numberItemPerPage, numberItemPerPage *
-                          page):
-                          directors%>
-                          <% i=1 %>
+                          directors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page) : directors %>
+                          <% var index=(page - 1) * numberItemPerPage + 1 %>
                             <% listDirector.forEach(element=> {%>
                               <tr>
                                 <td>
-                                  <%= i %>
+                                  <%= index %>
                                 </td>
                                 <td>
                                   <div class="m-r-10">
@@ -195,7 +193,7 @@
                                     href="/admin/director-management/remove/<%= element._id %>"><i
                                       class="fas fa-trash"></i></a>
                                 </td>
-                                <% i++ %>
+                                <% index++ %>
                               </tr>
                               <%}) %>
                       </tbody>
@@ -207,15 +205,15 @@
             <nav aria-label="Page navigation example" style="margin-right: 15px">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
-                  <% directors.length % numberItemPerPage==0 ? numberPage=(parseInt(directors.length/numberItemPerPage))
-                    : numberPage=(parseInt(directors.length/numberItemPerPage)) + 1 %>
-                    <% for(var i=1; i <=numberPage; i++) {%>
+                  <% directors.length % numberItemPerPage==0 ? numberPage=parseInt(directors.length/numberItemPerPage) :
+                    numberPage=parseInt(directors.length/numberItemPerPage) + 1 %>
+                    <% for(var i=1; i <=numberPage; i++) { %>
                       <li class="page-item <%= i == page ? 'active' : '' %>">
-                        <a class="page-link" href="/admin/director-management/page-<%= i %> ">
+                        <a class="page-link" href="/admin/director-management/page-<%= i %>">
                           <%= i %>
                         </a>
                       </li>
-                      <%} %>
+                      <% } %>
               </ul>
             </nav>
           </div>

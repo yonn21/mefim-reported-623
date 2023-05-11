@@ -47,12 +47,12 @@ passport.use(
         }
         if (!user) {
           return done(null, false, {
-            message: "Sai tên người dùng hoặc mật khẩu!",
+            message: "Sai rồi!",
           });
         }
         if (user.loginInformation.password !== password) {
           return done(null, false, {
-            message: "Sai tên người dùng hoặc mật khẩu!",
+            message: "Sai rồi!",
           });
         }
         return done(null, user, { message: "Đăng nhập thành công!" });

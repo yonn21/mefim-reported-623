@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Quản lý diễn viên</title>
+  <title>Mefim - Quản lý thể loại</title>
   <link rel="icon" href="/public/img/core-img/favicon.png" />
 </head>
 
@@ -125,7 +125,7 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                <h2 class="pageheader-title">Quản lý diễn viên</h2>
+                <h2 class="pageheader-title">Quản lý thể loại</h2>
                 <div class="page-breadcrumb">
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -133,7 +133,7 @@
                         <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
                       </li>
                       <li class="breadcrumb-item">
-                        <a href="/admin/actor-management/page-1" class="breadcrumb-link">Quản lý diễn viên</a>
+                        <a href="/admin/genre-management/page-1" class="breadcrumb-link">Quản lý thể loại</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
                         Trang <%= page %>
@@ -149,8 +149,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="card">
                 <div class="header-product">
-                  <h5 class="card-header">Quản lý diễn viên</h5>
-                  <a class="button" href="/admin/actor-management/add">Thêm diễn viên</a>
+                  <h5 class="card-header">Quản lý thể loại</h5>
+                  <a class="button" href="/admin/genre-management/add">Thêm thể loại</a>
                 </div>
                 <div class="card-body p-0">
                   <div class="table-responsive">
@@ -158,38 +158,31 @@
                       <thead class="bg-light">
                         <tr class="border-0">
                           <th class="border-0">#</th>
-                          <th class="border-0">Thumbnail</th>
-                          <th class="border-0">Tên diễn viên</th>
+                          <th class="border-0">Tên</th>
                           <th class="border-0">Mô tả</th>
                           <th class="border-0" width="90px">Thao tác</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <% listActor=actors.length> numberItemPerPage ?
-                          actors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page): actors %>
+                        <% listGenre=genres.length> numberItemPerPage ?
+                          genres.slice((page - 1) * numberItemPerPage, numberItemPerPage * page) : genres %>
                           <% var index=(page - 1) * numberItemPerPage + 1 %>
-                            <% listActor.forEach(element=> {%>
+                            <% listGenre.forEach(element=> { %>
                               <tr>
                                 <td>
                                   <%= index %>
                                 </td>
                                 <td>
-                                  <div class="m-r-10">
-                                    <img src="<%= element.actor_thumbnail %> " alt="user" class="rounded" width="70"
-                                      height="100" />
-                                  </div>
+                                  <%= element.genre_name %>
                                 </td>
                                 <td>
-                                  <%= element.actor_name %>
+                                  <%= element.genre_description %>
                                 </td>
                                 <td>
-                                  <%= element.actor_description %>
-                                </td>
-                                <td>
-                                  <a style="margin-right: 5px" href="/admin/actor-management/edit/<%= element._id %>"><i
+                                  <a style="margin-right: 5px" href="/admin/genre-management/edit/<%= element._id %>"><i
                                       class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa diễn viên này?',event)" style="margin-right: 5px"
-                                    href="/admin/actor-management/remove/<%= element._id %>"><i
+                                  <a onclick="comfirmDelete('Xóa thể loại này?',event)" style="margin-right: 5px"
+                                    href="/admin/genre-management/remove/<%= element._id %>"><i
                                       class="fas fa-trash"></i></a>
                                 </td>
                                 <% index++ %>
@@ -204,11 +197,11 @@
             <nav aria-label="Page navigation example" style="margin-right: 15px">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
-                  <% actors.length % numberItemPerPage==0 ? numberPage=parseInt(actors.length/numberItemPerPage) :
-                    numberPage=parseInt(actors.length/numberItemPerPage) + 1 %>
+                  <% genres.length % numberItemPerPage==0 ? numberPage=parseInt(genres.length/numberItemPerPage) :
+                    numberPage=parseInt(genres.length/numberItemPerPage) + 1 %>
                     <% for(var i=1; i <=numberPage; i++) {%>
                       <li class="page-item <%= i == page ? 'active' : '' %>">
-                        <a class="page-link" href="/admin/actor-management/page-<%= i %>">
+                        <a class="page-link" href="/admin/genre-management/page-<%= i %>">
                           <%= i %>
                         </a>
                       </li>
