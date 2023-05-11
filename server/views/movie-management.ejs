@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/public/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/public/assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="/public/assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet"
+        href="/public/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <title>Mefim - Quản lý phim</title>
+    <link rel="icon" href="/public/img/core-img/favicon.png" />
+</head>
+
+<body>
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/admin/tong-quan"><img class="logo-img"
+                        src="/public/img/core-img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="<%= admin.admin_avatar %> " alt="" class="user-avatar-md rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <% fullName=admin.loginInformation.username %>
+                                        <h5 class="mb-0 text-white nav-user-name">
+                                            <%= fullName %>
+                                        </h5>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Tài khoản</a>
+                                <a class="dropdown-item" href="/admin/tong-quan/dang-xuat"><i
+                                        class="fas fa-power-off mr-2"></i>Đăng xuất</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Tổng quan</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <div id="submenu-1" class="collapse submenu show">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/admin/tong-quan">Tổng quan</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/quan-ly-phim/">Quản lý phim</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý diễn viên</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý đạo diễn</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý đạo diễn</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý thể loại</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý đánh giá</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý bình luận</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/tong-quan/">Quản lý người dùng</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title"> Quản lý phim </h2>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tổng
+                                                    quan</a></li>
+                                            <li class="breadcrumb-item" aria-current="page">Quản lý phim</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Trang <%= page %>
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget">
+                        <!-- movie manager  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <div class="header-product">
+                                    <h5 class="card-header">Quản lý phim</h5>
+                                    <a class="button" href="/admin/quan-ly-phim/them-phim">Thêm phim</a>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">#</th>
+                                                    <th class="border-0">Tiêu đề chính</th>
+                                                    <th class="border-0">Tiêu đề phụ</th>
+                                                    <th class="border-0">Đạo diễn</th>
+                                                    <th class="border-0">Diễn viên</th>
+                                                    <th class="border-0">Thể loại</th>
+                                                    <th class="border-0">Năm phát hành</th>
+                                                    <th class="border-0">Loại phim</th>
+                                                    <th class="border-0">Thời lượng | Số tập</th>
+                                                    <th class="border-0">Ngôn ngữ</th>
+                                                    <th class="border-0">Loại sub</th>
+                                                    <th class="border-0">Trailer</th>
+                                                    <th class="border-0">Link</th>
+                                                    <th class="border-0">Mô tả</th>
+                                                    <th class="border-0"></th>
+                                                    <th class="border-0"></th>
+                                                    <th class="border-0"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% listMovie=movies.length> numberItemPerPage ?
+                                                    movies.slice((page - 1)*numberItemPerPage, numberItemPerPage*page)
+                                                    :
+                                                    movie %>
+                                                    <% i=1 %>
+                                                        <% listTypeCode=types.map(type=> type._id.toString()) %>
+                                                            <% listMovie.forEach(element=> {%>
+                                                                <tr>
+                                                                    <td>
+                                                                        <%= i %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= element.primary_title %>
+                                                                    </td>
+                                                                    <% suppliers.forEach(supplier=> {%>
+                                                                        <%
+                                                                            if(supplier._id==element.description.supplierCode){%>
+                                                                            <td>
+                                                                                <%= supplier.supplierName %>
+                                                                            </td>
+                                                                            <%} %>
+                                                                                <%})%>
+                                                                                    <%
+                                                                                        if(listTypeCode.indexOf(element.description.typeCode)>
+                                                                                        = 0) {%>
+                                                                                        <% types.forEach(type=> {%>
+                                                                                            <%
+                                                                                                if(type._id==element.description.typeCode){%>
+                                                                                                <td>
+                                                                                                    <%= type.typeName %>
+                                                                                                </td>
+                                                                                                <%} %>
+                                                                                                    <%})%>
+                                                                                                        <%} else {%>
+                                                                                                            <td> Không
+                                                                                                                xác định
+                                                                                                            </td>
+                                                                                                            <%} %>
+                                                                                                                <td> 100
+                                                                                                                </td>
+                                                                                                                <td>
+                                                                                                                    <%= element.description.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'
+                                                                                                                        )
+                                                                                                                        %>
+                                                                                                                        đ
+                                                                                                                </td>
+                                                                                                                <td>
+                                                                                                                    <%= element.description.unit
+                                                                                                                        %>
+                                                                                                                </td>
+                                                                                                                <% if(element.description.status==true)
+                                                                                                                    {%>
+                                                                                                                    <td> Hiển
+                                                                                                                        thị
+                                                                                                                    </td>
+                                                                                                                    <%} else
+                                                                                                                        {%>
+                                                                                                                        <td> Ẩn
+                                                                                                                        </td>
+                                                                                                                        <%}%>
+                                                                                                                            <td>
+                                                                                                                                <a style="margin-right: 5px;"
+                                                                                                                                    href="/admin/quan-ly-phim/sua-phim/<%= element._id %>"><i
+                                                                                                                                        class="fas fa-edit"></i></a>
+                                                                                                                                <a onclick="comfirmDelete('Xóa phim này?',event)"
+                                                                                                                                    style="margin-right: 5px;"
+                                                                                                                                    href="/admin/quan-ly-phim/xoa-phim/<%= element._id %>"><i
+                                                                                                                                        class="fas fa-trash"></i></a>
+                                                                                                                                <a onclick="comfirmDelete('Ẩn/hiển thị phim này?',event)"
+                                                                                                                                    style="margin-right: 5px;"
+                                                                                                                                    href="/admin/quan-ly-phim/an-phim/<%= element._id %>"><i
+                                                                                                                                        class="fas fa-eye-slash"></i></a>
+                                                                                                                            </td>
+                                                                                                                            <% i++
+                                                                                                                                %>
+                                                                </tr>
+                                                                <%}) %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <nav aria-label="Page navigation example" style="margin-right: 15px;">
+                            <ul class="pagination justify-content-end">
+                                <% numberPage=0 %>
+                                    <% movies.length % numberItemPerPage==0 ?
+                                        numberPage=(parseInt(movies.length/numberItemPerPage)) :
+                                        numberPage=(parseInt(movies.length/numberItemPerPage)) + 1 %>
+                                        <% for(var i=1; i <=numberPage; i++) {%>
+                                            <li class="page-item <%= i == page ? 'active' : '' %> "><a class="page-link"
+                                                    href="/admin/quan-ly-phim/<%= i %> ">
+                                                    <%= i %>
+                                                </a></li>
+                                            <%} %>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="/public/assets/libs/js/main-js.js"></script>
+    <script>
+        function comfirmDelete(msg, event) {
+            if (window.confirm(msg) == true) {
+                return true;
+            }
+            event.preventDefault();
+            return false;
+        } 
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <% if(message && message.length> 0){%>
+        <script>
+            toastr.success('<%= message %>', 'Thông báo', { timeOut: 1500, progressBar: true, closeButton: true });
+        </script>
+        <%} %>
+</body>
+
+</html>

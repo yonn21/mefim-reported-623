@@ -1,0 +1,83 @@
+admin:
+    loginInformation:  Object,
+        username: String,
+        password: String,
+        type: String,
+    admin_email: String,
+    admin_phoneNumber: String,
+    admin_avatar: String,
+    admin_level: Number,
+
+user:
+    loginInformation: Object,
+        username: String,
+        password: String,
+        type: String,
+    user_email: String,
+    user_phoneNumber: String,
+    user_avatar: String,
+    user_displayName: String,
+    user_gender: String,
+    user_favoriteMovies: Array,
+    user_followedMovies: Array,
+    user_purchasedMovies: Array,
+    user_watchedMovies: Array,
+    user_rating: Array,
+    user_comment: Array,
+    user_currentBalance: Number,
+    user_vipLevel: Number,
+    user_vipExpiryDate: Date,
+
+
+movie:
+    primary_title: String,
+    secondary_title: String,
+    directors: Array,
+    actor: Array,
+    genres: Array,
+    year: String,
+    country: String,
+    duration: String,
+    type: String,
+    languages: String,
+    type_sub: Array,
+    trailer: String,
+    episodes: Array,
+    summary: String,
+    thumbnail: String,
+    cover_image: String,
+    rating: Array,
+    comment: Array,
+    views_week: Number,
+    views_month: Number,
+    views_year: Number,
+    views_all: Number,
+
+director:
+    director_name: String,
+    director_thumbnail: String,
+    director_description: String,
+    director_movies: Array,
+
+actor:
+    actor_name: String,
+    actor_thumbnail: String,
+    actor_description: String,
+    actor_movies: Array,
+
+genre:
+    genre_name: String,
+    genre_description: String,
+    genre_movies: Array,
+
+rating:
+    rating_level: Number,
+    rating_users: Array,
+    rating_movies: Array,
+    rating_date: Date,
+
+comment:
+    comment_content: String,
+    comment_user: String,
+    comment_movie: String,
+    comment_date: Date,
