@@ -29,6 +29,7 @@ user:
 
 
 movie:
+    url_name: String,
     primary_title: String, (tựa đề chính)
     secondary_title: String, (tựa đề phụ)
     directors: Array, (đạo diễn, có thể chọn nhiều từ database)

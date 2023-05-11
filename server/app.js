@@ -144,7 +144,9 @@ app.use(express.static(path.join(__dirname, "/")));
 
 // Route config
 const admin = require("./routers/admin.router");
+const movie = require("./routers/movie.router");
 
+app.use("/", movie);
 app.use("/admin", admin);
 
 const PORT = 6969;
