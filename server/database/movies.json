@@ -1,0 +1,45 @@
+[
+  {
+    "_id": {
+      "$oid": "6449650485a981c91db81000"
+    },
+    "primary_title": "Hố Đen Tử Thần",
+    "secondary_title": "Interstellar",
+    "directors": [
+      "645ce05fca29b9cacc29c90f"
+    ],
+    "actor": [
+      "645d1442ac74b35e4c174f0d",
+      "645d148bac74b35e4c174f0e"
+    ],
+    "genres": [
+      "645d14b9ac74b35e4c174f0f",
+      "645d14c0ac74b35e4c174f10",
+      "645d14c6ac74b35e4c174f11",
+      "645d14cbac74b35e4c174f12"
+    ],
+    "year": "2014",
+    "country": "Âu Mỹ",
+    "type": "Phim lẻ",
+    "duration": "2 giờ 49 phút",
+    "type_sub": [
+      "Vietsub",
+      "Engsub"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+    "episodes": [
+      ""
+    ],
+    "summary": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "cover_image": "https://i1.kym-cdn.com/photos/images/original/000/964/872/5b5.jpg",
+    "rating": [],
+    "comment": [],
+    "views_3days": 0,
+    "views_week": 0,
+    "views_month": 0,
+    "views_year": 0,
+    "views_all": 0,
+    "number_favourited": 0
+  }
+]
