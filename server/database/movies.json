@@ -3,13 +3,12 @@
     "_id": {
       "$oid": "6449650485a981c91db81000"
     },
-    "url_name": "Interstellar",
     "primary_title": "Hố Đen Tử Thần",
     "secondary_title": "Interstellar",
     "directors": [
       "645ce05fca29b9cacc29c90f"
     ],
-    "actor": [
+    "actors": [
       "645d1442ac74b35e4c174f0d",
       "645d148bac74b35e4c174f0e"
     ],
