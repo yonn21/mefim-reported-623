@@ -15,7 +15,8 @@ describe('Movie API', () => {
         .end((err, res) => {
           // Kiểm tra và xử lý phản hồi từ API
           expect(res).to.have.status(200);
-          console.log(res.body);
+          expect(res.body).to.be.an('array');
+          expect(res.body).to.deep.equal(expectedMovies);
           done();
         });
     });
