@@ -1,0 +1,38 @@
+.header {
+    background: $bg-1;
+    .nav-link {
+        color: $color-white;
+        line-height: 60px;
+        padding: 0 ;
+        &:hover {
+            color: $color-orange;
+        }
+    }
+    .dropdown-menu {
+        background-color: $bg-color-black-1;
+        top: 108%;
+        width: 350px;
+        .dropdown-item {
+            padding: 5px 15px;
+            background-color: $bg-color-black-1;
+            color: $color-white;
+            &:hover {
+                color: $color-orange;
+            }
+        }
+    }
+    .header-form {
+        border: 1px solid $color-white;
+        .form-search {
+            border: none;
+            border-radius: 0;
+            background: $bg-1;
+            box-shadow: none;
+            color: $color-white;
+        }
+        i {
+            font-size: 20px;
+            padding-right: 20px;
+        }
+    }
+}
