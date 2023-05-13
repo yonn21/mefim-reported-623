@@ -153,3 +153,5 @@ const PORT = 6969;
 app.listen(PORT, () => {
   console.log(`Server is started at: http://localhost:${PORT}`);
 });
+
+module.exports = app;
