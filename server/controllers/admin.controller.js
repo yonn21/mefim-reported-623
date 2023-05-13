@@ -129,6 +129,7 @@ class AdminController {
       res.redirect("/admin/login");
     }
   }
+
   getAddMoviePage(req, res, next) {
     if (req.isAuthenticated()) {
       admins.findOne(

@@ -152,16 +152,52 @@
                   <label for="validationServer01" class="form-label">URL</label>
                   <input type="text" name="url_name" class="form-control" id="validationServer01" value="" required />
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Tên chính</label>
                   <input type="text" name="primary_title" class="form-control" id="validationServer01" value=""
                     required />
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Tên phụ</label>
                   <input type="text" name="secondary_title" class="form-control" id="validationServer01" value=""
                     required />
                 </div>
+
+                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                  <label for="validationServer01" class="form-label">Đạo diễn</label>
+                  <select name="directors" class="form-control" id="validationServer01" multiple required>
+                    <% for (var i=0; i < directors.length; i++) { %>
+                      <option value="<%= directors[i].id %>">
+                        <%= directors[i].director_name %>
+                      </option>
+                      <% } %>
+                  </select>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                  <label for="validationServer01" class="form-label">Diễn viên</label>
+                  <select name="actors" class="form-control" id="validationServer01" multiple required>
+                    <% for (var i=0; i < actors.length; i++) { %>
+                      <option value="<%= actors[i].id %>">
+                        <%= actors[i].actor_name %>
+                      </option>
+                      <% } %>
+                  </select>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                  <label for="validationServer01" class="form-label">Thể loại</label>
+                  <select name="genres" class="form-control" id="validationServer01" multiple required>
+                    <% for (var i=0; i < genres.length; i++) { %>
+                      <option value="<%= genres[i].id %>">
+                        <%= genres[i].genre_name %>
+                      </option>
+                      <% } %>
+                  </select>
+                </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Năm phát hành</label>
                   <select name="year" class="form-control" id="validationServer01" required>
@@ -174,6 +210,7 @@
                         <% } %>
                   </select>
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Quốc gia phát hành</label>
                   <select name="country" class="form-control" id="validationServer01" required>
@@ -193,10 +230,12 @@
                     <option value="Khác">Khác</option>
                   </select>
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Giới thiệu, mô tả</label>
                   <textarea name="summary" class="form-control" id="validationServer01" required></textarea>
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Phụ đề</label>
                   <select name="type_sub" class="form-control" id="validationServer01sub" multiple size="3" required>
@@ -205,18 +244,22 @@
                     <option value="Engsub">Engsub</option>
                   </select>
                 </div>
+
                 <label for="formFileMultiple" style="margin: 0 15px;" class="form-label">Thumbnail (Hình chữ nhật
                   đứng)</label>
                 <input class="form-control mb-3 mt-1" style="margin: 0 15px; display: inline-block;" type="file"
                   id="formFileMultipleThumbnail" name="thumbnail" required />
+
                 <label for="formFileMultiple" style="margin: 0 15px;" class="form-label">Ảnh bìa (Hình chữ nhật
                   nằm)</label>
                 <input class="form-control mb-3 mt-1" style="margin: 0 15px; display: inline-block;" type="file"
                   id="formFileMultipleCoverImage" name="cover_image" required />
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Link đến trailer</label>
                   <input type="text" name="trailer" class="form-control" id="validationServer01" value="" required />
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Loại phim</label>
                   <select name="type" class="form-control" id="validationServer01type" required>
@@ -225,15 +268,17 @@
                     <option value="Phim bộ">Phim bộ</option>
                   </select>
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3" id="seriesDuration" style="display: none;">
                   <label for="durationInput" class="form-label" id="durationLabel">Số tập</label>
                   <input type="number" name="duration" class="form-control" id="durationInput" min="2"
                     placeholder="Nhập số tập lớn hơn 1" />
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3" id="singleMovieDuration" style="display: none;">
                   <div class="row">
                     <div class="col-md-6">
-                      <label class="form-label">Giờ</label>
+                      <label class="form-label">Thời lượng: Giờ</label>
                       <input type="number" name="duration_hours" class="form-control" id="validationServer01_hours"
                         min="0" max="24" />
                     </div>
@@ -244,9 +289,11 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <div id="episodesContainer"></div>
                 </div>
+
                 <div class="col-12">
                   <button class="btn btn-primary mt-3" type="submit">
                     Thêm phim
@@ -279,7 +326,10 @@
           minutesInput.value = '';
           singleMovieDuration.style.display = 'none';
           seriesDuration.style.display = 'block';
+
           durationInput.required = true;
+          hoursInput.required = false;
+          minutesInput.required = false;
 
           durationInput.addEventListener('input', updateEpisodesInput);
           updateEpisodesInput();
@@ -288,8 +338,10 @@
           durationInput.value = '';
           singleMovieDuration.style.display = 'block';
           seriesDuration.style.display = 'none';
-          hoursInput.value = true;
-          minutesInput.value = true;
+
+          hoursInput.required = true;
+          minutesInput.required = true;
+          durationInput.required = false;
 
           durationInput.removeEventListener('input', updateEpisodesInput);
           episodesContainer.innerHTML = '';
