@@ -112,67 +112,13 @@ class AdminController {
     }
   }
 
-  // getAddMoviePage(req, res, next) {
-  //   if (req.isAuthenticated()) {
-  //     directors.find({}, (err, directorResult) => {
-  //       actors.find({}, (err, actorResult) => {
-  //         genres.find({}, (err, genreResult) => {
-  //           res.render("movie-add", {
-  //             message: req.flash("success"),
-  //             directorOptions: directorResult,
-  //             actorOptions: actorResult,
-  //             genreOptions: genreResult,
-  //           });
-  //         });
-  //       });
-  //     });
-  //   } else {
-  //     res.redirect("/admin/login");
-  //   }
-  // }
+  getAddMoviePage(req, res, next) {
+    
+  }
 
-  // postAddMovie(req, res, next) {
-  //   if (req.isAuthenticated()) {
-  //     var data = {
-  //       primary_title: req.body.primary_title,
-  //       secondary_title: req.body.secondary_title,
-  //       directors: req.body.directors,
-  //       actors: req.body.actors,
-  //       genres: req.body.genres,
-  //       year: req.body.year,
-  //       country: req.body.country,
-  //       type: req.body.type,
-  //       duration: req.body.duration,
-  //       type_sub: req.body.type_sub,
-  //       trailer: req.body.trailer,
-  //       episodes: req.body.episodes,
-  //       summary: req.body.summary,
-  //       thumbnail: req.body.thumbnail,
-  //       cover_image: req.body.cover_image,
-  //       rating: [],
-  //       comment: [],
-  //       views_week: 0,
-  //       views_month: 0,
-  //       views_year: 0,
-  //       views_all: 0,
-  //       number_favourited: 0,
-  //     };
-  //     var newMovie = new movies(data);
-  //     newMovie
-  //       .save()
-  //       .then(() => {
-  //         req.flash("success", "Thêm phim thành công!");
-  //         res.redirect("/admin/movie-management/page-1");
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //         req.flash("error", "Thêm phim không thành công! Có lỗi xảy ra!");
-  //         res.redirect("/admin/movie-management/page-1");
-  //       });
-  //   } else {
-  //     res.redirect("/admin/login");
-  //   }
-  // }
+  postAddMovie(req, res, next) {
+    
+  }
 
   getDeleteMovieInfo(req, res, next) {
     if (req.isAuthenticated()) {
