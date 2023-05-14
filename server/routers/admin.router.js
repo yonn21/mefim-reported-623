@@ -100,12 +100,24 @@ const uploadDirector = multer({
 
 const movieStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, `./public/uploads/movies`);
+    const madeMovieURL = mkdirp.sync(
+      `./public/uploads/movies/${req.body.url_name}`
+    );
+    cb(null, `./public/uploads/movies/${req.body.url_name}`);
   },
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
-    const timestamp = moment().format("YYYYMMDDHHmmss");
-    cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
+    const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
+
+    if (file.fieldname === "thumbnail") {
+      const thumbnailFilename = `thumbnail_${req.body.url_name}_${timestamp}.${fileExtension}`;
+      cb(null, thumbnailFilename);
+    } else if (file.fieldname === "cover_image") {
+      const coverImageFilename = `cover_image_${req.body.url_name}_${timestamp}.${fileExtension}`;
+      cb(null, coverImageFilename);
+    } else {
+      cb(new Error("Invalid fieldname"));
+    }
   },
 });
 
@@ -124,7 +136,6 @@ const uploadMovie = multer({
   },
   limits: { fileSize: 1024 * 1024 * 5 },
 });
-
 
 // Login
 router.get("/login", adminController.getLoginPage);
@@ -151,7 +162,10 @@ router.get(
   adminController.getMovieManagerAtPage
 );
 // add movie
-router.post("/check-duplicate-movie-url", adminController.postCheckDuplicateMovieURL);
+router.post(
+  "/check-duplicate-movie-url",
+  adminController.postCheckDuplicateMovieURL
+);
 router.post(
   "/movie-management/add",
   uploadMovie.fields([
@@ -163,16 +177,22 @@ router.post(
 router.get("/movie-management/add", adminController.getAddMoviePage);
 // edit movie
 router.post(
-  "/movie-management/edit/:id",
+  "/movie-management/edit/:url_name",
   uploadMovie.fields([
     { name: "thumbnail", maxCount: 1 },
     { name: "cover_image", maxCount: 1 },
   ]),
   adminController.postUpdateMovie
 );
-router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
+router.get(
+  "/movie-management/edit/:url_name",
+  adminController.getUpdateMoviePage
+);
 // remove movie
-router.get("/movie-management/remove/:id", adminController.getDeleteMovieInfo);
+router.get(
+  "/movie-management/remove/:url_name",
+  adminController.getDeleteMovieInfo
+);
 
 // Director manager
 router.get(
@@ -184,7 +204,10 @@ router.get(
   adminController.getDirectorManagerAtPage
 );
 // add director
-router.post("/check-duplicate-director-url", adminController.postCheckDuplicateDirectorURL);
+router.post(
+  "/check-duplicate-director-url",
+  adminController.postCheckDuplicateDirectorURL
+);
 router.post(
   "/director-management/add",
   uploadDirector.single("director_thumbnail"),
@@ -208,7 +231,10 @@ router.get(
 );
 
 // Actor manager
-router.post("/check-duplicate-actor-url", adminController.postCheckDuplicateActorURL);
+router.post(
+  "/check-duplicate-actor-url",
+  adminController.postCheckDuplicateActorURL
+);
 router.get("/actor-management/page-1", adminController.getActorManagerPage);
 router.get(
   "/actor-management/page-:page",
@@ -227,9 +253,15 @@ router.post(
   uploadActor.single("actor_thumbnail"),
   adminController.postUpdateActor
 );
-router.get("/actor-management/edit/:actor_url", adminController.getUpdateActorPage);
+router.get(
+  "/actor-management/edit/:actor_url",
+  adminController.getUpdateActorPage
+);
 // remove actor
-router.get("/actor-management/remove/:actor_url", adminController.getDeleteActorInfo);
+router.get(
+  "/actor-management/remove/:actor_url",
+  adminController.getDeleteActorInfo
+);
 
 // Genre manager
 router.get("/genre-management/page-1", adminController.getGenreManagerPage);
@@ -238,13 +270,25 @@ router.get(
   adminController.getGenreManagerAtPage
 );
 // add genre
-router.post("/check-duplicate-genre-url", adminController.postCheckDuplicateGenreURL);
+router.post(
+  "/check-duplicate-genre-url",
+  adminController.postCheckDuplicateGenreURL
+);
 router.post("/genre-management/add", adminController.postAddGenre);
 router.get("/genre-management/add", adminController.getAddGenrePage);
 // edit genre
-router.post("/genre-management/edit/:genre_url", adminController.postUpdateGenre);
-router.get("/genre-management/edit/:genre_url", adminController.getUpdateGenrePage);
+router.post(
+  "/genre-management/edit/:genre_url",
+  adminController.postUpdateGenre
+);
+router.get(
+  "/genre-management/edit/:genre_url",
+  adminController.getUpdateGenrePage
+);
 // remove genre
-router.get("/genre-management/remove/:genre_url", adminController.getDeleteGenreInfo);
+router.get(
+  "/genre-management/remove/:genre_url",
+  adminController.getDeleteGenreInfo
+);
 
 module.exports = router;

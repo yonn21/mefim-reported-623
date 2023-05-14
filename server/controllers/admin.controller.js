@@ -249,6 +249,10 @@ class AdminController {
         );
       };
 
+      const movieDirectory = `./public/uploads/movies/${data.url_name}`;
+      data.thumbnail = `/${movieDirectory}/${req.files["thumbnail"][0].filename}`;
+      data.cover_image = `/${movieDirectory}/${req.files["cover_image"][0].filename}`;
+
       var newMovie = new movies(data);
       newMovie
         .save()
@@ -305,26 +309,37 @@ class AdminController {
   // remove movie
   getDeleteMovieInfo(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      movies.findOneAndRemove({ _id: id }, (err, result) => {
+      var url_name = req.params.url_name;
+      movies.findOneAndRemove({ url_name: url_name }, (err, result) => {
         if (err) {
           console.log(err);
           req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
           next();
         }
         if (result && result.thumbnail && result.cover_image) {
-          const thumbnailPath = path.join(__dirname,'../', result.thumbnail);
+          const thumbnailPath = path.join(__dirname, "../", result.thumbnail);
           fs.unlink(thumbnailPath, (err) => {
             if (err) {
               console.log(err);
             }
           });
-          const coverPath = path.join(__dirname,'../', result.cover_image);
+          const coverPath = path.join(__dirname, "../", result.cover_image);
           fs.unlink(coverPath, (err) => {
             if (err) {
               console.log(err);
             }
           });
+          const folderPath = path.join(
+            __dirname,
+            "../public/uploads/movies/",
+            result.url_name
+          );
+          try {
+            fs.rmdirSync(folderPath, { recursive: false });
+            // console.log('Thư mục đã được xóa thành công.');
+          } catch (err) {
+            console.error('Lỗi khi xóa thư mục:', err);
+          }
         }
 
         req.flash("success", "Xóa phim thành công!");
@@ -447,17 +462,20 @@ class AdminController {
   getUpdateDirectorPage(req, res, next) {
     if (req.isAuthenticated()) {
       var director_url = req.params.director_url;
-      directors.findOne({ director_url: director_url }, (err, directorResult) => {
-        admins.findOne(
-          { "loginInformation.username": req.session.passport.user.username },
-          (err, adminResult) => {
-            res.render("director-edit", {
-              director: directorResult,
-              admin: adminResult,
-            });
-          }
-        );
-      });
+      directors.findOne(
+        { director_url: director_url },
+        (err, directorResult) => {
+          admins.findOne(
+            { "loginInformation.username": req.session.passport.user.username },
+            (err, adminResult) => {
+              res.render("director-edit", {
+                director: directorResult,
+                admin: adminResult,
+              });
+            }
+          );
+        }
+      );
     } else {
       res.redirect("/admin/login");
     }
@@ -466,45 +484,50 @@ class AdminController {
   postUpdateDirector(req, res, next) {
     if (req.isAuthenticated()) {
       var director_url = req.params.director_url;
-      directors.findOne({ director_url: director_url }, (err, directorResult) => {
-        var data = {
-          director_name: req.body.director_name,
-          director_description: req.body.director_description,
-        };
+      directors.findOne(
+        { director_url: director_url },
+        (err, directorResult) => {
+          var data = {
+            director_name: req.body.director_name,
+            director_description: req.body.director_description,
+          };
 
-        if (req.file) {
-          if (directorResult && directorResult.director_thumbnail) {
-            const thumbnailPath = path.join(
-              __dirname,
-              "../",
-              directorResult.director_thumbnail
-            );
-            fs.unlink(thumbnailPath, (err) => {
-              if (err) {
-                console.log(err);
-              }
-            });
-  
-            data.director_thumbnail = `/${req.file.path}`;
+          if (req.file) {
+            if (directorResult && directorResult.director_thumbnail) {
+              const thumbnailPath = path.join(
+                __dirname,
+                "../",
+                directorResult.director_thumbnail
+              );
+              fs.unlink(thumbnailPath, (err) => {
+                if (err) {
+                  console.log(err);
+                }
+              });
+
+              data.director_thumbnail = `/${req.file.path}`;
+            }
+          } else {
+            data.director_thumbnail = directorResult.director_thumbnail;
           }
-        } else {
-          data.director_thumbnail = directorResult.director_thumbnail;
+
+          directors
+            .findOneAndUpdate({ director_url: director_url }, data, {
+              new: true,
+            })
+            .then(() => {
+              req.flash("success", "Cập nhật thông tin đạo diễn thành công!");
+              res.redirect("/admin/director-management/page-1");
+            })
+            .catch((err) => {
+              req.flash(
+                "error",
+                "Cập nhật thông tin đạo diễn không thành công! Có lỗi xảy ra!"
+              );
+              next();
+            });
         }
-        
-        directors
-          .findOneAndUpdate({ director_url: director_url }, data, { new: true })
-          .then(() => {
-            req.flash("success", "Cập nhật thông tin đạo diễn thành công!");
-            res.redirect("/admin/director-management/page-1");
-          })
-          .catch((err) => {
-            req.flash(
-              "error",
-              "Cập nhật thông tin đạo diễn không thành công! Có lỗi xảy ra!"
-            );
-            next();
-          });
-      });
+      );
     } else {
       res.redirect("/admin/login");
     }
@@ -690,7 +713,7 @@ class AdminController {
                 console.log(err);
               }
             });
-  
+
             data.actor_thumbnail = `/${req.file.path}`;
           }
         } else {

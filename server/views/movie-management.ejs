@@ -242,10 +242,11 @@
                                   <%= element.number_favourited %>
                                 </td>
                                 <td>
-                                  <a style="margin-right: 5px" href="/admin/movie-management/edit/<%= element._id %>"><i
+                                  <a style="margin-right: 5px"
+                                    href="/admin/movie-management/edit/<%= element.url_name %>"><i
                                       class="fas fa-edit"></i></a>
                                   <a onclick="comfirmDelete('Xóa phim này?',event)" style="margin-right: 5px"
-                                    href="/admin/movie-management/remove/<%= element._id %>"><i
+                                    href="/admin/movie-management/remove/<%= element.url_name %>"><i
                                       class="fas fa-trash"></i></a>
                                 </td>
                                 <% index++ %>
