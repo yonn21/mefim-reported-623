@@ -201,10 +201,65 @@ class AdminController {
         data.duration = (req.body.duration || "") + " tập";
       }
 
+      const updateDirectorMovies = (directorId, movieId) => {
+        directors.findByIdAndUpdate(
+          directorId,
+          { $push: { director_movies: movieId } },
+          (err) => {
+            if (err) {
+              console.log(
+                `Cập nhật đạo diễn không thành công với ID:: ${directorId}`
+              );
+            }
+          }
+        );
+      };
+
+      const updateActorMovies = (actorId, movieId) => {
+        actors.findByIdAndUpdate(
+          actorId,
+          { $push: { actor_movies: movieId } },
+          (err) => {
+            if (err) {
+              console.log(
+                `Cập nhật diễn viên không thành công với ID:: ${actorId}`
+              );
+            }
+          }
+        );
+      };
+
+      const updateGenreMovies = (genreId, movieId) => {
+        genres.findByIdAndUpdate(
+          genreId,
+          { $push: { genre_movies: movieId } },
+          (err) => {
+            if (err) {
+              console.log(
+                `Cập nhật thể loại không thành công với ID:: ${genreId}`
+              );
+            }
+          }
+        );
+      };
+
       var newMovie = new movies(data);
       newMovie
         .save()
-        .then(() => {
+        .then((savedMovie) => {
+          const directorsArr = Array.isArray(req.body.directors) ? req.body.directors : [req.body.directors];
+          directorsArr.forEach((directorId) => {
+            updateDirectorMovies(directorId, savedMovie._id);
+          });
+          const actorsArr = Array.isArray(req.body.actors) ? req.body.actors : [req.body.actors];
+          actorsArr.forEach((actorId) => {
+            updateActorMovies(actorId, savedMovie._id);
+          });
+          const genresArr = Array.isArray(req.body.genres) ? req.body.genres : [req.body.genres];
+          genresArr.forEach((genreId) => {
+            updateGenreMovies(genreId, savedMovie._id);
+          });
+
           req.flash("success", "Thêm phim thành công!");
           res.redirect("/admin/movie-management/page-1");
         })
