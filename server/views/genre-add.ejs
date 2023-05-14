@@ -164,7 +164,7 @@
                   <textarea name="genre_description" class="form-control" id="validationServer01" required></textarea>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary mt-3" type="submit">
+                  <button class="btn btn-primary mt-3" type="submit" id="submitForm">
                     Thêm thể loại
                   </button>
                 </div>
@@ -189,10 +189,14 @@
           if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             if (response.isDuplicate) {
+              document.getElementById("submitForm").style.opacity = "0.5";
+              document.getElementById("submitForm").style.pointerEvents = "none";
               urlNameError.style.color = "red";
               urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác";
               document.getElementById("validationServer01").focus();
             } else if (!response.isDuplicate) {
+              document.getElementById("submitForm").style.opacity = "1";
+              document.getElementById("submitForm").style.pointerEvents = "";
               urlNameError.style.color = "green";
               urlNameError.textContent = "URL không trùng";
             }
@@ -209,7 +213,7 @@
       }
 
       var data = {
-        url_name: urlName.trim()
+        genre_url: urlName.trim()
       };
       xhr.send(JSON.stringify(data));
     }

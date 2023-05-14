@@ -312,6 +312,21 @@ class AdminController {
           req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
           next();
         }
+        if (result && result.thumbnail && result.cover_image) {
+          const thumbnailPath = path.join(__dirname,'../', result.thumbnail);
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+          const coverPath = path.join(__dirname,'../', result.cover_image);
+          fs.unlink(coverPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+
         req.flash("success", "Xóa phim thành công!");
         res.redirect("/admin/movie-management/page-1");
       });
@@ -454,11 +469,28 @@ class AdminController {
       directors.findOne({ _id: id }, (err, directorResult) => {
         var data = {
           director_name: req.body.director_name,
-          director_thumbnail: req.file
-            ? `/${req.file.path}`
-            : directorResult.director_thumbnail,
           director_description: req.body.director_description,
         };
+
+        if (req.file) {
+          if (directorResult && directorResult.director_thumbnail) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              directorResult.director_thumbnail
+            );
+            fs.unlink(thumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+  
+            data.director_thumbnail = `/${req.file.path}`;
+          }
+        } else {
+          data.director_thumbnail = directorResult.director_thumbnail;
+        }
+        
         directors
           .findOneAndUpdate({ _id: id }, data, { new: true })
           .then(() => {
@@ -489,7 +521,11 @@ class AdminController {
           next();
         }
         if (result && result.director_thumbnail) {
-          const thumbnailPath = path.join(__dirname,'../', result.director_thumbnail);
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            result.director_thumbnail
+          );
           fs.unlink(thumbnailPath, (err) => {
             if (err) {
               console.log(err);
@@ -639,11 +675,28 @@ class AdminController {
       actors.findOne({ _id: id }, (err, actorResult) => {
         var data = {
           actor_name: req.body.actor_name,
-          actor_thumbnail: req.file
-            ? `/${req.file.path}`
-            : actorResult.actor_thumbnail,
           actor_description: req.body.actor_description,
         };
+
+        if (req.file) {
+          if (actorResult && actorResult.actor_thumbnail) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              actorResult.actor_thumbnail
+            );
+            fs.unlink(thumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+  
+            data.actor_thumbnail = `/${req.file.path}`;
+          }
+        } else {
+          data.actor_thumbnail = actorResult.actor_thumbnail;
+        }
+
         actors
           .findOneAndUpdate({ _id: id }, data, { new: true })
           .then(() => {
@@ -673,6 +726,19 @@ class AdminController {
           req.flash("error", "Xóa diễn viên không thành công! Có lỗi xảy ra!");
           next();
         }
+        if (result && result.actor_thumbnail) {
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            result.actor_thumbnail
+          );
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+
         req.flash("success", "Xóa diễn viên thành công!");
         res.redirect("/admin/actor-management/page-1");
       });

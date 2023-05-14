@@ -152,7 +152,7 @@
                   <label for="validationServer01" class="form-label">URL (không dấu, không hoa, không cách, VD:
                     cuoc-song-em-on-khong)</label>
                   <input type="text" name="url_name" class="form-control" id="validationServer01" value="" required
-                    onblur="checkDuplicateURL(this.value)" />
+                    onblur="checkDuplicateMovieURL(this.value)" />
                   <div id="urlNameError"></div>
                 </div>
 
@@ -308,7 +308,7 @@
                 </div>
 
                 <div class="col-12">
-                  <button class="btn btn-primary mt-3" type="submit">
+                  <button class="btn btn-primary mt-3" type="submit" id="submitForm">
                     Thêm phim
                   </button>
                 </div>
@@ -333,10 +333,14 @@
             if (xhr.status === 200) {
               var response = JSON.parse(xhr.responseText);
               if (response.isDuplicate) {
+                document.getElementById("submitForm").style.opacity = "0.5";
+                document.getElementById("submitForm").style.pointerEvents = "none";
                 urlNameError.style.color = "red";
                 urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác";
                 document.getElementById("validationServer01").focus();
               } else if (!response.isDuplicate) {
+                document.getElementById("submitForm").style.opacity = "1";
+                document.getElementById("submitForm").style.pointerEvents = "";
                 urlNameError.style.color = "green";
                 urlNameError.textContent = "URL không trùng";
               }
