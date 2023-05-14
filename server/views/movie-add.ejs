@@ -149,20 +149,21 @@
               <form class="row g-3" accept-charset="utf-8" spellcheck="false" enctype="multipart/form-data"
                 action="/admin/movie-management/add" method="POST">
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">URL</label>
+                  <label for="validationServer01" class="form-label">URL (không dấu, không hoa, không cách, VD:
+                    cuoc-song-em-on-khong)</label>
                   <input type="text" name="url_name" class="form-control" id="validationServer01" value="" required
                     onblur="checkDuplicateURL(this.value)" />
-                  <div id="urlNameError" style="color: red;"></div>
+                  <div id="urlNameError"></div>
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">Tên chính</label>
+                  <label for="validationServer01" class="form-label">Tên chính (Tên đã dịch sang tiếng Việt)</label>
                   <input type="text" name="primary_title" class="form-control" id="validationServer01" value=""
                     required />
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">Tên phụ</label>
+                  <label for="validationServer01" class="form-label">Tên phụ (Tên gốc)</label>
                   <input type="text" name="secondary_title" class="form-control" id="validationServer01" value=""
                     required />
                 </div>
@@ -332,10 +333,12 @@
             if (xhr.status === 200) {
               var response = JSON.parse(xhr.responseText);
               if (response.isDuplicate) {
+                urlNameError.style.color = "red";
                 urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác.";
                 document.getElementById("validationServer01").focus();
               } else {
-                urlNameError.textContent = "";
+                urlNameError.style.color = "green";
+                urlNameError.textContent = "URL không trùng";
               }
             } else {
               urlNameError.textContent = "Đã xảy ra lỗi trong quá trình kiểm tra URL.";
@@ -347,7 +350,6 @@
         };
         xhr.send(JSON.stringify(data));
       }
-
     </script>
 
     <!-- search-box -->
