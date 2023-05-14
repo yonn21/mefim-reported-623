@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 const actors = require("../models/actors");
 const admins = require("../models/admins");
 const comments = require("../models/comments");
@@ -485,6 +488,15 @@ class AdminController {
           req.flash("error", "Xóa đạo diễn không thành công! Có lỗi xảy ra!");
           next();
         }
+        if (result && result.director_thumbnail) {
+          const thumbnailPath = path.join(__dirname,'../', result.director_thumbnail);
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+
         req.flash("success", "Xóa đạo diễn thành công!");
         res.redirect("/admin/director-management/page-1");
       });

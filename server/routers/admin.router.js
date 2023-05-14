@@ -184,6 +184,7 @@ router.get(
   adminController.getDirectorManagerAtPage
 );
 // add director
+router.post("/check-duplicate-director-url", adminController.postCheckDuplicateDirectorURL);
 router.post(
   "/director-management/add",
   uploadDirector.single("director_thumbnail"),
@@ -207,6 +208,7 @@ router.get(
 );
 
 // Actor manager
+router.post("/check-duplicate-actor-url", adminController.postCheckDuplicateActorURL);
 router.get("/actor-management/page-1", adminController.getActorManagerPage);
 router.get(
   "/actor-management/page-:page",
@@ -236,6 +238,7 @@ router.get(
   adminController.getGenreManagerAtPage
 );
 // add genre
+router.post("/check-duplicate-genre-url", adminController.postCheckDuplicateGenreURL);
 router.post("/genre-management/add", adminController.postAddGenre);
 router.get("/genre-management/add", adminController.getAddGenrePage);
 // edit genre
