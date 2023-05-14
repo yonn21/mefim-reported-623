@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
-    const timestamp = moment().format("YYYYMMDDHHmmss");
+    const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
     cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
   },
 });
@@ -50,8 +50,9 @@ const actorStorage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
-    const timestamp = moment().format("YYYYMMDDHHmmss");
-    cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
+    const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
+    const thumbnailFilename = `${req.body.url_name}_${timestamp}.${fileExtension}`;
+    cb(null, thumbnailFilename);
   },
 });
 
@@ -77,8 +78,9 @@ const directorStorage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
-    const timestamp = moment().format("YYYYMMDDHHmmss");
-    cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
+    const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
+    const thumbnailFilename = `${req.body.url_name}_${timestamp}.${fileExtension}`;
+    cb(null, thumbnailFilename);
   },
 });
 

@@ -536,8 +536,8 @@ class AdminController {
   // remove director
   getDeleteDirectorInfo(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      directors.findOneAndRemove({ _id: id }, (err, result) => {
+      var director_url = req.params.director_url;
+      directors.findOneAndRemove({ director_url: director_url }, (err, result) => {
         if (err) {
           console.log(err);
           req.flash("error", "Xóa đạo diễn không thành công! Có lỗi xảy ra!");
@@ -742,8 +742,8 @@ class AdminController {
   // remove actor
   getDeleteActorInfo(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      actors.findOneAndRemove({ _id: id }, (err, result) => {
+      var actor_url = req.params.actor_url;
+      actors.findOneAndRemove({ actor_url: actor_url }, (err, result) => {
         if (err) {
           console.log(err);
           req.flash("error", "Xóa diễn viên không thành công! Có lỗi xảy ra!");
@@ -927,8 +927,8 @@ class AdminController {
   // remove genre
   getDeleteGenreInfo(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      genres.findOneAndRemove({ _id: id }, (err, result) => {
+      var genre_url = req.params.genre_url;
+      genres.findOneAndRemove({ genre_url: genre_url }, (err, result) => {
         if (err) {
           console.log(err);
           req.flash("error", "Xóa thể loại không thành công! Có lỗi xảy ra!");
