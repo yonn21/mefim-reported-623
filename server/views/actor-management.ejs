@@ -186,10 +186,10 @@
                                   <%= element.actor_description %>
                                 </td>
                                 <td>
-                                  <a style="margin-right: 5px" href="/admin/actor-management/edit/<%= element._id %>"><i
+                                  <a style="margin-right: 5px" href="/admin/actor-management/edit/<%= element.actor_url %>"><i
                                       class="fas fa-edit"></i></a>
                                   <a onclick="comfirmDelete('Xóa diễn viên này?',event)" style="margin-right: 5px"
-                                    href="/admin/actor-management/remove/<%= element._id %>"><i
+                                    href="/admin/actor-management/remove/<%= element.actor_url %>"><i
                                       class="fas fa-trash"></i></a>
                                 </td>
                                 <% index++ %>

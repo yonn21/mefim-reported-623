@@ -193,17 +193,17 @@ router.post(
 router.get("/director-management/add", adminController.getAddDirectorPage);
 // edit director
 router.post(
-  "/director-management/edit/:id",
+  "/director-management/edit/:director_url",
   uploadDirector.single("director_thumbnail"),
   adminController.postUpdateDirector
 );
 router.get(
-  "/director-management/edit/:id",
+  "/director-management/edit/:director_url",
   adminController.getUpdateDirectorPage
 );
 // remove director
 router.get(
-  "/director-management/remove/:id",
+  "/director-management/remove/:director_url",
   adminController.getDeleteDirectorInfo
 );
 
@@ -223,13 +223,13 @@ router.post(
 router.get("/actor-management/add", adminController.getAddActorPage);
 // edit actor
 router.post(
-  "/actor-management/edit/:id",
+  "/actor-management/edit/:actor_url",
   uploadActor.single("actor_thumbnail"),
   adminController.postUpdateActor
 );
-router.get("/actor-management/edit/:id", adminController.getUpdateActorPage);
+router.get("/actor-management/edit/:actor_url", adminController.getUpdateActorPage);
 // remove actor
-router.get("/actor-management/remove/:id", adminController.getDeleteActorInfo);
+router.get("/actor-management/remove/:actor_url", adminController.getDeleteActorInfo);
 
 // Genre manager
 router.get("/genre-management/page-1", adminController.getGenreManagerPage);
@@ -242,9 +242,9 @@ router.post("/check-duplicate-genre-url", adminController.postCheckDuplicateGenr
 router.post("/genre-management/add", adminController.postAddGenre);
 router.get("/genre-management/add", adminController.getAddGenrePage);
 // edit genre
-router.post("/genre-management/edit/:id", adminController.postUpdateGenre);
-router.get("/genre-management/edit/:id", adminController.getUpdateGenrePage);
+router.post("/genre-management/edit/:genre_url", adminController.postUpdateGenre);
+router.get("/genre-management/edit/:genre_url", adminController.getUpdateGenrePage);
 // remove genre
-router.get("/genre-management/remove/:id", adminController.getDeleteGenreInfo);
+router.get("/genre-management/remove/:genre_url", adminController.getDeleteGenreInfo);
 
 module.exports = router;

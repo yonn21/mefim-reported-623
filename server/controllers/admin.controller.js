@@ -446,8 +446,8 @@ class AdminController {
   // edit director
   getUpdateDirectorPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      directors.findOne({ _id: id }, (err, directorResult) => {
+      var director_url = req.params.director_url;
+      directors.findOne({ director_url: director_url }, (err, directorResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
@@ -465,8 +465,8 @@ class AdminController {
 
   postUpdateDirector(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      directors.findOne({ _id: id }, (err, directorResult) => {
+      var director_url = req.params.director_url;
+      directors.findOne({ director_url: director_url }, (err, directorResult) => {
         var data = {
           director_name: req.body.director_name,
           director_description: req.body.director_description,
@@ -492,7 +492,7 @@ class AdminController {
         }
         
         directors
-          .findOneAndUpdate({ _id: id }, data, { new: true })
+          .findOneAndUpdate({ director_url: director_url }, data, { new: true })
           .then(() => {
             req.flash("success", "Cập nhật thông tin đạo diễn thành công!");
             res.redirect("/admin/director-management/page-1");
@@ -652,8 +652,8 @@ class AdminController {
   // edit actor
   getUpdateActorPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      actors.findOne({ _id: id }, (err, actorResult) => {
+      var actor_url = req.params.actor_url;
+      actors.findOne({ actor_url: actor_url }, (err, actorResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
@@ -671,8 +671,8 @@ class AdminController {
 
   postUpdateActor(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      actors.findOne({ _id: id }, (err, actorResult) => {
+      var actor_url = req.params.actor_url;
+      actors.findOne({ actor_url: actor_url }, (err, actorResult) => {
         var data = {
           actor_name: req.body.actor_name,
           actor_description: req.body.actor_description,
@@ -698,7 +698,7 @@ class AdminController {
         }
 
         actors
-          .findOneAndUpdate({ _id: id }, data, { new: true })
+          .findOneAndUpdate({ actor_url: actor_url }, data, { new: true })
           .then(() => {
             req.flash("success", "Cập nhật thông tin diễn viên thành công!");
             res.redirect("/admin/actor-management/page-1");
@@ -857,8 +857,8 @@ class AdminController {
   // edit genre
   getUpdateGenrePage(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      genres.findOne({ _id: id }, (err, genreResult) => {
+      var genre_url = req.params.genre_url;
+      genres.findOne({ genre_url: genre_url }, (err, genreResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
@@ -876,14 +876,14 @@ class AdminController {
 
   postUpdateGenre(req, res, next) {
     if (req.isAuthenticated()) {
-      var id = req.params.id;
-      genres.findOne({ _id: id }, (err, genreResult) => {
+      var genre_url = req.params.genre_url;
+      genres.findOne({ genre_url: genre_url }, (err, genreResult) => {
         var data = {
           genre_name: req.body.genre_name,
           genre_description: req.body.genre_description,
         };
         genres
-          .findOneAndUpdate({ _id: id }, data, { new: true })
+          .findOneAndUpdate({ genre_url: genre_url }, data, { new: true })
           .then(() => {
             req.flash("success", "Cập nhật thông tin thể loại thành công!");
             res.redirect("/admin/genre-management/page-1");

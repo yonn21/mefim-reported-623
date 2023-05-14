@@ -179,10 +179,11 @@
                                   <%= element.genre_description %>
                                 </td>
                                 <td>
-                                  <a style="margin-right: 5px" href="/admin/genre-management/edit/<%= element._id %>"><i
+                                  <a style="margin-right: 5px"
+                                    href="/admin/genre-management/edit/<%= element.genre_url %>"><i
                                       class="fas fa-edit"></i></a>
                                   <a onclick="comfirmDelete('Xóa thể loại này?',event)" style="margin-right: 5px"
-                                    href="/admin/genre-management/remove/<%= element._id %>"><i
+                                    href="/admin/genre-management/remove/<%= element.genre_url %>"><i
                                       class="fas fa-trash"></i></a>
                                 </td>
                                 <% index++ %>
