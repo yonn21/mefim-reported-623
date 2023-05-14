@@ -338,7 +338,7 @@ class AdminController {
             fs.rmdirSync(folderPath, { recursive: false });
             // console.log('Thư mục đã được xóa thành công.');
           } catch (err) {
-            console.error('Lỗi khi xóa thư mục:', err);
+            console.error("Lỗi khi xóa thư mục:", err);
           }
         }
 
@@ -488,6 +488,7 @@ class AdminController {
         { director_url: director_url },
         (err, directorResult) => {
           var data = {
+            director_url: req.body.director_url,
             director_name: req.body.director_name,
             director_description: req.body.director_description,
           };
@@ -509,6 +510,30 @@ class AdminController {
             }
           } else {
             data.director_thumbnail = directorResult.director_thumbnail;
+          }
+
+          if (req.body.director_url != directorResult.director_url) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              directorResult.director_thumbnail
+            );
+            const fileName = directorResult.director_thumbnail.split("/").pop();
+            const newFileName = `${req.body.director_url}_${fileName.substring(
+              fileName.indexOf("_") + 1
+            )}`;
+            const newThumbnailPath = path.join(
+              __dirname,
+              "../",
+              "public/uploads/directors",
+              newFileName
+            );
+            fs.rename(thumbnailPath, newThumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+            data.director_thumbnail = `/${newThumbnailPath.substring(newThumbnailPath.indexOf("public"))}`;
           }
 
           directors
@@ -537,28 +562,31 @@ class AdminController {
   getDeleteDirectorInfo(req, res, next) {
     if (req.isAuthenticated()) {
       var director_url = req.params.director_url;
-      directors.findOneAndRemove({ director_url: director_url }, (err, result) => {
-        if (err) {
-          console.log(err);
-          req.flash("error", "Xóa đạo diễn không thành công! Có lỗi xảy ra!");
-          next();
-        }
-        if (result && result.director_thumbnail) {
-          const thumbnailPath = path.join(
-            __dirname,
-            "../",
-            result.director_thumbnail
-          );
-          fs.unlink(thumbnailPath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
-        }
+      directors.findOneAndRemove(
+        { director_url: director_url },
+        (err, result) => {
+          if (err) {
+            console.log(err);
+            req.flash("error", "Xóa đạo diễn không thành công! Có lỗi xảy ra!");
+            next();
+          }
+          if (result && result.director_thumbnail) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              result.director_thumbnail
+            );
+            fs.unlink(thumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+          }
 
-        req.flash("success", "Xóa đạo diễn thành công!");
-        res.redirect("/admin/director-management/page-1");
-      });
+          req.flash("success", "Xóa đạo diễn thành công!");
+          res.redirect("/admin/director-management/page-1");
+        }
+      );
     } else {
       res.redirect("/admin/login");
     }
@@ -697,6 +725,7 @@ class AdminController {
       var actor_url = req.params.actor_url;
       actors.findOne({ actor_url: actor_url }, (err, actorResult) => {
         var data = {
+          actor_url: req.body.actor_url,
           actor_name: req.body.actor_name,
           actor_description: req.body.actor_description,
         };
@@ -718,6 +747,30 @@ class AdminController {
           }
         } else {
           data.actor_thumbnail = actorResult.actor_thumbnail;
+        }
+
+        if (req.body.actor_url != actorResult.actor_url) {
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            actorResult.actor_thumbnail
+          );
+          const fileName = actorResult.actor_thumbnail.split("/").pop();
+          const newFileName = `${req.body.actor_url}_${fileName.substring(
+            fileName.indexOf("_") + 1
+          )}`;
+          const newThumbnailPath = path.join(
+            __dirname,
+            "../",
+            "public/uploads/actors",
+            newFileName
+          );
+          fs.rename(thumbnailPath, newThumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+          data.actor_thumbnail = `/${newThumbnailPath.substring(newThumbnailPath.indexOf("public"))}`;
         }
 
         actors
@@ -902,6 +955,7 @@ class AdminController {
       var genre_url = req.params.genre_url;
       genres.findOne({ genre_url: genre_url }, (err, genreResult) => {
         var data = {
+          genre_url: req.body.genre_url,
           genre_name: req.body.genre_name,
           genre_description: req.body.genre_description,
         };

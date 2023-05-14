@@ -51,7 +51,7 @@ const actorStorage = multer.diskStorage({
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
     const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
-    const thumbnailFilename = `${req.body.url_name}_${timestamp}.${fileExtension}`;
+    const thumbnailFilename = `${req.body.actor_url}_${timestamp}.${fileExtension}`;
     cb(null, thumbnailFilename);
   },
 });
@@ -79,7 +79,7 @@ const directorStorage = multer.diskStorage({
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
     const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
-    const thumbnailFilename = `${req.body.url_name}_${timestamp}.${fileExtension}`;
+    const thumbnailFilename = `${req.body.director_url}_${timestamp}.${fileExtension}`;
     cb(null, thumbnailFilename);
   },
 });
