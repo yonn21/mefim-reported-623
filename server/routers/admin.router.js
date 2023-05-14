@@ -4,6 +4,7 @@ const router = express.Router();
 
 const adminController = require("../controllers/admin.controller");
 
+// create folder if not exists
 const mkdirp = require("mkdirp");
 const made = mkdirp.sync(`./public/uploads`);
 const madeActor = mkdirp.sync(`./public/uploads/actors`);
@@ -15,6 +16,7 @@ const madeUser = mkdirp.sync(`./public/uploads/users`);
 const multer = require("multer");
 const moment = require("moment");
 
+// create function upload image
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, `./public/uploads`);
@@ -148,7 +150,8 @@ router.get(
   "/movie-management/page-:page",
   adminController.getMovieManagerAtPage
 );
-router.post("/check-duplicate-url", adminController.postCheckDuplicateURL);
+// add movie
+router.post("/check-duplicate-movie-url", adminController.postCheckDuplicateMovieURL);
 router.post(
   "/movie-management/add",
   uploadMovie.fields([
@@ -158,6 +161,7 @@ router.post(
   adminController.postAddMovie
 );
 router.get("/movie-management/add", adminController.getAddMoviePage);
+// edit movie
 router.post(
   "/movie-management/edit/:id",
   uploadMovie.fields([
@@ -167,6 +171,7 @@ router.post(
   adminController.postUpdateMovie
 );
 router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
+// remove movie
 router.get("/movie-management/remove/:id", adminController.getDeleteMovieInfo);
 
 // Director manager
@@ -178,12 +183,14 @@ router.get(
   "/director-management/page-:page",
   adminController.getDirectorManagerAtPage
 );
+// add director
 router.post(
   "/director-management/add",
   uploadDirector.single("director_thumbnail"),
   adminController.postAddDirector
 );
 router.get("/director-management/add", adminController.getAddDirectorPage);
+// edit director
 router.post(
   "/director-management/edit/:id",
   uploadDirector.single("director_thumbnail"),
@@ -193,6 +200,7 @@ router.get(
   "/director-management/edit/:id",
   adminController.getUpdateDirectorPage
 );
+// remove director
 router.get(
   "/director-management/remove/:id",
   adminController.getDeleteDirectorInfo
@@ -204,18 +212,21 @@ router.get(
   "/actor-management/page-:page",
   adminController.getActorManagerAtPage
 );
+// add actor
 router.post(
   "/actor-management/add",
   uploadActor.single("actor_thumbnail"),
   adminController.postAddActor
 );
 router.get("/actor-management/add", adminController.getAddActorPage);
+// edit actor
 router.post(
   "/actor-management/edit/:id",
   uploadActor.single("actor_thumbnail"),
   adminController.postUpdateActor
 );
 router.get("/actor-management/edit/:id", adminController.getUpdateActorPage);
+// remove actor
 router.get("/actor-management/remove/:id", adminController.getDeleteActorInfo);
 
 // Genre manager
@@ -224,10 +235,13 @@ router.get(
   "/genre-management/page-:page",
   adminController.getGenreManagerAtPage
 );
+// add genre
 router.post("/genre-management/add", adminController.postAddGenre);
 router.get("/genre-management/add", adminController.getAddGenrePage);
+// edit genre
 router.post("/genre-management/edit/:id", adminController.postUpdateGenre);
 router.get("/genre-management/edit/:id", adminController.getUpdateGenrePage);
+// remove genre
 router.get("/genre-management/remove/:id", adminController.getDeleteGenreInfo);
 
 module.exports = router;

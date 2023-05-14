@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const director = new mongoose.Schema(
   {
+    director_url: String,
     director_name: String,
     director_thumbnail: String,
     director_description: String,

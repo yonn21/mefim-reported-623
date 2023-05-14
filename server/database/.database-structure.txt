@@ -38,6 +38,7 @@ movie:
     year: String, (năm phát hành, chọn từ form html)
     country: String, (quốc gia phát hành, chọn từ form html)
     type: String, (phim lẻ hoặc phim bộ, chọn từ form html)
+    type_url: String (phim-le hoặc phim-bo)
     duration: String, (chọn từ form html, thời lượng giờ nếu là phim lẻ, số tập nếu là phim bộ)
     type_sub: Array, (phụ đề, có thể chọn nhiều hoặc để trống là không phụ đề, thêm dần từ form html)
     trailer: String, (link trailer)
@@ -55,18 +56,21 @@ movie:
     number_favourited: Number, (tự động cập nhật)
 
 director:
+    director_url: String,
     director_name: String,
     director_thumbnail: String,
     director_description: String,
     director_movies: Array,
 
 actor:
+    actor_url: String,
     actor_name: String,
     actor_thumbnail: String,
     actor_description: String,
     actor_movies: Array,
 
 genre:
+    genre_url: String,
     genre_name: String,
     genre_description: String,
     genre_movies: Array,

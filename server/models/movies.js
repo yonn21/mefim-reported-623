@@ -12,6 +12,7 @@ const movie = new mongoose.Schema(
     country: String,
     duration: String,
     type: String,
+    type_url: String,
     type_sub: Array,
     trailer: String,
     episodes: Array,
