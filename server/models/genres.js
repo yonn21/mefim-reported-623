@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const genre = new mongoose.Schema(
   {
+    genre_url: String,
     genre_name: String,
     genre_description: String,
     genre_movies: Array,

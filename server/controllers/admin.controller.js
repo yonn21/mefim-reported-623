@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 const actors = require("../models/actors");
 const admins = require("../models/admins");
 const comments = require("../models/comments");
@@ -112,24 +115,7 @@ class AdminController {
     }
   }
 
-  getAddMoviePage(req, res, next) {
-    if (req.isAuthenticated()) {
-      directors.find({}, (err, directorResult) => {
-        actors.find({}, (err, actorResult) => {
-          genres.find({}, (err, genreResult) => {
-            res.render("movie-add", {
-              directors: directorResult,
-              actors: actorResult,
-              genres: genreResult,
-            });
-          });
-        });
-      });
-    } else {
-      res.redirect("/admin/login");
-    }
-  }
-
+  // add movie
   getAddMoviePage(req, res, next) {
     if (req.isAuthenticated()) {
       admins.findOne(
@@ -154,6 +140,22 @@ class AdminController {
     }
   }
 
+  postCheckDuplicateMovieURL(req, res, next) {
+    var urlName = req.body.url_name;
+
+    movies.findOne({ url_name: urlName }, function (err, movie) {
+      if (err) {
+        res
+          .status(500)
+          .json({ error: "Đã xảy ra lỗi trong quá trình kiểm tra URL." });
+      } else if (movie) {
+        res.json({ isDuplicate: true });
+      } else {
+        res.json({ isDuplicate: false });
+      }
+    });
+  }
+
   postAddMovie(req, res, next) {
     if (req.isAuthenticated()) {
       var data = {
@@ -166,6 +168,7 @@ class AdminController {
         year: req.body.year,
         country: req.body.country,
         type: req.body.type,
+        type_url: "",
         duration: "",
         type_sub: req.body.type_sub,
         trailer: req.body.trailer,
@@ -184,6 +187,8 @@ class AdminController {
       };
 
       if (data.type === "Phim lẻ") {
+        data.type_url = "phim-le";
+
         var duration_hours = req.body.duration_hours || "";
         var duration_minutes = req.body.duration_minutes || "";
         var durationString = "";
@@ -198,6 +203,7 @@ class AdminController {
 
         data.duration = durationString.trim();
       } else {
+        data.type_url = "phim-bo";
         data.duration = (req.body.duration || "") + " tập";
       }
 
@@ -247,15 +253,21 @@ class AdminController {
       newMovie
         .save()
         .then((savedMovie) => {
-          const directorsArr = Array.isArray(req.body.directors) ? req.body.directors : [req.body.directors];
+          const directorsArr = Array.isArray(req.body.directors)
+            ? req.body.directors
+            : [req.body.directors];
           directorsArr.forEach((directorId) => {
             updateDirectorMovies(directorId, savedMovie._id);
           });
-          const actorsArr = Array.isArray(req.body.actors) ? req.body.actors : [req.body.actors];
+          const actorsArr = Array.isArray(req.body.actors)
+            ? req.body.actors
+            : [req.body.actors];
           actorsArr.forEach((actorId) => {
             updateActorMovies(actorId, savedMovie._id);
           });
-          const genresArr = Array.isArray(req.body.genres) ? req.body.genres : [req.body.genres];
+          const genresArr = Array.isArray(req.body.genres)
+            ? req.body.genres
+            : [req.body.genres];
           genresArr.forEach((genreId) => {
             updateGenreMovies(genreId, savedMovie._id);
           });
@@ -273,23 +285,10 @@ class AdminController {
     }
   }
 
+  // edit movie
   getUpdateMoviePage(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
-      movies.findOne({ _id: id }, (err, movieResult) => {
-        directors.find({}, (err, directorResult) => {
-          actors.find({}, (err, actorResult) => {
-            genres.find({}, (err, genreResult) => {
-              res.render("update-movie", {
-                movie: movieResult,
-                directors: directorResult,
-                actors: actorResult,
-                genres: genreResult,
-              });
-            });
-          });
-        });
-      });
     } else {
       res.redirect("/admin/login");
     }
@@ -298,52 +297,12 @@ class AdminController {
   postUpdateMovie(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
-      movies.findOne({ _id: id }, (err, movieResult) => {
-        var data = {
-          url_name: req.body.url_name,
-          primary_title: req.body.primary_title,
-          secondary_title: req.body.secondary_title,
-          directors: req.body.directors,
-          actor: req.body.actor,
-          genres: req.body.genres,
-          year: req.body.year,
-          country: req.body.country,
-          type: req.body.type,
-          duration: req.body.duration,
-          type_sub: req.body.type_sub,
-          trailer: req.body.trailer,
-          episodes: req.body.episodes,
-          summary: req.body.summary,
-          thumbnail: req.body.thumbnail,
-          cover_image: req.body.cover_image,
-          rating: movieResult.rating,
-          comment: movieResult.comment,
-          views_3days: movieResult.views_3days,
-          views_week: movieResult.views_week,
-          views_month: movieResult.views_month,
-          views_year: movieResult.views_year,
-          views_all: movieResult.views_all,
-          number_favourited: movieResult.number_favourited,
-        };
-        movies
-          .findOneAndUpdate({ _id: id }, data, { new: true })
-          .then(() => {
-            req.flash("success", "Cập nhật thông tin phim thành công!");
-            res.redirect("/admin/movie-management/page-1");
-          })
-          .catch((err) => {
-            req.flash(
-              "error",
-              "Cập nhật thông tin phim không thành công! Có lỗi xảy ra!"
-            );
-            next();
-          });
-      });
     } else {
       res.redirect("/admin/login");
     }
   }
 
+  // remove movie
   getDeleteMovieInfo(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
@@ -413,6 +372,7 @@ class AdminController {
     }
   }
 
+  // add director
   getAddDirectorPage(req, res, next) {
     if (req.isAuthenticated()) {
       admins.findOne(
@@ -428,9 +388,26 @@ class AdminController {
     }
   }
 
+  postCheckDuplicateDirectorURL(req, res, next) {
+    var urlName = req.body.director_url;
+
+    directors.findOne({ director_url: urlName }, function (err, director) {
+      if (err) {
+        res
+          .status(500)
+          .json({ error: "Đã xảy ra lỗi trong quá trình kiểm tra URL." });
+      } else if (director) {
+        res.json({ isDuplicate: true });
+      } else {
+        res.json({ isDuplicate: false });
+      }
+    });
+  }
+
   postAddDirector(req, res, next) {
     if (req.isAuthenticated()) {
       var data = {
+        director_url: req.body.director_url,
         director_name: req.body.director_name,
         director_thumbnail: `/${req.file.path}`,
         director_description: req.body.director_description,
@@ -451,6 +428,7 @@ class AdminController {
     }
   }
 
+  // edit director
   getUpdateDirectorPage(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
@@ -500,6 +478,7 @@ class AdminController {
     }
   }
 
+  // remove director
   getDeleteDirectorInfo(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
@@ -509,6 +488,15 @@ class AdminController {
           req.flash("error", "Xóa đạo diễn không thành công! Có lỗi xảy ra!");
           next();
         }
+        if (result && result.director_thumbnail) {
+          const thumbnailPath = path.join(__dirname,'../', result.director_thumbnail);
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+
         req.flash("success", "Xóa đạo diễn thành công!");
         res.redirect("/admin/director-management/page-1");
       });
@@ -569,6 +557,7 @@ class AdminController {
     }
   }
 
+  // add actor
   getAddActorPage(req, res, next) {
     if (req.isAuthenticated()) {
       admins.findOne(
@@ -584,9 +573,26 @@ class AdminController {
     }
   }
 
+  postCheckDuplicateActorURL(req, res, next) {
+    var urlName = req.body.actor_url;
+
+    actors.findOne({ actor_url: urlName }, function (err, actor) {
+      if (err) {
+        res
+          .status(500)
+          .json({ error: "Đã xảy ra lỗi trong quá trình kiểm tra URL." });
+      } else if (actor) {
+        res.json({ isDuplicate: true });
+      } else {
+        res.json({ isDuplicate: false });
+      }
+    });
+  }
+
   postAddActor(req, res, next) {
     if (req.isAuthenticated()) {
       var data = {
+        actor_url: req.body.actor_url,
         actor_name: req.body.actor_name,
         actor_thumbnail: `/${req.file.path}`,
         actor_description: req.body.actor_description,
@@ -607,6 +613,7 @@ class AdminController {
     }
   }
 
+  // edit actor
   getUpdateActorPage(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
@@ -656,6 +663,7 @@ class AdminController {
     }
   }
 
+  // remove actor
   getDeleteActorInfo(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
@@ -725,6 +733,7 @@ class AdminController {
     }
   }
 
+  // add genre
   getAddGenrePage(req, res, next) {
     if (req.isAuthenticated()) {
       admins.findOne(
@@ -740,9 +749,26 @@ class AdminController {
     }
   }
 
+  postCheckDuplicateGenreURL(req, res, next) {
+    var urlName = req.body.genre_url;
+
+    genres.findOne({ genre_url: urlName }, function (err, genre) {
+      if (err) {
+        res
+          .status(500)
+          .json({ error: "Đã xảy ra lỗi trong quá trình kiểm tra URL." });
+      } else if (genre) {
+        res.json({ isDuplicate: true });
+      } else {
+        res.json({ isDuplicate: false });
+      }
+    });
+  }
+
   postAddGenre(req, res, next) {
     if (req.isAuthenticated()) {
       var data = {
+        genre_url: req.body.genre_url,
         genre_name: req.body.genre_name,
         genre_description: req.body.genre_description,
       };
@@ -762,6 +788,7 @@ class AdminController {
     }
   }
 
+  // edit genre
   getUpdateGenrePage(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
@@ -808,6 +835,7 @@ class AdminController {
     }
   }
 
+  // remove genre
   getDeleteGenreInfo(req, res, next) {
     if (req.isAuthenticated()) {
       var id = req.params.id;
