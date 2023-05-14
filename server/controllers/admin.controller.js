@@ -469,11 +469,28 @@ class AdminController {
       directors.findOne({ _id: id }, (err, directorResult) => {
         var data = {
           director_name: req.body.director_name,
-          director_thumbnail: req.file
-            ? `/${req.file.path}`
-            : directorResult.director_thumbnail,
           director_description: req.body.director_description,
         };
+
+        if (req.file) {
+          if (directorResult && directorResult.director_thumbnail) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              directorResult.director_thumbnail
+            );
+            fs.unlink(thumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+  
+            data.director_thumbnail = `/${req.file.path}`;
+          }
+        } else {
+          data.director_thumbnail = directorResult.director_thumbnail;
+        }
+        
         directors
           .findOneAndUpdate({ _id: id }, data, { new: true })
           .then(() => {
@@ -658,11 +675,28 @@ class AdminController {
       actors.findOne({ _id: id }, (err, actorResult) => {
         var data = {
           actor_name: req.body.actor_name,
-          actor_thumbnail: req.file
-            ? `/${req.file.path}`
-            : actorResult.actor_thumbnail,
           actor_description: req.body.actor_description,
         };
+
+        if (req.file) {
+          if (actorResult && actorResult.actor_thumbnail) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              actorResult.actor_thumbnail
+            );
+            fs.unlink(thumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+  
+            data.actor_thumbnail = `/${req.file.path}`;
+          }
+        } else {
+          data.actor_thumbnail = actorResult.actor_thumbnail;
+        }
+
         actors
           .findOneAndUpdate({ _id: id }, data, { new: true })
           .then(() => {
