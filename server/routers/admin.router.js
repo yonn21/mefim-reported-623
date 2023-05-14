@@ -148,6 +148,7 @@ router.get(
   "/movie-management/page-:page",
   adminController.getMovieManagerAtPage
 );
+router.post("/admin/check-duplicate-url", adminController.postCheckDuplicateURL);
 router.post(
   "/movie-management/add",
   uploadMovie.fields([

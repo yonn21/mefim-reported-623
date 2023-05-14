@@ -154,6 +154,22 @@ class AdminController {
     }
   }
 
+  postCheckDuplicateURL(req, res, next) {
+    var urlName = req.body.url_name;
+
+    movies.findOne({ url_name: urlName }, function (err, movie) {
+      if (err) {
+        res
+          .status(500)
+          .json({ error: "Đã xảy ra lỗi trong quá trình kiểm tra URL." });
+      } else if (movie) {
+        res.json({ isDuplicate: true });
+      } else {
+        res.json({ isDuplicate: false });
+      }
+    });
+  }
+
   postAddMovie(req, res, next) {
     if (req.isAuthenticated()) {
       var data = {
@@ -247,15 +263,21 @@ class AdminController {
       newMovie
         .save()
         .then((savedMovie) => {
-          const directorsArr = Array.isArray(req.body.directors) ? req.body.directors : [req.body.directors];
+          const directorsArr = Array.isArray(req.body.directors)
+            ? req.body.directors
+            : [req.body.directors];
           directorsArr.forEach((directorId) => {
             updateDirectorMovies(directorId, savedMovie._id);
           });
-          const actorsArr = Array.isArray(req.body.actors) ? req.body.actors : [req.body.actors];
+          const actorsArr = Array.isArray(req.body.actors)
+            ? req.body.actors
+            : [req.body.actors];
           actorsArr.forEach((actorId) => {
             updateActorMovies(actorId, savedMovie._id);
           });
-          const genresArr = Array.isArray(req.body.genres) ? req.body.genres : [req.body.genres];
+          const genresArr = Array.isArray(req.body.genres)
+            ? req.body.genres
+            : [req.body.genres];
           genresArr.forEach((genreId) => {
             updateGenreMovies(genreId, savedMovie._id);
           });
