@@ -61,18 +61,24 @@ router.get(
   "/movie-management/page-:page",
   adminController.getMovieManagerAtPage
 );
-// router.post(
-//   "/movie-management/add",
-//   uploadSingle.single("movie_thumbnail"),
-//   adminController.postAddMovie
-// );
-// router.get("/movie-management/add", adminController.getAddMoviePage);
-// router.post(
-//   "/movie-management/edit/:id",
-//   uploadSingle.single("movie_thumbnail"),
-//   adminController.postUpdateMoviePage
-// );
-// router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
+router.post(
+  "/movie-management/add",
+  uploadSingle.fields([
+    { name: "thumbnail", maxCount: 1 },
+    { name: "cover_image", maxCount: 1 },
+  ]),
+  adminController.postAddMovie
+);
+router.get("/movie-management/add", adminController.getAddMoviePage);
+router.post(
+  "/movie-management/edit/:id",
+  uploadSingle.fields([
+    { name: "thumbnail", maxCount: 1 },
+    { name: "cover_image", maxCount: 1 },
+  ]),
+  adminController.postUpdateMovie
+);
+router.get("/movie-management/edit/:id", adminController.getUpdateMoviePage);
 router.get("/movie-management/remove/:id", adminController.getDeleteMovieInfo);
 
 // Director manager
@@ -93,7 +99,7 @@ router.get("/director-management/add", adminController.getAddDirectorPage);
 router.post(
   "/director-management/edit/:id",
   uploadSingle.single("director_thumbnail"),
-  adminController.postUpdateDirectorPage
+  adminController.postUpdateDirector
 );
 router.get(
   "/director-management/edit/:id",
@@ -119,7 +125,7 @@ router.get("/actor-management/add", adminController.getAddActorPage);
 router.post(
   "/actor-management/edit/:id",
   uploadSingle.single("actor_thumbnail"),
-  adminController.postUpdateActorPage
+  adminController.postUpdateActor
 );
 router.get("/actor-management/edit/:id", adminController.getUpdateActorPage);
 router.get("/actor-management/remove/:id", adminController.getDeleteActorInfo);
@@ -132,7 +138,7 @@ router.get(
 );
 router.post("/genre-management/add", adminController.postAddGenre);
 router.get("/genre-management/add", adminController.getAddGenrePage);
-router.post("/genre-management/edit/:id", adminController.postUpdateGenrePage);
+router.post("/genre-management/edit/:id", adminController.postUpdateGenre);
 router.get("/genre-management/edit/:id", adminController.getUpdateGenrePage);
 router.get("/genre-management/remove/:id", adminController.getDeleteGenreInfo);
 

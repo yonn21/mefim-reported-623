@@ -38,7 +38,7 @@ movie:
     year: String, (năm phát hành, chọn từ form html)
     country: String, (quốc gia phát hành, chọn từ form html)
     type: String, (phim lẻ hoặc phim bộ, chọn từ form html)
-    duration: String, (chọn từ form html, thời lượng phút nếu là phim lẻ, số tập nếu là phim bộ)
+    duration: String, (chọn từ form html, thời lượng giờ nếu là phim lẻ, số tập nếu là phim bộ)
     type_sub: Array, (phụ đề, có thể chọn nhiều hoặc để trống là không phụ đề, thêm dần từ form html)
     trailer: String, (link trailer)
     episodes: Array, (chuỗi các link đến xem phim, có thể thêm nhiều, 1 nếu là phim lẻ, nhiều là phim bộ, thêm dần từ form html)
