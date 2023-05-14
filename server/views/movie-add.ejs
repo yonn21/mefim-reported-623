@@ -167,6 +167,9 @@
 
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Đạo diễn</label>
+                  <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm..." id="director-search-box" />
+                  </div>
                   <select name="directors" class="form-control" id="validationServer01" multiple required>
                     <% for (var i=0; i < directors.length; i++) { %>
                       <option value="<%= directors[i].id %>">
@@ -177,8 +180,11 @@
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">Diễn viên</label>
-                  <select name="actors" class="form-control" id="validationServer01" multiple required>
+                  <label for="validationServer02" class="form-label">Diễn viên</label>
+                  <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm..." id="actor-search-box" />
+                  </div>
+                  <select name="actors" class="form-control" id="validationServer02" multiple required>
                     <% for (var i=0; i < actors.length; i++) { %>
                       <option value="<%= actors[i].id %>">
                         <%= actors[i].actor_name %>
@@ -187,9 +193,13 @@
                   </select>
                 </div>
 
+
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">Thể loại</label>
-                  <select name="genres" class="form-control" id="validationServer01" multiple required>
+                  <label for="validationServer03" class="form-label">Thể loại</label>
+                  <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm..." id="genre-search-box" />
+                  </div>
+                  <select name="genres" class="form-control" id="validationServer03" multiple required>
                     <% for (var i=0; i < genres.length; i++) { %>
                       <option value="<%= genres[i].id %>">
                         <%= genres[i].genre_name %>
@@ -308,6 +318,65 @@
     <!-- Optional JavaScript -->
     <!-- jquery 3.3.1 -->
 
+    <!-- search-box -->
+    <script>
+      function removeDiacritics(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      const directorSearchBox = document.getElementById('director-search-box');
+      const directorOptions = document.querySelectorAll('#validationServer01 option');
+
+      directorSearchBox.addEventListener('input', function () {
+        const searchTerm = removeDiacritics(directorSearchBox.value.toLowerCase());
+
+        directorOptions.forEach(function (option) {
+          const directorName = removeDiacritics(option.textContent.toLowerCase());
+
+          if (directorName.includes(searchTerm)) {
+            option.style.display = 'block';
+          } else {
+            option.style.display = 'none';
+          }
+        });
+      });
+
+      const actorSearchBox = document.getElementById('actor-search-box');
+      const actorOptions = document.querySelectorAll('#validationServer02 option');
+
+      actorSearchBox.addEventListener('input', function () {
+        const searchTerm = removeDiacritics(actorSearchBox.value.toLowerCase());
+
+        actorOptions.forEach(function (option) {
+          const actorName = removeDiacritics(option.textContent.toLowerCase());
+
+          if (actorName.includes(searchTerm)) {
+            option.style.display = 'block';
+          } else {
+            option.style.display = 'none';
+          }
+        });
+      });
+
+      const genreSearchBox = document.getElementById('genre-search-box');
+      const genreOptions = document.querySelectorAll('#validationServer03 option');
+
+      genreSearchBox.addEventListener('input', function () {
+        const searchTerm = removeDiacritics(genreSearchBox.value.toLowerCase());
+
+        genreOptions.forEach(function (option) {
+          const genreName = removeDiacritics(option.textContent.toLowerCase());
+
+          if (genreName.includes(searchTerm)) {
+            option.style.display = 'block';
+          } else {
+            option.style.display = 'none';
+          }
+        });
+      });
+    </script>
+
+    <!-- Tách chọn thể loại phim -->
     <script>
       const typeSelect = document.getElementById('validationServer01type');
 
@@ -384,9 +453,9 @@
           }
         }
       });
-
     </script>
 
+    <!-- multi select -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $('option').mousedown(function (e) {
