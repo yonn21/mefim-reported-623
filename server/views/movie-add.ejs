@@ -334,17 +334,24 @@
               var response = JSON.parse(xhr.responseText);
               if (response.isDuplicate) {
                 urlNameError.style.color = "red";
-                urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác.";
+                urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác";
                 document.getElementById("validationServer01").focus();
-              } else {
+              } else if (!response.isDuplicate) {
                 urlNameError.style.color = "green";
                 urlNameError.textContent = "URL không trùng";
               }
             } else {
-              urlNameError.textContent = "Đã xảy ra lỗi trong quá trình kiểm tra URL.";
+              urlNameError.textContent = "Đã xảy ra lỗi trong quá trình kiểm tra URL";
             }
           }
         };
+
+        if (urlName.trim() === "") {
+          urlNameError.style.color = "red";
+          urlNameError.textContent = "Vui lòng nhập URL";
+          return;
+        }
+
         var data = {
           url_name: urlName.trim()
         };
