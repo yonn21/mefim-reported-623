@@ -312,6 +312,21 @@ class AdminController {
           req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
           next();
         }
+        if (result && result.thumbnail && result.cover_image) {
+          const thumbnailPath = path.join(__dirname,'../', result.thumbnail);
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+          const coverPath = path.join(__dirname,'../', result.cover_image);
+          fs.unlink(coverPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+
         req.flash("success", "Xóa phim thành công!");
         res.redirect("/admin/movie-management/page-1");
       });
@@ -489,7 +504,11 @@ class AdminController {
           next();
         }
         if (result && result.director_thumbnail) {
-          const thumbnailPath = path.join(__dirname,'../', result.director_thumbnail);
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            result.director_thumbnail
+          );
           fs.unlink(thumbnailPath, (err) => {
             if (err) {
               console.log(err);
@@ -673,6 +692,19 @@ class AdminController {
           req.flash("error", "Xóa diễn viên không thành công! Có lỗi xảy ra!");
           next();
         }
+        if (result && result.actor_thumbnail) {
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            result.actor_thumbnail
+          );
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+
         req.flash("success", "Xóa diễn viên thành công!");
         res.redirect("/admin/actor-management/page-1");
       });
