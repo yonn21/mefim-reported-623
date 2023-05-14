@@ -6,6 +6,11 @@ const adminController = require("../controllers/admin.controller");
 
 const mkdirp = require("mkdirp");
 const made = mkdirp.sync(`./public/uploads`);
+const madeActor = mkdirp.sync(`./public/uploads/actors`);
+const madeDirector = mkdirp.sync(`./public/uploads/directors`);
+const madeMovie = mkdirp.sync(`./public/uploads/movies`);
+const madeAdmin = mkdirp.sync(`./public/uploads/admins`);
+const madeUser = mkdirp.sync(`./public/uploads/users`);
 
 const multer = require("multer");
 const moment = require("moment");
@@ -37,6 +42,88 @@ const uploadSingle = multer({
   limits: { fileSize: 1024 * 1024 * 5 },
 });
 
+const actorStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, `./public/uploads/actors`);
+  },
+  filename: function (req, file, cb) {
+    const fileExtension = file.originalname.split(".").pop();
+    const timestamp = moment().format("YYYYMMDDHHmmss");
+    cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
+  },
+});
+
+const uploadActor = multer({
+  storage: actorStorage,
+  fileFilter: function (req, file, cb) {
+    if (
+      file.mimetype == "image/png" ||
+      file.mimetype == "image/jpeg" ||
+      file.mimetype == "image/jpg"
+    ) {
+      cb(null, true);
+    } else {
+      cb("File type is not allowed", false);
+    }
+  },
+  limits: { fileSize: 1024 * 1024 * 5 },
+});
+
+const directorStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, `./public/uploads/directors`);
+  },
+  filename: function (req, file, cb) {
+    const fileExtension = file.originalname.split(".").pop();
+    const timestamp = moment().format("YYYYMMDDHHmmss");
+    cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
+  },
+});
+
+const uploadDirector = multer({
+  storage: directorStorage,
+  fileFilter: function (req, file, cb) {
+    if (
+      file.mimetype == "image/png" ||
+      file.mimetype == "image/jpeg" ||
+      file.mimetype == "image/jpg"
+    ) {
+      cb(null, true);
+    } else {
+      cb("File type is not allowed", false);
+    }
+  },
+  limits: { fileSize: 1024 * 1024 * 5 },
+});
+
+const movieStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, `./public/uploads/movies`);
+  },
+  filename: function (req, file, cb) {
+    const fileExtension = file.originalname.split(".").pop();
+    const timestamp = moment().format("YYYYMMDDHHmmss");
+    cb(null, `${file.originalname}_${timestamp}.${fileExtension}`);
+  },
+});
+
+const uploadMovie = multer({
+  storage: movieStorage,
+  fileFilter: function (req, file, cb) {
+    if (
+      file.mimetype == "image/png" ||
+      file.mimetype == "image/jpeg" ||
+      file.mimetype == "image/jpg"
+    ) {
+      cb(null, true);
+    } else {
+      cb("File type is not allowed", false);
+    }
+  },
+  limits: { fileSize: 1024 * 1024 * 5 },
+});
+
+
 // Login
 router.get("/login", adminController.getLoginPage);
 router.post(
@@ -63,7 +150,7 @@ router.get(
 );
 router.post(
   "/movie-management/add",
-  uploadSingle.fields([
+  uploadMovie.fields([
     { name: "thumbnail", maxCount: 1 },
     { name: "cover_image", maxCount: 1 },
   ]),
@@ -72,7 +159,7 @@ router.post(
 router.get("/movie-management/add", adminController.getAddMoviePage);
 router.post(
   "/movie-management/edit/:id",
-  uploadSingle.fields([
+  uploadMovie.fields([
     { name: "thumbnail", maxCount: 1 },
     { name: "cover_image", maxCount: 1 },
   ]),
@@ -92,13 +179,13 @@ router.get(
 );
 router.post(
   "/director-management/add",
-  uploadSingle.single("director_thumbnail"),
+  uploadDirector.single("director_thumbnail"),
   adminController.postAddDirector
 );
 router.get("/director-management/add", adminController.getAddDirectorPage);
 router.post(
   "/director-management/edit/:id",
-  uploadSingle.single("director_thumbnail"),
+  uploadDirector.single("director_thumbnail"),
   adminController.postUpdateDirector
 );
 router.get(
@@ -118,13 +205,13 @@ router.get(
 );
 router.post(
   "/actor-management/add",
-  uploadSingle.single("actor_thumbnail"),
+  uploadActor.single("actor_thumbnail"),
   adminController.postAddActor
 );
 router.get("/actor-management/add", adminController.getAddActorPage);
 router.post(
   "/actor-management/edit/:id",
-  uploadSingle.single("actor_thumbnail"),
+  uploadActor.single("actor_thumbnail"),
   adminController.postUpdateActor
 );
 router.get("/actor-management/edit/:id", adminController.getUpdateActorPage);
