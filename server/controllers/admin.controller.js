@@ -42,7 +42,7 @@ class AdminController {
   // Movie manager
   getMovieManagerPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 10;
+      var numberItemPerPage = 20;
       movies.find({}, (err, movieResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
@@ -79,7 +79,7 @@ class AdminController {
 
   getMovieManagerAtPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 10;
+      var numberItemPerPage = 20;
       var page = req.params.page;
       movies.find({}, (err, movieResult) => {
         admins.findOne(
@@ -113,6 +113,23 @@ class AdminController {
     } else {
       res.redirect("/admin/login");
     }
+  }
+
+  getSearchMovie(req, res, next) {
+    const keyword = req.query.keyword;
+    movies
+      .find({
+        $or: [
+          { primary_title: { $regex: keyword, $options: "i" } },
+          { secondary_title: { $regex: keyword, $options: "i" } },
+        ],
+      })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.status(500).json({ error: "Lỗi server" });
+      });
   }
 
   // add movie
@@ -353,7 +370,7 @@ class AdminController {
   // Director manager
   getDirectorManagerPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 10;
+      var numberItemPerPage = 20;
       directors.find({}, (err, directorResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
@@ -378,7 +395,7 @@ class AdminController {
 
   getDirectorManagerAtPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 10;
+      var numberItemPerPage = 20;
       var page = req.params.page;
       directors.find({}, (err, directorResult) => {
         admins.findOne(
@@ -400,6 +417,18 @@ class AdminController {
     } else {
       res.redirect("/admin/login");
     }
+  }
+
+  getSearchDirector(req, res, next) {
+    const keyword = req.query.keyword;
+    directors
+      .find({ director_name: { $regex: keyword, $options: "i" } })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.status(500).json({ error: "Lỗi server" });
+      });
   }
 
   // add director
@@ -533,7 +562,9 @@ class AdminController {
                 console.log(err);
               }
             });
-            data.director_thumbnail = `/${newThumbnailPath.substring(newThumbnailPath.indexOf("public"))}`;
+            data.director_thumbnail = `/${newThumbnailPath.substring(
+              newThumbnailPath.indexOf("public")
+            )}`;
           }
 
           directors
@@ -595,7 +626,7 @@ class AdminController {
   // Actor manager
   getActorManagerPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 10;
+      var numberItemPerPage = 20;
       actors.find({}, (err, actorResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
@@ -620,7 +651,7 @@ class AdminController {
 
   getActorManagerAtPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 10;
+      var numberItemPerPage = 20;
       var page = req.params.page;
       actors.find({}, (err, actorResult) => {
         admins.findOne(
@@ -642,6 +673,18 @@ class AdminController {
     } else {
       res.redirect("/admin/login");
     }
+  }
+
+  getSearchActor(req, res, next) {
+    const keyword = req.query.keyword;
+    actors
+      .find({ actor_name: { $regex: keyword, $options: "i" } })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.status(500).json({ error: "Lỗi server" });
+      });
   }
 
   // add actor
@@ -770,7 +813,9 @@ class AdminController {
               console.log(err);
             }
           });
-          data.actor_thumbnail = `/${newThumbnailPath.substring(newThumbnailPath.indexOf("public"))}`;
+          data.actor_thumbnail = `/${newThumbnailPath.substring(
+            newThumbnailPath.indexOf("public")
+          )}`;
         }
 
         actors

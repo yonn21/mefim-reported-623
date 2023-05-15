@@ -163,6 +163,7 @@ router.get(
   "/movie-management/page-:page",
   adminController.getMovieManagerAtPage
 );
+router.get("/movie-management/search", adminController.getSearchMovie);
 // add movie
 router.post(
   "/check-duplicate-movie-url",
@@ -205,6 +206,7 @@ router.get(
   "/director-management/page-:page",
   adminController.getDirectorManagerAtPage
 );
+router.get("/director-management/search", adminController.getSearchDirector);
 // add director
 router.post(
   "/check-duplicate-director-url",
@@ -242,6 +244,7 @@ router.get(
   "/actor-management/page-:page",
   adminController.getActorManagerAtPage
 );
+router.get("/actor-management/search", adminController.getSearchActor);
 // add actor
 router.post(
   "/actor-management/add",
