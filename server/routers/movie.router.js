@@ -4,8 +4,8 @@ const router = express.Router();
 
 const movieController = require("../controllers/movie.controller");
 
-router.get("/phim/", movieController.getAllMovie);
+router.get("/movie/", movieController.getAllMovie);
 //router.get("/:id", movieController.getMovieByID);
-router.get("/phim/:url_name", movieController.getMovieByURL);
+router.get("/movie/:url_name", movieController.getMovieByURL);
 
 module.exports = router;
