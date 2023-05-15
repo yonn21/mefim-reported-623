@@ -164,203 +164,204 @@
                         <button class="btn btn-primary" id="search-button">Tìm kiếm</button>
                       </div>
                     </div>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead class="bg-light">
-                          <tr class="border-0">
-                            <th class="border-0">#</th>
-                            <th class="border-0">Thumbnail</th>
-                            <th class="border-0">Tên</th>
-                            <th class="border-0">Mô tả</th>
-                            <th class="border-0" width="90px">Thao tác</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <% listActor=actors.length> numberItemPerPage ?
-                            actors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page): actors %>
-                            <% var index=(page - 1) * numberItemPerPage + 1 %>
-                              <% listActor.forEach(element=> {%>
-                                <tr>
-                                  <td>
-                                    <%= index %>
-                                  </td>
-                                  <td>
-                                    <div class="m-r-10">
-                                      <img src="<%= element.actor_thumbnail %> " alt="user" class="rounded" width="70"
-                                        height="100" />
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <%= element.actor_name %>
-                                  </td>
-                                  <td>
-                                    <%= element.actor_description %>
-                                  </td>
-                                  <td>
-                                    <a style="margin-right: 5px"
-                                      href="/admin/actor-management/edit/<%= element.actor_url %>"><i
-                                        class="fas fa-edit"></i></a>
-                                    <a onclick="comfirmDelete('Xóa diễn viên này?',event)" style="margin-right: 5px"
-                                      href="/admin/actor-management/remove/<%= element.actor_url %>"><i
-                                        class="fas fa-trash"></i></a>
-                                  </td>
-                                  <% index++ %>
-                                </tr>
-                                <%}) %>
-                        </tbody>
-                      </table>
-                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="bg-light">
+                        <tr class="border-0">
+                          <th class="border-0">#</th>
+                          <th class="border-0">Thumbnail</th>
+                          <th class="border-0">Tên</th>
+                          <th class="border-0">Mô tả</th>
+                          <th class="border-0" width="90px">Thao tác</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% listActor=actors.length> numberItemPerPage ?
+                          actors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page): actors %>
+                          <% var index=(page - 1) * numberItemPerPage + 1 %>
+                            <% listActor.forEach(element=> {%>
+                              <tr>
+                                <td>
+                                  <%= index %>
+                                </td>
+                                <td>
+                                  <div class="m-r-10">
+                                    <img src="<%= element.actor_thumbnail %> " alt="user" class="rounded" width="70"
+                                      height="100" />
+                                  </div>
+                                </td>
+                                <td>
+                                  <%= element.actor_name %>
+                                </td>
+                                <td>
+                                  <%= element.actor_description %>
+                                </td>
+                                <td>
+                                  <a style="margin-right: 5px"
+                                    href="/admin/actor-management/edit/<%= element.actor_url %>"><i
+                                      class="fas fa-edit"></i></a>
+                                  <a onclick="comfirmDelete('Xóa diễn viên này?',event)" style="margin-right: 5px"
+                                    href="/admin/actor-management/remove/<%= element.actor_url %>"><i
+                                      class="fas fa-trash"></i></a>
+                                </td>
+                                <% index++ %>
+                              </tr>
+                              <%}) %>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-              <nav aria-label="Page navigation example" style="margin-right: 15px" id="pagination">
-                <ul class="pagination justify-content-end">
-                  <% numberPage=0 %>
-                    <% actors.length % numberItemPerPage==0 ? numberPage=parseInt(actors.length/numberItemPerPage) :
-                      numberPage=parseInt(actors.length/numberItemPerPage) + 1 %>
-                      <% for(var i=1; i <=numberPage; i++) {%>
-                        <li class="page-item <%= i == page ? 'active' : '' %>">
-                          <a class="page-link" href="/admin/actor-management/page-<%= i %>">
-                            <%= i %>
-                          </a>
-                        </li>
-                        <% } %>
-                </ul>
-              </nav>
             </div>
+            <nav aria-label="Page navigation example" style="margin-right: 15px" id="pagination">
+              <ul class="pagination justify-content-end">
+                <% numberPage=0 %>
+                  <% actors.length % numberItemPerPage==0 ? numberPage=parseInt(actors.length/numberItemPerPage) :
+                    numberPage=parseInt(actors.length/numberItemPerPage) + 1 %>
+                    <% for(var i=1; i <=numberPage; i++) {%>
+                      <li class="page-item <%= i == page ? 'active' : '' %>">
+                        <a class="page-link" href="/admin/actor-management/page-<%= i %>">
+                          <%= i %>
+                        </a>
+                      </li>
+                      <% } %>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jquery 3.3.1 -->
-    <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <!-- bootstap bundle js -->
-    <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <!-- slimscroll js -->
-    <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <!-- main js -->
-    <script src="/public/assets/libs/js/main-js.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jquery 3.3.1 -->
+  <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+  <!-- bootstap bundle js -->
+  <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <!-- slimscroll js -->
+  <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+  <!-- main js -->
+  <script src="/public/assets/libs/js/main-js.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Lấy các phần tử HTML liên quan đến tìm kiếm
-        var searchInput = document.getElementById("search-actor");
-        var searchButton = document.getElementById("search-button");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Lấy các phần tử HTML liên quan đến tìm kiếm
+      var searchInput = document.getElementById("search-actor");
+      var searchButton = document.getElementById("search-button");
 
-        // Gắn sự kiện click cho nút tìm kiếm
-        searchButton.addEventListener("click", function () {
-          var searchText = searchInput.value.trim();
+      // Gắn sự kiện click cho nút tìm kiếm
+      searchButton.addEventListener("click", function () {
+        var searchText = searchInput.value.trim();
 
-          // Gửi yêu cầu tìm kiếm đến server bằng AJAX hoặc fetch
-          fetch(`/admin/actor-management/search?keyword=${searchText}`)
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              // Xử lý kết quả tìm kiếm và cập nhật bảng dữ liệu diễn viên
-              var tableBody = document.querySelector(".table tbody");
-              tableBody.innerHTML = "";
+        // Gửi yêu cầu tìm kiếm đến server bằng AJAX hoặc fetch
+        fetch(`/admin/actor-management/search?keyword=${searchText}`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            // Xử lý kết quả tìm kiếm và cập nhật bảng dữ liệu diễn viên
+            var tableBody = document.querySelector(".table tbody");
+            tableBody.innerHTML = "";
 
-              data.forEach(function (actor, index) {
-                if (searchText === "") {
-                  if (index >= 20) {
-                    return;
-                  }
-                } else {
-                  if (index >= 5) {
-                    return;
-                  }
-                }
-
-                var row = document.createElement("tr");
-
-                var indexCell = document.createElement("td");
-                indexCell.textContent = index + 1;
-                row.appendChild(indexCell);
-
-                // Tạo và điền các ô dữ liệu cho hàng mới
-                var thumbnailCell = document.createElement("td");
-                var thumbnailImage = document.createElement("img");
-                thumbnailImage.src = actor.actor_thumbnail;
-                thumbnailImage.alt = "user";
-                thumbnailImage.classList.add("rounded");
-                thumbnailImage.width = 70;
-                thumbnailImage.height = 100;
-                thumbnailCell.appendChild(thumbnailImage);
-                row.appendChild(thumbnailCell);
-
-                var nameCell = document.createElement("td");
-                nameCell.textContent = actor.actor_name;
-                row.appendChild(nameCell);
-
-                var descriptionCell = document.createElement("td");
-                descriptionCell.textContent = actor.actor_description;
-                row.appendChild(descriptionCell);
-
-                var actionCell = document.createElement("td");
-                var editLink = document.createElement("a");
-                editLink.href = `/admin/actor-management/edit/${actor.actor_url}`;
-                editLink.innerHTML = '<i class="fas fa-edit"></i>';
-                editLink.style.marginRight = "5px";
-                actionCell.appendChild(editLink);
-
-                var deleteLink = document.createElement("a");
-                deleteLink.href = `/admin/actor-management/remove/${actor.actor_url}`;
-                deleteLink.innerHTML = '<i class="fas fa-trash"></i>';
-                deleteLink.style.marginRight = "5px";
-                deleteLink.onclick = function (event) {
-                  comfirmDelete("Xóa diễn viên này?", event);
-                };
-                actionCell.appendChild(deleteLink);
-
-                row.appendChild(actionCell);
-
-                // Thêm hàng mới vào bảng dữ liệu diễn viên
-                tableBody.appendChild(row);
-              });
-
+            data.forEach(function (actor, index) {
               if (searchText === "") {
-                var pagination = document.getElementById("pagination");
-                if (pagination) {
-                  pagination.style.display = "block";
+                if (index >= 20) {
+                  return;
                 }
               } else {
-                var pagination = document.getElementById("pagination");
-                if (pagination) {
-                  pagination.style.display = "none";
+                if (index >= 5) {
+                  return;
                 }
               }
 
-            })
-            .catch(function (error) {
-              console.log(error);
+              var row = document.createElement("tr");
+
+              var indexCell = document.createElement("td");
+              indexCell.textContent = index + 1;
+              row.appendChild(indexCell);
+
+              // Tạo và điền các ô dữ liệu cho hàng mới
+              var thumbnailCell = document.createElement("td");
+              var thumbnailImage = document.createElement("img");
+              thumbnailImage.src = actor.actor_thumbnail;
+              thumbnailImage.alt = "user";
+              thumbnailImage.classList.add("rounded");
+              thumbnailImage.width = 70;
+              thumbnailImage.height = 100;
+              thumbnailCell.appendChild(thumbnailImage);
+              row.appendChild(thumbnailCell);
+
+              var nameCell = document.createElement("td");
+              nameCell.textContent = actor.actor_name;
+              row.appendChild(nameCell);
+
+              var descriptionCell = document.createElement("td");
+              descriptionCell.textContent = actor.actor_description;
+              row.appendChild(descriptionCell);
+
+              var actionCell = document.createElement("td");
+              var editLink = document.createElement("a");
+              editLink.href = `/admin/actor-management/edit/${actor.actor_url}`;
+              editLink.innerHTML = '<i class="fas fa-edit"></i>';
+              editLink.style.marginRight = "5px";
+              actionCell.appendChild(editLink);
+
+              var deleteLink = document.createElement("a");
+              deleteLink.href = `/admin/actor-management/remove/${actor.actor_url}`;
+              deleteLink.innerHTML = '<i class="fas fa-trash"></i>';
+              deleteLink.style.marginRight = "5px";
+              deleteLink.onclick = function (event) {
+                comfirmDelete("Xóa diễn viên này?", event);
+              };
+              actionCell.appendChild(deleteLink);
+
+              row.appendChild(actionCell);
+
+              // Thêm hàng mới vào bảng dữ liệu diễn viên
+              tableBody.appendChild(row);
             });
-        });
+
+            if (searchText === "") {
+              var pagination = document.getElementById("pagination");
+              if (pagination) {
+                pagination.style.display = "block";
+              }
+            } else {
+              var pagination = document.getElementById("pagination");
+              if (pagination) {
+                pagination.style.display = "none";
+              }
+            }
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+    });
+  </script>
+
+  <script>
+    function comfirmDelete(msg, event) {
+      if (window.confirm(msg) == true) {
+        return true;
+      }
+      event.preventDefault();
+      return false;
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <% if(message && message.length> 0){%>
+    <script>
+      toastr.success("<%= message %>", "Thông báo", {
+        timeOut: 1500,
+        progressBar: true,
+        closeButton: true,
       });
     </script>
-
-    <script>
-      function comfirmDelete(msg, event) {
-        if (window.confirm(msg) == true) {
-          return true;
-        }
-        event.preventDefault();
-        return false;
-      }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-    <% if(message && message.length> 0){%>
-      <script>
-        toastr.success("<%= message %>", "Thông báo", {
-          timeOut: 1500,
-          progressBar: true,
-          closeButton: true,
-        });
-      </script>
-      <%} %>
+    <%} %>
 
 </body>
 

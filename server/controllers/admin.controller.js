@@ -224,42 +224,42 @@ class AdminController {
         data.duration = (req.body.duration || "") + " tập";
       }
 
-      const updateDirectorMovies = (directorId, movieId) => {
-        directors.findByIdAndUpdate(
-          directorId,
-          { $push: { director_movies: movieId } },
+      const updateDirectorMovies = (directorUrl, movieUrl) => {
+        directors.findOneAndUpdate(
+          { director_url: directorUrl },
+          { $push: { director_movies: movieUrl } },
           (err) => {
             if (err) {
               console.log(
-                `Cập nhật đạo diễn không thành công với ID:: ${directorId}`
+                `Cập nhật đạo diễn không thành công với URL: ${directorUrl}`
               );
             }
           }
         );
       };
 
-      const updateActorMovies = (actorId, movieId) => {
-        actors.findByIdAndUpdate(
-          actorId,
-          { $push: { actor_movies: movieId } },
+      const updateActorMovies = (actorUrl, movieUrl) => {
+        actors.findOneAndUpdate(
+          { actor_url: actorUrl },
+          { $push: { actor_movies: movieUrl } },
           (err) => {
             if (err) {
               console.log(
-                `Cập nhật diễn viên không thành công với ID:: ${actorId}`
+                `Cập nhật diễn viên không thành công với URL: ${actorUrl}`
               );
             }
           }
         );
       };
 
-      const updateGenreMovies = (genreId, movieId) => {
-        genres.findByIdAndUpdate(
-          genreId,
-          { $push: { genre_movies: movieId } },
+      const updateGenreMovies = (genreUrl, movieUrl) => {
+        genres.findOneAndUpdate(
+          { genre_url: genreUrl },
+          { $push: { genre_movies: movieUrl } },
           (err) => {
             if (err) {
               console.log(
-                `Cập nhật thể loại không thành công với ID:: ${genreId}`
+                `Cập nhật thể loại không thành công với URL: ${genreUrl}`
               );
             }
           }
@@ -277,20 +277,20 @@ class AdminController {
           const directorsArr = Array.isArray(req.body.directors)
             ? req.body.directors
             : [req.body.directors];
-          directorsArr.forEach((directorId) => {
-            updateDirectorMovies(directorId, savedMovie._id);
+          directorsArr.forEach((directorUrl) => {
+            updateDirectorMovies(directorUrl, savedMovie.url_name);
           });
           const actorsArr = Array.isArray(req.body.actors)
             ? req.body.actors
             : [req.body.actors];
-          actorsArr.forEach((actorId) => {
-            updateActorMovies(actorId, savedMovie._id);
+          actorsArr.forEach((actorUrl) => {
+            updateActorMovies(actorUrl, savedMovie.url_name);
           });
           const genresArr = Array.isArray(req.body.genres)
             ? req.body.genres
             : [req.body.genres];
-          genresArr.forEach((genreId) => {
-            updateGenreMovies(genreId, savedMovie._id);
+          genresArr.forEach((genreUrl) => {
+            updateGenreMovies(genreUrl, savedMovie.url_name);
           });
 
           req.flash("success", "Thêm phim thành công!");
@@ -324,6 +324,7 @@ class AdminController {
   }
 
   // remove movie
+
   getDeleteMovieInfo(req, res, next) {
     if (req.isAuthenticated()) {
       var url_name = req.params.url_name;
@@ -351,9 +352,24 @@ class AdminController {
             "../public/uploads/movies/",
             result.url_name
           );
+
+          const deleteDirectoryRecursive = (directoryPath) => {
+            if (fs.existsSync(directoryPath)) {
+              fs.readdirSync(directoryPath).forEach((file) => {
+                const currentPath = path.join(directoryPath, file);
+                if (fs.lstatSync(currentPath).isDirectory()) {
+                  deleteDirectoryRecursive(currentPath);
+                } else {
+                  fs.unlinkSync(currentPath);
+                }
+              });
+              fs.rmdirSync(directoryPath);
+              // console.log(`Thư mục đã được xóa thành công: ${directoryPath}`);
+            }
+          };
+
           try {
-            fs.rmdirSync(folderPath, { recursive: false });
-            // console.log('Thư mục đã được xóa thành công.');
+            deleteDirectoryRecursive(folderPath);
           } catch (err) {
             console.error("Lỗi khi xóa thư mục:", err);
           }

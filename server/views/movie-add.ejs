@@ -175,7 +175,7 @@
                   </div>
                   <select name="directors" class="form-control" id="validationServer01" multiple required>
                     <% for (var i=0; i < directors.length; i++) { %>
-                      <option value="<%= directors[i].id %>">
+                      <option value="<%= directors[i].director_url %>">
                         <%= directors[i].director_name %>
                       </option>
                       <% } %>
@@ -189,7 +189,7 @@
                   </div>
                   <select name="actors" class="form-control" id="validationServer02" multiple required>
                     <% for (var i=0; i < actors.length; i++) { %>
-                      <option value="<%= actors[i].id %>">
+                      <option value="<%= actors[i].actor_url %>">
                         <%= actors[i].actor_name %>
                       </option>
                       <% } %>
@@ -204,7 +204,7 @@
                   </div>
                   <select name="genres" class="form-control" id="validationServer03" multiple required>
                     <% for (var i=0; i < genres.length; i++) { %>
-                      <option value="<%= genres[i].id %>">
+                      <option value="<%= genres[i].genre_url %>">
                         <%= genres[i].genre_name %>
                       </option>
                       <% } %>
