@@ -70,7 +70,7 @@
     <div class="nav-left-sidebar sidebar-dark">
       <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="d-xl-none d-lg-none" href="#">Tổng quan</a>
+          <a class="d-xl-none d-lg-none" href="#">Menu</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,10 +84,10 @@
                 <div id="submenu-1" class="collapse submenu show">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link active" href="/admin/dashboard">Tổng quan</a>
+                      <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/admin/movie-management/page-1">Quản lý phim</a>
+                      <a class="nav-link active" href="/admin/movie-management/page-1">Quản lý phim</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/actor-management/page-1">Quản lý diễn viên</a>
@@ -130,7 +130,7 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
+                        <a href="/admin/dashboard" class="breadcrumb-link">Menu</a>
                       </li>
                       <li class="breadcrumb-item">
                         <a href="/admin/movie-management/page-1" class="breadcrumb-link">Quản lý phim</a>
@@ -175,7 +175,7 @@
                   </div>
                   <select name="directors" class="form-control" id="validationServer01" multiple required>
                     <% for (var i=0; i < directors.length; i++) { %>
-                      <option value="<%= directors[i].id %>">
+                      <option value="<%= directors[i].director_url %>">
                         <%= directors[i].director_name %>
                       </option>
                       <% } %>
@@ -189,7 +189,7 @@
                   </div>
                   <select name="actors" class="form-control" id="validationServer02" multiple required>
                     <% for (var i=0; i < actors.length; i++) { %>
-                      <option value="<%= actors[i].id %>">
+                      <option value="<%= actors[i].actor_url %>">
                         <%= actors[i].actor_name %>
                       </option>
                       <% } %>
@@ -204,7 +204,7 @@
                   </div>
                   <select name="genres" class="form-control" id="validationServer03" multiple required>
                     <% for (var i=0; i < genres.length; i++) { %>
-                      <option value="<%= genres[i].id %>">
+                      <option value="<%= genres[i].genre_url %>">
                         <%= genres[i].genre_name %>
                       </option>
                       <% } %>
