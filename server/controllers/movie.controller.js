@@ -65,7 +65,7 @@ class MovieController {
   getMovieByURL(req, res, next) {
     const url = req.params.url_name;
 
-    movies.findOne({ primary_title: url }, (err, result) => {
+    movies.findOne({ url_name: url }, (err, result) => {
       if (err) {
         console.log(err);
         res.status(500).json({ error: "Đã xảy ra lỗi khi truy xuất phim" });

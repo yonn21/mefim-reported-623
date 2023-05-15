@@ -174,6 +174,7 @@
                           <th class="border-0">Thumbnail</th>
                           <th class="border-0">Tên</th>
                           <th class="border-0">URL</th>
+                          <th class="border-0">Phim</th>
                           <th class="border-0">Mô tả</th>
                           <th class="border-0" width="90px">Thao tác</th>
                         </tr>
@@ -193,14 +194,26 @@
                                       height="100" />
                                   </div>
                                 </td>
-                                <td>
+                                <td width="150px">
                                   <%= element.actor_name %>
                                 </td>
-                                <td>
+                                <td width="150px">
                                   <%= element.actor_url %>
                                 </td>
-                                <td>
-                                  <%= element.actor_description %>
+                                <td width="60px">
+                                  <%= element.actor_movies.length %>
+                                </td>
+                                <td width="1000px">
+                                  <div class="description-container">
+                                    <p class="description-collapsed">
+                                      <%= element.actor_description.slice(0, 135) + '...' %>
+                                    </p>
+                                    <p class="description-expanded">
+                                      <%= element.actor_description %>
+                                    </p>
+                                    <a href="#" class="expand-button">Xem thêm</a>
+                                    <a href="#" class="collapse-button" style="display: none;">Thu gọn</a>
+                                  </div>
                                 </td>
                                 <td>
                                   <a style="margin-right: 5px"
@@ -350,6 +363,36 @@
           });
       });
     });
+  </script>
+
+  <!-- xem them mo ta -->
+  <script>
+    const descriptionContainers = document.querySelectorAll('.description-container');
+    descriptionContainers.forEach(container => {
+      const descriptionCollapsed = container.querySelector('.description-collapsed');
+      const descriptionExpanded = container.querySelector('.description-expanded');
+      const expandButton = container.querySelector('.expand-button');
+      const collapseButton = container.querySelector('.collapse-button');
+
+      descriptionExpanded.style.display = 'none';
+
+      expandButton.addEventListener('click', () => {
+        event.preventDefault();
+        descriptionExpanded.style.display = 'block';
+        descriptionCollapsed.style.display = 'none';
+        expandButton.style.display = 'none';
+        collapseButton.style.display = 'block';
+      });
+
+      collapseButton.addEventListener('click', () => {
+        event.preventDefault();
+        descriptionExpanded.style.display = 'none';
+        descriptionCollapsed.style.display = 'block';
+        collapseButton.style.display = 'none';
+        expandButton.style.display = 'block';
+      });
+    });
+
   </script>
 
   <script>
