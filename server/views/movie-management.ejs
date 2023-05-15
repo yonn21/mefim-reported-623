@@ -164,7 +164,7 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <input type="text" id="search-movie" class="form-control"
-                          placeholder="Tìm kiếm phim (Nhập tên chính hoặc tên phụ)">
+                          placeholder="Tìm kiếm phim (Nhập tên chính, tên phụ hoặc url phim)">
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -181,6 +181,7 @@
                           <th class="border-0">Thumbnail</th>
                           <th class="border-0">Tên chính</th>
                           <th class="border-0">Tên phụ</th>
+                          <th class="border-0">URL</th>
                           <th class="border-0">Năm</th>
                           <th class="border-0">Quốc gia</th>
                           <th class="border-0">Loại</th>
@@ -217,6 +218,9 @@
                                 </td>
                                 <td>
                                   <%= element.secondary_title %>
+                                </td>
+                                <td>
+                                  <%= element.url_name %>
                                 </td>
                                 <td>
                                   <%= element.year %>
@@ -337,6 +341,7 @@
               thumbnailImage.src = movie.thumbnail;
               thumbnailImage.alt = "user";
               thumbnailImage.classList.add("rounded");
+              thumbnailImage.classList.add("m-r-10");
               thumbnailImage.width = 70;
               thumbnailImage.height = 100;
               thumbnailCell.appendChild(thumbnailImage);
@@ -349,6 +354,10 @@
               var secondaryTitleCell = document.createElement("td");
               secondaryTitleCell.textContent = movie.secondary_title;
               row.appendChild(secondaryTitleCell);
+
+              var urlCell = document.createElement("td");
+              urlCell.textContent = movie.url_name;
+              row.appendChild(urlCell);
 
               var yearCell = document.createElement("td");
               yearCell.textContent = movie.year;

@@ -135,9 +135,9 @@
                       <li class="breadcrumb-item">
                         <a href="/admin/genre-management/page-1" class="breadcrumb-link">Quản lý thể loại</a>
                       </li>
-                      <li class="breadcrumb-item active" aria-current="page">
+                      <!-- <li class="breadcrumb-item active" aria-current="page">
                         Trang <%= page %>
-                      </li>
+                      </li> -->
                     </ol>
                   </nav>
                 </div>
@@ -159,7 +159,8 @@
                         <tr class="border-0">
                           <th class="border-0">#</th>
                           <th class="border-0">Tên</th>
-                          <th class="border-0">Mô tả</th>
+                          <th class="border-0">URL</th>
+                          <th class="border-0">Số phim</th>
                           <th class="border-0" width="90px">Thao tác</th>
                         </tr>
                       </thead>
@@ -176,7 +177,10 @@
                                   <%= element.genre_name %>
                                 </td>
                                 <td>
-                                  <%= element.genre_description %>
+                                  <%= element.genre_url %>
+                                </td>
+                                <td>
+                                  <%= element.genre_movies.length %>
                                 </td>
                                 <td>
                                   <a style="margin-right: 5px"
@@ -195,7 +199,7 @@
                 </div>
               </div>
             </div>
-            <nav aria-label="Page navigation example" style="margin-right: 15px">
+            <!-- <nav aria-label="Page navigation example" style="margin-right: 15px">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
                   <% genres.length % numberItemPerPage==0 ? numberPage=parseInt(genres.length/numberItemPerPage) :
@@ -208,7 +212,7 @@
                       </li>
                       <% } %>
               </ul>
-            </nav>
+            </nav> -->
           </div>
         </div>
       </div>

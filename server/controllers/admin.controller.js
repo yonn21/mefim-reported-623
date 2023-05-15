@@ -122,6 +122,7 @@ class AdminController {
         $or: [
           { primary_title: { $regex: keyword, $options: "i" } },
           { secondary_title: { $regex: keyword, $options: "i" } },
+          { url_name: { $regex: keyword, $options: "i" } },
         ],
       })
       .then((result) => {
@@ -201,6 +202,8 @@ class AdminController {
         views_year: 0,
         views_all: 0,
         number_favourited: 0,
+        created_at: new Date(),
+        updated_at: new Date(),
       };
 
       if (data.type === "Phim lẻ") {
@@ -438,7 +441,12 @@ class AdminController {
   getSearchDirector(req, res, next) {
     const keyword = req.query.keyword;
     directors
-      .find({ director_name: { $regex: keyword, $options: "i" } })
+      .find({
+        $or: [
+          { director_name: { $regex: keyword, $options: "i" } },
+          { director_url: { $regex: keyword, $options: "i" } },
+        ],
+      })
       .then((result) => {
         res.json(result);
       })
@@ -694,7 +702,12 @@ class AdminController {
   getSearchActor(req, res, next) {
     const keyword = req.query.keyword;
     actors
-      .find({ actor_name: { $regex: keyword, $options: "i" } })
+      .find({
+        $or: [
+          { actor_name: { $regex: keyword, $options: "i" } },
+          { actor_url: { $regex: keyword, $options: "i" } },
+        ],
+      })
       .then((result) => {
         res.json(result);
       })
@@ -887,7 +900,7 @@ class AdminController {
   // Genre manager
   getGenreManagerPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 20;
+      var numberItemPerPage = 100;
       genres.find({}, (err, genreResult) => {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
@@ -912,7 +925,7 @@ class AdminController {
 
   getGenreManagerAtPage(req, res, next) {
     if (req.isAuthenticated()) {
-      var numberItemPerPage = 20;
+      var numberItemPerPage = 100;
       var page = req.params.page;
       genres.find({}, (err, genreResult) => {
         admins.findOne(
@@ -973,7 +986,6 @@ class AdminController {
       var data = {
         genre_url: req.body.genre_url,
         genre_name: req.body.genre_name,
-        genre_description: req.body.genre_description,
       };
       var newGenre = new genres(data);
       newGenre
@@ -1018,7 +1030,6 @@ class AdminController {
         var data = {
           genre_url: req.body.genre_url,
           genre_name: req.body.genre_name,
-          genre_description: req.body.genre_description,
         };
         genres
           .findOneAndUpdate({ genre_url: genre_url }, data, { new: true })

@@ -156,7 +156,7 @@
                   <div class="row m-3">
                     <div class="col-md-4">
                       <div class="form-group">
-                        <input type="text" id="search-director" class="form-control" placeholder="Tìm kiếm đạo diễn">
+                        <input type="text" id="search-director" class="form-control" placeholder="Tìm kiếm đạo diễn (Nhập tên hoặc url)">
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -172,6 +172,7 @@
                           <th class="border-0">#</th>
                           <th class="border-0">Thumbnail</th>
                           <th class="border-0">Tên</th>
+                          <th class="border-0">URL</th>
                           <th class="border-0">Mô tả</th>
                           <th class="border-0" width="90px">Thao tác</th>
                         </tr>
@@ -193,6 +194,9 @@
                                 </td>
                                 <td>
                                   <%= element.director_name %>
+                                </td>
+                                <td>
+                                  <%= element.director_url %>
                                 </td>
                                 <td>
                                   <%= element.director_description %>
@@ -287,6 +291,7 @@
               thumbnailImage.src = director.director_thumbnail;
               thumbnailImage.alt = "user";
               thumbnailImage.classList.add("rounded");
+              thumbnailImage.classList.add("m-r-10");
               thumbnailImage.width = 70;
               thumbnailImage.height = 100;
               thumbnailCell.appendChild(thumbnailImage);
@@ -295,6 +300,10 @@
               var nameCell = document.createElement("td");
               nameCell.textContent = director.director_name;
               row.appendChild(nameCell);
+
+              var urlCell = document.createElement("td");
+              urlCell.textContent = director.director_url;
+              row.appendChild(urlCell);
 
               var descriptionCell = document.createElement("td");
               descriptionCell.textContent = director.director_description;
