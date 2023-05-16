@@ -687,7 +687,7 @@ class AdminController {
               }
     
               req.flash("success", "Xóa đạo diễn thành công!");
-              res.redirect("/admin/actor-management/page-1");
+              res.redirect("/admin/director-management/page-1");
             }
           );
         });
