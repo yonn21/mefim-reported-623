@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "64626003d490ed617c15af7d"
+  },
+  "director_movies": [
+    "ho-den-tu-than"
+  ],
+  "director_url": "christopher-nolan",
+  "director_name": "Christopher Nolan",
+  "director_thumbnail": "/public\\uploads\\directors\\christopher-nolan.jpg",
+  "director_description": "Christopher Nolan là một nhà làm phim nổi tiếng người Anh, sinh ngày 30 tháng 7 năm 1970. Ông được coi là một trong những nhà làm phim tài năng và ảnh hưởng nhất của thế hệ mới. Christopher Nolan nổi tiếng với phong cách đậm chất điện ảnh, những câu chuyện phức tạp và những hiệu ứng đặc biệt độc đáo.\r\nCông việc đáng chú ý của Nolan bao gồm các bộ phim nổi tiếng như \"Memento\" (2000), \"The Dark Knight Trilogy\" (2005-2012), \"Inception\" (2010), và \"Interstellar\" (2014). Ông đã nhận được nhiều lời khen ngợi về khả năng kịch bản, đạo diễn và sự đổi mới trong việc sử dụng kỹ thuật và cấu trúc câu chuyện. Các tác phẩm của Nolan thường có yếu tố trí tuệ, tạo động lực cho khán giả suy nghĩ và tranh luận về các khía cạnh văn hóa và tâm lý."
+}]

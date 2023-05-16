@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "6462717626eaed66804fc057"
+  },
+  "directors": [
+    "christopher-nolan"
+  ],
+  "actors": [
+    "matthew-mcconaughey",
+    "anne-hathaway",
+    "jessica-chastain",
+    "michael-caine",
+    "casey-affleck",
+    "mackenzie-foy",
+    "john-lithgow",
+    "david-gyasi",
+    "wes-bentley",
+    "timothee-chalamet",
+    "matt-damon",
+    "ellen-burstyn",
+    "topher-grace"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "phieu-luu",
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Raw",
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=zSWdZVtXT7E"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "ho-den-tu-than",
+  "primary_title": "Hố Đen Tử Thần",
+  "secondary_title": "Interstellar",
+  "year": "2014",
+  "country": "Âu Mỹ",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 49 phút",
+  "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+  "summary": "\"Interstellar\" là một bộ phim khoa học viễn tưởng và phiêu lưu đa chiều, được đạo diễn bởi Christopher Nolan và ra mắt vào năm 2014. Bộ phim kể về một nhóm phi hành gia đi vào không gian sâu để tìm kiếm một hành tinh mới có thể trở thành nơi sinh sống cho con người.\r\nCốt truyện của \"Interstellar\" xoay quanh câu chuyện về Trái Đất đang đối mặt với khủng hoảng tài nguyên và khô hạn, khiến nông nghiệp trở thành nguồn sống còn của nhân loại. Nhân vật chính, Joseph Cooper (do Matthew McConaughey thủ vai), một phi công cựu NASA, được gọi trở lại vào một nhiệm vụ quan trọng để cứu nhân loại. Anh tham gia vào một cuộc hành trình đáng ngạc nhiên thông qua không gian và thời gian, để tìm kiếm một hành tinh mới có thể trở thành tổ quốc cho loài người.\r\n\"Interstellar\" không chỉ là một bộ phim về phiêu lưu trong không gian mà còn mang đậm yếu tố tâm lý và triết lý. Bộ phim đề cập đến những câu hỏi về thời gian, không gian và sự tồn tại của con người. Nó đặt ra các vấn đề về tình yêu, trách nhiệm, lòng tin và sự hy sinh.\r\nVới sự kết hợp giữa cốt truyện hấp dẫn và hiệu ứng đặc biệt tuyệt vời, \"Interstellar\" tạo ra một trải nghiệm điện ảnh sống động và đầy kỳ thú. Bộ phim khám phá không gian rộng lớn và đưa khán giả vào cuộc phiêu lưu ngoạn mục, đồng thời thúc đẩy suy nghĩ và khám phá về vai trò của con người trong vũ trụ lớn.",
+  "thumbnail": "/./public/uploads/movies/ho-den-tu-than/ho-den-tu-than_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/ho-den-tu-than/ho-den-tu-than_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-15T17:52:54.670Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-15T17:52:54.670Z"
+  }
+}]

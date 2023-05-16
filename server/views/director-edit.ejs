@@ -125,7 +125,8 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                <h2 class="pageheader-title">Sửa đạo diễn</h2>
+                <h2 class="pageheader-title">Sửa đạo diễn: <%= director.director_name %>
+                </h2>
                 <div class="page-breadcrumb">
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -167,23 +168,6 @@
                   <label for="validationServer01" class="form-label">Mô tả</label>
                   <textarea name="director_description" class="form-control" id="validationServer01"
                     required><%= director.director_description %></textarea>
-                </div>
-                <div class="col-md-12 col-sm-12 col-lg-12 mt-4">
-                  <label for="validationServer01" class="form-label">Danh sách phim: <%= director.director_movies.length
-                      %></label>
-                  <div class="search-box">
-                    <input type="text" placeholder="Tìm kiếm..." id="movie-search-box" />
-                  </div>
-                  <select name="movies" class="form-control" id="validationServer02" multiple required>
-                    <% director.director_movies.forEach((movieUrl)=> {
-                      const movie = movies.find((m) => m.url_name === movieUrl);
-                      if (movie) { %>
-                      <option value="<%= movie.url_name %>">
-                        <%= movie.primary_title %> - <%= movie.secondary_title %> &nbsp;&nbsp;&nbsp;&nbsp; |
-                            &nbsp;&nbsp;&nbsp;&nbsp; url: &nbsp;<%= movie.url_name %>
-                      </option>
-                      <% } }); %>
-                  </select>
                 </div>
                 <div class="col-12">
                   <button class="btn btn-primary mt-3" type="submit" id="submitForm">
@@ -246,29 +230,6 @@
       };
       xhr.send(JSON.stringify(data));
     }
-  </script>
-
-  <script>
-    function removeDiacritics(str) {
-      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    }
-
-    const movieSearchBox = document.getElementById('movie-search-box');
-    const movieOptions = document.querySelectorAll('#validationServer02 option');
-
-    movieSearchBox.addEventListener('input', function () {
-      const searchTerm = removeDiacritics(movieSearchBox.value.toLowerCase());
-
-      movieOptions.forEach(function (option) {
-        const movieInfo = removeDiacritics(option.textContent.toLowerCase());
-
-        if (movieInfo.includes(searchTerm)) {
-          option.style.display = 'block';
-        } else {
-          option.style.display = 'none';
-        }
-      });
-    });
   </script>
 
   <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>

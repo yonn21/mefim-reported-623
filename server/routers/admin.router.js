@@ -194,7 +194,7 @@ router.get(
 // remove movie
 router.get(
   "/movie-management/remove/:url_name",
-  adminController.getDeleteMovieInfo
+  adminController.getDeleteMovie
 );
 
 // Director manager
@@ -205,6 +205,10 @@ router.get(
 router.get(
   "/director-management/page-:page",
   adminController.getDirectorManagerAtPage
+);
+router.get(
+  "/director-management/detail/:director_url",
+  adminController.getDirectorDetail
 );
 router.get("/director-management/search", adminController.getSearchDirector);
 // add director
@@ -231,7 +235,7 @@ router.get(
 // remove director
 router.get(
   "/director-management/remove/:director_url",
-  adminController.getDeleteDirectorInfo
+  adminController.getDeleteDirector
 );
 
 // Actor manager
@@ -243,6 +247,10 @@ router.get("/actor-management/page-1", adminController.getActorManagerPage);
 router.get(
   "/actor-management/page-:page",
   adminController.getActorManagerAtPage
+);
+router.get(
+  "/actor-management/detail/:actor_url",
+  adminController.getActorDetail
 );
 router.get("/actor-management/search", adminController.getSearchActor);
 // add actor
@@ -265,7 +273,7 @@ router.get(
 // remove actor
 router.get(
   "/actor-management/remove/:actor_url",
-  adminController.getDeleteActorInfo
+  adminController.getDeleteActor
 );
 
 // Genre manager
@@ -273,6 +281,10 @@ router.get("/genre-management/page-1", adminController.getGenreManagerPage);
 router.get(
   "/genre-management/page-:page",
   adminController.getGenreManagerAtPage
+);
+router.get(
+  "/genre-management/detail/:genre_url",
+  adminController.getGenreDetail
 );
 // add genre
 router.post(
@@ -293,7 +305,7 @@ router.get(
 // remove genre
 router.get(
   "/genre-management/remove/:genre_url",
-  adminController.getDeleteGenreInfo
+  adminController.getDeleteGenre
 );
 
 module.exports = router;
