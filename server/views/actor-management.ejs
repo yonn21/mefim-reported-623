@@ -176,7 +176,6 @@
                           <th class="border-0">URL</th>
                           <th class="border-0">Phim</th>
                           <th class="border-0">Mô tả</th>
-                          <th class="border-0" width="90px">Thao tác</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -184,44 +183,32 @@
                           actors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page): actors %>
                           <% var index=(page - 1) * numberItemPerPage + 1 %>
                             <% listActor.forEach(element=> {%>
-                              <tr>
-                                <td>
+                              <tr style="cursor: pointer; transition: opacity 1s, transform 0.2s;"
+                                onmouseover="this.style.opacity='0.6'; this.style.transform='scale(0.99)';"
+                                onmouseout="this.style.opacity='1'; this.style.transform='scale(1)';"
+                                onclick="redirectToDetail('/admin/actor-management/detail/<%= element.actor_url %>')">
+                                <td width="3%">
                                   <%= index %>
                                 </td>
-                                <td>
+                                <td width="7%">
                                   <div class="m-r-10">
                                     <img src="<%= element.actor_thumbnail %> " alt="user" class="rounded" width="70"
                                       height="100" />
                                   </div>
                                 </td>
-                                <td width="150px">
+                                <td width="12%">
                                   <%= element.actor_name %>
                                 </td>
-                                <td width="150px">
+                                <td width="12%">
                                   <%= element.actor_url %>
                                 </td>
-                                <td width="60px">
+                                <td width="4%">
                                   <%= element.actor_movies.length %>
                                 </td>
-                                <td width="1000px">
-                                  <div class="description-container">
-                                    <p class="description-collapsed">
-                                      <%= element.actor_description.slice(0, 135) + '...' %>
-                                    </p>
-                                    <p class="description-expanded">
-                                      <%= element.actor_description %>
-                                    </p>
-                                    <a href="#" class="expand-button">Xem thêm</a>
-                                    <a href="#" class="collapse-button" style="display: none;">Thu gọn</a>
-                                  </div>
-                                </td>
-                                <td>
-                                  <a style="margin-right: 5px"
-                                    href="/admin/actor-management/edit/<%= element.actor_url %>"><i
-                                      class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa diễn viên này?',event)" style="margin-right: 5px"
-                                    href="/admin/actor-management/remove/<%= element.actor_url %>"><i
-                                      class="fas fa-trash"></i></a>
+                                <td width="62%">
+                                  <p>
+                                    <%= element.actor_description.slice(0, 130) + '...' %>
+                                  </p>
                                 </td>
                                 <% index++ %>
                               </tr>
@@ -232,7 +219,7 @@
                 </div>
               </div>
             </div>
-            <nav aria-label="Page navigation example" style="margin-right: 15px" id="pagination">
+            <nav aria-label=" Page navigation example" style="margin-right: 15px" id="pagination">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
                   <% actors.length % numberItemPerPage==0 ? numberPage=parseInt(actors.length/numberItemPerPage) :
@@ -295,13 +282,31 @@
 
               var row = document.createElement("tr");
 
+              row.style.cursor = "pointer";
+              row.style.transition = "opacity 1s, transform 0.2s";
+              row.onmouseover = function () {
+                this.style.opacity = "0.6";
+                this.style.transform = "scale(0.99)";
+                this.style.transformOrigin = "center center";
+              };
+              row.onmouseout = function () {
+                this.style.opacity = "1";
+                this.style.transform = "scale(1)";
+                this.style.transformOrigin = "center center";
+              };
+              row.onclick = function () {
+                redirectToDetail(`/admin/actor-management/detail/${actor.actor_url}`);
+              };
+
               var indexCell = document.createElement("td");
               indexCell.textContent = index + 1;
+              indexCell.width = "3%";
               row.appendChild(indexCell);
 
               // Tạo và điền các ô dữ liệu cho hàng mới
               var thumbnailCell = document.createElement("td");
               var thumbnailImage = document.createElement("img");
+              thumbnailCell.width = "7%";
               thumbnailImage.src = actor.actor_thumbnail;
               thumbnailImage.alt = "user";
               thumbnailImage.classList.add("rounded");
@@ -312,34 +317,24 @@
               row.appendChild(thumbnailCell);
 
               var nameCell = document.createElement("td");
+              nameCell.width = "12%";
               nameCell.textContent = actor.actor_name;
               row.appendChild(nameCell);
 
               var urlCell = document.createElement("td");
+              urlCell.width = "12%";
               urlCell.textContent = actor.actor_url;
               row.appendChild(urlCell);
 
+              var movieCell = document.createElement("td");
+              movieCell.width = "4%";
+              movieCell.textContent = actor.actor_movies.length;
+              row.appendChild(movieCell);
+
               var descriptionCell = document.createElement("td");
-              descriptionCell.textContent = actor.actor_description;
+              descriptionCell.width = "62%";
+              descriptionCell.textContent = actor.actor_description.slice(0, 130) + '...';
               row.appendChild(descriptionCell);
-
-              var actionCell = document.createElement("td");
-              var editLink = document.createElement("a");
-              editLink.href = `/admin/actor-management/edit/${actor.actor_url}`;
-              editLink.innerHTML = '<i class="fas fa-edit"></i>';
-              editLink.style.marginRight = "5px";
-              actionCell.appendChild(editLink);
-
-              var deleteLink = document.createElement("a");
-              deleteLink.href = `/admin/actor-management/remove/${actor.actor_url}`;
-              deleteLink.innerHTML = '<i class="fas fa-trash"></i>';
-              deleteLink.style.marginRight = "5px";
-              deleteLink.onclick = function (event) {
-                comfirmDelete("Xóa diễn viên này?", event);
-              };
-              actionCell.appendChild(deleteLink);
-
-              row.appendChild(actionCell);
 
               // Thêm hàng mới vào bảng dữ liệu diễn viên
               tableBody.appendChild(row);
@@ -365,56 +360,11 @@
     });
   </script>
 
-  <!-- xem them mo ta -->
   <script>
-    const descriptionContainers = document.querySelectorAll('.description-container');
-    descriptionContainers.forEach(container => {
-      const descriptionCollapsed = container.querySelector('.description-collapsed');
-      const descriptionExpanded = container.querySelector('.description-expanded');
-      const expandButton = container.querySelector('.expand-button');
-      const collapseButton = container.querySelector('.collapse-button');
-
-      descriptionExpanded.style.display = 'none';
-
-      expandButton.addEventListener('click', () => {
-        event.preventDefault();
-        descriptionExpanded.style.display = 'block';
-        descriptionCollapsed.style.display = 'none';
-        expandButton.style.display = 'none';
-        collapseButton.style.display = 'block';
-      });
-
-      collapseButton.addEventListener('click', () => {
-        event.preventDefault();
-        descriptionExpanded.style.display = 'none';
-        descriptionCollapsed.style.display = 'block';
-        collapseButton.style.display = 'none';
-        expandButton.style.display = 'block';
-      });
-    });
-
-  </script>
-
-  <script>
-    function comfirmDelete(msg, event) {
-      if (window.confirm(msg) == true) {
-        return true;
-      }
-      event.preventDefault();
-      return false;
+    function redirectToDetail(url) {
+      window.location.href = url;
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-  <% if(message && message.length> 0){%>
-    <script>
-      toastr.success("<%= message %>", "Thông báo", {
-        timeOut: 1500,
-        progressBar: true,
-        closeButton: true,
-      });
-    </script>
-    <%} %>
 
 </body>
 

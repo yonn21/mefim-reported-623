@@ -161,7 +161,6 @@
                           <th class="border-0">Tên</th>
                           <th class="border-0">URL</th>
                           <th class="border-0">Số phim</th>
-                          <th class="border-0" width="90px">Thao tác</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -169,7 +168,10 @@
                           genres.slice((page - 1) * numberItemPerPage, numberItemPerPage * page) : genres %>
                           <% var index=(page - 1) * numberItemPerPage + 1 %>
                             <% listGenre.forEach(element=> { %>
-                              <tr>
+                              <tr style="cursor: pointer; transition: opacity 1s, transform 0.2s;"
+                                onmouseover="this.style.opacity='0.6'; this.style.transform='scale(0.995)';"
+                                onmouseout="this.style.opacity='1'; this.style.transform='scale(1)';"
+                                onclick="redirectToDetail('/admin/genre-management/detail/<%= element.genre_url %>')">
                                 <td>
                                   <%= index %>
                                 </td>
@@ -181,14 +183,6 @@
                                 </td>
                                 <td>
                                   <%= element.genre_movies.length %>
-                                </td>
-                                <td>
-                                  <a style="margin-right: 5px"
-                                    href="/admin/genre-management/edit/<%= element.genre_url %>"><i
-                                      class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa thể loại này?',event)" style="margin-right: 5px"
-                                    href="/admin/genre-management/remove/<%= element.genre_url %>"><i
-                                      class="fas fa-trash"></i></a>
                                 </td>
                                 <% index++ %>
                               </tr>
@@ -228,26 +222,12 @@
   <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
   <!-- main js -->
   <script src="/public/assets/libs/js/main-js.js"></script>
+
   <script>
-    function comfirmDelete(msg, event) {
-      if (window.confirm(msg) == true) {
-        return true;
-      }
-      event.preventDefault();
-      return false;
+    function redirectToDetail(url) {
+      window.location.href = url;
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-  <% if(message && message.length> 0){%>
-    <script>
-      toastr.success("<%= message %>", "Thông báo", {
-        timeOut: 1500,
-        progressBar: true,
-        closeButton: true,
-      });
-    </script>
-    <%} %>
 
 </body>
 

@@ -312,7 +312,6 @@ class AdminController {
   // edit movie
   getUpdateMoviePage(req, res, next) {
     if (req.isAuthenticated()) {
-      
     } else {
       res.redirect("/admin/login");
     }
@@ -320,7 +319,6 @@ class AdminController {
 
   postUpdateMovie(req, res, next) {
     if (req.isAuthenticated()) {
-      
     } else {
       res.redirect("/admin/login");
     }
@@ -386,27 +384,33 @@ class AdminController {
               req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
               next();
             }
-  
+
             actors.updateMany(
               { actor_movies: url_name },
               { $pull: { actor_movies: url_name } },
               (err, updateActorResult) => {
                 if (err) {
                   console.log(err);
-                  req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
+                  req.flash(
+                    "error",
+                    "Xóa phim không thành công! Có lỗi xảy ra!"
+                  );
                   next();
                 }
-  
+
                 genres.updateMany(
                   { genre_movies: url_name },
                   { $pull: { genre_movies: url_name } },
                   (err, updateGenreResult) => {
                     if (err) {
                       console.log(err);
-                      req.flash("error", "Xóa phim không thành công! Có lỗi xảy ra!");
+                      req.flash(
+                        "error",
+                        "Xóa phim không thành công! Có lỗi xảy ra!"
+                      );
                       next();
                     }
-  
+
                     req.flash("success", "Xóa phim thành công!");
                     res.redirect("/admin/movie-management/page-1");
                   }
@@ -468,6 +472,37 @@ class AdminController {
           }
         );
       });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getDirectorDetail(req, res, next) {
+    if (req.isAuthenticated()) {
+      var director_url = req.params.director_url;
+      directors.findOne(
+        { director_url: director_url },
+        (err, directorResult) => {
+          admins.findOne(
+            { "loginInformation.username": req.session.passport.user.username },
+            (err, adminResult) => {
+              movies.find({}, (err, moviesResult) => {
+                if (err) {
+                  console.log(err);
+                  res.redirect("/admin/director-management/page-1");
+                } else {
+                  res.render("director-detail", {
+                    message: req.flash("success"),
+                    director: directorResult,
+                    admin: adminResult,
+                    movies: moviesResult,
+                  });
+                }
+              });
+            }
+          );
+        }
+      );
     } else {
       res.redirect("/admin/login");
     }
@@ -635,7 +670,9 @@ class AdminController {
             })
             .then(() => {
               req.flash("success", "Cập nhật thông tin đạo diễn thành công!");
-              res.redirect("/admin/director-management/page-1");
+              res.redirect(
+                "/admin/director-management/detail/" + req.body.director_url
+              );
             })
             .catch((err) => {
               req.flash(
@@ -682,19 +719,23 @@ class AdminController {
             (err, updateResult) => {
               if (err) {
                 console.log(err);
-                req.flash("error", "Xóa đạo diễn không thành công! Có lỗi xảy ra!");
+                req.flash(
+                  "error",
+                  "Xóa đạo diễn không thành công! Có lỗi xảy ra!"
+                );
                 next();
               }
-    
+
               req.flash("success", "Xóa đạo diễn thành công!");
               res.redirect("/admin/director-management/page-1");
             }
           );
-        });
-      } else {
-        res.redirect("/admin/login");
-      }
+        }
+      );
+    } else {
+      res.redirect("/admin/login");
     }
+  }
 
   // Actor manager
   getActorManagerPage(req, res, next) {
@@ -739,6 +780,34 @@ class AdminController {
                 movies: movieResult,
                 actors: actorResult,
               });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getActorDetail(req, res, next) {
+    if (req.isAuthenticated()) {
+      var actor_url = req.params.actor_url;
+      actors.findOne({ actor_url: actor_url }, (err, actorResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            movies.find({}, (err, moviesResult) => {
+              if (err) {
+                console.log(err);
+                res.redirect("/admin/actor-management/page-1");
+              } else {
+                res.render("actor-detail", {
+                  message: req.flash("success"),
+                  actor: actorResult,
+                  admin: adminResult,
+                  movies: moviesResult,
+                });
+              }
             });
           }
         );
@@ -908,7 +977,9 @@ class AdminController {
           .findOneAndUpdate({ actor_url: actor_url }, data, { new: true })
           .then(() => {
             req.flash("success", "Cập nhật thông tin diễn viên thành công!");
-            res.redirect("/admin/actor-management/page-1");
+            res.redirect(
+              "/admin/actor-management/detail/" + req.body.actor_url
+            );
           })
           .catch((err) => {
             req.flash(
@@ -952,10 +1023,13 @@ class AdminController {
           (err, updateResult) => {
             if (err) {
               console.log(err);
-              req.flash("error", "Xóa diễn viên không thành công! Có lỗi xảy ra!");
+              req.flash(
+                "error",
+                "Xóa diễn viên không thành công! Có lỗi xảy ra!"
+              );
               next();
             }
-  
+
             req.flash("success", "Xóa diễn viên thành công!");
             res.redirect("/admin/actor-management/page-1");
           }
@@ -1009,6 +1083,34 @@ class AdminController {
                 movies: movieResult,
                 genres: genreResult,
               });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
+  getGenreDetail(req, res, next) {
+    if (req.isAuthenticated()) {
+      var genre_url = req.params.genre_url;
+      genres.findOne({ genre_url: genre_url }, (err, genreResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            movies.find({}, (err, moviesResult) => {
+              if (err) {
+                console.log(err);
+                res.redirect("/admin/genre-management/page-1");
+              } else {
+                res.render("genre-detail", {
+                  message: req.flash("success"),
+                  genre: genreResult,
+                  admin: adminResult,
+                  movies: moviesResult,
+                });
+              }
             });
           }
         );
@@ -1107,7 +1209,9 @@ class AdminController {
           .findOneAndUpdate({ genre_url: genre_url }, data, { new: true })
           .then(() => {
             req.flash("success", "Cập nhật thông tin thể loại thành công!");
-            res.redirect("/admin/genre-management/page-1");
+            res.redirect(
+              "/admin/genre-management/detail/" + req.body.genre_url
+            );
           })
           .catch((err) => {
             req.flash(

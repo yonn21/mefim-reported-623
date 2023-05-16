@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Sửa diễn viên</title>
+  <title>Mefim - Chi tiết diễn viên</title>
   <link rel="icon" href="/public/img/core-img/favicon.png" />
 </head>
 
@@ -125,7 +125,7 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                <h2 class="pageheader-title">Sửa diễn viên: <%= actor.actor_name %>
+                <h2 class="pageheader-title">Chi tiết diễn viên: <%= actor.actor_name %>
                 </h2>
                 <div class="page-breadcrumb">
                   <nav aria-label="breadcrumb">
@@ -137,7 +137,7 @@
                         <a href="/admin/actor-management/page-1" class="breadcrumb-link">Quản lý diễn viên</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Sửa diễn viên
+                        Chi tiết diễn viên
                       </li>
                     </ol>
                   </nav>
@@ -147,34 +147,50 @@
           </div>
           <div class="content" style="width: 100%; height: 100vh">
             <div class="container-fluid">
-              <form class="row g-3" accept-charset="utf-8" spellcheck="false" enctype="multipart/form-data"
-                action="/admin/actor-management/edit/<%= actor.actor_url %>" method="POST">
-                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">URL (không dấu, không hoa, không cách, VD:
-                    pho-dinh-manh)</label>
-                  <input type="text" name="actor_url" class="form-control" id="validationServer01"
-                    value="<%= actor.actor_url %>" required onblur="checkDuplicateActorURL(this.value)" />
-                  <div id="urlNameError"></div>
+
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                <div class="m-r-10">
+                  <img src="<%= actor.actor_thumbnail %> " alt="user" class="rounded" width="196" height="280" />
                 </div>
-                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">Tên diễn viên</label>
-                  <input type="text" name="actor_name" class="form-control" id="validationServer01"
-                    value="<%= actor.actor_name %>" required />
+              </div>
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                <label for="validationServer01" class="form-label">URL: <%=actor.actor_url%><br>
+                    Tên: <%=actor.actor_name%><br><br>Mô tả:<br>
+                      <%= actor.actor_description %></label>
+                <label for="validationServer01" class="form-label"></label>
+              </div>
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                <button type="button" class="btn btn-primary" onclick="redirectToEdit()">Chỉnh sửa thông
+                  tin</button>
+              </div>
+              <div class="col-md-12 col-sm-12 col-lg-12 mt-4">
+                <label for="validationServer01" class="form-label">Danh sách phim đang liên kết: <%=
+                    actor.actor_movies.length %>
+                </label>
+                <div class="search-box">
+                  <input type="text" placeholder="Tìm kiếm..." id="movie-search-box" />
                 </div>
-                <label for="formFileMultiple" style="margin: 0 15px;" class="form-label">Ảnh</label>
-                <input class="form-control mb-3 mt-1" style="margin: 0 15px; display: inline-block;" type="file"
-                  id="formFileMultiple" accept="image/*" name="actor_thumbnail" />
-                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                  <label for="validationServer01" class="form-label">Mô tả</label>
-                  <textarea name="actor_description" class="form-control" id="validationServer01"
-                    required><%= actor.actor_description %></textarea>
+                <select name="movies" class="form-control" id="validationServer02" multiple required>
+                  <% actor.actor_movies.forEach((movieUrl)=> {
+                    const movie = movies.find((m) => m.url_name === movieUrl);
+                    if (movie) { %>
+                    <option value="<%= movie.url_name %>" disabled>
+                      <%= movie.primary_title %> (<%= movie.secondary_title %>) <%= movie.url_name %>
+                    </option>
+                    <% } }); %>
+                </select>
+                <div>
+                  <p></p>
+                  <button type="button" class="btn btn-success" onclick="redirectToLinkMovie()">Liên kết phim
+                    mới</button>
+                  <button type="button" class="btn btn-success" onclick="redirectToUnlinkMovie()">Xóa phim đang liên
+                    kết</button>
+                  <p></p>
+                  <button type="button" class="btn btn-danger"
+                    onclick="if (comfirmDelete('Xóa diễn viên này?', event)) removeActor()">Xóa
+                    diễn viên</button>
                 </div>
-                <div class="col-12">
-                  <button class="btn btn-primary mt-3" type="submit" id="submitForm">
-                    Cập nhật diễn viên
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -185,61 +201,76 @@
   <!-- jquery 3.3.1 -->
 
   <script>
-    function checkDuplicateActorURL(urlName) {
-      var urlNameError = document.getElementById("urlNameError");
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "/admin/check-duplicate-actor-url", true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            if (response.isDuplicate) {
-              document.getElementById("submitForm").style.opacity = "0.5";
-              document.getElementById("submitForm").style.pointerEvents = "none";
-              urlNameError.style.color = "red";
-              urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác";
-              document.getElementById("validationServer01").focus();
-            } else if (!response.isDuplicate) {
-              document.getElementById("submitForm").style.opacity = "1";
-              document.getElementById("submitForm").style.pointerEvents = "";
-              urlNameError.style.color = "green";
-              urlNameError.textContent = "URL không trùng";
-            }
-          } else {
-            urlNameError.textContent = "Đã xảy ra lỗi trong quá trình kiểm tra URL";
-          }
-        }
-      };
-
-      if (urlName.trim() === "") {
-        urlNameError.style.color = "red";
-        urlNameError.textContent = "Vui lòng nhập URL";
-        return;
-      }
-
-      var actorURL = "<%= actor.actor_url %>";
-      if (urlName.trim() === actorURL) {
-        urlNameError.style.color = "green";
-        urlNameError.textContent = "URL không thay đổi";
-        return;
-      }
-
-      var data = {
-        actor_url: urlName.trim()
-      };
-      xhr.send(JSON.stringify(data));
+    function redirectToEdit() {
+      const actorUrl = "<%= actor.actor_url %>";
+      window.location.href = "/admin/actor-management/edit/" + actorUrl;
+    }
+    function redirectToLinkMovie() {
+      const actorUrl = "<%= actor.actor_url %>";
+      window.location.href = "/admin/actor-management/link-movie/" + actorUrl;
+    }
+    function redirectToUnlinkMovie() {
+      const actorUrl = "<%= actor.actor_url %>";
+      window.location.href = "/admin/actor-management/unlink-movie/" + actorUrl;
+    }
+    function removeActor() {
+      const actorUrl = "<%= actor.actor_url %>";
+      window.location.href = "/admin/actor-management/remove/" + actorUrl;
     }
   </script>
 
-  <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-  <!-- bootstap bundle js -->
-  <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-  <!-- slimscroll js -->
-  <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-  <!-- main js -->
-  <script src="/public/assets/libs/js/main-js.js"></script>
+  <script>
+    function comfirmDelete(msg, event) {
+      if (window.confirm(msg) == true) {
+        return true;
+      }
+      event.preventDefault();
+      return false;
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <% if(message && message.length> 0){%>
+    <script>
+      toastr.success("<%= message %>", "Thông báo", {
+        timeOut: 1500,
+        progressBar: true,
+        closeButton: true,
+      });
+    </script>
+    <%} %>
+
+      <script>
+        function removeDiacritics(str) {
+          return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        const movieSearchBox = document.getElementById('movie-search-box');
+        const movieOptions = document.querySelectorAll('#validationServer02 option');
+
+        movieSearchBox.addEventListener('input', function () {
+          const searchTerm = removeDiacritics(movieSearchBox.value.toLowerCase());
+
+          movieOptions.forEach(function (option) {
+            const movieInfo = removeDiacritics(option.textContent.toLowerCase());
+
+            if (movieInfo.includes(searchTerm)) {
+              option.style.display = 'block';
+            } else {
+              option.style.display = 'none';
+            }
+          });
+        });
+      </script>
+
+      <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+      <!-- bootstap bundle js -->
+      <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+      <!-- slimscroll js -->
+      <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+      <!-- main js -->
+      <script src="/public/assets/libs/js/main-js.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 
 </html>

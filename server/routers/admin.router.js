@@ -206,6 +206,10 @@ router.get(
   "/director-management/page-:page",
   adminController.getDirectorManagerAtPage
 );
+router.get(
+  "/director-management/detail/:director_url",
+  adminController.getDirectorDetail
+);
 router.get("/director-management/search", adminController.getSearchDirector);
 // add director
 router.post(
@@ -244,6 +248,10 @@ router.get(
   "/actor-management/page-:page",
   adminController.getActorManagerAtPage
 );
+router.get(
+  "/actor-management/detail/:actor_url",
+  adminController.getActorDetail
+);
 router.get("/actor-management/search", adminController.getSearchActor);
 // add actor
 router.post(
@@ -273,6 +281,10 @@ router.get("/genre-management/page-1", adminController.getGenreManagerPage);
 router.get(
   "/genre-management/page-:page",
   adminController.getGenreManagerAtPage
+);
+router.get(
+  "/genre-management/detail/:genre_url",
+  adminController.getGenreDetail
 );
 // add genre
 router.post(
