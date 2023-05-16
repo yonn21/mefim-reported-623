@@ -619,41 +619,29 @@ class AdminController {
             director_description: req.body.director_description,
           };
 
-          if (req.file) {
-            if (directorResult && directorResult.director_thumbnail) {
-              const thumbnailPath = path.join(
-                __dirname,
-                "../",
-                directorResult.director_thumbnail
-              );
-              fs.unlink(thumbnailPath, (err) => {
-                if (err) {
-                  console.log(err);
-                }
-              });
-
-              data.director_thumbnail = `/${req.file.path}`;
-            }
-          } else {
-            data.director_thumbnail = directorResult.director_thumbnail;
-          }
-
-          if (req.body.director_url != directorResult.director_url) {
+          if (req.file && req.body.director_url != directorResult.director_url) {
             const thumbnailPath = path.join(
               __dirname,
               "../",
               directorResult.director_thumbnail
             );
-            const fileName = directorResult.director_thumbnail.split("/").pop();
-            const newFileName = `${req.body.director_url}_${fileName.substring(
-              fileName.indexOf("_") + 1
-            )}`;
-            const newThumbnailPath = path.join(
+            fs.unlink(thumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+            data.director_thumbnail = `/${req.file.path}`;
+          } else if (!req.file && req.body.director_url != directorResult.director_url) {
+            const thumbnailPath = path.join(
               __dirname,
               "../",
-              "public/uploads/directors",
-              newFileName
+              directorResult.director_thumbnail
             );
+            const thumbnailDir = path.dirname(thumbnailPath);
+            const fileName = path.basename(thumbnailPath);
+            const fileExt = path.extname(fileName);
+            const newFileName = `${req.body.director_url}${fileExt}`;
+            const newThumbnailPath = path.join(thumbnailDir, newFileName);
             fs.rename(thumbnailPath, newThumbnailPath, (err) => {
               if (err) {
                 console.log(err);
@@ -662,6 +650,12 @@ class AdminController {
             data.director_thumbnail = `/${newThumbnailPath.substring(
               newThumbnailPath.indexOf("public")
             )}`;
+          } else if (req.file && req.body.director_url == directorResult.director_url) {
+            if (directorResult && directorResult.director_thumbnail) {
+              data.director_thumbnail = `/${req.file.path}`;
+            }
+          } else {
+            data.director_thumbnail = directorResult.director_thumbnail;
           }
 
           directors
@@ -928,8 +922,7 @@ class AdminController {
           actor_description: req.body.actor_description,
         };
 
-        if (req.file) {
-          if (actorResult && actorResult.actor_thumbnail) {
+        if (req.file && req.body.actor_url != actorResult.actor_url) {
             const thumbnailPath = path.join(
               __dirname,
               "../",
@@ -940,38 +933,33 @@ class AdminController {
                 console.log(err);
               }
             });
-
             data.actor_thumbnail = `/${req.file.path}`;
-          }
-        } else {
-          data.actor_thumbnail = actorResult.actor_thumbnail;
-        }
-
-        if (req.body.actor_url != actorResult.actor_url) {
-          const thumbnailPath = path.join(
-            __dirname,
-            "../",
-            actorResult.actor_thumbnail
-          );
-          const fileName = actorResult.actor_thumbnail.split("/").pop();
-          const newFileName = `${req.body.actor_url}_${fileName.substring(
-            fileName.indexOf("_") + 1
-          )}`;
-          const newThumbnailPath = path.join(
-            __dirname,
-            "../",
-            "public/uploads/actors",
-            newFileName
-          );
-          fs.rename(thumbnailPath, newThumbnailPath, (err) => {
-            if (err) {
-              console.log(err);
+          } else if (!req.file && req.body.actor_url != actorResult.actor_url) {
+            const thumbnailPath = path.join(
+              __dirname,
+              "../",
+              actorResult.actor_thumbnail
+            );
+            const thumbnailDir = path.dirname(thumbnailPath);
+            const fileName = path.basename(thumbnailPath);
+            const fileExt = path.extname(fileName);
+            const newFileName = `${req.body.actor_url}${fileExt}`;
+            const newThumbnailPath = path.join(thumbnailDir, newFileName);
+            fs.rename(thumbnailPath, newThumbnailPath, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+            data.actor_thumbnail = `/${newThumbnailPath.substring(
+              newThumbnailPath.indexOf("public")
+            )}`;
+          } else if (req.file && req.body.actor_url == actorResult.actor_url) {
+            if (actorResult && actorResult.actor_thumbnail) {
+              data.actor_thumbnail = `/${req.file.path}`;
             }
-          });
-          data.actor_thumbnail = `/${newThumbnailPath.substring(
-            newThumbnailPath.indexOf("public")
-          )}`;
-        }
+          } else {
+            data.actor_thumbnail = actorResult.actor_thumbnail;
+          }
 
         actors
           .findOneAndUpdate({ actor_url: actor_url }, data, { new: true })
