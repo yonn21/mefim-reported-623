@@ -51,7 +51,7 @@ const actorStorage = multer.diskStorage({
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
     const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
-    const thumbnailFilename = `${req.body.actor_url}_${timestamp}.${fileExtension}`;
+    const thumbnailFilename = `${req.body.actor_url}.${fileExtension}`;
     cb(null, thumbnailFilename);
   },
 });
@@ -79,7 +79,7 @@ const directorStorage = multer.diskStorage({
   filename: function (req, file, cb) {
     const fileExtension = file.originalname.split(".").pop();
     const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
-    const thumbnailFilename = `${req.body.director_url}_${timestamp}.${fileExtension}`;
+    const thumbnailFilename = `${req.body.director_url}.${fileExtension}`;
     cb(null, thumbnailFilename);
   },
 });
@@ -112,10 +112,10 @@ const movieStorage = multer.diskStorage({
     const timestamp = moment().format("HH[h]mm[m]ss[s]-DD-MM-YYYY");
 
     if (file.fieldname === "thumbnail") {
-      const thumbnailFilename = `thumbnail_${req.body.url_name}_${timestamp}.${fileExtension}`;
+      const thumbnailFilename = `${req.body.url_name}_thumbnail.${fileExtension}`;
       cb(null, thumbnailFilename);
     } else if (file.fieldname === "cover_image") {
-      const coverImageFilename = `cover_image_${req.body.url_name}_${timestamp}.${fileExtension}`;
+      const coverImageFilename = `${req.body.url_name}_cover-image.${fileExtension}`;
       cb(null, coverImageFilename);
     } else {
       cb(new Error("Invalid fieldname"));

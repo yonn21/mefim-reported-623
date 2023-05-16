@@ -521,9 +521,12 @@ class AdminController {
           admins.findOne(
             { "loginInformation.username": req.session.passport.user.username },
             (err, adminResult) => {
-              res.render("director-edit", {
-                director: directorResult,
-                admin: adminResult,
+              movies.find({}, (err, moviesResult) => {
+                res.render("director-edit", {
+                  director: directorResult,
+                  admin: adminResult,
+                  movies: moviesResult,
+                });
               });
             }
           );
@@ -777,13 +780,21 @@ class AdminController {
     if (req.isAuthenticated()) {
       var actor_url = req.params.actor_url;
       actors.findOne({ actor_url: actor_url }, (err, actorResult) => {
-        admins.findOne(
-          { "loginInformation.username": req.session.passport.user.username },
-          (err, adminResult) => {
-            res.render("actor-edit", {
-              actor: actorResult,
-              admin: adminResult,
-            });
+        movies.find(
+          { url_name: actorResult.actor_movies },
+          (err, moviesResult) => {
+            admins.findOne(
+              {
+                "loginInformation.username": req.session.passport.user.username,
+              },
+              (err, adminResult) => {
+                res.render("actor-edit", {
+                  actor: actorResult,
+                  admin: adminResult,
+                  movies: moviesResult,
+                });
+              }
+            );
           }
         );
       });
@@ -1011,9 +1022,12 @@ class AdminController {
         admins.findOne(
           { "loginInformation.username": req.session.passport.user.username },
           (err, adminResult) => {
-            res.render("genre-edit", {
-              genre: genreResult,
-              admin: adminResult,
+            movies.find({}, (err, moviesResult) => {
+              res.render("genre-edit", {
+                genre: genreResult,
+                admin: adminResult,
+                movies: moviesResult,
+              });
             });
           }
         );
