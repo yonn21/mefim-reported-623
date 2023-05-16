@@ -77,7 +77,7 @@ genre:
     genre_movies: Array,
 
 rating:
-    rating_level: Number,
+    rating_value: Number,
     rating_users: Array,
     rating_movies: Array,
     rating_date: Date,

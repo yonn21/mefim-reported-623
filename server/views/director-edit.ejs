@@ -178,9 +178,8 @@
                     <% director.director_movies.forEach((movieUrl)=> {
                       const movie = movies.find((m) => m.url_name === movieUrl);
                       if (movie) { %>
-                      <option value="<%= movie.url_name %>">
-                        <%= movie.primary_title %> - <%= movie.secondary_title %> &nbsp;&nbsp;&nbsp;&nbsp; |
-                            &nbsp;&nbsp;&nbsp;&nbsp; url: &nbsp;<%= movie.url_name %>
+                      <option value="<%= movie.url_name %>" disabled>
+                        <%= movie.primary_title %> (<%= movie.secondary_title %>) <%= movie.url_name %>
                       </option>
                       <% } }); %>
                   </select>

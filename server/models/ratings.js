@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const rating = new mongoose.Schema(
   {
-    rating_level: Number,
+    rating_value: Number,
     rating_users: Array,
     rating_movies: Array,
     rating_date: Date,

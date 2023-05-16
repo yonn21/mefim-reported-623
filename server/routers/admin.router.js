@@ -194,7 +194,7 @@ router.get(
 // remove movie
 router.get(
   "/movie-management/remove/:url_name",
-  adminController.getDeleteMovieInfo
+  adminController.getDeleteMovie
 );
 
 // Director manager
@@ -231,7 +231,7 @@ router.get(
 // remove director
 router.get(
   "/director-management/remove/:director_url",
-  adminController.getDeleteDirectorInfo
+  adminController.getDeleteDirector
 );
 
 // Actor manager
@@ -265,7 +265,7 @@ router.get(
 // remove actor
 router.get(
   "/actor-management/remove/:actor_url",
-  adminController.getDeleteActorInfo
+  adminController.getDeleteActor
 );
 
 // Genre manager
@@ -293,7 +293,7 @@ router.get(
 // remove genre
 router.get(
   "/genre-management/remove/:genre_url",
-  adminController.getDeleteGenreInfo
+  adminController.getDeleteGenre
 );
 
 module.exports = router;
