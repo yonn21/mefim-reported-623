@@ -147,19 +147,31 @@
           </div>
           <div class="content" style="width: 100%; height: 100vh">
             <div class="container-fluid">
-
               <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                 <div class="m-r-10">
-                  <img src="<%= actor.actor_thumbnail %> " alt="user" class="rounded" width="196" height="280" />
+                  <img src="<%= actor.actor_thumbnail %> " alt="user" class="rounded" height="280" />
                 </div>
               </div>
-              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                <label for="validationServer01" class="form-label">URL: <%=actor.actor_url%><br>
-                    Tên: <%=actor.actor_name%><br><br>Mô tả:<br>
-                      <%= actor.actor_description %></label>
-                <label for="validationServer01" class="form-label"></label>
-              </div>
-              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+              <label for="validationServer01" class="form-label">
+                <table>
+                  <tr>
+                    <td width="50px">URL:</td>
+                    <td><span style="color: black;">
+                        <%= actor.actor_url %>
+                      </span></td>
+                  </tr>
+                  <tr>
+                    <td>Tên:</td>
+                    <td><span style="color: black;">
+                        <%= actor.actor_name %>
+                      </span></td>
+                  </tr>
+                </table>
+                <br><span style="color: black;">
+                  <%= actor.actor_description %>
+                </span>
+              </label>
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3"><br>
                 <button type="button" class="btn btn-primary" onclick="redirectToEdit()">Chỉnh sửa thông
                   tin</button>
               </div>
