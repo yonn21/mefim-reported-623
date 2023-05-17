@@ -176,8 +176,8 @@
                   tin</button>
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12 mt-4">
-                <label for="validationServer01" class="form-label">Danh sách phim đang liên kết: <%=
-                    actor.actor_movies.length %>
+                <label for="validationServer01" class="form-label" style="color: black;">Danh sách phim đang liên kết:
+                  <%= actor.actor_movies.length %>
                 </label>
                 <div class="search-box">
                   <input type="text" placeholder="Tìm kiếm..." id="movie-search-box" />
@@ -186,7 +186,10 @@
                   <% actor.actor_movies.forEach((movieUrl)=> {
                     const movie = movies.find((m) => m.url_name === movieUrl);
                     if (movie) { %>
-                    <option value="<%= movie.url_name %>" disabled>
+                    <option value="<%= movie.url_name %>" onclick="redirectToMovieDetail('<%= movie.url_name %>')"
+                      style="color: black; cursor: pointer;"
+                      onmouseover="this.style.color='blue'; this.style.cursor='pointer';"
+                      onmouseout="this.style.color='black'; this.style.cursor='default';" target="_blank">
                       <%= movie.primary_title %> (<%= movie.secondary_title %>) <%= movie.url_name %>
                     </option>
                     <% } }); %>
@@ -228,6 +231,10 @@
     function removeActor() {
       const actorUrl = "<%= actor.actor_url %>";
       window.location.href = "/admin/actor-management/remove/" + actorUrl;
+    }
+
+    function redirectToMovieDetail(urlName) {
+      window.location.href = "/admin/movie-management/detail/" + urlName;
     }
   </script>
 
