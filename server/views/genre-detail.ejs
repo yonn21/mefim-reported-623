@@ -221,9 +221,40 @@
       return false;
     }
   </script>
+
+  <script>
+    function removeDiacritics(str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const movieSearchBox = document.getElementById('movie-search-box');
+    const movieOptions = document.querySelectorAll('#validationServer02 option');
+
+    movieSearchBox.addEventListener('input', function () {
+      const searchTerm = removeDiacritics(movieSearchBox.value.toLowerCase());
+
+      movieOptions.forEach(function (option) {
+        const movieInfo = removeDiacritics(option.textContent.toLowerCase());
+
+        if (movieInfo.includes(searchTerm)) {
+          option.style.display = 'block';
+        } else {
+          option.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+  <!-- bootstap bundle js -->
+  <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <!-- slimscroll js -->
+  <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+  <!-- main js -->
+  <script src="/public/assets/libs/js/main-js.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-  <% if(message && message.length> 0){%>
+  <% if(message && message.length> 0){ %>
     <script>
       toastr.success("<%= message %>", "Thông báo", {
         timeOut: 1500,
@@ -231,39 +262,7 @@
         closeButton: true,
       });
     </script>
-    <%} %>
-
-      <script>
-        function removeDiacritics(str) {
-          return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        }
-
-        const movieSearchBox = document.getElementById('movie-search-box');
-        const movieOptions = document.querySelectorAll('#validationServer02 option');
-
-        movieSearchBox.addEventListener('input', function () {
-          const searchTerm = removeDiacritics(movieSearchBox.value.toLowerCase());
-
-          movieOptions.forEach(function (option) {
-            const movieInfo = removeDiacritics(option.textContent.toLowerCase());
-
-            if (movieInfo.includes(searchTerm)) {
-              option.style.display = 'block';
-            } else {
-              option.style.display = 'none';
-            }
-          });
-        });
-      </script>
-
-      <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-      <!-- bootstap bundle js -->
-      <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-      <!-- slimscroll js -->
-      <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-      <!-- main js -->
-      <script src="/public/assets/libs/js/main-js.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <% } %>
 </body>
 
 </html>
