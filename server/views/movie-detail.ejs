@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Chi tiết phim</title>
+  <title>Phim: <%= movie.primary_title %> (<%= movie.secondary_title %>)</title>
   <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
@@ -131,7 +131,8 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                <h2 class="pageheader-title">Chi tiết phim: <%= movie.primary_title %> (<%= movie.secondary_title %>)
+                <h2 class="pageheader-title">
+                  <%= movie.primary_title %> (<%= movie.secondary_title %>)
                 </h2>
                 <div class="page-breadcrumb">
                   <nav aria-label="breadcrumb">
