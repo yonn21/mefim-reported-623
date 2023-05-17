@@ -335,18 +335,19 @@ class AdminController {
           next();
         }
         if (result && result.thumbnail && result.cover_image) {
-          const thumbnailPath = path.join(__dirname, "../", result.thumbnail);
-          fs.unlink(thumbnailPath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
-          const coverPath = path.join(__dirname, "../", result.cover_image);
-          fs.unlink(coverPath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
+          // const thumbnailPath = path.join(__dirname, "../", result.thumbnail);
+          // fs.unlink(thumbnailPath, (err) => {
+          //   if (err) {
+          //     console.log(err);
+          //   }
+          // });
+          // const coverPath = path.join(__dirname, "../", result.cover_image);
+          // fs.unlink(coverPath, (err) => {
+          //   if (err) {
+          //     console.log(err);
+          //   }
+          // });
+
           const folderPath = path.join(
             __dirname,
             "../public/uploads/movies/",
