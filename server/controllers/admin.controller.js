@@ -133,6 +133,44 @@ class AdminController {
       });
   }
 
+  getMovieDetail(req, res, next) {
+    if (req.isAuthenticated()) {
+      var url_name = req.params.url_name;
+      movies.findOne(
+        { url_name: url_name },
+        (err, movieResult) => {
+          admins.findOne(
+            { "loginInformation.username": req.session.passport.user.username },
+            (err, adminResult) => {
+              directors.find({}, (err, directorResult) => {
+                actors.find({}, (err, actorResult) => {
+                  genres.find({}, (err, genreResult) => {
+                    ratings.find({}, (err, ratingResult) => {
+                      comments.find({}, (err, commentResult) => {
+                        res.render("movie-detail", {
+                          message: req.flash("success"),
+                          admin: adminResult,
+                          movies: movieResult,
+                          directors: directorResult,
+                          actors: actorResult,
+                          genres: genreResult,
+                          ratings: ratingResult,
+                          comments: commentResult,
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            }
+          );
+        }
+      );
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
   // add movie
   getAddMoviePage(req, res, next) {
     if (req.isAuthenticated()) {

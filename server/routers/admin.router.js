@@ -163,6 +163,10 @@ router.get(
   "/movie-management/page-:page",
   adminController.getMovieManagerAtPage
 );
+router.get(
+  "/movie-management/detail/:url_name",
+  adminController.getMovieDetail
+);
 router.get("/movie-management/search", adminController.getSearchMovie);
 // add movie
 router.post(
