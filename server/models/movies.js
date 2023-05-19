@@ -10,6 +10,7 @@ const movie = new mongoose.Schema(
     genres: Array,
     year: String,
     country: String,
+    country_url: String,
     duration: String,
     type: String,
     type_url: String,

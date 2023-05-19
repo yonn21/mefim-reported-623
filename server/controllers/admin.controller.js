@@ -220,6 +220,7 @@ class AdminController {
         genres: req.body.genres,
         year: req.body.year,
         country: req.body.country,
+        country_url: req.body.country_url,
         type: req.body.type,
         type_url: "",
         duration: "",

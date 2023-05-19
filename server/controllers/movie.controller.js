@@ -174,9 +174,9 @@ class MovieController {
   }
 
   async getMovieByCountry(req, res, next) {
-    const country = req.params.country;
+    const country_url = req.params.country_url;
     try {
-      const movies = await moviesModel.find({ country: country });
+      const movies = await moviesModel.find({ country_url: country_url });
       const promises = movies.map(async (movie) => {
         movie.directors = await getDirectorInfo(movie.directors);
         movie.actors = await getActorInfo(movie.actors);
