@@ -2,28 +2,40 @@
   "_id": {
     "$oid": "64625a2b8e87b24ac4136f17"
   },
-  "genre_movies": [],
+  "genre_movies": [
+    "transformers-quai-thu-troi-day"
+  ],
   "genre_url": "phim-moi",
   "genre_name": "Phim mới"
 },{
   "_id": {
     "$oid": "64625a3f8e87b24ac4136f18"
   },
-  "genre_movies": [],
+  "genre_movies": [
+    "ho-den-tu-than",
+    "transformers-quai-thu-troi-day"
+  ],
   "genre_url": "phim-chieu-rap",
   "genre_name": "Phim chiếu rạp"
 },{
   "_id": {
     "$oid": "64625a4b8e87b24ac4136f19"
   },
-  "genre_movies": [],
+  "genre_movies": [
+    "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1",
+    "transformers-quai-thu-troi-day"
+  ],
   "genre_url": "hanh-dong",
   "genre_name": "Hành động"
 },{
   "_id": {
     "$oid": "64625a558e87b24ac4136f1a"
   },
-  "genre_movies": [],
+  "genre_movies": [
+    "ho-den-tu-than",
+    "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1",
+    "transformers-quai-thu-troi-day"
+  ],
   "genre_url": "phieu-luu",
   "genre_name": "Phiêu lưu"
 },{
@@ -58,7 +70,10 @@
   "_id": {
     "$oid": "64625b408e87b24ac4136f1f"
   },
-  "genre_movies": [],
+  "genre_movies": [
+    "ho-den-tu-than",
+    "transformers-quai-thu-troi-day"
+  ],
   "genre_url": "khoa-hoc-vien-tuong",
   "genre_name": "Khoa học, viễn tưởng"
 },{

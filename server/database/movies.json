@@ -58,4 +58,111 @@
   "updated_at": {
     "$date": "2023-05-15T17:52:54.670Z"
   }
+},{
+  "_id": {
+    "$oid": "646505d12f14bc306c7a1c65"
+  },
+  "directors": [
+    "christopher-mcquarrie"
+  ],
+  "actors": [
+    "tom-cruise",
+    "hayley-atwell",
+    "simon-pegg",
+    "ving-rhames",
+    "rebecca-ferguson",
+    "vanessa -kirby",
+    "henry-czerny",
+    "mariela-garriga"
+  ],
+  "genres": [
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Raw"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=2m1drlOZSDw"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1",
+  "primary_title": "Nhiệm vụ bất khả thi: Nghiệp báo - Phần 1",
+  "secondary_title": "Mission: Impossible - Dead Reckoning Part One",
+  "year": "2023",
+  "country": "Âu Mỹ",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 27 phút",
+  "trailer": "https://www.youtube.com/watch?v=2m1drlOZSDw",
+  "summary": "Nhiệm vụ bất khả thi: Nghiệp báo – Phần 1 là một bộ phim về điệp viên hành động sắp tới của Mỹ do Christopher McQuarrie viết kịch bản và đạo diễn. Đây sẽ là phần thứ bảy và là phần áp chót của loạt phim Nhiệm vụ bất khả thi, và phần ba trong loạt phim do McQuarrie đạo diễn, sau Quốc gia bí ẩn và Sụp đổ",
+  "thumbnail": "/./public/uploads/movies/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-17T16:50:25.922Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-17T16:50:25.922Z"
+  }
+},{
+  "_id": {
+    "$oid": "64660cbadc8c352dd8980b76"
+  },
+  "directors": [
+    "steven-caple-jr"
+  ],
+  "actors": [
+    "peter-dinklage",
+    "ron-perlman",
+    "dominique-fishback",
+    "anthony-ramos",
+    "luna-lauren-velez",
+    "colman-domingo"
+  ],
+  "genres": [
+    "phim-moi",
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu",
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Raw"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=itnqEauWQZM"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "transformers-quai-thu-troi-day",
+  "primary_title": "Transformers: Quái thú trỗi dậy",
+  "secondary_title": "Transformers: Rise of the Beasts",
+  "year": "2023",
+  "country": "Âu Mỹ",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 57 phút",
+  "trailer": "https://www.youtube.com/watch?v=itnqEauWQZM",
+  "summary": "Không có cốt truyện được biết. Theo thông tin đồn đại, bộ phim dựa trên phần ngoại truyện 'Beast Wars' của series 'Transformers', trong đó các robot có khả năng biến hình thành các con vật máy móc.",
+  "thumbnail": "/./public/uploads/movies/transformers-quai-thu-troi-day/transformers-quai-thu-troi-day_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/transformers-quai-thu-troi-day/transformers-quai-thu-troi-day_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-18T11:32:10.081Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-18T11:32:10.081Z"
+  }
 }]
