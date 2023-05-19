@@ -225,23 +225,26 @@
 
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Quốc gia phát hành</label>
-                  <select name="country" class="form-control" id="validationServer01" required>
+                  <select name="country" class="form-control" id="validationServer01country" required
+                    onchange="updateCountryURL()">
                     <option value="">Chọn quốc gia</option>
-                    <option value="Âu Mỹ">Âu Mỹ</option>
-                    <option value="Hàn Quốc">Hàn Quốc</option>
-                    <option value="Trung Quốc">Trung Quốc</option>
-                    <option value="Nhật Bản">Nhật Bản</option>
-                    <option value="Đài Loan">Đài Loan</option>
-                    <option value="Hồng Kông">Hồng Kông</option>
-                    <option value="Thái Lan">Thái Lan</option>
-                    <option value="Ấn Độ">Ấn Độ</option>
-                    <option value="Philippines">Philippines</option>
-                    <option value="Việt Nam">Việt Nam</option>
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Singapore">Singapore</option>
-                    <option value="Khác">Khác</option>
+                    <option value="Âu Mỹ" data-url="au-my">Âu Mỹ</option>
+                    <option value="Hàn Quốc" data-url="han-quoc">Hàn Quốc</option>
+                    <option value="Trung Quốc" data-url="trung-quoc">Trung Quốc</option>
+                    <option value="Nhật Bản" data-url="nhat-ban">Nhật Bản</option>
+                    <option value="Đài Loan" data-url="dai-loan">Đài Loan</option>
+                    <option value="Hồng Kông" data-url="hong-kong">Hồng Kông</option>
+                    <option value="Thái Lan" data-url="thai-lan">Thái Lan</option>
+                    <option value="Ấn Độ" data-url="an-do">Ấn Độ</option>
+                    <option value="Philippines" data-url="philippines">Philippines</option>
+                    <option value="Việt Nam" data-url="viet-nam">Việt Nam</option>
+                    <option value="Indonesia" data-url="indonesia">Indonesia</option>
+                    <option value="Singapore" data-url="singapore">Singapore</option>
+                    <option value="Khác" data-url="khac">Khác</option>
                   </select>
                 </div>
+
+                <input type="hidden" name="country_url" id="country_url" value="" />
 
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Giới thiệu, mô tả</label>
@@ -418,6 +421,15 @@
           }
         });
       });
+    </script>
+
+    <script>
+      function updateCountryURL() {
+        var countrySelect = document.getElementById('validationServer01country');
+        var selectedCountry = countrySelect.options[countrySelect.selectedIndex];
+        var countryURL = selectedCountry.getAttribute('data-url');
+        document.getElementById('country_url').value = countryURL;
+      }
     </script>
 
     <!-- Tách chọn thể loại phim -->

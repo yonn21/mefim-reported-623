@@ -37,6 +37,7 @@ movie:
     genres: Array, (thể loại, có thể chọn nhiều từ database)
     year: String, (năm phát hành, chọn từ form html)
     country: String, (quốc gia phát hành, chọn từ form html)
+    country_url: String,
     type: String, (phim lẻ hoặc phim bộ, chọn từ form html)
     type_url: String (phim-le hoặc phim-bo)
     duration: String, (chọn từ form html, thời lượng giờ nếu là phim lẻ, số tập nếu là phim bộ)
