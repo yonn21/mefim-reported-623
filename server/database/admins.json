@@ -1,16 +1,14 @@
-[
-    {
-        "_id": {
-            "$oid": "6449650485a984cbc91db810"
-        },
-        "loginInformation": {
-            "username": "anh2",
-            "password": "1111",
-            "type": "admin"
-        },
-        "admin_email": "phuongyon9",
-        "admin_phoneNumber": "0977183919",
-        "admin_avatar": "https://avatars.githubusercontent.com/u/87416721?v=4",
-        "admin_level": 3
-    }
-]
+[{
+  "_id": {
+    "$oid": "6449650485a984cbc91db810"
+  },
+  "loginInformation": {
+    "username": "anh2",
+    "password": "1111",
+    "type": "admin"
+  },
+  "admin_email": "phuongyon9",
+  "admin_phoneNumber": "0977183919",
+  "admin_avatar": "https://avatars.githubusercontent.com/u/87416721?v=4",
+  "admin_level": 3
+}]

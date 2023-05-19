@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Quản lý diễn viên</title>
-  <link rel="icon" href="/public/img/core-img/favicon.png" />
+  <title>Quản lý diễn viên</title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
 <body>
@@ -365,6 +365,18 @@
       window.location.href = url;
     }
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <% if(message && message.length> 0){%>
+    <script>
+      toastr.success("<%= message %>", "Thông báo", {
+        timeOut: 1500,
+        progressBar: true,
+        closeButton: true,
+      });
+    </script>
+    <%} %>
 
 </body>
 

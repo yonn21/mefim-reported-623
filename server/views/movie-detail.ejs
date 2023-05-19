@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link href="/public/assets/vendor/fonts/circular-std/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/assets/libs/css/style.css" />
+  <link rel="stylesheet" href="/public/assets/vendor/fonts/fontawesome/css/fontawesome-all.css" />
+  <link rel="stylesheet" href="/public/assets/vendor/charts/chartist-bundle/chartist.css" />
+  <link rel="stylesheet" href="/public/assets/vendor/charts/morris-bundle/morris.css" />
+  <link rel="stylesheet"
+    href="/public/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="/public/assets/vendor/charts/c3charts/c3.css" />
+  <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+  <title>Phim: <%= movie.primary_title %> (<%= movie.secondary_title %>)</title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
+</head>
+
+<body>
+  <div class="dashboard-main-wrapper">
+    <!-- ============================================================== -->
+    <!-- navbar -->
+    <!-- ============================================================== -->
+    <div class="dashboard-header">
+      <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <a class="navbar-brand" href="/admin/dashboard"><img class="logo-img" src="/public/img/core-img/logo.png"
+            alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto navbar-right-top">
+            <li class="nav-item dropdown nav-user">
+              <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img src="<%= admin.admin_avatar %> " alt="" class="user-avatar-md rounded-circle">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                aria-labelledby="navbarDropdownMenuLink2">
+                <div class="nav-user-info">
+                  <% fullName=admin.loginInformation.username %>
+                    <h5 class="mb-0 text-white nav-user-name">
+                      <%= fullName %>
+                    </h5>
+                </div>
+                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Tài khoản</a>
+                <a class="dropdown-item" href="/admin/dashboard/logout"><i class="fas fa-power-off mr-2"></i>Đăng
+                  xuất</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end navbar -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- left sidebar -->
+    <!-- ============================================================== -->
+    <div class="nav-left-sidebar sidebar-dark">
+      <div class="menu-list">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="d-xl-none d-lg-none" href="#">Menu</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-column">
+              <li class="nav-divider">
+                Menu
+              </li>
+              <li class="nav-item ">
+                <div id="submenu-1" class="collapse submenu show">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/admin/movie-management/page-1">Quản lý phim</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/actor-management/page-1">Quản lý diễn
+                        viên</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/director-management/page-1">Quản lý đạo
+                        diễn</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/genre-management/page-1">Quản lý thể
+                        loại</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/rating-management/page-1">Quản lý đánh
+                        giá</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/comment-management/page-1">Quản lý bình
+                        luận</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/user-management/page-1">Quản lý người
+                        dùng</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end left sidebar -->
+    <!-- ============================================================== -->
+
+    <div class="dashboard-wrapper">
+      <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content">
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="page-header">
+                <h2 class="pageheader-title">
+                  <%= movie.primary_title %> (<%= movie.secondary_title %>)
+                </h2>
+                <div class="page-breadcrumb">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="/admin/dashboard" class="breadcrumb-link">Menu</a>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <a href="/admin/movie-management/page-1" class="breadcrumb-link">Quản lý
+                          phim</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Chi tiết phim
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content" style="width: 100%; height: 100vh">
+            <div class="container-fluid">
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                <div class="m-r-10">
+                  <img src="<%= movie.thumbnail %> " alt="user" class="rounded" height="350" />
+                  <img src="<%= movie.cover_image %> " alt="user" class="rounded" height="350" />
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                <button type="button" class="btn btn-primary" onclick="redirectToEdit()">Chỉnh sửa thông
+                  tin</button>
+                <button type="button" class="btn btn-secondary" onclick="redirectToLinkDirector()">Thêm đạo
+                  diễn</button>
+                <button type="button" class="btn btn-secondary" onclick="redirectToUnlinkDirector()">Xóa đạo
+                  diễn</button>
+                <button type="button" class="btn btn-success" onclick="redirectToLinkActor()">Thêm diễn viên</button>
+                <button type="button" class="btn btn-success" onclick="redirectToUnlinkActor()">Xóa diễn viên</button>
+                <button type="button" class="btn btn-warning" onclick="redirectToLinkGenre()">Thêm thể loại</button>
+                <button type="button" class="btn btn-warning" onclick="redirectToUnlinkGenre()">Xóa thể loại</button>
+                <button type="button" class="btn btn-danger"
+                  onclick="if (comfirmDelete('Xóa phim này?', event)) removeMovie()">Xóa
+                  phim</button>
+              </div>
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                <label for="validationServer01" class="form-label">
+                  <table>
+                    <tr>
+                      <td width="150px">URL:</td>
+                      <td><span style="color: black;">
+                          <%= movie.url_name %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Tên chính:</td>
+                      <td><span style="color: black;">
+                          <%= movie.primary_title %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Tên phụ:</td>
+                      <td><span style="color: black;">
+                          <%= movie.secondary_title %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align: top;">Đạo diễn:</td>
+                      <td>
+                        <span style="color: black;">
+                          <% movie.directors.forEach((directorUrl, index)=> {
+                            const director = directors.find((m) => m.director_url === directorUrl);
+                            if (director) { %>
+                            <a href="/admin/director-management/detail/<%= director.director_url %>"
+                              style="color: black; transition: color 0.3s;" onmouseover="this.style.color='blue';"
+                              onmouseout="this.style.color='black';">
+                              <%= director.director_name %>
+                            </a>
+                            <% if (index < movie.directors.length - 1) { %>
+                              |
+                              <% } %>
+                                <% } }); %>
+                        </span>
+                      </td>
+                    </tr>
+
+                    <td style="vertical-align: top;">Diễn viên:</td>
+                    <td><span style="color: black;">
+                        <% movie.actors.forEach((actorUrl, index)=> {
+                          const actor = actors.find((m) => m.actor_url === actorUrl);
+                          if (actor) { %>
+                          <a href="/admin/actor-management/detail/<%= actor.actor_url %>"
+                            style="color: black; transition: color 0.3s;" onmouseover="this.style.color='blue';"
+                            onmouseout="this.style.color='black';">
+                            <%= actor.actor_name %>
+                          </a>
+                          <% if (index < movie.actors.length - 1) { %>
+                            |<% } %>
+                              <% }}); %>
+                      </span></td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align: top;">Thể loại:</td>
+                      <td><span style="color: black;">
+                          <% movie.genres.forEach((genreUrl, index)=> {
+                            const genre = genres.find((m) => m.genre_url === genreUrl);
+                            if (genre) { %>
+                            <a href="/admin/genre-management/detail/<%= genre.genre_url %>"
+                              style="color: black; transition: color 0.3s;" onmouseover="this.style.color='blue';"
+                              onmouseout="this.style.color='black';">
+                              <%= genre.genre_name %>
+                            </a>
+                            <% if (index < movie.genres.length - 1) { %>
+                              |<% } %>
+                                <% }}); %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Năm phát hành:</td>
+                      <td><span style="color: black;">
+                          <%= movie.year %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Quốc gia:</td>
+                      <td><span style="color: black;">
+                          <%= movie.country %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Loại phim:</td>
+                      <td><span style="color: black;">
+                          <%= movie.type %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Thời lượng:</td>
+                      <td><span style="color: black;">
+                          <%= movie.duration %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Phụ đề:</td>
+                      <td>
+                        <span style="color: black;">
+                          <% movie.type_sub.forEach((typeSub, index)=> { %>
+                            <%= typeSub %>
+                              <% if (index < movie.type_sub.length - 1) { %>
+                                |
+                                <% } %>
+                                  <% }); %>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Trailer:</td>
+                      <td><span style="color: black;">
+                          <%= movie.trailer %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Đánh giá:</td>
+                      <td>
+                        <% if (movie.rating && movie.rating.length> 0) { %>
+                          <span style="color: black;">
+                            <%= movie.rating %>
+                          </span>
+                          <% } else { %>
+                            <span style="color: black;">Chưa có đánh giá</span>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lượt yêu thích:</td>
+                      <td><span style="color: black;">
+                          <%= movie.number_favourited %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Lượt xem 3 ngày:</td>
+                      <td><span style="color: black;">
+                          <%= movie.views_3days %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Lượt xem tuần:</td>
+                      <td><span style="color: black;">
+                          <%= movie.views_week %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Lượt xem tháng:</td>
+                      <td><span style="color: black;">
+                          <%= movie.views_month %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Lượt xem năm:</td>
+                      <td><span style="color: black;">
+                          <%= movie.views_year %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Lượt xem tổng:</td>
+                      <td><span style="color: black;">
+                          <%= movie.views_all %>
+                        </span></td>
+                    </tr>
+                    <tr>
+                      <td>Tổng bình luận:</td>
+                      <td><span style="color: black;">
+                          <%= movie.comment.length %>
+                        </span></td>
+                    </tr>
+                  </table>
+                  <br><span style="color: black;">
+                    <%= movie.summary %>
+                  </span><br>
+                </label>
+                <label for="validationServer01" class="form-label"></label>
+              </div>
+              <!-- <div class="col-md-12 col-sm-12 col-lg-12 mt-4">
+                <label for="validationServer01" class="form-label">Danh sách diễn viên: <%= movie.actors.length %>
+                </label>
+                <div class="search-box">
+                  <input type="text" placeholder="Tìm kiếm..." id="actor-search-box" />
+                </div>
+                <select name="movies" class="form-control" id="validationServer02" multiple required>
+                  <% movie.actors.forEach((actorUrl)=> {
+                    const actor = actors.find((m) => m.actor_url === actorUrl);
+                    if (actor) { %>
+                    <option value="<%= movie.url_name %>" disabled>
+                      <%= actor.actor_name %>
+                    </option>
+                    <% } }); %>
+                </select>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function redirectToEdit() {
+      const movieUrl = "<%= movie.url_name %>";
+      window.location.href = "/admin/movie-management/edit/" + movieUrl;
+    }
+    function redirectToLinkActor() {
+      const movieUrl = "<%= movie.url_name %>";
+      window.location.href = "/admin/movie-management/link-actor/" + movieUrl;
+    }
+    function redirectToUnlinkActor() {
+      const movieUrl = "<%= movie.url_name %>";
+      window.location.href = "/admin/movie-management/unlink-actor/" + movieUrl;
+    }
+    function removeMovie() {
+      const movieUrl = "<%= movie.url_name %>";
+      window.location.href = "/admin/movie-management/remove/" + movieUrl;
+    }
+  </script>
+
+  <script>
+    function comfirmDelete(msg, event) {
+      if (window.confirm(msg) == true) {
+        return true;
+      }
+      event.preventDefault();
+      return false;
+    }
+  </script>
+
+  <!-- <script>
+    function removeDiacritics(str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const actorSearchBox = document.getElementById('actor-search-box');
+    const actorOptions = document.querySelectorAll('#validationServer02 option');
+
+    actorSearchBox.addEventListener('input', function () {
+      const searchTerm = removeDiacritics(actorSearchBox.value.toLowerCase());
+
+      actorOptions.forEach(function (option) {
+        const actorInfo = removeDiacritics(option.textContent.toLowerCase());
+
+        if (actorInfo.includes(searchTerm)) {
+          option.style.display = 'block';
+        } else {
+          option.style.display = 'none';
+        }
+      });
+    });
+  </script> -->
+
+  <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+  <!-- bootstap bundle js -->
+  <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <!-- slimscroll js -->
+  <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+  <!-- main js -->
+  <script src="/public/assets/libs/js/main-js.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <% if(message && message.length> 0){%>
+    <script>
+      toastr.success("<%= message %>", "Thông báo", {
+        timeOut: 1500,
+        progressBar: true,
+        closeButton: true,
+      });
+    </script>
+    <%} %>
+
+</body>
+
+</html>

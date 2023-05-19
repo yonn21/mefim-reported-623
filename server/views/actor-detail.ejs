@@ -19,8 +19,9 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Chi tiết diễn viên</title>
-  <link rel="icon" href="/public/img/core-img/favicon.png" />
+  <title>Diễn viên <%= actor.actor_name %>
+  </title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
 <body>
@@ -125,7 +126,7 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                <h2 class="pageheader-title">Chi tiết diễn viên: <%= actor.actor_name %>
+                <h2 class="pageheader-title">Diễn viên <%= actor.actor_name %>
                 </h2>
                 <div class="page-breadcrumb">
                   <nav aria-label="breadcrumb">
@@ -147,25 +148,37 @@
           </div>
           <div class="content" style="width: 100%; height: 100vh">
             <div class="container-fluid">
-
               <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                 <div class="m-r-10">
-                  <img src="<%= actor.actor_thumbnail %> " alt="user" class="rounded" width="196" height="280" />
+                  <img src="<%= actor.actor_thumbnail %> " alt="user" class="rounded" height="280" />
                 </div>
               </div>
-              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                <label for="validationServer01" class="form-label">URL: <%=actor.actor_url%><br>
-                    Tên: <%=actor.actor_name%><br><br>Mô tả:<br>
-                      <%= actor.actor_description %></label>
-                <label for="validationServer01" class="form-label"></label>
-              </div>
-              <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+              <label for="validationServer01" class="form-label">
+                <table>
+                  <tr>
+                    <td width="50px">URL:</td>
+                    <td><span style="color: black;">
+                        <%= actor.actor_url %>
+                      </span></td>
+                  </tr>
+                  <tr>
+                    <td>Tên:</td>
+                    <td><span style="color: black;">
+                        <%= actor.actor_name %>
+                      </span></td>
+                  </tr>
+                </table>
+                <br><span style="color: black;">
+                  <%= actor.actor_description %>
+                </span>
+              </label>
+              <div class="col-md-12 col-sm-12 col-lg-12 mb-3"><br>
                 <button type="button" class="btn btn-primary" onclick="redirectToEdit()">Chỉnh sửa thông
                   tin</button>
               </div>
               <div class="col-md-12 col-sm-12 col-lg-12 mt-4">
-                <label for="validationServer01" class="form-label">Danh sách phim đang liên kết: <%=
-                    actor.actor_movies.length %>
+                <label for="validationServer01" class="form-label" style="color: black;">Danh sách phim đang liên kết:
+                  <%= actor.actor_movies.length %>
                 </label>
                 <div class="search-box">
                   <input type="text" placeholder="Tìm kiếm..." id="movie-search-box" />
@@ -174,7 +187,10 @@
                   <% actor.actor_movies.forEach((movieUrl)=> {
                     const movie = movies.find((m) => m.url_name === movieUrl);
                     if (movie) { %>
-                    <option value="<%= movie.url_name %>" disabled>
+                    <option value="<%= movie.url_name %>" onclick="redirectToMovieDetail('<%= movie.url_name %>')"
+                      style="color: black; cursor: pointer;"
+                      onmouseover="this.style.color='blue'; this.style.cursor='pointer';"
+                      onmouseout="this.style.color='black'; this.style.cursor='default';" target="_blank">
                       <%= movie.primary_title %> (<%= movie.secondary_title %>) <%= movie.url_name %>
                     </option>
                     <% } }); %>
@@ -217,6 +233,10 @@
       const actorUrl = "<%= actor.actor_url %>";
       window.location.href = "/admin/actor-management/remove/" + actorUrl;
     }
+
+    function redirectToMovieDetail(urlName) {
+      window.location.href = "/admin/movie-management/detail/" + urlName;
+    }
   </script>
 
   <script>
@@ -228,6 +248,37 @@
       return false;
     }
   </script>
+
+  <script>
+    function removeDiacritics(str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const movieSearchBox = document.getElementById('movie-search-box');
+    const movieOptions = document.querySelectorAll('#validationServer02 option');
+
+    movieSearchBox.addEventListener('input', function () {
+      const searchTerm = removeDiacritics(movieSearchBox.value.toLowerCase());
+
+      movieOptions.forEach(function (option) {
+        const movieInfo = removeDiacritics(option.textContent.toLowerCase());
+
+        if (movieInfo.includes(searchTerm)) {
+          option.style.display = 'block';
+        } else {
+          option.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+  <!-- bootstap bundle js -->
+  <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <!-- slimscroll js -->
+  <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+  <!-- main js -->
+  <script src="/public/assets/libs/js/main-js.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <% if(message && message.length> 0){%>
@@ -239,38 +290,6 @@
       });
     </script>
     <%} %>
-
-      <script>
-        function removeDiacritics(str) {
-          return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        }
-
-        const movieSearchBox = document.getElementById('movie-search-box');
-        const movieOptions = document.querySelectorAll('#validationServer02 option');
-
-        movieSearchBox.addEventListener('input', function () {
-          const searchTerm = removeDiacritics(movieSearchBox.value.toLowerCase());
-
-          movieOptions.forEach(function (option) {
-            const movieInfo = removeDiacritics(option.textContent.toLowerCase());
-
-            if (movieInfo.includes(searchTerm)) {
-              option.style.display = 'block';
-            } else {
-              option.style.display = 'none';
-            }
-          });
-        });
-      </script>
-
-      <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-      <!-- bootstap bundle js -->
-      <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-      <!-- slimscroll js -->
-      <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-      <!-- main js -->
-      <script src="/public/assets/libs/js/main-js.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 
 </html>

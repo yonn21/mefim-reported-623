@@ -1,6 +1,6 @@
 [{
   "_id": {
-    "$oid": "64626003d490ed617c15af7d"
+    "$oid": "6463def7846fb45a2dac16e9"
   },
   "director_movies": [
     "ho-den-tu-than"
@@ -9,4 +9,26 @@
   "director_name": "Christopher Nolan",
   "director_thumbnail": "/public\\uploads\\directors\\christopher-nolan.jpg",
   "director_description": "Christopher Nolan là một nhà làm phim nổi tiếng người Anh, sinh ngày 30 tháng 7 năm 1970. Ông được coi là một trong những nhà làm phim tài năng và ảnh hưởng nhất của thế hệ mới. Christopher Nolan nổi tiếng với phong cách đậm chất điện ảnh, những câu chuyện phức tạp và những hiệu ứng đặc biệt độc đáo.\r\nCông việc đáng chú ý của Nolan bao gồm các bộ phim nổi tiếng như \"Memento\" (2000), \"The Dark Knight Trilogy\" (2005-2012), \"Inception\" (2010), và \"Interstellar\" (2014). Ông đã nhận được nhiều lời khen ngợi về khả năng kịch bản, đạo diễn và sự đổi mới trong việc sử dụng kỹ thuật và cấu trúc câu chuyện. Các tác phẩm của Nolan thường có yếu tố trí tuệ, tạo động lực cho khán giả suy nghĩ và tranh luận về các khía cạnh văn hóa và tâm lý."
+},{
+  "_id": {
+    "$oid": "6464ff0d2f14bc306c7a1c5c"
+  },
+  "director_movies": [
+    "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1"
+  ],
+  "director_url": "christopher-mcquarrie",
+  "director_name": "Christopher McQuarrie",
+  "director_thumbnail": "/public\\uploads\\directors\\christopher-mcquarrie.jpg",
+  "director_description": "Christopher McQuarrie, sinh ngày 25 tháng 10 năm 1968, là một đạo diễn, biên kịch và nhà sản xuất người Mỹ. Anh được biết đến với sự nghiệp thành công và đóng góp đáng kể cho ngành công nghiệp điện ảnh.\r\nChristopher McQuarrie có tài năng biên kịch xuất sắc và đã viết nhiều kịch bản nổi tiếng. Anh được biết đến nhiều nhất qua việc viết kịch bản cho bộ phim \"The Usual Suspects\" (1995), một tác phẩm được đánh giá cao và đã giành giải Oscar cho Kịch bản ban đầu xuất sắc nhất. Đó cũng là bộ phim mở đường cho sự nổi tiếng của McQuarrie trong ngành.\r\nNgoài công việc biên kịch, Christopher McQuarrie cũng đã trở thành một đạo diễn tài năng. Anh đã đạo diễn và đồng biên kịch cho nhiều bộ phim thành công, bao gồm \"Jack Reacher\" (2012), \"Mission: Impossible - Rogue Nation\" (2015), \"Mission: Impossible - Fallout\" (2018) và \"Top Gun: Maverick\" (đang trong quá trình sản xuất)."
+},{
+  "_id": {
+    "$oid": "64660838dc8c352dd8980b72"
+  },
+  "director_movies": [
+    "transformers-quai-thu-troi-day"
+  ],
+  "director_url": "steven-caple-jr",
+  "director_name": "Steven Caple Jr.",
+  "director_thumbnail": "/public\\uploads\\directors\\steven-caple-jr.jpg",
+  "director_description": "Steven Caple Jr. là một đạo diễn và biên kịch người Mỹ. Sinh ngày 11 tháng 10 năm 1988, ông đã gây ấn tượng với công chúng và nhận được đánh giá cao trong lĩnh vực điện ảnh.\r\nSteven Caple Jr. đã nổi danh qua việc đạo diễn bộ phim \"Creed II\" (2018), tiếp nối thành công của phần đầu tiên \"Creed\" (2015). Với sự tài năng và tầm nhìn độc đáo, ông đã đem lại sự sáng tạo và cảm xúc cho câu chuyện về võ sĩ quyền Anh Adonis Creed. Bộ phim đã nhận được đánh giá tích cực và trở thành một trong những phim thành công về mặt thương mại và nghệ thuật.\r\nTrước khi nổi tiếng với \"Creed II\", Steven Caple Jr. đã làm việc trên các dự án độc lập và truyền hình. Ông đã thực hiện các bộ phim ngắn và làm việc trong các loạt phim truyền hình như \"Grown-ish\" và \"Class\". Sự sáng tạo và tầm nhìn của ông đã thu hút sự chú ý của ngành công nghiệp điện ảnh."
 }]

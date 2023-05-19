@@ -133,6 +133,41 @@ class AdminController {
       });
   }
 
+  getMovieDetail(req, res, next) {
+    if (req.isAuthenticated()) {
+      var url_name = req.params.url_name;
+      movies.findOne({ url_name: url_name }, (err, movieResult) => {
+        admins.findOne(
+          { "loginInformation.username": req.session.passport.user.username },
+          (err, adminResult) => {
+            directors.find({}, (err, directorResult) => {
+              actors.find({}, (err, actorResult) => {
+                genres.find({}, (err, genreResult) => {
+                  ratings.find({}, (err, ratingResult) => {
+                    comments.find({}, (err, commentResult) => {
+                      res.render("movie-detail", {
+                        message: req.flash("success"),
+                        admin: adminResult,
+                        movie: movieResult,
+                        directors: directorResult,
+                        actors: actorResult,
+                        genres: genreResult,
+                        ratings: ratingResult,
+                        comments: commentResult,
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          }
+        );
+      });
+    } else {
+      res.redirect("/admin/login");
+    }
+  }
+
   // add movie
   getAddMoviePage(req, res, next) {
     if (req.isAuthenticated()) {
@@ -335,18 +370,19 @@ class AdminController {
           next();
         }
         if (result && result.thumbnail && result.cover_image) {
-          const thumbnailPath = path.join(__dirname, "../", result.thumbnail);
-          fs.unlink(thumbnailPath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
-          const coverPath = path.join(__dirname, "../", result.cover_image);
-          fs.unlink(coverPath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
+          // const thumbnailPath = path.join(__dirname, "../", result.thumbnail);
+          // fs.unlink(thumbnailPath, (err) => {
+          //   if (err) {
+          //     console.log(err);
+          //   }
+          // });
+          // const coverPath = path.join(__dirname, "../", result.cover_image);
+          // fs.unlink(coverPath, (err) => {
+          //   if (err) {
+          //     console.log(err);
+          //   }
+          // });
+
           const folderPath = path.join(
             __dirname,
             "../public/uploads/movies/",
@@ -619,7 +655,10 @@ class AdminController {
             director_description: req.body.director_description,
           };
 
-          if (req.file && req.body.director_url != directorResult.director_url) {
+          if (
+            req.file &&
+            req.body.director_url != directorResult.director_url
+          ) {
             const thumbnailPath = path.join(
               __dirname,
               "../",
@@ -631,7 +670,10 @@ class AdminController {
               }
             });
             data.director_thumbnail = `/${req.file.path}`;
-          } else if (!req.file && req.body.director_url != directorResult.director_url) {
+          } else if (
+            !req.file &&
+            req.body.director_url != directorResult.director_url
+          ) {
             const thumbnailPath = path.join(
               __dirname,
               "../",
@@ -650,7 +692,10 @@ class AdminController {
             data.director_thumbnail = `/${newThumbnailPath.substring(
               newThumbnailPath.indexOf("public")
             )}`;
-          } else if (req.file && req.body.director_url == directorResult.director_url) {
+          } else if (
+            req.file &&
+            req.body.director_url == directorResult.director_url
+          ) {
             if (directorResult && directorResult.director_thumbnail) {
               data.director_thumbnail = `/${req.file.path}`;
             }
@@ -663,10 +708,27 @@ class AdminController {
               new: true,
             })
             .then(() => {
-              req.flash("success", "Cập nhật thông tin đạo diễn thành công!");
-              res.redirect(
-                "/admin/director-management/detail/" + req.body.director_url
-              );
+              movies
+                .updateMany(
+                  { directors: director_url },
+                  { $set: { "directors.$": req.body.director_url } }
+                )
+                .then(() => {
+                  req.flash(
+                    "success",
+                    "Cập nhật thông tin thể loại thành công!"
+                  );
+                  res.redirect(
+                    "/admin/director-management/detail/" + req.body.director_url
+                  );
+                })
+                .catch((err) => {
+                  req.flash(
+                    "error",
+                    "Cập nhật thông tin thể loại không thành công! Có lỗi xảy ra!"
+                  );
+                  next();
+                });
             })
             .catch((err) => {
               req.flash(
@@ -923,51 +985,65 @@ class AdminController {
         };
 
         if (req.file && req.body.actor_url != actorResult.actor_url) {
-            const thumbnailPath = path.join(
-              __dirname,
-              "../",
-              actorResult.actor_thumbnail
-            );
-            fs.unlink(thumbnailPath, (err) => {
-              if (err) {
-                console.log(err);
-              }
-            });
-            data.actor_thumbnail = `/${req.file.path}`;
-          } else if (!req.file && req.body.actor_url != actorResult.actor_url) {
-            const thumbnailPath = path.join(
-              __dirname,
-              "../",
-              actorResult.actor_thumbnail
-            );
-            const thumbnailDir = path.dirname(thumbnailPath);
-            const fileName = path.basename(thumbnailPath);
-            const fileExt = path.extname(fileName);
-            const newFileName = `${req.body.actor_url}${fileExt}`;
-            const newThumbnailPath = path.join(thumbnailDir, newFileName);
-            fs.rename(thumbnailPath, newThumbnailPath, (err) => {
-              if (err) {
-                console.log(err);
-              }
-            });
-            data.actor_thumbnail = `/${newThumbnailPath.substring(
-              newThumbnailPath.indexOf("public")
-            )}`;
-          } else if (req.file && req.body.actor_url == actorResult.actor_url) {
-            if (actorResult && actorResult.actor_thumbnail) {
-              data.actor_thumbnail = `/${req.file.path}`;
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            actorResult.actor_thumbnail
+          );
+          fs.unlink(thumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
             }
-          } else {
-            data.actor_thumbnail = actorResult.actor_thumbnail;
+          });
+          data.actor_thumbnail = `/${req.file.path}`;
+        } else if (!req.file && req.body.actor_url != actorResult.actor_url) {
+          const thumbnailPath = path.join(
+            __dirname,
+            "../",
+            actorResult.actor_thumbnail
+          );
+          const thumbnailDir = path.dirname(thumbnailPath);
+          const fileName = path.basename(thumbnailPath);
+          const fileExt = path.extname(fileName);
+          const newFileName = `${req.body.actor_url}${fileExt}`;
+          const newThumbnailPath = path.join(thumbnailDir, newFileName);
+          fs.rename(thumbnailPath, newThumbnailPath, (err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+          data.actor_thumbnail = `/${newThumbnailPath.substring(
+            newThumbnailPath.indexOf("public")
+          )}`;
+        } else if (req.file && req.body.actor_url == actorResult.actor_url) {
+          if (actorResult && actorResult.actor_thumbnail) {
+            data.actor_thumbnail = `/${req.file.path}`;
           }
+        } else {
+          data.actor_thumbnail = actorResult.actor_thumbnail;
+        }
 
         actors
           .findOneAndUpdate({ actor_url: actor_url }, data, { new: true })
           .then(() => {
-            req.flash("success", "Cập nhật thông tin diễn viên thành công!");
-            res.redirect(
-              "/admin/actor-management/detail/" + req.body.actor_url
-            );
+            movies
+              .updateMany(
+                { actors: actor_url },
+                { $set: { "actors.$": req.body.actor_url } }
+              )
+              .then(() => {
+                req.flash("success", "Cập nhật thông tin thể loại thành công!");
+                res.redirect(
+                  "/admin/actor-management/detail/" + req.body.actor_url
+                );
+              })
+              .catch((err) => {
+                req.flash(
+                  "error",
+                  "Cập nhật thông tin thể loại không thành công! Có lỗi xảy ra!"
+                );
+                next();
+              });
           })
           .catch((err) => {
             req.flash(
@@ -1193,13 +1269,28 @@ class AdminController {
           genre_url: req.body.genre_url,
           genre_name: req.body.genre_name,
         };
+
         genres
           .findOneAndUpdate({ genre_url: genre_url }, data, { new: true })
           .then(() => {
-            req.flash("success", "Cập nhật thông tin thể loại thành công!");
-            res.redirect(
-              "/admin/genre-management/detail/" + req.body.genre_url
-            );
+            movies
+              .updateMany(
+                { genres: genre_url },
+                { $set: { "genres.$": req.body.genre_url } }
+              )
+              .then(() => {
+                req.flash("success", "Cập nhật thông tin thể loại thành công!");
+                res.redirect(
+                  "/admin/genre-management/detail/" + req.body.genre_url
+                );
+              })
+              .catch((err) => {
+                req.flash(
+                  "error",
+                  "Cập nhật thông tin thể loại không thành công! Có lỗi xảy ra!"
+                );
+                next();
+              });
           })
           .catch((err) => {
             req.flash(
