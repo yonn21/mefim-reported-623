@@ -1,110 +1,94 @@
-const actors = require("../models/actors");
-const comments = require("../models/comments");
-const directors = require("../models/directors");
-const genres = require("../models/genres");
-const movies = require("../models/movies");
-const ratings = require("../models/ratings");
-const users = require("../models/users");
+const actorsModel = require("../models/actors");
+const commentsModel = require("../models/comments");
+const directorsModel = require("../models/directors");
+const genresModel = require("../models/genres");
+const moviesModel = require("../models/movies");
+const ratingsModel = require("../models/ratings");
+const usersModel = require("../models/users");
 
-const getDirectorNames = (directorUrl) => {
-  return directors.find(
-    { director_url: { $in: directorUrl } },
-    "director_name"
-  );
+const getDirectorInfo = async (directorUrls) => {
+  try {
+    const directors = await directorsModel.find(
+      { director_url: { $in: directorUrls } },
+      { director_name: 1, director_url: 1}
+    );
+    return directors.map((director) => ({
+      director_name: director.director_name,
+      director_url: director.director_url,
+    }));
+  } catch (err) {
+    throw new Error("Đã xảy ra lỗi khi truy xuất thông tin đạo diễn");
+  }
 };
 
-const getActorNames = (actorUrl) => {
-  return actors.find({ actor_url: { $in: actorUrl } }, "actor_name");
+const getActorInfo = async (actorUrls) => {
+  try {
+    const actors = await actorsModel.find(
+      { actor_url: { $in: actorUrls } },
+      { actor_name: 1, actor_url: 1}
+    );
+    return actors.map((actor) => ({
+      actor_name: actor.actor_name,
+      actor_url: actor.actor_url,
+    }));
+  } catch (err) {
+    throw new Error("Đã xảy ra lỗi khi truy xuất thông tin diễn viên");
+  }
 };
 
-const getGenreNames = (genreUrl) => {
-  return genres.find({ genre_url: { $in: genreUrl } }, "genre_name");
+const getGenreInfo = async (genreUrls) => {
+  try {
+    const genres = await genresModel.find(
+      { genre_url: { $in: genreUrls } },
+      { genre_name: 1, genre_url: 1}
+    );
+    return genres.map((genre) => ({
+      genre_name: genre.genre_name,
+      genre_url: genre.genre_url,
+    }));
+  } catch (err) {
+    throw new Error("Đã xảy ra lỗi khi truy xuất thông tin thể loại");
+  }
 };
 
 class MovieController {
-  getAllMovie(req, res, next) {
-    movies.find({}, (err, result) => {
-      if (err) {
-        console.log(err);
-        res.status(500).json({ error: "Đã xảy ra lỗi khi truy xuất phim" });
-      } else {
-        const promises = result.map((movie) => {
-          const directorPromise = getDirectorNames(movie.directors).then(
-            (directors) => {
-              movie.directors = directors.map(
-                (director) => director.director_name
-              );
-            }
-          );
+  async getAllMovie(req, res, next) {
+    try {
+      const result = await moviesModel.find({});
+      const promises = result.map(async (movie) => {
+        movie.directors = await getDirectorInfo(movie.directors);
+        movie.actors = await getActorInfo(movie.actors);
+        movie.genres = await getGenreInfo(movie.genres);
+      });
 
-          const actorPromise = getActorNames(movie.actors).then((actors) => {
-            movie.actors = actors.map((actor) => actor.actor_name);
-          });
-
-          const genrePromise = getGenreNames(movie.genres).then((genres) => {
-            movie.genres = genres.map((genre) => genre.genre_name);
-          });
-
-          return Promise.all([directorPromise, actorPromise, genrePromise]);
-        });
-
-        Promise.all(promises)
-          .then(() => {
-            res.json(result);
-          })
-          .catch((err) => {
-            console.log(err);
-            res.status(500).json({
-              error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
-            });
-          });
-      }
-    });
+      await Promise.all(promises);
+      res.json(result);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
+      });
+    }
   }
 
-  getMovieByURL(req, res, next) {
+  async getMovieByURL(req, res, next) {
     const url = req.params.url_name;
-
-    movies.findOne({ url_name: url }, (err, result) => {
-      if (err) {
-        console.log(err);
-        res.status(500).json({ error: "Đã xảy ra lỗi khi truy xuất phim" });
-      } else if (!result) {
+    try {
+      const result = await moviesModel.findOne({ url_name: url });
+      if (!result) {
         res.status(404).json({ error: "Không tìm thấy phim" });
       } else {
-        const promises = [];
-
-        const directorPromise = getDirectorNames(result.directors).then(
-          (directors) => {
-            result.directors = directors.map(
-              (director) => director.director_name
-            );
-          }
-        );
-        promises.push(directorPromise);
-
-        const actorPromise = getActorNames(result.actors).then((actors) => {
-          result.actors = actors.map((actor) => actor.actor_name);
-        });
-        promises.push(actorPromise);
-
-        const genrePromise = getGenreNames(result.genres).then((genres) => {
-          result.genres = genres.map((genre) => genre.genre_name);
-        });
-        promises.push(genrePromise);
-
-        Promise.all(promises)
-          .then(() => {
-            res.json(result);
-          })
-          .catch((err) => {
-            console.log(err);
-            res
-              .status(500)
-              .json({ error: "Đã xảy ra lỗi khi truy xuất chi tiết phim" });
-          });
+        result.directors = await getDirectorInfo(result.directors);
+        result.actors = await getActorInfo(result.actors);
+        result.genres = await getGenreInfo(result.genres);
+        res.json(result);
       }
-    });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
+      });
+    }
   }
 }
 
