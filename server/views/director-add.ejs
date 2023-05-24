@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Thêm đạo diễn</title>
-  <link rel="icon" href="/public/img/core-img/favicon.png" />
+  <title>Thêm đạo diễn</title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
 <body>
@@ -70,7 +70,7 @@
     <div class="nav-left-sidebar sidebar-dark">
       <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="d-xl-none d-lg-none" href="#">Tổng quan</a>
+          <a class="d-xl-none d-lg-none" href="#">Menu</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,7 +84,7 @@
                 <div id="submenu-1" class="collapse submenu show">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link active" href="/admin/dashboard">Tổng quan</a>
+                      <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/movie-management/page-1">Quản lý phim</a>
@@ -93,7 +93,7 @@
                       <a class="nav-link" href="/admin/actor-management/page-1">Quản lý diễn viên</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/admin/director-management/page-1">Quản lý đạo diễn</a>
+                      <a class="nav-link active" href="/admin/director-management/page-1">Quản lý đạo diễn</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/genre-management/page-1">Quản lý thể loại</a>
@@ -130,7 +130,7 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
+                        <a href="/admin/dashboard" class="breadcrumb-link">Menu</a>
                       </li>
                       <li class="breadcrumb-item">
                         <a href="/admin/director-management/page-1" class="breadcrumb-link">Quản lý đạo diễn</a>
@@ -149,6 +149,13 @@
               <form class="row g-3" accept-charset="utf-8" spellcheck="false" enctype="multipart/form-data"
                 action="/admin/director-management/add" method="POST">
                 <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                  <label for="validationServer01" class="form-label">URL (không dấu, không hoa, không cách, VD:
+                    vu-hong-phuong)</label>
+                  <input type="text" name="director_url" class="form-control" id="validationServer01" value="" required
+                    onblur="checkDuplicateDirectorURL(this.value)" />
+                  <div id="urlNameError"></div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
                   <label for="validationServer01" class="form-label">Tên đạo diễn</label>
                   <input type="text" name="director_name" class="form-control" id="validationServer01" value=""
                     required />
@@ -162,7 +169,7 @@
                     required></textarea>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary mt-3" type="submit">
+                  <button class="btn btn-primary mt-3" type="submit" id="submitForm">
                     Thêm đạo diễn
                   </button>
                 </div>
@@ -175,6 +182,47 @@
   </div>
   <!-- Optional JavaScript -->
   <!-- jquery 3.3.1 -->
+
+  <script>
+    function checkDuplicateDirectorURL(urlName) {
+      var urlNameError = document.getElementById("urlNameError");
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/admin/check-duplicate-director-url", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.isDuplicate) {
+              document.getElementById("submitForm").style.opacity = "0.5";
+              document.getElementById("submitForm").style.pointerEvents = "none";
+              urlNameError.style.color = "red";
+              urlNameError.textContent = "URL đã tồn tại. Vui lòng chọn URL khác";
+              document.getElementById("validationServer01").focus();
+            } else if (!response.isDuplicate) {
+              document.getElementById("submitForm").style.opacity = "1";
+              document.getElementById("submitForm").style.pointerEvents = "";
+              urlNameError.style.color = "green";
+              urlNameError.textContent = "URL không trùng";
+            }
+          } else {
+            urlNameError.textContent = "Đã xảy ra lỗi trong quá trình kiểm tra URL";
+          }
+        }
+      };
+
+      if (urlName.trim() === "") {
+        urlNameError.style.color = "red";
+        urlNameError.textContent = "Vui lòng nhập URL";
+        return;
+      }
+
+      var data = {
+        director_url: urlName.trim()
+      };
+      xhr.send(JSON.stringify(data));
+    }
+  </script>
 
   <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
   <!-- bootstap bundle js -->

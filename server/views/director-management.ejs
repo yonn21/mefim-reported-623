@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Quản lý đạo diễn</title>
-  <link rel="icon" href="/public/img/core-img/favicon.png" />
+  <title>Quản lý đạo diễn</title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
 <body>
@@ -70,7 +70,7 @@
     <div class="nav-left-sidebar sidebar-dark">
       <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="d-xl-none d-lg-none" href="#">Tổng quan</a>
+          <a class="d-xl-none d-lg-none" href="#">Menu</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,7 +84,7 @@
                 <div id="submenu-1" class="collapse submenu show">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link active" href="/admin/dashboard">Tổng quan</a>
+                      <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/movie-management/page-1">Quản lý phim</a>
@@ -93,7 +93,7 @@
                       <a class="nav-link" href="/admin/actor-management/page-1">Quản lý diễn viên</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/admin/director-management/page-1">Quản lý đạo diễn</a>
+                      <a class="nav-link active" href="/admin/director-management/page-1">Quản lý đạo diễn</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/genre-management/page-1">Quản lý thể loại</a>
@@ -130,7 +130,7 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
+                        <a href="/admin/dashboard" class="breadcrumb-link">Menu</a>
                       </li>
                       <li class="breadcrumb-item">
                         <a href="/admin/director-management/page-1" class="breadcrumb-link">Quản lý đạo diễn</a>
@@ -153,15 +153,29 @@
                   <a class="button" href="/admin/director-management/add">Thêm đạo diễn</a>
                 </div>
                 <div class="card-body p-0">
+                  <div class="row m-3">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input type="text" id="search-director" class="form-control"
+                          placeholder="Tìm kiếm đạo diễn (Nhập tên hoặc url)">
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <button class="btn btn-primary" id="search-button">Tìm kiếm</button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="table-responsive">
                     <table class="table">
                       <thead class="bg-light">
                         <tr class="border-0">
                           <th class="border-0">#</th>
                           <th class="border-0">Thumbnail</th>
-                          <th class="border-0">Tên đạo diễn</th>
+                          <th class="border-0">Tên</th>
+                          <th class="border-0">URL</th>
+                          <th class="border-0">Phim</th>
                           <th class="border-0">Mô tả</th>
-                          <th class="border-0" width="90px">Thao tác</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -169,29 +183,32 @@
                           directors.slice((page - 1) * numberItemPerPage, numberItemPerPage * page) : directors %>
                           <% var index=(page - 1) * numberItemPerPage + 1 %>
                             <% listDirector.forEach(element=> {%>
-                              <tr>
-                                <td>
+                              <tr style="cursor: pointer; transition: opacity 1s, transform 0.2s;"
+                                onmouseover="this.style.opacity='0.6'; this.style.transform='scale(0.99)';"
+                                onmouseout="this.style.opacity='1'; this.style.transform='scale(1)';"
+                                onclick="redirectToDetail('/admin/director-management/detail/<%= element.director_url %>')">
+                                <td width="3%">
                                   <%= index %>
                                 </td>
-                                <td>
+                                <td width="7%">
                                   <div class="m-r-10">
                                     <img src="<%= element.director_thumbnail %> " alt="user" class="rounded" width="70"
                                       height="100" />
                                   </div>
                                 </td>
-                                <td>
+                                <td width="12%">
                                   <%= element.director_name %>
                                 </td>
-                                <td>
-                                  <%= element.director_description %>
+                                <td width="12%">
+                                  <%= element.director_url %>
                                 </td>
-                                <td>
-                                  <a style="margin-right: 5px"
-                                    href="/admin/director-management/edit/<%= element._id %>"><i
-                                      class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa đạo diễn này?',event)" style="margin-right: 5px"
-                                    href="/admin/director-management/remove/<%= element._id %>"><i
-                                      class="fas fa-trash"></i></a>
+                                <td width="4%">
+                                  <%= element.director_movies.length %>
+                                </td>
+                                <td width="62%">
+                                  <p>
+                                    <%= element.director_description.slice(0, 130) + '...' %>
+                                  </p>
                                 </td>
                                 <% index++ %>
                               </tr>
@@ -202,12 +219,12 @@
                 </div>
               </div>
             </div>
-            <nav aria-label="Page navigation example" style="margin-right: 15px">
+            <nav aria-label=" Page navigation example" style="margin-right: 15px" id="pagination">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
                   <% directors.length % numberItemPerPage==0 ? numberPage=parseInt(directors.length/numberItemPerPage) :
                     numberPage=parseInt(directors.length/numberItemPerPage) + 1 %>
-                    <% for(var i=1; i <=numberPage; i++) { %>
+                    <% for(var i=1; i <=numberPage; i++) {%>
                       <li class="page-item <%= i == page ? 'active' : '' %>">
                         <a class="page-link" href="/admin/director-management/page-<%= i %>">
                           <%= i %>
@@ -231,15 +248,124 @@
   <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
   <!-- main js -->
   <script src="/public/assets/libs/js/main-js.js"></script>
+
   <script>
-    function comfirmDelete(msg, event) {
-      if (window.confirm(msg) == true) {
-        return true;
-      }
-      event.preventDefault();
-      return false;
+    document.addEventListener("DOMContentLoaded", function () {
+      // Lấy các phần tử HTML liên quan đến tìm kiếm
+      var searchInput = document.getElementById("search-director");
+      var searchButton = document.getElementById("search-button");
+
+      // Gắn sự kiện click cho nút tìm kiếm
+      searchButton.addEventListener("click", function () {
+        var searchText = searchInput.value.trim();
+
+        // Gửi yêu cầu tìm kiếm đến server bằng AJAX hoặc fetch
+        fetch(`/admin/director-management/search?keyword=${searchText}`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            // Xử lý kết quả tìm kiếm và cập nhật bảng dữ liệu đạo diễn
+            var tableBody = document.querySelector(".table tbody");
+            tableBody.innerHTML = "";
+
+            data.forEach(function (director, index) {
+              if (searchText === "") {
+                if (index >= 20) {
+                  return;
+                }
+              } else {
+                if (index >= 5) {
+                  return;
+                }
+              }
+
+              var row = document.createElement("tr");
+
+              row.style.cursor = "pointer";
+              row.style.transition = "opacity 1s, transform 0.2s";
+              row.onmouseover = function () {
+                this.style.opacity = "0.6";
+                this.style.transform = "scale(0.99)";
+                this.style.transformOrigin = "center center";
+              };
+              row.onmouseout = function () {
+                this.style.opacity = "1";
+                this.style.transform = "scale(1)";
+                this.style.transformOrigin = "center center";
+              };
+              row.onclick = function () {
+                redirectToDetail(`/admin/director-management/detail/${director.director_url}`);
+              };
+
+              var indexCell = document.createElement("td");
+              indexCell.textContent = index + 1;
+              indexCell.width = "3%";
+              row.appendChild(indexCell);
+
+              // Tạo và điền các ô dữ liệu cho hàng mới
+              var thumbnailCell = document.createElement("td");
+              var thumbnailImage = document.createElement("img");
+              thumbnailCell.width = "7%";
+              thumbnailImage.src = director.director_thumbnail;
+              thumbnailImage.alt = "user";
+              thumbnailImage.classList.add("rounded");
+              thumbnailImage.classList.add("m-r-10");
+              thumbnailImage.width = 70;
+              thumbnailImage.height = 100;
+              thumbnailCell.appendChild(thumbnailImage);
+              row.appendChild(thumbnailCell);
+
+              var nameCell = document.createElement("td");
+              nameCell.width = "12%";
+              nameCell.textContent = director.director_name;
+              row.appendChild(nameCell);
+
+              var urlCell = document.createElement("td");
+              urlCell.width = "12%";
+              urlCell.textContent = director.director_url;
+              row.appendChild(urlCell);
+
+              var movieCell = document.createElement("td");
+              movieCell.width = "4%";
+              movieCell.textContent = director.director_movies.length;
+              row.appendChild(movieCell);
+
+              var descriptionCell = document.createElement("td");
+              descriptionCell.width = "62%";
+              descriptionCell.textContent = director.director_description.slice(0, 130) + '...';
+              row.appendChild(descriptionCell);
+
+              // Thêm hàng mới vào bảng dữ liệu đạo diễn
+              tableBody.appendChild(row);
+            });
+
+            if (searchText === "") {
+              var pagination = document.getElementById("pagination");
+              if (pagination) {
+                pagination.style.display = "block";
+              }
+            } else {
+              var pagination = document.getElementById("pagination");
+              if (pagination) {
+                pagination.style.display = "none";
+              }
+            }
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+    });
+  </script>
+
+  <script>
+    function redirectToDetail(url) {
+      window.location.href = url;
     }
   </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <% if(message && message.length> 0){%>

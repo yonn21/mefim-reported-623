@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Quản lý phim</title>
-  <link rel="icon" href="/public/img/core-img/favicon.png" />
+  <title>Quản lý phim</title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
 <body>
@@ -70,7 +70,7 @@
     <div class="nav-left-sidebar sidebar-dark">
       <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="d-xl-none d-lg-none" href="#">Tổng quan</a>
+          <a class="d-xl-none d-lg-none" href="#">Menu</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,10 +84,10 @@
                 <div id="submenu-1" class="collapse submenu show">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link active" href="/admin/dashboard">Tổng quan</a>
+                      <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/admin/movie-management/page-1">Quản lý phim</a>
+                      <a class="nav-link active" href="/admin/movie-management/page-1">Quản lý phim</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/actor-management/page-1">Quản lý diễn
@@ -136,7 +136,7 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
+                        <a href="/admin/dashboard" class="breadcrumb-link">Menu</a>
                       </li>
                       <li class="breadcrumb-item">
                         <a href="/admin/movie-management/page-1" class="breadcrumb-link">Quản lý
@@ -160,6 +160,19 @@
                   <a class="button" href="/admin/movie-management/add">Thêm phim</a>
                 </div>
                 <div class="card-body p-0">
+                  <div class="row m-3">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input type="text" id="search-movie" class="form-control"
+                          placeholder="Tìm kiếm phim (Nhập tên chính, tên phụ hoặc url phim)">
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <button class="btn btn-primary" id="search-button">Tìm kiếm</button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="table-responsive">
                     <table class="table">
                       <thead class="bg-light">
@@ -168,6 +181,7 @@
                           <th class="border-0">Thumbnail</th>
                           <th class="border-0">Tên chính</th>
                           <th class="border-0">Tên phụ</th>
+                          <th class="border-0">URL</th>
                           <th class="border-0">Năm</th>
                           <th class="border-0">Quốc gia</th>
                           <th class="border-0">Loại</th>
@@ -180,7 +194,6 @@
                           <th class="border-0">View năm</th>
                           <th class="border-0">View tổng</th>
                           <th class="border-0">Lượt thích</th>
-                          <th class="border-0" width="90px">Thao tác</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -189,64 +202,63 @@
                           page): movies %>
                           <% var index=(page - 1) * numberItemPerPage + 1 %>
                             <% listMovie.forEach(element=> {%>
-                              <tr>
-                                <td>
+                              <tr style="cursor: pointer; transition: opacity 1s, transform 0.2s;"
+                                onmouseover="this.style.opacity='0.6'; this.style.transform='scale(0.99)';"
+                                onmouseout="this.style.opacity='1'; this.style.transform='scale(1)';"
+                                onclick="redirectToDetail('/admin/movie-management/detail/<%= element.url_name %>')">
+                                <td width="2%">
                                   <%= index %>
                                 </td>
-                                <td>
+                                <td width="7%">
                                   <div class="m-r-10">
                                     <img src="<%= element.thumbnail %> " alt="user" class="rounded" width="70"
                                       height="100" />
                                   </div>
                                 </td>
-                                <td>
+                                <td width="9%">
                                   <%= element.primary_title %>
                                 </td>
-                                <td>
+                                <td width="9%">
                                   <%= element.secondary_title %>
                                 </td>
-                                <td>
+                                <td width="9%">
+                                  <%= element.url_name %>
+                                </td>
+                                <td width="">
                                   <%= element.year %>
                                 </td>
-                                <td>
+                                <td width="6%">
                                   <%= element.country %>
                                 </td>
-                                <td>
+                                <td width="5%">
                                   <%= element.type %>
                                 </td>
-                                <td>
+                                <td width="8.5%">
                                   <%= element.duration %>
                                 </td>
-                                <td>
+                                <td width="">
                                   <%= element.rating %>
                                 </td>
-                                <td>
+                                <td width="">
                                   <%= element.comment.length %>
                                 </td>
-                                <td>
+                                <td width="7%">
                                   <%= element.views_3days %>
                                 </td>
-                                <td>
+                                <td width="6%">
                                   <%= element.views_week %>
                                 </td>
-                                <td>
+                                <td width="7%">
                                   <%= element.views_month %>
                                 </td>
-                                <td>
+                                <td width="6%">
                                   <%= element.views_year %>
                                 </td>
-                                <td>
+                                <td width="6%">
                                   <%= element.views_all %>
                                 </td>
-                                <td>
+                                <td width="7%">
                                   <%= element.number_favourited %>
-                                </td>
-                                <td>
-                                  <a style="margin-right: 5px" href="/admin/movie-management/edit/<%= element._id %>"><i
-                                      class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa phim này?',event)" style="margin-right: 5px"
-                                    href="/admin/movie-management/remove/<%= element._id %>"><i
-                                      class="fas fa-trash"></i></a>
                                 </td>
                                 <% index++ %>
                               </tr>
@@ -257,7 +269,7 @@
                 </div>
               </div>
             </div>
-            <nav aria-label="Page navigation example" style="margin-right: 15px">
+            <nav aria-label="Page navigation example" style="margin-right: 15px" id="pagination">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
                   <% movies.length % numberItemPerPage==0 ? numberPage=parseInt(movies.length/numberItemPerPage) :
@@ -279,6 +291,173 @@
 
   <!-- Optional JavaScript -->
   <!-- jquery 3.3.1 -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Lấy các phần tử HTML liên quan đến tìm kiếm
+      var searchInput = document.getElementById("search-movie");
+      var searchButton = document.getElementById("search-button");
+
+      // Gắn sự kiện click cho nút tìm kiếm
+      searchButton.addEventListener("click", function () {
+        var searchText = searchInput.value.trim();
+
+        // Gửi yêu cầu tìm kiếm đến server bằng AJAX hoặc fetch
+        fetch(`/admin/movie-management/search?keyword=${searchText}`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            // Xử lý kết quả tìm kiếm và cập nhật bảng dữ liệu diễn viên
+            var tableBody = document.querySelector(".table tbody");
+            tableBody.innerHTML = "";
+
+            data.forEach(function (movie, index) {
+              if (searchText === "") {
+                if (index >= 20) {
+                  return;
+                }
+              } else {
+                if (index >= 5) {
+                  return;
+                }
+              }
+
+              var row = document.createElement("tr");
+
+              row.style.cursor = "pointer";
+              row.style.transition = "opacity 1s, transform 0.2s";
+              row.onmouseover = function () {
+                this.style.opacity = "0.6";
+                this.style.transform = "scale(0.99)";
+                this.style.transformOrigin = "center center";
+              };
+              row.onmouseout = function () {
+                this.style.opacity = "1";
+                this.style.transform = "scale(1)";
+                this.style.transformOrigin = "center center";
+              };
+              row.onclick = function () {
+                redirectToDetail(`/admin/movie-management/detail/${movie.url_name}`);
+              };
+
+              var indexCell = document.createElement("td");
+              indexCell.width = "2%";
+              indexCell.textContent = index + 1;
+              row.appendChild(indexCell);
+
+              // Tạo và điền các ô dữ liệu cho hàng mới
+              var thumbnailCell = document.createElement("td");
+              var thumbnailImage = document.createElement("img");
+              thumbnailCell.width = "7%";
+              thumbnailImage.src = movie.thumbnail;
+              thumbnailImage.alt = "user";
+              thumbnailImage.classList.add("rounded");
+              thumbnailImage.classList.add("m-r-10");
+              thumbnailImage.width = 70;
+              thumbnailImage.height = 100;
+              thumbnailCell.appendChild(thumbnailImage);
+              row.appendChild(thumbnailCell);
+
+              var primaryTitleCell = document.createElement("td");
+              primaryTitleCell.width = "9%";
+              primaryTitleCell.textContent = movie.primary_title;
+              row.appendChild(primaryTitleCell);
+
+              var secondaryTitleCell = document.createElement("td");
+              secondaryTitleCell.width = "9%";
+              secondaryTitleCell.textContent = movie.secondary_title;
+              row.appendChild(secondaryTitleCell);
+
+              var urlCell = document.createElement("td");
+              urlCell.width = "9%";
+              urlCell.textContent = movie.url_name;
+              row.appendChild(urlCell);
+
+              var yearCell = document.createElement("td");
+              yearCell.width = "";
+              yearCell.textContent = movie.year;
+              row.appendChild(yearCell);
+
+              var countryCell = document.createElement("td");
+              countryCell.width = "6%";
+              countryCell.textContent = movie.country;
+              row.appendChild(countryCell);
+
+              var typeCell = document.createElement("td");
+              typeCell.width = "5%";
+              typeCell.textContent = movie.type;
+              row.appendChild(typeCell);
+
+              var durationCell = document.createElement("td");
+              durationCell.width = "8.5%";
+              durationCell.textContent = movie.duration;
+              row.appendChild(durationCell);
+
+              var ratingCell = document.createElement("td");
+              ratingCell.width = "";
+              ratingCell.textContent = movie.rating;
+              row.appendChild(ratingCell);
+
+              var commentCell = document.createElement("td");
+              commentCell.width = "";
+              commentCell.textContent = movie.comment.length;
+              row.appendChild(commentCell);
+
+              var views3DaysCell = document.createElement("td");
+              views3DaysCell.width = "7%";
+              views3DaysCell.textContent = movie.views_3days;
+              row.appendChild(views3DaysCell);
+
+              var viewsWeekCell = document.createElement("td");
+              viewsWeekCell.width = "6%";
+              viewsWeekCell.textContent = movie.views_week;
+              row.appendChild(viewsWeekCell);
+
+              var viewsMonthCell = document.createElement("td");
+              viewsMonthCell.width = "7%";
+              viewsMonthCell.textContent = movie.views_month;
+              row.appendChild(viewsMonthCell);
+
+              var viewsYearCell = document.createElement("td");
+              viewsYearCell.width = "6%";
+              viewsYearCell.textContent = movie.views_year;
+              row.appendChild(viewsYearCell);
+
+              var viewsAllCell = document.createElement("td");
+              viewsAllCell.width = "6%";
+              viewsAllCell.textContent = movie.views_all;
+              row.appendChild(viewsAllCell);
+
+              var likesCell = document.createElement("td");
+              likesCell.width = "7%";
+              likesCell.textContent = movie.number_favourited;
+              row.appendChild(likesCell);
+
+              // Thêm hàng mới vào bảng dữ liệu phim
+              tableBody.appendChild(row);
+            });
+
+            if (searchText === "") {
+              var pagination = document.getElementById("pagination");
+              if (pagination) {
+                pagination.style.display = "block";
+              }
+            } else {
+              var pagination = document.getElementById("pagination");
+              if (pagination) {
+                pagination.style.display = "none";
+              }
+            }
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+    });
+  </script>
+
   <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
   <!-- bootstap bundle js -->
   <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
@@ -286,16 +465,14 @@
   <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
   <!-- main js -->
   <script src="/public/assets/libs/js/main-js.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   <script>
-    function comfirmDelete(msg, event) {
-      if (window.confirm(msg) == true) {
-        return true;
-      }
-      event.preventDefault();
-      return false;
+    function redirectToDetail(url) {
+      window.location.href = url;
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <% if(message && message.length> 0){%>
     <script>

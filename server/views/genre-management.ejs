@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-  <title>Mefim - Quản lý thể loại</title>
-  <link rel="icon" href="/public/img/core-img/favicon.png" />
+  <title>Quản lý thể loại</title>
+  <link rel="icon" href="/public/img/core-img/favicon.ico" />
 </head>
 
 <body>
@@ -70,7 +70,7 @@
     <div class="nav-left-sidebar sidebar-dark">
       <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="d-xl-none d-lg-none" href="#">Tổng quan</a>
+          <a class="d-xl-none d-lg-none" href="#">Menu</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,7 +84,7 @@
                 <div id="submenu-1" class="collapse submenu show">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link active" href="/admin/dashboard">Tổng quan</a>
+                      <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/movie-management/page-1">Quản lý phim</a>
@@ -96,7 +96,7 @@
                       <a class="nav-link" href="/admin/director-management/page-1">Quản lý đạo diễn</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/admin/genre-management/page-1">Quản lý thể loại</a>
+                      <a class="nav-link active" href="/admin/genre-management/page-1">Quản lý thể loại</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/rating-management/page-1">Quản lý đánh giá</a>
@@ -130,14 +130,14 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="/admin/dashboard" class="breadcrumb-link">Tổng quan</a>
+                        <a href="/admin/dashboard" class="breadcrumb-link">Menu</a>
                       </li>
                       <li class="breadcrumb-item">
                         <a href="/admin/genre-management/page-1" class="breadcrumb-link">Quản lý thể loại</a>
                       </li>
-                      <li class="breadcrumb-item active" aria-current="page">
+                      <!-- <li class="breadcrumb-item active" aria-current="page">
                         Trang <%= page %>
-                      </li>
+                      </li> -->
                     </ol>
                   </nav>
                 </div>
@@ -159,8 +159,8 @@
                         <tr class="border-0">
                           <th class="border-0">#</th>
                           <th class="border-0">Tên</th>
-                          <th class="border-0">Mô tả</th>
-                          <th class="border-0" width="90px">Thao tác</th>
+                          <th class="border-0">URL</th>
+                          <th class="border-0">Số phim</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -168,7 +168,10 @@
                           genres.slice((page - 1) * numberItemPerPage, numberItemPerPage * page) : genres %>
                           <% var index=(page - 1) * numberItemPerPage + 1 %>
                             <% listGenre.forEach(element=> { %>
-                              <tr>
+                              <tr style="cursor: pointer; transition: opacity 1s, transform 0.2s;"
+                                onmouseover="this.style.opacity='0.6'; this.style.transform='scale(0.995)';"
+                                onmouseout="this.style.opacity='1'; this.style.transform='scale(1)';"
+                                onclick="redirectToDetail('/admin/genre-management/detail/<%= element.genre_url %>')">
                                 <td>
                                   <%= index %>
                                 </td>
@@ -176,14 +179,10 @@
                                   <%= element.genre_name %>
                                 </td>
                                 <td>
-                                  <%= element.genre_description %>
+                                  <%= element.genre_url %>
                                 </td>
                                 <td>
-                                  <a style="margin-right: 5px" href="/admin/genre-management/edit/<%= element._id %>"><i
-                                      class="fas fa-edit"></i></a>
-                                  <a onclick="comfirmDelete('Xóa thể loại này?',event)" style="margin-right: 5px"
-                                    href="/admin/genre-management/remove/<%= element._id %>"><i
-                                      class="fas fa-trash"></i></a>
+                                  <%= element.genre_movies.length %>
                                 </td>
                                 <% index++ %>
                               </tr>
@@ -194,7 +193,7 @@
                 </div>
               </div>
             </div>
-            <nav aria-label="Page navigation example" style="margin-right: 15px">
+            <!-- <nav aria-label="Page navigation example" style="margin-right: 15px">
               <ul class="pagination justify-content-end">
                 <% numberPage=0 %>
                   <% genres.length % numberItemPerPage==0 ? numberPage=parseInt(genres.length/numberItemPerPage) :
@@ -207,7 +206,7 @@
                       </li>
                       <% } %>
               </ul>
-            </nav>
+            </nav> -->
           </div>
         </div>
       </div>
@@ -223,15 +222,13 @@
   <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
   <!-- main js -->
   <script src="/public/assets/libs/js/main-js.js"></script>
+
   <script>
-    function comfirmDelete(msg, event) {
-      if (window.confirm(msg) == true) {
-        return true;
-      }
-      event.preventDefault();
-      return false;
+    function redirectToDetail(url) {
+      window.location.href = url;
     }
   </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <% if(message && message.length> 0){%>
