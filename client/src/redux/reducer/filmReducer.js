@@ -7,6 +7,8 @@ const initialState = {
   ListPhimChieuRap: [],
   listPhimLeMoiCapNhat: [],
   listPhimChieuRapTheoNam: [],
+  filmInfo: {},
+  genres: {}
 }
 
 const filmReducer = createSlice({
@@ -14,11 +16,14 @@ const filmReducer = createSlice({
   initialState,
   reducers: {
     getAllMovieApiAction: (state, action) => {
-      state.listPhimLeMoiCapNhat = action.payload;
+      state.listPhimLeMoiCapNhat = action.payload.latestMoviesByType1ToRender;
     },
-    // getPhimLeMoiCapNhat: (state, action) => {
-    //   state.listPhimLeMoiCapNhat = state.listPhimLe;
-    // },
+    getMovieApiAction: (state, action) => {
+      state.filmInfo = action.payload;
+    },
+    getMovieByGenresApiAction: (state, action) => {
+      state.genres = action.payload;
+    },
     getPhimLeTheoTheLoai: (state, action) => {
       const gettheloai = action.payload;
       console.log(gettheloai);
@@ -53,23 +58,51 @@ const filmReducer = createSlice({
   }
 });
 
-export const { getAllMovieApiAction, getPhimChieuRap, getPhimLeTheoTheLoai, getPhimChieuRapTheoNam } = filmReducer.actions
+export const { getAllMovieApiAction, getMovieApiAction, getMovieByGenresApiAction, getPhimChieuRap, getPhimLeTheoTheLoai, getPhimChieuRapTheoNam } = filmReducer.actions
 
 export default filmReducer.reducer
 
 export const getAllMovieApi = () => {
-
-    return async (dispatch,getState) => {
-
-        try{
-            const result = await axios ({
-                url: 'http://localhost:6969/',
-                method:'GET'
-            });
-            const action = getAllMovieApiAction(result.data);
-            dispatch(action);
-        }catch (err) {
-            console.log(err)
-        }
+  return async (dispatch, getState) => {
+    try {
+      const result = await axios({
+        url: 'http://localhost:6969/',
+        method: 'GET'
+      });
+      const action = getAllMovieApiAction(result.data);
+      dispatch(action);
+    } catch (err) {
+      console.log(err)
     }
+  }
+}
+
+export const getMovieApi = (url_name) => {
+  return async (dispatch, getState) => {
+    try {
+      const result = await axios({
+        url: `http://localhost:6969/phim/${url_name}`,
+        method: 'GET'
+      });
+      const action = getMovieApiAction(result.data);
+      dispatch(action);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
+export const getMovieByGenresApi = (genre_url) => {
+  return async (dispatch, getState) => {
+    try {
+      const result = await axios({
+        url: `http://localhost:6969/the-loai/${genre_url}`,
+        method: 'GET'
+      });
+      const action = getMovieByGenresApiAction(result.data);
+      dispatch(action);
+    } catch (err) {
+      console.log(err)
+    }
+  }
 }

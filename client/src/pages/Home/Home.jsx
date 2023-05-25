@@ -12,9 +12,6 @@ export default function Home(props) {
         const actionGetPhimLe = getAllMovieApi()
         dispatch(actionGetPhimLe)
 
-        // const actionGetPhimLeMoiCapNhat = getPhimLeMoiCapNhat()
-        // dispatch(actionGetPhimLeMoiCapNhat)
-
         const actionGetPhimChieuRap = getPhimChieuRap()
         dispatch(actionGetPhimChieuRap)
     }, [dispatch]);
@@ -23,7 +20,7 @@ export default function Home(props) {
         return listPhimLeMoiCapNhat.map((film, index) => {
             if (index === 0) {
                 return <div className="large" key={index}>
-                    <NavLink title={film.primary_title} to={`/info/${film.primary_title}`}>
+                    <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
                         <img src={film.thumbnail} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>
@@ -31,7 +28,7 @@ export default function Home(props) {
                 </div>
             } else {
                 return <div className="small" key={index}>
-                    <NavLink title={film.primary_title} to={`/info/${film.primary_title}`}>
+                    <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
                         <img src={film.thumbnail} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>

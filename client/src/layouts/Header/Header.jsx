@@ -25,22 +25,22 @@ export default function Header(props) {
                             <div className="dropdown-menu">
                                 <div className="row">
                                     <div className="col-6">
-                                        <NavLink className="dropdown-item" to={"/genre/phim hành động"}>Phim Hành Động</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim tình cảm">Phim Tình Cảm</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim hài hước">Phim Hài Hước</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim cổ trang">Phim Cổ Trang</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim tâm lý">Phim Tâm Lý</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim hình sự">Phim Hình Sự</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim chiến tranh">Phim Chiến Tranh</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/hanh-dong">Phim Hành Động</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/tinh-cam">Phim Tình Cảm</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/hai-huoc">Phim Hài Hước</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/co-trang">Phim Cổ Trang</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/tam-ly">Phim Tâm Lý</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/hinh-su">Phim Hình Sự</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/chien-tranh">Phim Chiến Tranh</NavLink>
                                     </div>
                                     <div className="col-6">
-                                        <NavLink className="dropdown-item" to="/genre/phim võ thuật">Phim Võ Thuật</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim hoạt hình">Phim Hoạt Hình</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim viễn tưởng">Phim Viễn Tưởng</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim phiêu lưu">Phim Phiêu Lưu</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim khoa học">Phim Khoa Học</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim ma - kinh dị">Phim Ma - Kinh Dị</NavLink>
-                                        <NavLink className="dropdown-item" to="/genre/phim âm nhạc">Phim Âm Nhạc</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/vo-thuat">Phim Võ Thuật</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/hoat-hinh">Phim Hoạt Hình</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/vien-tuong">Phim Viễn Tưởng</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/phieu-luu">Phim Phiêu Lưu</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/khoa-hoc">Phim Khoa Học</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/kinh-di">Phim Kinh Dị</NavLink>
+                                        <NavLink className="dropdown-item" to="/the-loai/am-nhac">Phim Âm Nhạc</NavLink>
                                     </div>
                                 </div>
                             </div>

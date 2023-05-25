@@ -130,6 +130,14 @@ class MovieController {
         result.directors = await getDirectorInfo(result.directors);
         result.actors = await getActorInfo(result.actors);
         result.genres = await getGenreInfo(result.genres);
+        result.thumbnail = result.thumbnail.replace(
+          "/./public",
+          "http://localhost:6969/public"
+        );
+        result.cover_image = result.cover_image.replace(
+          "/./public",
+          "http://localhost:6969/public"
+        );
         res.json(result);
       }
     } catch (err) {
@@ -283,7 +291,7 @@ class MovieController {
       });
     }
   }
-  
+
   async getMovieByCountry(req, res, next) {
     const country_url = req.params.country_url;
     try {
