@@ -59,6 +59,76 @@ async function createMovieListToRender(movies) {
   }));
 }
 
+const replaceMoviesArrayPublicPath = (movies) => {
+  return movies.map((movie) => {
+    movie.thumbnail = movie.thumbnail.replace(
+      "/./public",
+      "http://localhost:6969/public"
+    );
+    movie.cover_image = movie.cover_image.replace(
+      "/./public",
+      "http://localhost:6969/public"
+    );
+    return movie;
+  });
+};
+
+const replaceMoviePublicPath = (movie) => {
+  movie.thumbnail = movie.thumbnail.replace(
+    "/./public",
+    "http://localhost:6969/public"
+  );
+  movie.cover_image = movie.cover_image.replace(
+    "/./public",
+    "http://localhost:6969/public"
+  );
+  return movie;
+};
+
+const replaceDirectorPublicPath = (data) => {
+  data.director_thumbnail = data.director_thumbnail.replace(
+    "/public",
+    "http://localhost:6969/public"
+  );
+  data.director_movies.forEach((movie) => {
+    if (movie.thumbnail) {
+      movie.thumbnail = movie.thumbnail.replace(
+        "/./public",
+        "http://localhost:6969/public"
+      );
+    }
+  });
+  return data;
+};
+
+const replaceActorPublicPath = (data) => {
+  data.actor_thumbnail = data.actor_thumbnail.replace(
+    "/public",
+    "http://localhost:6969/public"
+  );
+  data.actor_movies.forEach((movie) => {
+    if (movie.thumbnail) {
+      movie.thumbnail = movie.thumbnail.replace(
+        "/./public",
+        "http://localhost:6969/public"
+      );
+    }
+  });
+  return data;
+};
+
+const replaceGenrePublicPath = (data) => {
+  data.genre_movies.forEach((movie) => {
+    if (movie.thumbnail) {
+      movie.thumbnail = movie.thumbnail.replace(
+        "/./public",
+        "http://localhost:6969/public"
+      );
+    }
+  });
+  return data;
+};
+
 class MovieController {
   async getMainMovie(req, res, next) {
     try {
@@ -66,25 +136,34 @@ class MovieController {
         .find({ type_url: "phim-le" })
         .sort({ created_at: -1 })
         .limit(12);
+      const latestMoviesByType1Path = await replaceMoviesArrayPublicPath(
+        latestMoviesByType1
+      );
 
       const latestMoviesByGenre = await moviesModel
         .find({ genres: "phim-chieu-rap" })
         .sort({ created_at: -1 })
         .limit(12);
+      const latestMoviesByGenrePath = await replaceMoviesArrayPublicPath(
+        latestMoviesByGenre
+      );
 
       const latestMoviesByType2 = await moviesModel
         .find({ type_url: "phim-bo" })
         .sort({ created_at: -1 })
         .limit(12);
+      const latestMoviesByType2Path = await replaceMoviesArrayPublicPath(
+        latestMoviesByType2
+      );
 
       const latestMoviesByType1ToRender = await createMovieListToRender(
-        latestMoviesByType1
+        latestMoviesByType1Path
       );
       const latestMoviesByGenreToRender = await createMovieListToRender(
-        latestMoviesByGenre
+        latestMoviesByGenrePath
       );
       const latestMoviesByType2ToRender = await createMovieListToRender(
-        latestMoviesByType2
+        latestMoviesByType2Path
       );
 
       const mainMovies = {
@@ -105,8 +184,9 @@ class MovieController {
   async getAllMovie(req, res, next) {
     try {
       const result = await moviesModel.find({}).sort({ created_at: -1 });
+      const resultPath = replaceMoviesArrayPublicPath(result);
 
-      const moviesToRender = await createMovieListToRender(result);
+      const moviesToRender = await createMovieListToRender(resultPath);
 
       res.json(moviesToRender);
     } catch (err) {
@@ -123,14 +203,16 @@ class MovieController {
       const result = await moviesModel
         .findOne({ url_name: url })
         .sort({ created_at: -1 });
+      const resultPath = replaceMoviePublicPath(result);
 
       if (!result) {
         res.status(404).json({ error: "Không tìm thấy phim" });
       } else {
-        result.directors = await getDirectorInfo(result.directors);
-        result.actors = await getActorInfo(result.actors);
-        result.genres = await getGenreInfo(result.genres);
-        res.json(result);
+        resultPath.directors = await getDirectorInfo(result.directors);
+        resultPath.actors = await getActorInfo(result.actors);
+        resultPath.genres = await getGenreInfo(result.genres);
+
+        res.json(resultPath);
       }
     } catch (err) {
       console.log(err);
@@ -173,11 +255,13 @@ class MovieController {
         director_movies: movies.filter(Boolean),
       };
 
-      res.json(directorInfo);
+      const directorInfoPath = replaceDirectorPublicPath(directorInfo);
+
+      res.json(directorInfoPath);
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
+        error: "Đã xảy ra lỗi khi truy xuất phim theo đạo diễn",
       });
     }
   }
@@ -215,11 +299,13 @@ class MovieController {
         actor_movies: movies.filter(Boolean),
       };
 
-      res.json(actorInfo);
+      const actorInfoPath = replaceActorPublicPath(actorInfo);
+
+      res.json(actorInfoPath);
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
+        error: "Đã xảy ra lỗi khi truy xuất phim theo diễn viên",
       });
     }
   }
@@ -232,7 +318,7 @@ class MovieController {
       });
 
       if (!genre) {
-        res.status(404).json({ error: "Không tìm thấy đạo diễn" });
+        res.status(404).json({ error: "Không tìm thấy thể loại" });
         return;
       }
 
@@ -257,11 +343,13 @@ class MovieController {
         genre_movies: movies.filter(Boolean),
       };
 
-      res.json(genreInfo);
+      const genreInfoPath = replaceGenrePublicPath(genreInfo);
+
+      res.json(genreInfoPath);
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
+        error: "Đã xảy ra lỗi khi truy xuất phim theo thể loại",
       });
     }
   }
@@ -272,26 +360,28 @@ class MovieController {
       const movies = await moviesModel
         .find({ year: year })
         .sort({ created_at: -1 });
+      const moviesPath = replaceMoviesArrayPublicPath(movies);
 
-      const moviesToRender = await createMovieListToRender(movies);
+      const moviesToRender = await createMovieListToRender(moviesPath);
 
       res.json(moviesToRender);
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        error: "Đã xảy ra lỗi khi truy xuất chi tiết phim",
+        error: "Đã xảy ra lỗi khi truy xuất phim theo năm",
       });
     }
   }
-  
+
   async getMovieByCountry(req, res, next) {
     const country_url = req.params.country_url;
     try {
       const movies = await moviesModel
         .find({ country_url: country_url })
         .sort({ created_at: -1 });
+      const moviesPath = replaceMoviesArrayPublicPath(movies);
 
-      const moviesToRender = await createMovieListToRender(movies);
+      const moviesToRender = await createMovieListToRender(moviesPath);
 
       res.json(moviesToRender);
     } catch (err) {
@@ -308,8 +398,9 @@ class MovieController {
       const movies = await moviesModel
         .find({ type_url: typeUrl })
         .sort({ created_at: -1 });
+      const moviesPath = replaceMoviesArrayPublicPath(movies);
 
-      const moviesToRender = await createMovieListToRender(movies);
+      const moviesToRender = await createMovieListToRender(moviesPath);
 
       res.json(moviesToRender);
     } catch (err) {
