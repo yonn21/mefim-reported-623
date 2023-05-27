@@ -51,11 +51,21 @@ const getGenreInfo = async (genreUrls) => {
   }
 };
 
+async function createMovieListToRender(movies) {
+  return movies.map((movie) => ({
+    url_name: movie.url_name,
+    primary_title: movie.primary_title,
+    thumbnail: movie.thumbnail,
+    cover_image: movie.cover_image,
+  }));
+}
+
 async function createMovieListByYearToRender(movies, year) {
   const movieList = movies.map((movie) => ({
     url_name: movie.url_name,
     primary_title: movie.primary_title,
     thumbnail: movie.thumbnail,
+    cover_image: movie.cover_image,
   }));
 
   return {
@@ -69,6 +79,7 @@ async function createMovieListByCountryToRender(movies, country_url) {
     url_name: movie.url_name,
     primary_title: movie.primary_title,
     thumbnail: movie.thumbnail,
+    cover_image: movie.cover_image,
   }));
 
   const country = movies.length > 0 ? movies[0].country : "Chưa có phim";
@@ -85,6 +96,7 @@ async function createMovieListByTypeToRender(movies, type_url) {
     url_name: movie.url_name,
     primary_title: movie.primary_title,
     thumbnail: movie.thumbnail,
+    cover_image: movie.cover_image,
   }));
 
   const type = movies.length > 0 ? movies[0].type : "Chưa có phim";
