@@ -17,7 +17,7 @@ export default function Genre({ match }) {
         if (genres && genres.genre_movies) {
             return genres.genre_movies.map((film, index) => {
                 return <div className="small" key={index}>
-                    <NavLink title={film.primary_title} to={`/info/${film.primary_title}`}>
+                    <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
                         <img src={film.thumbnail} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>
@@ -46,3 +46,4 @@ export default function Genre({ match }) {
         </div>
     )
 }
+

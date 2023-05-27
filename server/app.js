@@ -121,7 +121,7 @@ passport.deserializeUser((user, done) => {
 
 // Mongoose connect
 mongoose
-  .connect("mongodb://127.0.0.1/mefims", {
+  .connect("mongodb://127.0.0.1/mefilm", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

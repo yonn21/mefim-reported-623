@@ -8,7 +8,8 @@ const initialState = {
   listPhimLeMoiCapNhat: [],
   listPhimChieuRapTheoNam: [],
   filmInfo: {},
-  genres: {}
+  genres: {},
+  country: [],
 }
 
 const filmReducer = createSlice({
@@ -23,6 +24,9 @@ const filmReducer = createSlice({
     },
     getMovieByGenresApiAction: (state, action) => {
       state.genres = action.payload;
+    },
+    getMovieByCountryApiAction: (state, action) => {
+      state.country = action.payload;
     },
     getPhimLeTheoTheLoai: (state, action) => {
       const gettheloai = action.payload;
@@ -58,7 +62,7 @@ const filmReducer = createSlice({
   }
 });
 
-export const { getAllMovieApiAction, getMovieApiAction, getMovieByGenresApiAction, getPhimChieuRap, getPhimLeTheoTheLoai, getPhimChieuRapTheoNam } = filmReducer.actions
+export const { getAllMovieApiAction, getMovieApiAction, getMovieByGenresApiAction, getMovieByCountryApiAction } = filmReducer.actions
 
 export default filmReducer.reducer
 
@@ -100,6 +104,21 @@ export const getMovieByGenresApi = (genre_url) => {
         method: 'GET'
       });
       const action = getMovieByGenresApiAction(result.data);
+      dispatch(action);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
+export const getMovieByCountryApi = (country_url) => {
+  return async (dispatch, getState) => {
+    try {
+      const result = await axios({
+        url: `http://localhost:6969/quoc-gia/${country_url}`,
+        method: 'GET'
+      });
+      const action = getMovieByCountryApiAction(result.data);
       dispatch(action);
     } catch (err) {
       console.log(err)

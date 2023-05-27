@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovieApi } from '../../redux/reducer/filmReducer';
+import { NavLink } from 'react-router-dom';
 
 export default function Info({ match }) {
     let url_name = match.params.name;
@@ -15,7 +16,7 @@ export default function Info({ match }) {
     const renderGener = () => {
         if (filmInfo && filmInfo.genres) {
             return filmInfo.genres.map((item, index) => {
-                return <span key={index}> {item.genre_name}, </span>;
+                return <NavLink to={`/the-loai/${item.genre_url}`} key={index}> {item.genre_name} </NavLink>;
             });
         }
         return null;
