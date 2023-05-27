@@ -51,12 +51,49 @@ const getGenreInfo = async (genreUrls) => {
   }
 };
 
-async function createMovieListToRender(movies) {
-  return movies.map((movie) => ({
+async function createMovieListByYearToRender(movies, year) {
+  const movieList = movies.map((movie) => ({
     url_name: movie.url_name,
     primary_title: movie.primary_title,
     thumbnail: movie.thumbnail,
   }));
+
+  return {
+    year: year,
+    year_movies: movieList,
+  };
+}
+
+async function createMovieListByCountryToRender(movies, country_url) {
+  const movieList = movies.map((movie) => ({
+    url_name: movie.url_name,
+    primary_title: movie.primary_title,
+    thumbnail: movie.thumbnail,
+  }));
+
+  const country = movies.length > 0 ? movies[0].country : "Chưa có phim";
+
+  return {
+    country_url: country_url,
+    country: country,
+    country_movies: movieList,
+  };
+}
+
+async function createMovieListByTypeToRender(movies, type_url) {
+  const movieList = movies.map((movie) => ({
+    url_name: movie.url_name,
+    primary_title: movie.primary_title,
+    thumbnail: movie.thumbnail,
+  }));
+
+  const type = movies.length > 0 ? movies[0].type : "Chưa có phim";
+
+  return {
+    type_url: type_url,
+    type: type,
+    year_movies: movieList,
+  };
 }
 
 const replaceMoviesArrayPublicPath = (movies) => {
@@ -362,7 +399,10 @@ class MovieController {
         .sort({ created_at: -1 });
       const moviesPath = replaceMoviesArrayPublicPath(movies);
 
-      const moviesToRender = await createMovieListToRender(moviesPath);
+      const moviesToRender = await createMovieListByYearToRender(
+        moviesPath,
+        year
+      );
 
       res.json(moviesToRender);
     } catch (err) {
@@ -381,7 +421,10 @@ class MovieController {
         .sort({ created_at: -1 });
       const moviesPath = replaceMoviesArrayPublicPath(movies);
 
-      const moviesToRender = await createMovieListToRender(moviesPath);
+      const moviesToRender = await createMovieListByCountryToRender(
+        moviesPath,
+        country_url
+      );
 
       res.json(moviesToRender);
     } catch (err) {
@@ -400,7 +443,10 @@ class MovieController {
         .sort({ created_at: -1 });
       const moviesPath = replaceMoviesArrayPublicPath(movies);
 
-      const moviesToRender = await createMovieListToRender(moviesPath);
+      const moviesToRender = await createMovieListByTypeToRender(
+        moviesPath,
+        typeUrl
+      );
 
       res.json(moviesToRender);
     } catch (err) {
