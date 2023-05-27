@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllMovieApi, getPhimLeTheoTheLoai, getPhimChieuRap, getPhimChieuRapTheoNam } from '../../redux/reducer/filmReducer';
+import { getAllMovieApi} from '../../redux/reducer/filmReducer';
 
 export default function Home(props) {
 
@@ -11,19 +11,13 @@ export default function Home(props) {
     useEffect(() => {
         const actionGetPhimLe = getAllMovieApi()
         dispatch(actionGetPhimLe)
-
-        // const actionGetPhimLeMoiCapNhat = getPhimLeMoiCapNhat()
-        // dispatch(actionGetPhimLeMoiCapNhat)
-
-        const actionGetPhimChieuRap = getPhimChieuRap()
-        dispatch(actionGetPhimChieuRap)
     }, [dispatch]);
 
     const renderPhimle = () => {
         return listPhimLeMoiCapNhat.map((film, index) => {
             if (index === 0) {
                 return <div className="large" key={index}>
-                    <NavLink title={film.primary_title} to={`/info/${film.primary_title}`}>
+                    <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
                         <img src={film.thumbnail} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>
@@ -31,7 +25,7 @@ export default function Home(props) {
                 </div>
             } else {
                 return <div className="small" key={index}>
-                    <NavLink title={film.primary_title} to={`/info/${film.primary_title}`}>
+                    <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
                         <img src={film.thumbnail} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>
@@ -72,22 +66,22 @@ export default function Home(props) {
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const theloai = "khoa hoc vien tuong";
-                        const action = getPhimLeTheoTheLoai(theloai);
-                        dispatch(action);
+                        // const action = getPhimLeTheoTheLoai(theloai);
+                        // dispatch(action);
                     }}>Khoa hoc vien tuong</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const theloai = "phim hoạt hình";
-                        const action = getPhimLeTheoTheLoai(theloai);
-                        dispatch(action);
+                        // const action = getPhimLeTheoTheLoai(theloai);
+                        // dispatch(action);
                     }}>Hoạt hình</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const theloai = "phim ma - kinh dị";
-                        const action = getPhimLeTheoTheLoai(theloai);
-                        dispatch(action);
+                        // const action = getPhimLeTheoTheLoai(theloai);
+                        // dispatch(action);
                     }}>Kinh dị</button>
                 </li>
             </ul>
@@ -101,29 +95,29 @@ export default function Home(props) {
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const year = "2023";
-                        const action = getPhimChieuRapTheoNam(year);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(year);
+                        // dispatch(action);
                     }}>2023</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const year = "2022";
-                        const action = getPhimChieuRapTheoNam(year);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(year);
+                        // dispatch(action);
                     }}>2022</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const year = "2021";
-                        const action = getPhimChieuRapTheoNam(year);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(year);
+                        // dispatch(action);
                     }}>2021</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const year = "2020";
-                        const action = getPhimChieuRapTheoNam(year);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(year);
+                        // dispatch(action);
                     }}>2020</button>
                 </li>
             </ul>
@@ -137,29 +131,29 @@ export default function Home(props) {
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const nation = "phim hàn quốc";
-                        const action = getPhimChieuRapTheoNam(nation);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(nation);
+                        // dispatch(action);
                     }}>Hàn Quốc</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const nation = "phim trung quốc";
-                        const action = getPhimChieuRapTheoNam(nation);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(nation);
+                        // dispatch(action);
                     }}>Trung Quốc</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const nation = "phim âu mỹ";
-                        const action = getPhimChieuRapTheoNam(nation);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(nation);
+                        // dispatch(action);
                     }}>Âu - Mỹ</button>
                 </li>
                 <li className="nav-item">
                     <button className="nav-link btn" onClick={() => {
                         const nation = "2020";
-                        const action = getPhimChieuRapTheoNam(nation);
-                        dispatch(action);
+                        // const action = getPhimChieuRapTheoNam(nation);
+                        // dispatch(action);
                     }}>Phim Bộ Full</button>
                 </li>
             </ul>

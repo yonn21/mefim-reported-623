@@ -259,6 +259,10 @@ div {
   margin: 3px 0;
   font-weight: 700;
 }
+.container-info .film-des a {
+  color: red;
+  font-size: 14px;
+}
 .container-info .film-des span {
   color: red;
   font-size: 14px;
