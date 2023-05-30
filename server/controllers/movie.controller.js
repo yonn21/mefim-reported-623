@@ -6,6 +6,8 @@ const moviesModel = require("../models/movies");
 const ratingsModel = require("../models/ratings");
 const usersModel = require("../models/users");
 
+var HOST_SERVER = "http://localhost:6969";
+
 const getDirectorInfo = async (directorUrls) => {
   try {
     const directors = await directorsModel.find(
@@ -104,7 +106,7 @@ async function createMovieListByTypeToRender(movies, type_url) {
   return {
     type_url: type_url,
     type: type,
-    year_movies: movieList,
+    type_movies: movieList,
   };
 }
 
@@ -112,11 +114,11 @@ const replaceMoviesArrayPublicPath = (movies) => {
   return movies.map((movie) => {
     movie.thumbnail = movie.thumbnail.replace(
       "/./public",
-      "http://localhost:6969/public"
+      HOST_SERVER + "/public"
     );
     movie.cover_image = movie.cover_image.replace(
       "/./public",
-      "http://localhost:6969/public"
+      HOST_SERVER + "/public"
     );
     return movie;
   });
@@ -125,11 +127,11 @@ const replaceMoviesArrayPublicPath = (movies) => {
 const replaceMoviePublicPath = (movie) => {
   movie.thumbnail = movie.thumbnail.replace(
     "/./public",
-    "http://localhost:6969/public"
+    HOST_SERVER + "/public"
   );
   movie.cover_image = movie.cover_image.replace(
     "/./public",
-    "http://localhost:6969/public"
+    HOST_SERVER + "/public"
   );
   return movie;
 };
@@ -137,13 +139,19 @@ const replaceMoviePublicPath = (movie) => {
 const replaceDirectorPublicPath = (data) => {
   data.director_thumbnail = data.director_thumbnail.replace(
     "/public",
-    "http://localhost:6969/public"
+    HOST_SERVER + "/public"
   );
   data.director_movies.forEach((movie) => {
     if (movie.thumbnail) {
       movie.thumbnail = movie.thumbnail.replace(
         "/./public",
-        "http://localhost:6969/public"
+        HOST_SERVER + "/public"
+      );
+    }
+    if (movie.cover_image) {
+      movie.cover_image = movie.cover_image.replace(
+        "/./public",
+        HOST_SERVER + "/public"
       );
     }
   });
@@ -153,13 +161,19 @@ const replaceDirectorPublicPath = (data) => {
 const replaceActorPublicPath = (data) => {
   data.actor_thumbnail = data.actor_thumbnail.replace(
     "/public",
-    "http://localhost:6969/public"
+    HOST_SERVER + "/public"
   );
   data.actor_movies.forEach((movie) => {
     if (movie.thumbnail) {
       movie.thumbnail = movie.thumbnail.replace(
         "/./public",
-        "http://localhost:6969/public"
+        HOST_SERVER + "/public"
+      );
+    }
+    if (movie.cover_image) {
+      movie.cover_image = movie.cover_image.replace(
+        "/./public",
+        HOST_SERVER + "/public"
       );
     }
   });
@@ -171,7 +185,13 @@ const replaceGenrePublicPath = (data) => {
     if (movie.thumbnail) {
       movie.thumbnail = movie.thumbnail.replace(
         "/./public",
-        "http://localhost:6969/public"
+        HOST_SERVER + "/public"
+      );
+    }
+    if (movie.cover_image) {
+      movie.cover_image = movie.cover_image.replace(
+        "/./public",
+        HOST_SERVER + "/public"
       );
     }
   });
@@ -290,6 +310,7 @@ class MovieController {
             url_name: movie.url_name,
             primary_title: movie.primary_title,
             thumbnail: movie.thumbnail,
+            cover_image: movie.cover_image,
           };
         }
       });
@@ -334,6 +355,7 @@ class MovieController {
             url_name: movie.url_name,
             primary_title: movie.primary_title,
             thumbnail: movie.thumbnail,
+            cover_image: movie.cover_image,
           };
         }
       });
@@ -378,6 +400,7 @@ class MovieController {
             url_name: movie.url_name,
             primary_title: movie.primary_title,
             thumbnail: movie.thumbnail,
+            cover_image: movie.cover_image,
           };
         }
       });
@@ -387,7 +410,6 @@ class MovieController {
       const genreInfo = {
         genre_url: genre.genre_url,
         genre_name: genre.genre_name,
-        genre_thumbnail: genre.genre_thumbnail,
         genre_description: genre.genre_description,
         genre_movies: movies.filter(Boolean),
       };
