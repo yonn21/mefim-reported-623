@@ -1,0 +1,245 @@
+[{
+  "_id": {
+    "$oid": "64625a3f8e87b24ac4136f18"
+  },
+  "genre_movies": [
+    "ho-den-tu-than",
+    "transformers-quai-thu-troi-day",
+    "the-gioi-khung-long",
+    "qua-nhanh-qua-nguy-hiem-5",
+    "qua-nhanh-qua-nguy-hiem",
+    "qua-nhanh-qua-nguy-hiem-2",
+    "qua-nhanh-qua-nguy-hiem-3",
+    "qua-nhanh-qua-nguy-hiem-6",
+    "qua-nhanh-qua-nguy-hiem-ngoai-truyen",
+    "qua-nhanh-qua-nguy-hiem-8",
+    "qua-nhanh-qua-nguy-hiem-7",
+    "qua-nhanh-qua-nguy-hiem-10",
+    "tham-tu-lung-danh-conan-vien-dan-do",
+    "jujutsu-kaisen-0-chu-thuat-hoi-chien"
+  ],
+  "genre_url": "phim-chieu-rap",
+  "genre_name": "Phim chiếu rạp"
+},{
+  "_id": {
+    "$oid": "64625a4b8e87b24ac4136f19"
+  },
+  "genre_movies": [
+    "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1",
+    "transformers-quai-thu-troi-day",
+    "the-gioi-khung-long",
+    "qua-nhanh-qua-nguy-hiem-5",
+    "qua-nhanh-qua-nguy-hiem",
+    "qua-nhanh-qua-nguy-hiem-2",
+    "qua-nhanh-qua-nguy-hiem-3",
+    "qua-nhanh-qua-nguy-hiem-6",
+    "qua-nhanh-qua-nguy-hiem-ngoai-truyen",
+    "qua-nhanh-qua-nguy-hiem-8",
+    "qua-nhanh-qua-nguy-hiem-7",
+    "qua-nhanh-qua-nguy-hiem-10",
+    "tro-choi-con-muc"
+  ],
+  "genre_url": "hanh-dong",
+  "genre_name": "Hành động"
+},{
+  "_id": {
+    "$oid": "64625a558e87b24ac4136f1a"
+  },
+  "genre_movies": [
+    "ho-den-tu-than",
+    "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1",
+    "transformers-quai-thu-troi-day",
+    "bao-boi-tu-than",
+    "qua-nhanh-qua-nguy-hiem",
+    "qua-nhanh-qua-nguy-hiem-2",
+    "qua-nhanh-qua-nguy-hiem-3",
+    "qua-nhanh-qua-nguy-hiem-6",
+    "qua-nhanh-qua-nguy-hiem-ngoai-truyen",
+    "qua-nhanh-qua-nguy-hiem-8",
+    "qua-nhanh-qua-nguy-hiem-7",
+    "qua-nhanh-qua-nguy-hiem-10",
+    "tro-choi-con-muc"
+  ],
+  "genre_url": "phieu-luu",
+  "genre_name": "Phiêu lưu"
+},{
+  "_id": {
+    "$oid": "64625af78e87b24ac4136f1b"
+  },
+  "genre_movies": [
+    "vuon-sao-bang"
+  ],
+  "genre_url": "tinh-cam-lang-man",
+  "genre_name": "Tình cảm, lãng mạn"
+},{
+  "_id": {
+    "$oid": "64625b158e87b24ac4136f1c"
+  },
+  "genre_movies": [],
+  "genre_url": "tv-shows",
+  "genre_name": "TV Shows"
+},{
+  "_id": {
+    "$oid": "64625b1e8e87b24ac4136f1d"
+  },
+  "genre_movies": [
+    "xac-song-phan1",
+    "xac-song-phan2",
+    "xac-song-phan3",
+    "xac-song-phan4",
+    "xac-song-phan5"
+  ],
+  "genre_url": "kinh-di",
+  "genre_name": "Kinh dị"
+},{
+  "_id": {
+    "$oid": "64625b288e87b24ac4136f1e"
+  },
+  "genre_movies": [
+    "qua-nhanh-qua-nguy-hiem-5",
+    "vuon-sao-bang"
+  ],
+  "genre_url": "hai-huoc",
+  "genre_name": "Hài hước"
+},{
+  "_id": {
+    "$oid": "64625b408e87b24ac4136f1f"
+  },
+  "genre_movies": [
+    "ho-den-tu-than",
+    "transformers-quai-thu-troi-day",
+    "bao-boi-tu-than",
+    "sieu-di-nhan",
+    "loai-nguoi-nhan-tao"
+  ],
+  "genre_url": "khoa-hoc-vien-tuong",
+  "genre_name": "Khoa học, viễn tưởng"
+},{
+  "_id": {
+    "$oid": "64625b538e87b24ac4136f20"
+  },
+  "genre_movies": [],
+  "genre_url": "than-thoai",
+  "genre_name": "Thần thoại"
+},{
+  "_id": {
+    "$oid": "64625b5b8e87b24ac4136f21"
+  },
+  "genre_movies": [
+    "Bong-Ma-Anh-Quoc",
+    "bong-ma-anh-quoc-phan-1",
+    "bong-ma-anh-quoc-phan-2",
+    "bong-ma-anh-quoc-phan-4",
+    "bong-ma-anh-quoc-phan-5",
+    "bong-ma-anh-quoc-phan-6"
+  ],
+  "genre_url": "tam-ly",
+  "genre_name": "Tâm lý"
+},{
+  "_id": {
+    "$oid": "64625b748e87b24ac4136f22"
+  },
+  "genre_movies": [
+    "tuyet-dinh-kungfu"
+  ],
+  "genre_url": "kiem-hiep-vo-thuat",
+  "genre_name": "Kiếm hiệp, võ thuật"
+},{
+  "_id": {
+    "$oid": "64625b838e87b24ac4136f23"
+  },
+  "genre_movies": [
+    "Bong-Ma-Anh-Quoc",
+    "bong-ma-anh-quoc-phan-1",
+    "bong-ma-anh-quoc-phan-2",
+    "bong-ma-anh-quoc-phan-4",
+    "bong-ma-anh-quoc-phan-5",
+    "bong-ma-anh-quoc-phan-6"
+  ],
+  "genre_url": "hinh-su",
+  "genre_name": "Hình sự"
+},{
+  "_id": {
+    "$oid": "64625ba18e87b24ac4136f24"
+  },
+  "genre_movies": [
+    "thanh-guom-diet-quy-phan-lang-ren-kiem",
+    "hoc-vien-anh-hung-6",
+    "tham-tu-lung-danh-conan-vien-dan-do",
+    "jujutsu-kaisen-0-chu-thuat-hoi-chien"
+  ],
+  "genre_url": "hoat-hinh",
+  "genre_name": "Hoạt hình"
+},{
+  "_id": {
+    "$oid": "64625bd28e87b24ac4136f25"
+  },
+  "genre_movies": [],
+  "genre_url": "vien-tay",
+  "genre_name": "Viễn tây"
+},{
+  "_id": {
+    "$oid": "64625bda8e87b24ac4136f26"
+  },
+  "genre_movies": [],
+  "genre_url": "chien-tranh",
+  "genre_name": "Chiến tranh"
+},{
+  "_id": {
+    "$oid": "64625bed8e87b24ac4136f27"
+  },
+  "genre_movies": [
+    "dau-pha-thuong-khung-phan-5"
+  ],
+  "genre_url": "hoat-hinh-trung-quoc",
+  "genre_name": "Hoạt hình Trung Quốc"
+},{
+  "_id": {
+    "$oid": "64625bf28e87b24ac4136f28"
+  },
+  "genre_movies": [],
+  "genre_url": "anime",
+  "genre_name": "Anime"
+},{
+  "_id": {
+    "$oid": "64625bfc8e87b24ac4136f29"
+  },
+  "genre_movies": [],
+  "genre_url": "co-trang",
+  "genre_name": "Cổ trang"
+},{
+  "_id": {
+    "$oid": "64625c078e87b24ac4136f2a"
+  },
+  "genre_movies": [],
+  "genre_url": "lich-su",
+  "genre_name": "Lịch sử"
+},{
+  "_id": {
+    "$oid": "64625c108e87b24ac4136f2b"
+  },
+  "genre_movies": [],
+  "genre_url": "tai-lieu",
+  "genre_name": "Tài liệu"
+},{
+  "_id": {
+    "$oid": "64625c208e87b24ac4136f2c"
+  },
+  "genre_movies": [],
+  "genre_url": "am-nhac",
+  "genre_name": "Âm nhạc"
+},{
+  "_id": {
+    "$oid": "64625c2a8e87b24ac4136f2d"
+  },
+  "genre_movies": [],
+  "genre_url": "the-thao",
+  "genre_name": "Thể thao"
+},{
+  "_id": {
+    "$oid": "64625c588e87b24ac4136f2e"
+  },
+  "genre_movies": [],
+  "genre_url": "phim-18",
+  "genre_name": "Phim 18+"
+}]

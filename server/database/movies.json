@@ -1,0 +1,1915 @@
+[{
+  "_id": {
+    "$oid": "6462717626eaed66804fc057"
+  },
+  "directors": [
+    "christopher-nolan"
+  ],
+  "actors": [
+    "matthew-mcconaughey",
+    "anne-hathaway",
+    "jessica-chastain",
+    "michael-caine",
+    "casey-affleck",
+    "mackenzie-foy",
+    "john-lithgow",
+    "david-gyasi",
+    "wes-bentley",
+    "timothee-chalamet",
+    "matt-damon",
+    "ellen-burstyn",
+    "topher-grace"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "phieu-luu",
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Raw",
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=zSWdZVtXT7E"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "ho-den-tu-than",
+  "primary_title": "Hố Đen Tử Thần",
+  "secondary_title": "Interstellar",
+  "year": "2014",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 49 phút",
+  "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+  "summary": "\"Interstellar\" là một bộ phim khoa học viễn tưởng và phiêu lưu đa chiều, được đạo diễn bởi Christopher Nolan và ra mắt vào năm 2014. Bộ phim kể về một nhóm phi hành gia đi vào không gian sâu để tìm kiếm một hành tinh mới có thể trở thành nơi sinh sống cho con người.\r\nCốt truyện của \"Interstellar\" xoay quanh câu chuyện về Trái Đất đang đối mặt với khủng hoảng tài nguyên và khô hạn, khiến nông nghiệp trở thành nguồn sống còn của nhân loại. Nhân vật chính, Joseph Cooper (do Matthew McConaughey thủ vai), một phi công cựu NASA, được gọi trở lại vào một nhiệm vụ quan trọng để cứu nhân loại. Anh tham gia vào một cuộc hành trình đáng ngạc nhiên thông qua không gian và thời gian, để tìm kiếm một hành tinh mới có thể trở thành tổ quốc cho loài người.\r\n\"Interstellar\" không chỉ là một bộ phim về phiêu lưu trong không gian mà còn mang đậm yếu tố tâm lý và triết lý. Bộ phim đề cập đến những câu hỏi về thời gian, không gian và sự tồn tại của con người. Nó đặt ra các vấn đề về tình yêu, trách nhiệm, lòng tin và sự hy sinh.\r\nVới sự kết hợp giữa cốt truyện hấp dẫn và hiệu ứng đặc biệt tuyệt vời, \"Interstellar\" tạo ra một trải nghiệm điện ảnh sống động và đầy kỳ thú. Bộ phim khám phá không gian rộng lớn và đưa khán giả vào cuộc phiêu lưu ngoạn mục, đồng thời thúc đẩy suy nghĩ và khám phá về vai trò của con người trong vũ trụ lớn.",
+  "thumbnail": "/./public/uploads/movies/ho-den-tu-than/ho-den-tu-than_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/ho-den-tu-than/ho-den-tu-than_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-15T17:52:54.670Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-15T17:52:54.670Z"
+  }
+},{
+  "_id": {
+    "$oid": "646505d12f14bc306c7a1c65"
+  },
+  "directors": [
+    "christopher-mcquarrie"
+  ],
+  "actors": [
+    "tom-cruise",
+    "hayley-atwell",
+    "simon-pegg",
+    "ving-rhames",
+    "rebecca-ferguson",
+    "vanessa-kirby",
+    "henry-czerny",
+    "mariela-garriga"
+  ],
+  "genres": [
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Raw"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=2m1drlOZSDw"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1",
+  "primary_title": "Nhiệm vụ bất khả thi: Nghiệp báo - Phần 1",
+  "secondary_title": "Mission: Impossible - Dead Reckoning Part One",
+  "year": "2023",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 27 phút",
+  "trailer": "https://www.youtube.com/watch?v=2m1drlOZSDw",
+  "summary": "Nhiệm vụ bất khả thi: Nghiệp báo – Phần 1 là một bộ phim về điệp viên hành động sắp tới của Mỹ do Christopher McQuarrie viết kịch bản và đạo diễn. Đây sẽ là phần thứ bảy và là phần áp chót của loạt phim Nhiệm vụ bất khả thi, và phần ba trong loạt phim do McQuarrie đạo diễn, sau Quốc gia bí ẩn và Sụp đổ",
+  "thumbnail": "/./public/uploads/movies/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1/nhiem-vu-bat-kha-thi-nghiep-bao-phan-1_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-17T16:50:25.922Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-17T16:50:25.922Z"
+  }
+},{
+  "_id": {
+    "$oid": "64660cbadc8c352dd8980b76"
+  },
+  "directors": [
+    "steven-caple-jr"
+  ],
+  "actors": [
+    "peter-dinklage",
+    "ron-perlman",
+    "dominique-fishback",
+    "anthony-ramos",
+    "luna-lauren-velez",
+    "colman-domingo"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu",
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Raw"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=itnqEauWQZM"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "transformers-quai-thu-troi-day",
+  "primary_title": "Transformers: Quái thú trỗi dậy",
+  "secondary_title": "Transformers: Rise of the Beasts",
+  "year": "2023",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 57 phút",
+  "trailer": "https://www.youtube.com/watch?v=itnqEauWQZM",
+  "summary": "Không có cốt truyện được biết. Theo thông tin đồn đại, bộ phim dựa trên phần ngoại truyện 'Beast Wars' của series 'Transformers', trong đó các robot có khả năng biến hình thành các con vật máy móc.",
+  "thumbnail": "/./public/uploads/movies/transformers-quai-thu-troi-day/transformers-quai-thu-troi-day_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/transformers-quai-thu-troi-day/transformers-quai-thu-troi-day_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-18T11:32:10.081Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-18T11:32:10.081Z"
+  }
+},{
+  "_id": {
+    "$oid": "646e39bd701518319c5a5300"
+  },
+  "directors": [
+    "colin-trevorrow"
+  ],
+  "actors": [
+    " judy-greer",
+    "chris-pratt"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/the-gioi-khung-long-tap-full-vietsub-pm3526"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "the-gioi-khung-long",
+  "primary_title": "Thế Giới Khủng Long",
+  "secondary_title": "Jurassic World (2015)",
+  "year": "2015",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 4 phút",
+  "trailer": "https://phimmoichillc.net/info/the-gioi-khung-long-pm3522",
+  "summary": "Thế Giới Khủng Long Jurassic World 2015 Full HD Vietsub Thuyết Minh Jurassic World, Jurassic World 4, Jurassic World 2015 Hai mươi hai năm sau Công viên kỷ Jura, Isla Nublar hiện là một công viên khủng long thực sự, được gọi là Jurassic World, do John Hammond hình dung ban đầu. Công viên mới thuộc sở hữu của Tập đoàn Masrani. Owen (Chris Pratt), một nhân viên công viên tại chỗ, đang nghiên cứu hành vi của Velociraptor. Nhiều năm sau, xếp hạng khách truy cập của Jurassic World giảm dần và một điểm thu hút mới, được tạo ra để thu hút lại sự chú ý của khách truy cập, đã phản tác dụng.",
+  "thumbnail": "/./public/uploads/movies/the-gioi-khung-long/the-gioi-khung-long_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/the-gioi-khung-long/the-gioi-khung-long_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-24T16:22:21.789Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-24T16:22:21.789Z"
+  }
+},{
+  "_id": {
+    "$oid": "646f22ed482f412260d3d7ea"
+  },
+  "directors": [
+    "tim-mielants"
+  ],
+  "actors": [
+    "Cillian-Murphy",
+    "Paul-Anderson",
+    "Sophie-Rundle",
+    "Helen-McCrory"
+  ],
+  "genres": [
+    "tam-ly",
+    "hinh-su"
+  ],
+  "type_sub": [
+    "Raw",
+    "Vietsub",
+    "Engsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-3-tap-1-pm94531",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-3-tap-2-pm94532",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-3-tap-3-pm94533",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-3-tap-4-pm94534",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-3-tap-5-pm94535",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-3-tap-6-pm94536"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "Bong-Ma-Anh-Quoc",
+  "primary_title": "Bóng Ma Anh Quốc: Phần 3",
+  "secondary_title": "Peaky Blinders Season 3 (2016)",
+  "year": "2016",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/t5D4-nTAWLY",
+  "summary": "Bóng Ma Anh Quốc: Phần 3 Peaky Blinders Season 3 2016 Full HD Vietsub Thuyết Minh Lấy bối cảnh năm 1924, hai năm sau các sự kiện của Phần 2 , phim theo chân gia đình Shelby khi họ bước vào một thế giới đầy nguy hiểm của những âm mưu quốc tế. Thomas Shelby và toàn bộ tổ chức của anh ta đang gặp rủi ro, buộc anh ta phải đặt câu hỏi về mọi thứ về tham vọng và mong muốn của mình.",
+  "thumbnail": "/./public/uploads/movies/Bong-Ma-Anh-Quoc/Bong-Ma-Anh-Quoc_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/Bong-Ma-Anh-Quoc/Bong-Ma-Anh-Quoc_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-25T08:57:17.980Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-25T08:57:17.980Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475599e72958e2d7099270b"
+  },
+  "directors": [
+    "david-yates"
+  ],
+  "actors": [
+    "emma-watson",
+    "daniel-radcliffe",
+    "ralph-fiennes",
+    "rupert-grint",
+    "alan-rickman",
+    "michael-gambon"
+  ],
+  "genres": [
+    "phieu-luu",
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Vietsub",
+    "Engsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/harry-potter-and-the-deathly-hallows-part-2-tap-full-pm2202"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "bao-boi-tu-than",
+  "primary_title": "Harry Potter Và Bảo Bối Tử Thần Phần 2",
+  "secondary_title": "Harry Potter 7: Harry Potter and the Deathly Hallows Part 2 (2011)  ",
+  "year": "2011",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 10 phút",
+  "trailer": "https://youtu.be/-sTSZzNewYk",
+  "summary": "Harry Potter Và Bảo Bối Tử Thần Phần 2 Harry Potter 7: Harry Potter and the Deathly Hallows Part 2 2011. Sau khi chôn cất Dulk, Harry Potter đã nhờ yêu tinh Griphook giúp mình, cùng với Ron Weasley và Hermione Granger, đột nhập vào hầm của Bellatrix Lestrange tại Ngân hàng Gringotts, nghi ngờ Trường sinh linh giá có thể ở đó. Griphook đồng ý, đổi lấy Sword of Gryffindor. Wandmaker Ollivander nói với Harry rằng hai cây đũa phép lấy từ Trang viên Malfoy thuộc về Bellatrix và Draco Malfoy, mặc dù Malfoy đã thay đổi lòng trung thành với Harry.\r\nTrong hầm, Harry phát hiện ra rằng Trường sinh linh giá là chiếc cốc của Helga Hufflepuff. Anh ta lấy nó, nhưng Griphook giật lấy thanh kiếm và bỏ mặc bộ ba, khiến họ bị dồn vào chân tường bởi lực lượng an ninh. Cả ba thả người bảo vệ rồng và bỏ chạy trên lưng nó. Harry nhìn thấy cảnh Chúa tể Voldemort giết yêu tinh, bao gồm cả Griphook, và biết rằng Voldemort đã biết về vụ trộm. Harry cũng nhận ra rằng có một Trường sinh linh giá ở Hogwarts bằng cách nào đó được kết nối với Rowena Ravenclaw. Bộ ba APPARATE tiến vào làng Hogsmeade, nơi cụ Aberforth Dumbledore một lần nữa miễn cưỡng chỉ dẫn bức chân dung của người chị Ariana đã chết của mình để lấy Neville Longbottom, người đã dẫn bộ ba đi qua một lối đi bí mật vào Hogwarts",
+  "thumbnail": "/./public/uploads/movies/bao-boi-tu-than/bao-boi-tu-than_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/bao-boi-tu-than/bao-boi-tu-than_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T02:04:14.258Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T02:04:14.258Z"
+  }
+},{
+  "_id": {
+    "$oid": "64758cee72958e2d70992715"
+  },
+  "directors": [
+    "justin-lin"
+  ],
+  "actors": [
+    "vin-diesel",
+    "dwayne-johnson",
+    "tyrese-gibson",
+    "jordana-brewster",
+    " paul-walker",
+    "sung-kang",
+    "gal-gadot",
+    "joaquim-de-almeida"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "hai-huoc"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-5-tap-full-hd-pm1256"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-5",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 5",
+  "secondary_title": "Fast and Furious 5 Fast Five The Rio Heist (2011)",
+  "year": "2011",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 11 phút",
+  "trailer": "https://youtu.be/mw2AqdB5EVA",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 5 Fast and Furious 5 Fast Five The Rio Heist 2011 Full HD Vietsub Thuyết Minh Quá Nhanh Quá Nguy Hiểm 5, Fast Five 2011 Câu chuyện phim Quá Nhanh Quá Nguy Hiểm 5 xoay quanh việc cứu Dom khỏi nhà tù, Brian và Mia Toretto phải trôi dạt đến một đất nước khác. Bây giờ ở Rio de Janeiro, cả ba tập hợp thành một đội đua với đầy đủ các tay đua ưu tú để thực hiện nhiệm vụ cuối cùng là giành tự do, đó là vụ trộm 100 triệu đô la. Không chỉ đối mặt với tên trùm khét tiếng nhất thành phố Rio, họ còn phải đối mặt với sự truy đuổi gắt gao của đặc vụ liên bang Luke Hobbs - kẻ chưa bao giờ mất mục tiêu ... Với những pha hành động mượt mà. Với diễn biến hồi hộp và sự trợ giúp đắc lực của âm nhạc, bộ phim Quá Nhanh Quá Nguy Hiểm 5 là món ăn tinh thần hấp dẫn dành cho các fan của dòng phim nhanh quá. Xem phim này bạn sẽ rất hài lòng và ưng ý với chất lượng của dịch vụ xem phim trực tuyến.",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-5/qua-nhanh-qua-nguy-hiem-5_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-5/qua-nhanh-qua-nguy-hiem-5_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T05:43:10.638Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T05:43:10.638Z"
+  }
+},{
+  "_id": {
+    "$oid": "64758e1f72958e2d70992717"
+  },
+  "directors": [
+    "justin-lin"
+  ],
+  "actors": [
+    "vin-diesel",
+    "jordana-brewster",
+    " paul-walker",
+    "michelle-rodriguez"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-tap-full-hd-pm1260"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm",
+  "secondary_title": "The Fast and the Furious (2001)",
+  "year": "2001",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 46 phút",
+  "trailer": "https://youtu.be/2TAOizOnNPo",
+  "summary": "Quá Nhanh Quá Nguy Hiểm The Fast and the Furious 2001 Full HD Vietsub Thuyết Minh Quá Nhanh Quá Nguy Hiểm, The Fast and the Furious 2001 Trong bộ phim Quá Nhanh Quá Nguy Hiểm, Brian là một kẻ lang thang, đói khát và háo hức muốn nếm thử giới hạn của tốc độ. Anh ấy tự hào về kỹ năng lái xe của mình, nhưng đối với các tay đua, anh ấy chỉ là một người mới tập. Với chiếc xe được trang bị bộ tăng tốc NOS, anh đến tìm Dominic - ông hoàng tốc độ ở Los Angeles để xin tham gia vào làng đua. Sau một cuộc đua liều lĩnh và bị cảnh sát truy đuổi trong phim hd này, Brian đã quay lại để cứu Dominic thoát khỏi chiếc còng tay đang chuẩn bị giáng vào người anh. Từ đó Brian được Dominic nhận vào đội và từ đó mối tình của Brian với Mia - em gái của Dominic bắt đầu nảy nở. Trên thực tế, Brian là một đặc vụ bí mật của FBI được cử đến để giải quyết vụ án Băng cướp tốc độ đang gieo rắc nỗi kinh hoàng trên khắp các tuyến đường cao tốc. Nhưng bây giờ anh cảm thấy mình có mối quan hệ thân thiết với Dominic, và tình cảm của anh dành cho Mia là không thể tách rời. Brian buộc phải quyết định đặt lòng trung thành của mình ở đâu và tìm ra đâu là giới hạn thực sự của mình. Diễn biến của phim sẽ như thế nào, hãy cùng xem phim Quá Nhanh Quá Nguy Hiểm và tận hưởng những giây phút nghẹt thở với những màn đua xe tuyệt vời trong phim online này nhé!",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem/qua-nhanh-qua-nguy-hiem_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem/qua-nhanh-qua-nguy-hiem_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T05:48:15.966Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T05:48:15.966Z"
+  }
+},{
+  "_id": {
+    "$oid": "64758f3272958e2d70992719"
+  },
+  "directors": [
+    "rob-cohen"
+  ],
+  "actors": [
+    "vin-diesel",
+    "jordana-brewster",
+    " paul-walker",
+    "michelle-rodriguez"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-2-tap-full-hd-pm1259"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-2",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 2",
+  "secondary_title": "Fast and Furious 2: 2 Fast 2 Furious (2003)",
+  "year": "2003",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 47 phút",
+  "trailer": "https://youtu.be/F_VIM03DXWI",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 2 Fast and Furious 2: 2 Fast 2 Furious 2003 Full HD Vietsub Thuyết Minh Quá Nhanh Quá Nguy Hiểm 2, 2 Fast 2 Furious 2003 Trong bộ phim Quá Nhanh Quá Nguy Hiểm 2, Brian O'Conner là một cảnh sát giỏi bị mất việc chỉ vì bọn tội phạm sử dụng những thủ đoạn quá tinh vi. Và bây giờ anh ấy có cơ hội chuộc lỗi với lần thử thứ hai. Để thực hiện nhiệm vụ của mình trong bộ phim hay này, Brian O'Conner phải tham gia vào một nhóm đua xe trái phép trên đường phố Miami để tìm ra tung tích của Carter Verone, một tên tội phạm chuyên buôn bán ma túy và rửa tiền. Anh và người bạn thân nhất của mình là Roman Pearce được giao nhiệm vụ chuyển tiền bất hợp pháp cho Carter Verone, kẻ đang núp dưới danh nghĩa một thương gia xuất nhập khẩu ở Miami. Ngoài Roman Pearce, Brian O'Conner còn nhận được sự giúp đỡ của nữ mật vụ tài năng và hấp dẫn Monica Clemente trong vai người tình bất đắc dĩ của Carter Verone. Và cuộc phiêu lưu và cuộc rượt đuổi bắt đầu. Phim Quá Nhanh Quá Nguy Hiểm 2 hứa hẹn sẽ mang đến cho các bạn những giây phút xem phim tuyệt vời nhất!",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-2/qua-nhanh-qua-nguy-hiem-2_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-2/qua-nhanh-qua-nguy-hiem-2_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T05:52:50.475Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T05:52:50.475Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475915a72958e2d7099271e"
+  },
+  "directors": [
+    "justin-lin"
+  ],
+  "actors": [
+    "vin-diesel",
+    " paul-walker",
+    "lucas-black",
+    "zachery-ty-bryan",
+    "daniel-booko",
+    "damien-marzette"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-3-chinh-phuc-tokyo-tap-full-hd-pm1258"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-3",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 3: Chinh Phục Tokyo",
+  "secondary_title": "Fast and Furious 3 : Tokyo Drift (2006)",
+  "year": "2006",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 44 phút",
+  "trailer": "https://youtu.be/Gl-d_UIhdBw",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 3: Chinh Phục Tokyo Fast and Furious 3 : Tokyo Drift 2006 Full HD Vietsub Thuyết Minh Quá Nhanh Quá Nguy Hiểm 3: Chinh Phục Tokyo (2006) Trong bộ phim Quá Nhanh Quá Nguy Hiểm 3: Chinh Phục Tokyo, Sean Boswell là một học sinh trung học cô đơn ở Mỹ. Mối liên hệ duy nhất của anh với thế giới bình thường xung quanh là những cuộc đua tốc độ bất hợp pháp. Chỉ khi được tự do trên đường đua, Sean mới thoát ra khỏi cuộc sống bế tắc. Chính vì những cuộc đua đó mà Sean trở thành đối tượng được chính quyền địa phương chú ý. Để tránh khỏi nhà tù, anh được gửi ra nước ngoài để sống với cha mình đang phục vụ trong quân đội. Cuộc sống trở lại mới của anh với cha mình nhanh chóng bị lãng quên khi Sean khám phá ra một lãnh thổ mới thú vị và phiêu lưu hơn nhiều, đường đua Tokyo ... Bộ phim này là phần thứ ba trong loạt phim Too Fast Too Dangerous. . Với những cung đường mạo hiểm và dàn xe đua ấn tượng, bộ phim hd này là một chương trình tuyệt đẹp để thỏa mãn những người hâm mộ tốc độ và những người đam mê xe hơi.",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-3/qua-nhanh-qua-nguy-hiem-3_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-3/qua-nhanh-qua-nguy-hiem-3_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:02:02.382Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:02:02.382Z"
+  }
+},{
+  "_id": {
+    "$oid": "647592e372958e2d70992721"
+  },
+  "directors": [
+    "justin-lin"
+  ],
+  "actors": [
+    "vin-diesel",
+    "dwayne-johnson",
+    "tyrese-gibson",
+    " paul-walker",
+    "sung-kang",
+    "gal-gadot",
+    "michelle-rodriguez",
+    "luke-evans",
+    "ludacris"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-6-tap-full-hd-pm1255"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-6",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 6",
+  "secondary_title": "Fast and Furious 6 (2016)",
+  "year": "2016",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 10 phút",
+  "trailer": "https://youtu.be/dKi5XoeTN0k",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 6 Fast and Furious 6 2016 Full HD Vietsub Thuyết Minh Quá Nhanh Quá Nguy Hiểm 6, Fast & Furious 6 (2013) Quá Nhanh Quá Nguy Hiểm 6 là phần thứ 6 của loạt phim hành động nổi tiếng của Mỹ Fast And Furious. Lần này trong bộ phim trực tuyến này, Đặc vụ Hobbs phải nhờ Dom và nhóm của anh giúp đỡ trong cuộc bao vây của một băng nhóm do Owen Shaw cầm đầu. Đổi lại, Dom muốn có một bản lý lịch \"sạch sẽ\" cho tất cả mọi người trong đội. Diễn biến của phim sẽ như thế nào, mời các bạn xem phim Quá Nhanh Quá Nguy Hiểm 6.",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-6/qua-nhanh-qua-nguy-hiem-6_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-6/qua-nhanh-qua-nguy-hiem-6_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:08:35.425Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:08:35.425Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475946072958e2d70992724"
+  },
+  "directors": [
+    "justin-lin"
+  ],
+  "actors": [
+    "vanessa-kirby",
+    "vin-diesel",
+    "dwayne-johnson",
+    "jason-statham",
+    "idris-elba"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-ngoai-truyen-tap-full-hd-pm71144"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-ngoai-truyen",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm Ngoại Truyện",
+  "secondary_title": "Fast Furious Presents Hobbs Shaw (2019)",
+  "year": "2019",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ",
+  "trailer": "https://youtu.be/9SA7FaKxZVI",
+  "summary": "Quá Nhanh Quá Nguy Hiểm Ngoại Truyện Fast Furious Presents Hobbs Shaw 2019 Full HD Vietsub Thuyết Minh Câu chuyện giữa hai người tưởng như không đội trời chung là Đặc vụ An ninh Ngoại giao Mỹ Luke Hobbs và tên tội phạm đánh thuê khét tiếng Deckard Shaw khi họ bất đắc dĩ phải bắt tay hợp tác nhằm ngăn chặn âm mưu của trùm phản diện cực nguy hiểm trong diện bí ẩn Brixton.",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-ngoai-truyen/qua-nhanh-qua-nguy-hiem-ngoai-truyen_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-ngoai-truyen/qua-nhanh-qua-nguy-hiem-ngoai-truyen_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:14:56.579Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:14:56.579Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475971672958e2d7099272a"
+  },
+  "directors": [
+    "f-gary-gray"
+  ],
+  "actors": [
+    "vin-diesel",
+    "dwayne-johnson",
+    "jordana-brewster",
+    "michelle-rodriguez",
+    "lucas-black",
+    "ludacris",
+    "jason-statham",
+    "elsa-pataky",
+    "nathalie-emmanuel",
+    "kurt-russell"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://youtu.be/uisBaTkQAEs"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-8",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 8",
+  "secondary_title": "Fast & Furious 8 The Fate of the Furious (2017)",
+  "year": "2017",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ",
+  "trailer": "https://youtu.be/uisBaTkQAEs",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 8 Fast &amp; Furious 8 The Fate of the Furious 2017 Full HD Vietsub Thuyết Minh Phim Quá Nhanh Quá Nguy Hiểm 8: Cipher - kẻ phản diện chính sẽ bắt cóc cả gia đình Mia Toretto và Bian O'Conner, đồng thời buộc Dom phải phản bội anh ta anh em. Lần này, \"cựu phản diện\" Deckard Shaw (do Jason Statham thủ vai) cũng bất ngờ đứng về phe phải. Sở hữu kỹ năng chiến đấu tay đôi tàn bạo và đầu óc xảo quyệt, liệu đây sẽ là dấu chấm hết cho tình thế “huynh đệ tương tàn” hiện tại của nhóm hay là con dao hai lưỡi khi đối mặt với hàng loạt hiểm nguy đang chờ đón?",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-8/qua-nhanh-qua-nguy-hiem-8_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-8/qua-nhanh-qua-nguy-hiem-8_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:26:30.312Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:26:30.312Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475980772958e2d7099272c"
+  },
+  "directors": [
+    "james-wan"
+  ],
+  "actors": [
+    "vin-diesel",
+    "dwayne-johnson",
+    " paul-walker",
+    "michelle-rodriguez",
+    "jason-statham"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/qua-nhanh-qua-nguy-hiem-7-tap-full-hd-pm1240"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-7",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 7",
+  "secondary_title": "Fast and Furious 7 (2015)",
+  "year": "2015",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 20 phút",
+  "trailer": "https://youtu.be/Skpu5HaVkOc",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 7 Fast and Furious 7 2015 Full HD Vietsub Thuyết Minh Quá Nhanh Quá Nguy Hiểm 7 - Fast & Furious 7: là phần 7 của loạt phim Fast & Furious nổi tiếng. Kết thúc phần trước, tưởng chừng như mọi chuyện đã kết thúc, và mở ra một cuộc sống êm ả, khi cả nhóm đã tiêu diệt được Owen Shaw. Sau đó, trong phần này, sự xuất hiện của Deckard Shaw, kẻ đã giết Han, và thách thức Dominic Toretto, để trả thù cho anh trai Owen Shaw, đã thay đổi tất cả. Đưa cuộc đụng độ giữa hai băng nhóm lên đến đỉnh điểm ...",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-7/qua-nhanh-qua-nguy-hiem-7_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-7/qua-nhanh-qua-nguy-hiem-7_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:30:31.565Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:30:31.565Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475999072958e2d70992731"
+  },
+  "directors": [
+    "louis-leterrier"
+  ],
+  "actors": [
+    "vin-diesel",
+    "tyrese-gibson",
+    "sung-kang",
+    "michelle-rodriguez",
+    "jason-statham",
+    "jason-momoa",
+    "rita-moreno",
+    "alan-ritchson"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Engsub"
+  ],
+  "episodes": [
+    "https://youtu.be/32RAq6JzY-w"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "qua-nhanh-qua-nguy-hiem-10",
+  "primary_title": "Quá Nhanh Quá Nguy Hiểm 10",
+  "secondary_title": "Fast X (Fast & Furious 10) (2023)",
+  "year": "2023",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "2 giờ 10 phút",
+  "trailer": "https://youtu.be/32RAq6JzY-w",
+  "summary": "Quá Nhanh Quá Nguy Hiểm 10 Fast X (Fast & Furious 10) 2023 Full HD Vietsub Thuyết Minh Trải qua nhiều nhiệm vụ và đối đầu với những khó khăn khó lường, Dom Toretto (Vin Diesel) và gia đình anh đã thông minh, can đảm và lái xe vượt qua được mọi đối thủ trên hành trình của họ. Bây giờ, họ đối mặt với đối thủ nguy hiểm nhất mà họ từng gặp: một mối đe dọa đáng sợ nổi lên từ bóng tối của quá khứ, được thúc đẩy bởi sự trả thù máu me, và quyết tâm phá hủy gia đình này và phá huỷ mọi thứ - và tất cả những người - mà Dom yêu thương mãi mãi.\r\nTrong Fast Five năm 2011, Dom và đồng đội của anh đã tiêu diệt Hernan Reyes - một tên trùm ma túy nguy hiểm tại Brazil và phá tan đế chế của hắn trên một cây cầu ở Rio De Janeiro. Nhưng điều mà họ không biết là con trai của Reyes, Dante (Jason Momoa trong Aquaman) đã chứng kiến tất cả và đã dành 12 năm để thực hiện kế hoạch trả thù và khiến Dom phải trả giá đắt nhất. Kế hoạch của Dante sẽ xé tan gia đình của Dom từ Los Angeles cho đến mê cung của Paris, trong khi họ đua với thời gian để ngăn chặn kế hoạch độc ác của Dante và cứu lấy nhau khỏi cái chết chắc chắn. Đừng quên cùng phimmoi đón chờ bộ phim quy tụ toàn sao này với những pha đua xe và hành động kịch tính nha.",
+  "thumbnail": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-10/qua-nhanh-qua-nguy-hiem-10_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/qua-nhanh-qua-nguy-hiem-10/qua-nhanh-qua-nguy-hiem-10_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:37:04.487Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:37:04.487Z"
+  }
+},{
+  "_id": {
+    "$oid": "64759b5872958e2d70992737"
+  },
+  "directors": [
+    " frank-darabont"
+  ],
+  "actors": [
+    "sarah-wayne-callies",
+    "jon-bernthal",
+    "andrew-lincoln",
+    "laurie-holden"
+  ],
+  "genres": [
+    "kinh-di"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/xac-song-phan-1-tap-1-pm51117",
+    "https://phimmoichillc.net/xem/xac-song-phan-1-tap-2-pm51118",
+    "https://phimmoichillc.net/xem/xac-song-phan-1-tap-3-pm51120",
+    "https://phimmoichillc.net/xem/xac-song-phan-1-tap-4-pm51122",
+    "https://phimmoichillc.net/xem/xac-song-phan-1-tap-5-pm51124",
+    "https://phimmoichillc.net/xem/xac-song-phan-1-tap-6-pm110369"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "xac-song-phan1",
+  "primary_title": "Xác Sống (Phần 1)",
+  "secondary_title": "The Walking Dead (2010)",
+  "year": "2010",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/HpNtjIWSSEA",
+  "summary": "Xác Sống (Phần 1) The Walking Dead 2010 Full HD Vietsub Thuyết Minh Xác Sống (Phần 1), The Walking Dead (Season 1) (2010)​ Phim Xác Sống nói về cuộc sống sau thảm họa dịch bệnh thây ma của một nhóm nhỏ những người sống sót sau sự bùng nổ của đại dịch những người sống sót cố sức tìm một nơi trú thân mới, chạy trốn những thây ma ăn thịt sống . Khi bạn xem phim này sẽ biết rõ cốt truyện phim tập trung chủ là xoáy vào tính nhân văn sau tận thế và cách con người tranh đấu để sống còn. Rick Grimes - cựu phó quận trưởng cảnh sát ở một thị trấn nhỏ tại Georgia là người dẫn đầu nhóm. Khi tình hình ngày càng trở nên hiểm nghèo, sự tuyệt vọng của nhóm người này đã đẩy họ đến bờ vực của sự hoảng loạn. Phim được đánh giá là bộ phim kinh dị bậc nhất điện ảnh Mỹ kể trong hơn chục năm trở lại đây. Nói như vậy cũng đủ thấy phim Xác Sống không dành cho những người yếu tim. Khai thác khía cạnh sự sống bị đe dọa do các xác chết và cuộc đấu tranh để giành giật sự sống của những người còn lại, đây là đề tài khá que thuộc nhưng nội dung của phim hay này lại rất hấp dẫn và mới mẻ thể hiện sự tìm tòi mới trong \"công thức\" làm phim của nhà sản xuất. ",
+  "thumbnail": "/./public/uploads/movies/xac-song-phan1/xac-song-phan1_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/xac-song-phan1/xac-song-phan1_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:44:40.782Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:44:40.782Z"
+  }
+},{
+  "_id": {
+    "$oid": "64759c1d72958e2d70992738"
+  },
+  "directors": [
+    " frank-darabont"
+  ],
+  "actors": [
+    "sarah-wayne-callies",
+    "jon-bernthal",
+    "andrew-lincoln"
+  ],
+  "genres": [
+    "kinh-di"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/xac-song-phan-2-tap-1-pm61187",
+    "https://phimmoichillc.net/xem/xac-song-phan-2-tap-9-pm61203",
+    "https://phimmoichillc.net/xem/xac-song-phan-2-tap-10-pm61205",
+    "https://phimmoichillc.net/xem/xac-song-phan-2-tap-11-pm61208",
+    "https://phimmoichillc.net/xem/xac-song-phan-2-tap-12-pm61211",
+    "https://phimmoichillc.net/xem/xac-song-phan-2-tap-13-pm110382"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "xac-song-phan2",
+  "primary_title": "Xác Sống (Phần 2)",
+  "secondary_title": "The Walking Dead (Season 2) (2011)",
+  "year": "2011",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/Xva84-aqET8",
+  "summary": "Xác Sống (Phần 2) The Walking Dead (Season 2) 2011 Full HD Vietsub Thuyết Minh Trong phim Xác Sống 2, nhóm người sống sót đang tìm nơi nương náu giữa thảm họa xác sống do Rick Grimes dẫn đầu tiếp tục cuộc hành trình về pháo đài Benning. Nhưng số phận không chịu chấm dứt trò đùa quái ác với sinh mạng các thành viên trong nhóm phim hd này. Để tìm đường thoát thân cho mình, các thành viên trong nhóm người phải đứng giữa lựa chọn khắc nghiệt khi chứng kiến người thân biến thành một thây ma biết đi và quay lại đe dọa mạng sống của chính họ.",
+  "thumbnail": "/./public/uploads/movies/xac-song-phan2/xac-song-phan2_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/xac-song-phan2/xac-song-phan2_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:47:57.804Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:47:57.804Z"
+  }
+},{
+  "_id": {
+    "$oid": "64759d0572958e2d70992739"
+  },
+  "directors": [
+    " frank-darabont"
+  ],
+  "actors": [
+    "sarah-wayne-callies",
+    "jon-bernthal",
+    "andrew-lincoln"
+  ],
+  "genres": [
+    "kinh-di"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/xac-song-phan-3-tap-1-pm44181",
+    "https://phimmoichillc.net/xem/xac-song-phan-3-tap-12-pm44203",
+    "https://phimmoichillc.net/xem/xac-song-phan-3-tap-13-pm44204",
+    "https://phimmoichillc.net/xem/xac-song-phan-3-tap-14-pm44206",
+    "https://phimmoichillc.net/xem/xac-song-phan-3-tap-15-pm110400",
+    "https://phimmoichillc.net/xem/xac-song-phan-3-tap-16-pm110401"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "xac-song-phan3",
+  "primary_title": "Xác Sống (Phần 3)",
+  "secondary_title": "The Walking Dead (2015)",
+  "year": "2015",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/HpNtjIWSSEA",
+  "summary": "Xác Sống (Phần 3) The Walking Dead 2015 Full HD Vietsub Thuyết Minh Xác Sống (Phần 3), The Walking Dead (Season 3) (2012) Phim Xác Sống 3 là phần tiếp theo của series phim Xác Sống kể về cuộc trốn chạy khỏi thảm họa thây ma của một nhóm người. Lúc này, nhóm của Rick tìm thấy 1 nhà tù bị bỏ hoang. Nhà tù này trước đó bị hoành hành bởi bệnh zombie, đa số tù nhân đã chết. Trong phim hay này, cả nhóm bắt tay vào công việc sửa chữa lại nhà tù này, gia cố hàng rào đồng thời dọn dẹp, loại bỏ những con zombie vất vưởng ở trong đó. Họ tình cờ phát hiện ra vẫn còn 1 nhóm tù nhân còn sống sót trong khu nhà và phải miễn cưỡng cho họ gia nhập vào nhóm của mình. Liệu phim sẽ diễn biến ra sao, các bạn cùng chú ý đón xem phim Xác Sống 3 nhé.   ",
+  "thumbnail": "/./public/uploads/movies/xac-song-phan3/xac-song-phan3_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/xac-song-phan3/xac-song-phan3_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T06:51:49.885Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T06:51:49.885Z"
+  }
+},{
+  "_id": {
+    "$oid": "64759f9872958e2d70992741"
+  },
+  "directors": [
+    "greg-nicotero",
+    "guy-ferland"
+  ],
+  "actors": [
+    "andrew-lincoln",
+    "norman-reedus",
+    "melissa-mcbride",
+    "danai-gurira",
+    "lauren-cohan"
+  ],
+  "genres": [
+    "kinh-di"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-1-pm110415",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-2-pm110416",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-4-pm110418",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-4-pm110418",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-5-pm110419",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-6-pm110420",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-7-pm110421",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-8-pm110422",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-9-pm110423",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-10-pm110424",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-11-pm110425",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-12-pm110426",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-13-pm110427",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-14-pm110428",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-15-pm110429",
+    "https://phimmoichillc.net/xem/xac-song-phan-4-tap-16-pm110430"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "xac-song-phan4",
+  "primary_title": "Xác Sống (Phần 4)",
+  "secondary_title": "The Walking Dead (Season 4) (2013)",
+  "year": "2013",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "16 tập",
+  "trailer": "https://youtu.be/NXDosr9UryU",
+  "summary": "Xác Sống (Phần 4) The Walking Dead (Season 4) 2013 Full HD Vietsub Thuyết Minh Sống hay là chết? Trong **The Walking Dead** không bao giờ có sự lựa chọn bởi vì cái chết luôn cận kề mỗi người khi họ phải giành giật mạng sống của chính mình trong từng giây phút. Và làm thế nào mọi người có thể sống sót trong thế giới đầy nhiễm khuẩn zombie này? **The Walking Dead 4\" tiếp tục trở lại đầy đe dọa khi nhóm người còn sống sót tình cờ phát hiện ra vẫn còn 1 số tù nhân đang lẩn trốn trong 1 nhà tù bị bỏ hoang. Họ phải miễn cưỡng cho đám người này gia nhập vào nhóm của mình.",
+  "thumbnail": "/./public/uploads/movies/xac-song-phan4/xac-song-phan4_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/xac-song-phan4/xac-song-phan4_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T07:02:48.643Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T07:02:48.643Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475a27c72958e2d70992747"
+  },
+  "directors": [
+    "kim-ki-sang"
+  ],
+  "actors": [
+    "lee-min-ho",
+    "gu-hye-seon",
+    "kim-bum",
+    "kim-so-eun"
+  ],
+  "genres": [
+    "tinh-cam-lang-man",
+    "hai-huoc"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-1-pm69169",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-2-pm69170",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-3-pm69171",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-4-pm69172",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-5-pm69173",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-6-pm69174",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-7-pm69175",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-8-pm69176",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-9-pm69177",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-10-pm69178",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-11-pm69179",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-12-pm69180",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-13-pm69181",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-14-pm69182",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-15-pm69183",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-16-pm69184",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-17-pm69185",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-18-pm69186",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-19-pm69187",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-20-pm69188",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-21-pm69189",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-22-pm69190",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-23-pm69191",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-24-pm69192",
+    "https://phimmoichillc.net/xem/vuon-sao-bang-tap-25-pm69193"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "vuon-sao-bang",
+  "primary_title": "Vườn Sao Băng",
+  "secondary_title": "Boys Over Flowers (2009)",
+  "year": "2009",
+  "country": "Hàn Quốc",
+  "country_url": "han-quoc",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "25 tập",
+  "trailer": "https://youtu.be/9jFNHRSa1Wc",
+  "summary": "Vườn Sao Băng Boys Over Flowers 2009 Full HD Vietsub Thuyết Minh Phim Vườn Sao Băng chuyển thể từ bộ truyện tranh nổi tiếng Nhật Bản kể về Jan Di. Jan Di là một cô gái bình thường, gia đình có tiệm giặt khô gần trường đại học danh tiếng dành cho con nhà Shin Hwa.Một ngày nọ Jan Di gặp được 4 chàng trai nổi tiếng \"quậy\" và đều là con nhà giàu có khi cô vào trường này giao đồ giặt ủi. Bốn chàng trai này được biết đến như laà một nhóm F4, những ai lên tiếng chống đối bốn anh chàng này đều không được \"yên thân\".",
+  "thumbnail": "/./public/uploads/movies/vuon-sao-bang/vuon-sao-bang_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/vuon-sao-bang/vuon-sao-bang_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T07:15:08.384Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T07:15:08.384Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475a49272958e2d7099274d"
+  },
+  "directors": [
+    "chau-tinh-tri"
+  ],
+  "actors": [
+    "wah-yuen",
+    "kai-man-tin",
+    "siu-lung-leung",
+    "qiu-yuen"
+  ],
+  "genres": [
+    "kiem-hiep-vo-thuat"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/tuyet-dinh-kungfu-tap-full-pm562"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "tuyet-dinh-kungfu",
+  "primary_title": "Tuyệt Đỉnh Kungfu",
+  "secondary_title": "Kungfu Hustle (2004)",
+  "year": "2004",
+  "country": "Trung Quốc",
+  "country_url": "trung-quoc",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 40 phút",
+  "trailer": "https://youtu.be/FtE9-o6dBEI",
+  "summary": "Tuyệt Đỉnh Kungfu Kungfu Hustle 2004 Full HD Vietsub Thuyết Minh Kungfu Kung Fu, Kungfu Hustle 2004 Kungfu Hay Nhất Phim Lấy bối cảnh xã hội náo động ở Trung Quốc những năm 1940, các băng nhóm có tầm ảnh hưởng vô cùng lớn. Đáng sợ nhất là đảng Axe Blade do Đại ca Sum đứng đầu. Anh là một người đam mê giết chóc và cực kỳ tàn nhẫn. Bất cứ nơi nào băng nhóm của Sum đi đến, nỗi kinh hoàng theo sau. Người dân thành phố lo lắng, cảnh sát sợ hãi.",
+  "thumbnail": "/./public/uploads/movies/tuyet-dinh-kungfu/tuyet-dinh-kungfu_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/tuyet-dinh-kungfu/tuyet-dinh-kungfu_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T07:24:02.002Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T07:24:02.002Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475a8e972958e2d7099274e"
+  },
+  "directors": [
+    " frank-darabont"
+  ],
+  "actors": [
+    "sarah-wayne-callies",
+    "jon-bernthal",
+    "andrew-lincoln"
+  ],
+  "genres": [
+    "kinh-di"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-1-pm62119",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-2-pm62122",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-3-pm62124",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-4-pm62126",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-5-pm62128",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-6-pm62130",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-7-pm62132",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-8-pm62134",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-9-pm62136",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-10-pm62137",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-11-pm62139",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-12-pm62141",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-13-pm62143",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-14-pm62145",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-15-pm62148",
+    "https://phimmoichillc.net/xem/xac-song-phan-5-tap-16-pm110479"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "xac-song-phan5",
+  "primary_title": "Xác Sống (Phần 5)",
+  "secondary_title": "The Walking Dead (Season 5) (2016)",
+  "year": "2016",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "16 tập",
+  "trailer": "https://youtu.be/cKl61k4OCSI",
+  "summary": "Xác Sống (Phần 5) The Walking Dead (Season 5) 2016 Full HD Vietsub Thuyết Minh Xác Sống (Phần 5), The Walking Dead (Season 5) (2014) Tiếp theo phần 1, 2, 3, 4 phim Xác Sống 5 kể về cuộc trốn chạy khỏi thảm họa thây ma của 1 nhóm người. Liệu ai là người còn sống cuối cùng trong phần phim hay này, có trả thù được Thống đốc hay không ? Họ phải chống lại lũ thây ma khát máu ra sao? Tất cả sẽ có câu trả lời trong phần này. Mời các bạn cùng theo dõi phim Xác Sống 5. ",
+  "thumbnail": "/./public/uploads/movies/xac-song-phan5/xac-song-phan5_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/xac-song-phan5/xac-song-phan5_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T07:42:33.997Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T07:42:33.997Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475aa8772958e2d70992753"
+  },
+  "directors": [
+    "hwang-dong-hyuk"
+  ],
+  "actors": [
+    " lee-jung-jae",
+    "park-hae-soo",
+    "wi-ha-joon"
+  ],
+  "genres": [
+    "hanh-dong",
+    "phieu-luu"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-1-pm90886",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-2-pm90887",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-3-pm90888",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-4-pm90889",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-5-pm90890",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-6-pm90891",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-7-pm90892",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-8-pm90893",
+    "https://phimmoichillc.net/xem/tro-choi-con-muc-tap-9-pm90894"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "tro-choi-con-muc",
+  "primary_title": "Trò chơi con mực",
+  "secondary_title": "Squid Game (2021)",
+  "year": "2021",
+  "country": "Hàn Quốc",
+  "country_url": "han-quoc",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "9 tập",
+  "trailer": "https://youtu.be/B7h331PDlag",
+  "summary": "Trò chơi con mực Squid Game 2021 Full HD Vietsub Thuyết Minh Bốn trăm năm mươi sáu người, tất cả đều gặp khó khăn về tài chính trong cuộc sống, được mời tham gia một cuộc thi sinh tồn bí ẩn. Cạnh tranh trong một loạt các truyền thống trò chơi cho trẻ em nhưng với xoắn chết người, họ đặt cuộc sống của họ có nguy cơ để cạnh tranh cho một ₩ 45,6 tỷ (US 38.500.000 $) giải thưởng, mà sẽ chỉ có một người chiến thắng.",
+  "thumbnail": "/./public/uploads/movies/tro-choi-con-muc/tro-choi-con-muc_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/tro-choi-con-muc/tro-choi-con-muc_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T07:49:27.790Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T07:49:27.790Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b25872958e2d70992758"
+  },
+  "directors": [
+    "otto-bathurst"
+  ],
+  "actors": [
+    "Cillian-Murphy",
+    "Paul-Anderson",
+    "Sophie-Rundle",
+    "Helen-McCrory",
+    "ned-dennehy",
+    "finn-cole",
+    "ian-peck"
+  ],
+  "genres": [
+    "tam-ly",
+    "hinh-su"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-1-tap-1-pm94519",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-1-tap-2-pm94520",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-1-tap-3-pm94521",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-1-tap-4-pm94522",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-1-tap-5-pm94523",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-1-tap-6-pm94524"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "bong-ma-anh-quoc-phan-1",
+  "primary_title": "Bóng Ma Anh Quốc: Phần 1",
+  "secondary_title": "Peaky Blinders Season 1 (2013)",
+  "year": "2013",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/oVzVdvGIC7U",
+  "summary": "Bóng Ma Anh Quốc: Phần 1 Peaky Blinders Season 1 2013 Full HD Vietsub Thuyết Minh Ở nước Anh đầu thế kỷ 19, Peaky Blinders kể về những thủ lĩnh của băng đảng Peaky Blinders khét tiếng trong Thế giới ngầm với bộ não của Tommy Shelby, con trai thứ hai của họ. Phim kể về hành trình thăng tiến của Tommy trong Thế giới ngầm với những âm mưu và thủ đoạn tàn nhẫn. Ngoài ra, người xem sẽ được chứng kiến rất nhiều nhân vật và sự kiện lịch sử có thật như cuộc kháng chiến giành độc lập của người Ireland ...",
+  "thumbnail": "/./public/uploads/movies/bong-ma-anh-quoc-phan-1/bong-ma-anh-quoc-phan-1_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/bong-ma-anh-quoc-phan-1/bong-ma-anh-quoc-phan-1_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:22:48.999Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:22:48.999Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b37d72958e2d7099275a"
+  },
+  "directors": [
+    "colm-mccarthy"
+  ],
+  "actors": [
+    "Cillian-Murphy",
+    "Paul-Anderson",
+    "Sophie-Rundle",
+    "Helen-McCrory",
+    "ned-dennehy",
+    "finn-cole"
+  ],
+  "genres": [
+    "tam-ly",
+    "hinh-su"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-2-tap-2-pm94525",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-2-tap-2-pm94526",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-2-tap-3-pm94527",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-2-tap-4-pm94528",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-2-tap-5-pm94529",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-2-tap-6-pm94530"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "bong-ma-anh-quoc-phan-2",
+  "primary_title": "Bóng Ma Anh Quốc: Phần 2",
+  "secondary_title": "Peaky Blinders Season 2 (2014)",
+  "year": "2014",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/uIJ07Wg5i0k",
+  "summary": "Bóng Ma Anh Quốc: Phần 2 Peaky Blinders Season 2 2014 Full HD Vietsub Thuyết Minh Lấy bối cảnh hai năm sau các sự kiện của PHẦN 1 , phim theo chân gia đình Shelby khi họ mở rộng kinh doanh theo hướng Nam và Bắc trong khi duy trì thành trì của mình ở Birmingham, Anh. Bắt đầu từ năm 1921, nó kết thúc với một cao trào tại trường đua ngựa Epsom vào \"Ngày Derby\" là ngày 31 tháng 5 năm 1922.",
+  "thumbnail": "/./public/uploads/movies/bong-ma-anh-quoc-phan-2/bong-ma-anh-quoc-phan-2_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/bong-ma-anh-quoc-phan-2/bong-ma-anh-quoc-phan-2_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:27:41.769Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:27:41.769Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b46672958e2d7099275c"
+  },
+  "directors": [
+    "david-caffrey"
+  ],
+  "actors": [
+    "Cillian-Murphy",
+    "Paul-Anderson",
+    "Sophie-Rundle",
+    "Helen-McCrory",
+    "ned-dennehy",
+    "finn-cole",
+    "ian-peck"
+  ],
+  "genres": [
+    "tam-ly",
+    "hinh-su"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-4-tap-1-pm94537",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-4-tap-2-pm94538",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-4-tap-3-pm94539",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-4-tap-4-pm94540",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-4-tap-5-pm94541",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-4-tap-6-pm94542"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "bong-ma-anh-quoc-phan-4",
+  "primary_title": "Bóng Ma Anh Quốc: Phần 4",
+  "secondary_title": "Peaky Blinders Season 4 (2017)",
+  "year": "2017",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/nsPIvMCTQ40",
+  "summary": "Bóng Ma Anh Quốc: Phần 4 Peaky Blinders Season 4 2017 Full HD Vietsub Thuyết Minh Sau khi bị bắt ở phần thứ ba, Polly, Arthur và Michael phải ngồi tù sáu tháng. Cuối cùng họ đã ra ngoài. Tuy nhiên, gia đình bị chia cắt. Michael trở lại làm việc cho Công ty Shelby, nhưng John và Arthur đã mua những ngôi nhà ở vùng nông thôn và cố gắng sống một cuộc sống yên tĩnh, còn Polly thì bị ám bởi linh hồn của người chết. Vào Giáng sinh năm 1925, gia đình Shelby nhận được một bức thư bí ẩn, và Tommy hiểu rằng tất cả họ đều đang gặp nguy hiểm. Luca Changretta đến từ New York để trả thù cho cái chết của cha mình. Gia đình Shelby tập trung tại Small Heath, Birmingham. Tất cả bọn họ sẽ phải gác lại tranh chấp để cùng nhau chiến đấu vì sự sống còn của mình.",
+  "thumbnail": "/./public/uploads/movies/bong-ma-anh-quoc-phan-4/bong-ma-anh-quoc-phan-4_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/bong-ma-anh-quoc-phan-4/bong-ma-anh-quoc-phan-4_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:31:34.678Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:31:34.678Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b53172958e2d7099275e"
+  },
+  "directors": [
+    "anthony-byrne"
+  ],
+  "actors": [
+    "Cillian-Murphy",
+    "Paul-Anderson",
+    "Sophie-Rundle",
+    "Helen-McCrory",
+    "ned-dennehy",
+    "finn-cole",
+    "ian-peck"
+  ],
+  "genres": [
+    "tam-ly",
+    "hinh-su"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-5-tap-1-pm94543",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-5-tap-2-pm94544",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-5-tap-3-pm94545",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-5-tap-4-pm94546",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-5-tap-5-pm94547",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-5-tap-6-pm94548"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "bong-ma-anh-quoc-phan-5",
+  "primary_title": "Bóng Ma Anh Quốc: Phần 5",
+  "secondary_title": "Peaky Blinders Season 5 (2019)",
+  "year": "2019",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/Ruyl8_PT_y8",
+  "summary": "Bóng Ma Anh Quốc: Phần 5 Peaky Blinders Season 5 2019 Full HD Vietsub Thuyết Minh Phần 5 chứng kiến ​​thế giới rơi vào tình trạng hỗn loạn bởi cuộc khủng hoảng tài chính năm 1929. Cơ hội và bất hạnh ở khắp mọi nơi. Khi Tommy , hiện là một nghị sĩ, được tiếp cận bởi một chính trị gia lôi cuốn với tầm nhìn táo bạo đối với nước Anh, anh nhận ra rằng phản ứng của mình sẽ ảnh hưởng không chỉ đến tương lai của gia đình anh mà còn của toàn bộ quốc gia",
+  "thumbnail": "/./public/uploads/movies/bong-ma-anh-quoc-phan-5/bong-ma-anh-quoc-phan-5_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/bong-ma-anh-quoc-phan-5/bong-ma-anh-quoc-phan-5_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:34:57.845Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:34:57.845Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b5df72958e2d7099275f"
+  },
+  "directors": [
+    "anthony-byrne"
+  ],
+  "actors": [
+    "Cillian-Murphy",
+    "Paul-Anderson",
+    "Sophie-Rundle",
+    "Helen-McCrory",
+    "ned-dennehy",
+    "finn-cole",
+    "ian-peck"
+  ],
+  "genres": [
+    "tam-ly",
+    "hinh-su"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-6-tap-1-pm94551",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-6-tap-2-pm94552",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-6-tap-3-pm94553",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-6-tap-4-pm94554",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-6-tap-5-pm94555",
+    "https://phimmoichillc.net/xem/bong-ma-anh-quoc-phan-6-tap-6-pm94557"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "bong-ma-anh-quoc-phan-6",
+  "primary_title": "Bóng Ma Anh Quốc: Phần 6",
+  "secondary_title": "Peaky Blinders Season 6 (2022)",
+  "year": "2022",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "6 tập",
+  "trailer": "https://youtu.be/2nsT9uQPIrk",
+  "summary": "Bóng Ma Anh Quốc: Phần 6 Peaky Blinders Season 6 2022 Full HD Vietsub Thuyết Minh Peaky Blinders mùa 6 sẽ tiếp tục xây dựng dựa trên mong muốn của Tommy để đạt được quyền lực chính trị trong khi điều hành một chiến dịch tội phạm trên đường phố Birmingham. Tuy nhiên, liệu điều này có khả thi khi khả năng hiển thị của anh ta tiếp tục tăng lên? Theo Cillian, người xem sẽ nhận được kết thúc mà họ đã chờ đợi",
+  "thumbnail": "/./public/uploads/movies/bong-ma-anh-quoc-phan-6/bong-ma-anh-quoc-phan-6_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/bong-ma-anh-quoc-phan-6/bong-ma-anh-quoc-phan-6_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:37:51.652Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:37:51.652Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b82872958e2d70992767"
+  },
+  "directors": [
+    "scott-buck"
+  ],
+  "actors": [
+    "serinda-swan",
+    "anson-mount",
+    "ken-leung",
+    "eme-ikwuakor",
+    "isabelle cornish",
+    " ellen-woglom"
+  ],
+  "genres": [
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-1-pm23182",
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-2-pm23185",
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-3-pm23187",
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-4-pm23188",
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-5-pm23191",
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-6-pm23192",
+    "https://phimmoichillc.net/xem/sieu-di-nhan-phan-1-tap-7-pm23195"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "sieu-di-nhan",
+  "primary_title": "Siêu Dị Nhân (Phần 1)",
+  "secondary_title": "Marvel's Inhumans (2017)",
+  "year": "2017",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "7 tập",
+  "trailer": "https://youtu.be/HpNtjIWSSEA",
+  "summary": "Siêu Dị Nhân (Phần 1) Marvel's Inhumans 2017 Full HD Vietsub Thuyết Minh Marvel's Inhumans 2017 Bộ phim Marvel's Inhumans sẽ xoay quanh nhân vật chính là Black Bolt, một vị vua hùng mạnh và quyền lực của tộc người Kree. Black Bolt sẽ là thủ lĩnh của Inhumans, một người có sức mạnh kỳ lạ, đặc biệt là qua tiếng hét Quad Sonic có thể tạo ra sức mạnh hủy diệt. Sau khi Hoàng gia Inhumans tan vỡ vì một cuộc đảo chính quân sự, họ trốn thoát trong gang tấc đến Hawaii, nơi những tương tác đáng ngạc nhiên của họ với thế giới màu mỡ và con người ngày càng trở nên giống người hơn. mang đến cho các Siêu đột biến một tia hy vọng để cứu họ và Trái đất khỏi sự hủy diệt vĩnh viễn.",
+  "thumbnail": "/./public/uploads/movies/sieu-di-nhan/sieu-di-nhan_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/sieu-di-nhan/sieu-di-nhan_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:47:36.141Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:47:36.141Z"
+  }
+},{
+  "_id": {
+    "$oid": "6475b9b872958e2d7099276d"
+  },
+  "directors": [
+    "lewis-arnold"
+  ],
+  "actors": [
+    "gemma-chan",
+    "katherine-parkinson",
+    "lucy-carless",
+    "tom-goodman-hill"
+  ],
+  "genres": [
+    "khoa-hoc-vien-tuong"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-1-pm47692",
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-2-pm47693",
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-3-pm47694",
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-4-pm47695",
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-5-pm47696",
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-6-pm47697",
+    "https://phimmoichillc.net/xem/loai-nguoi-nhan-tao-phan-2-tap-7-pm47698"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "loai-nguoi-nhan-tao",
+  "primary_title": "Loài Người Nhân Tạo (Phần 2)",
+  "secondary_title": "Humans (2016)",
+  "year": "2016",
+  "country": "Âu Mỹ",
+  "country_url": "au-my",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "7 tập",
+  "trailer": "https://youtu.be/HpNtjIWSSEA",
+  "summary": "Loài Người Nhân Tạo (Phần 2) Humans 2016 Full HD Vietsub Thuyết Minh Loài Người Nhân Tạo (Phần 2), Humans (Season 2) (2016) Phim truyền hình khoa học viễn tưởng, tâm lý Loài Người Nhân Tạo 2 dựa trên bộ phim truyền hình ăn khách Äkta människor (Real Humans) của Thụy Điển. Bộ phim khai thác khía cạnh tác động tình cảm làm mờ ranh giới giữa con người với máy móc. Bối cảnh ở ngoại ô London, nơi mà một synth (người máy thông minh công nghệ cao) là người giúp việc phải có trong bất kì gia đình bận rộn nào.",
+  "thumbnail": "/./public/uploads/movies/loai-nguoi-nhan-tao/loai-nguoi-nhan-tao_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/loai-nguoi-nhan-tao/loai-nguoi-nhan-tao_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-05-30T08:54:16.536Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-30T08:54:16.536Z"
+  }
+},{
+  "_id": {
+    "$oid": "647861e411ee0647843fe0a5"
+  },
+  "directors": [
+    "haruo-sotozaki"
+  ],
+  "actors": [
+    "natsuki-hanae"
+  ],
+  "genres": [
+    "hoat-hinh"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=d2lYcxPUQQk",
+    "https://www.youtube.com/watch?v=d2lYcxPUQQk"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "thanh-guom-diet-quy-phan-lang-ren-kiem",
+  "primary_title": "Thanh Gươm Diệt Quỷ: Phần Làng Rèn Kiếm",
+  "secondary_title": "Kimetsu no Yaiba：Swordsmith Village Arc",
+  "year": "2023",
+  "country": "Nhật Bản",
+  "country_url": "nhat-ban",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "2 tập",
+  "trailer": "https://www.youtube.com/watch?v=d2lYcxPUQQk",
+  "summary": "Thanh Gươm Diệt Quỷ: Phần Làng Rèn Kiếm Kimetsu no Yaiba：Swordsmith Village Arc 2023 Full HD Vietsub Thuyết Minh Mùa 3 của bộ anime \"Kimetsu no Yaiba\" đã ra mắt trên. Hành trình của Tanjiro đưa anh đến tìm sự giúp đỡ từ Hotaru Haganezuka để sửa chiếc kiếm hư hỏng của mình, nhưng kẻ thù luôn tìm cách tấn công anh. Trong khi thanh kiếm của Tanjiro bị hỏng, những con quỷ mới lại tiến lại gần anh, em gái Nezuko và những người bạn Inosuke và Zenitsu, đe dọa tính mạng của họ. Chuẩn bị để gặp hai con quỷ Đế Quỷ: Hantengu và Gyokko.\r\nBên cạnh đó, mùa 3 của loạt phim sẽ có một bài hát chủ đề mới, cùng với sự tham gia của các nhân vật Love và Mist Hashiras với phong cách kiếm thuật đầy ấn tượng của riêng họ",
+  "thumbnail": "/./public/uploads/movies/thanh-guom-diet-quy-phan-lang-ren-kiem/thanh-guom-diet-quy-phan-lang-ren-kiem_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/thanh-guom-diet-quy-phan-lang-ren-kiem/thanh-guom-diet-quy-phan-lang-ren-kiem_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-06-01T09:16:20.646Z"
+  },
+  "updated_at": {
+    "$date": "2023-06-01T09:16:20.646Z"
+  }
+},{
+  "_id": {
+    "$oid": "6478639411ee0647843fe0a6"
+  },
+  "directors": [
+    "haruo-sotozaki"
+  ],
+  "actors": [
+    "natsuki-hanae"
+  ],
+  "genres": [
+    "hoat-hinh-trung-quoc"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=qEAVxxySvSU",
+    "https://www.youtube.com/watch?v=qEAVxxySvSU"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "dau-pha-thuong-khung-phan-5",
+  "primary_title": "Đấu Phá Thương Khung (Phần 5)",
+  "secondary_title": "Fights Break Sphere 5",
+  "year": "2023",
+  "country": "Trung Quốc",
+  "country_url": "trung-quoc",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "2 tập",
+  "trailer": "https://www.youtube.com/watch?v=qEAVxxySvSU",
+  "summary": "Đấu Phá Thương Khung (Phần 5) Fights Break Sphere 5 2022 Full HD Vietsub Thuyết Minh Sau ba năm không gặp nhau, Xiao Yan cuối cùng đã gặp được Xun'er tại Học viện Jia Nan. Sau đó, họ trở nên thân thiết hơn và thành lập Cổng đá (Pan Gate).\r\nĐể tiếp tục nâng cao sức mạnh và trả thù cho anh ta ở phái Mây mù, anh ta đã liều mình tiếp tục tiến sâu hơn vào chùa Tinh luyện Tề để nuốt chửng Ngọn lửa trái tim sa ngã.",
+  "thumbnail": "/./public/uploads/movies/dau-pha-thuong-khung-phan-5/dau-pha-thuong-khung-phan-5_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/dau-pha-thuong-khung-phan-5/dau-pha-thuong-khung-phan-5_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-06-01T09:23:32.430Z"
+  },
+  "updated_at": {
+    "$date": "2023-06-01T09:23:32.430Z"
+  }
+},{
+  "_id": {
+    "$oid": "6478664611ee0647843fe0a7"
+  },
+  "directors": [
+    "haruo-sotozaki"
+  ],
+  "actors": [
+    "natsuki-hanae"
+  ],
+  "genres": [
+    "hoat-hinh"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=mezyq2OX6TM",
+    "https://www.youtube.com/watch?v=mezyq2OX6TM"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "hoc-vien-anh-hung-6",
+  "primary_title": "Học Viện Anh Hùng 6",
+  "secondary_title": "Boku no Hero Academia 6th Season",
+  "year": "2022",
+  "country": "Nhật Bản",
+  "country_url": "nhat-ban",
+  "type": "Phim bộ",
+  "type_url": "phim-bo",
+  "duration": "2 tập",
+  "trailer": "https://www.youtube.com/watch?v=mezyq2OX6TM",
+  "summary": "Học Viện Anh Hùng 6 Boku no Hero Academia 6th Season 2022 Full HD Vietsub Thuyết Minh kể về một vị anh hùng muốn vượt lên đứng đầu trong tất cả! Izuku có một ước mở trở thành anh hùng từ khi còn nhỏ - là một mục tiêu cao nhất mà ai cũng muốn đạt được - nhưng đó là lại là một thách thức đối với một cậu bé không hề có tý năng lực siêu nhiên nào. Đúng thế, ở một cái thế giới mà hơn 80% dân số đều có một loại siêu năng lực \"một cách lạ thường\", Izuku không may mắn khi sinh lại hoàn toàn bình thường.  Nhưng việc đó cũng không thể ngăn cản việc cậu ghi danh vào học viện anh hùng được xem là uy tín hàng đầu thế giới. Hiện giờ, điều duy nhất ngăn cản cậu vào học viện chính là kỳ thi tuyển sinh đầy đáng sợ đó. Bài hướng dẫn nho nhỏ từ người anh hùng mạnh nhất thế giới sẽ giúp cậu giải quyết tất cả.",
+  "thumbnail": "/./public/uploads/movies/hoc-vien-anh-hung-6/hoc-vien-anh-hung-6_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/hoc-vien-anh-hung-6/hoc-vien-anh-hung-6_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-06-01T09:35:02.485Z"
+  },
+  "updated_at": {
+    "$date": "2023-06-01T09:35:02.485Z"
+  }
+},{
+  "_id": {
+    "$oid": "647868da11ee0647843fe0a8"
+  },
+  "directors": [
+    "haruo-sotozaki"
+  ],
+  "actors": [
+    "natsuki-hanae"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hoat-hinh"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=qZQJiyqBZHg"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "tham-tu-lung-danh-conan-vien-dan-do",
+  "primary_title": "Thám tử lừng danh Conan: Viên đạn đỏ",
+  "secondary_title": "Detective Conan Movie 24: The Scarlet Bullet",
+  "year": "2021",
+  "country": "Nhật Bản",
+  "country_url": "nhat-ban",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 50 phút",
+  "trailer": "https://www.youtube.com/watch?v=qZQJiyqBZHg",
+  "summary": "Thám tử lừng danh Conan: Viên đạn đỏ Detective Conan Movie 24: The Scarlet Bullet 2021 Full HD Vietsub Thuyết Minh Nhật Bản đang chuẩn bị kỷ niệm Đại hội Thể thao Thế giới (WSG), trò chơi thể thao lớn nhất thế giới, đăng cai tổ chức tại Tokyo . Tàu cao tốc Hyperlinear, đỉnh cao của công nghệ tiên tiến của Nhật Bản, sẽ bắt đầu hoạt động trùng với lễ khai mạc của WSG, chạy với tốc độ lên tới 1.000 km / h giữa ga Shin-Nagoya và ga Shibahama mới xây của Tokyo. Khi cả thế giới đang theo dõi, thảm họa bất ngờ ập đến với địa điểm đăng cai, nơi quy tụ các nhà tài trợ của Thế vận hội. Một cuộc khủng hoảng mở ra khi một số nhà lãnh đạo trong ngành liên tiếp bị bắt cóc. Trong bóng tối, Shuichi Akai chờ đợi, theo dõi cuộc khủng hoảng đang diễn ra, khi các đặc vụ FBI chờ lệnh của anh ta. Conan suy ra mối liên hệ giữa các vụ bắt cóc khủng khiếp liên quan đến WSG xảy ra ở Boston, Liệu Conan sẽ suy đoán và kết luận ai là hung thù mời các bạn đón xem ",
+  "thumbnail": "/./public/uploads/movies/tham-tu-lung-danh-conan-vien-dan-do/tham-tu-lung-danh-conan-vien-dan-do_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/tham-tu-lung-danh-conan-vien-dan-do/tham-tu-lung-danh-conan-vien-dan-do_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-06-01T09:46:02.292Z"
+  },
+  "updated_at": {
+    "$date": "2023-06-01T09:46:02.292Z"
+  }
+},{
+  "_id": {
+    "$oid": "647868dd11ee0647843fe0a9"
+  },
+  "directors": [
+    "haruo-sotozaki"
+  ],
+  "actors": [
+    "natsuki-hanae"
+  ],
+  "genres": [
+    "phim-chieu-rap",
+    "hoat-hinh"
+  ],
+  "type_sub": [
+    "Vietsub"
+  ],
+  "episodes": [
+    "https://www.youtube.com/watch?v=ceqa2pIN9ng"
+  ],
+  "rating": [],
+  "comment": [],
+  "url_name": "jujutsu-kaisen-0-chu-thuat-hoi-chien",
+  "primary_title": "Jujutsu Kaisen 0: Chú Thuật Hồi Chiến",
+  "secondary_title": "Jujutsu Kaisen 0: The Movie",
+  "year": "2021",
+  "country": "Nhật Bản",
+  "country_url": "nhat-ban",
+  "type": "Phim lẻ",
+  "type_url": "phim-le",
+  "duration": "1 giờ 45 phút",
+  "trailer": "https://www.youtube.com/watch?v=ceqa2pIN9ng",
+  "summary": "Jujutsu Kaisen 0: Chú Thuật Hồi Chiến Jujutsu Kaisen 0: The Movie 2021 Full HD Vietsub Thuyết Minh Những bất hạnh bạo lực thường xuyên xảy ra xung quanh Yuuta Okkotsu, 16 tuổi, một nạn nhân nhút nhát của nạn bắt nạt ở trường trung học. Yuuta bị đeo một lời nguyền quái dị, một sức mạnh có thể gây ra sự trả thù tàn bạo chống lại những kẻ bắt nạt mình. Rika Orimoto, lời nguyền của Yuuta, là cái bóng từ thời thơ ấu đầy bi kịch của anh và là mối đe dọa có thể gây chết người cho bất cứ ai dám sai anh ta.Tình huống độc đáo của Yuuta thu hút sự chú ý của Satoru Gojou, một pháp sư quyền năng đang giảng dạy tại trường Trung học Jujutsu Tokyo. Gojou nhìn thấy tiềm năng to lớn ở Yuuta, và ông hy vọng sẽ giúp cậu bé chuyển gánh nặng chết chóc của mình thành một lực lượng tốt. Tuy nhiên, Yuuta phải vật lộn để tìm được vị trí của mình trong số những người bạn học tài năng của mình: Toge Inumaki bị câm có chọn lọc, chuyên gia vũ khí Maki Zenin và Panda.\r\nYuuta sử dụng Rika một cách vụng về trong các nhiệm vụ với các học sinh năm nhất khác, nhưng hậu quả khủng khiếp của màn thể hiện sức mạnh khủng khiếp của Rika đã thu hút sự quan tâm của người sử dụng lời nguyền tính toán Suguru Getou. Khi Getou cố gắng yêu cầu sức mạnh của Rika và sử dụng nó để loại bỏ tất cả những người không sử dụng thuật thuật trên thế giới, Yuuta chiến đấu cùng với bạn bè của mình để ngăn chặn âm mưu diệt chủng.",
+  "thumbnail": "/./public/uploads/movies/jujutsu-kaisen-0-chu-thuat-hoi-chien/jujutsu-kaisen-0-chu-thuat-hoi-chien_thumbnail.jpg",
+  "cover_image": "/./public/uploads/movies/jujutsu-kaisen-0-chu-thuat-hoi-chien/jujutsu-kaisen-0-chu-thuat-hoi-chien_cover-image.jpg",
+  "views_3days": 0,
+  "views_week": 0,
+  "views_month": 0,
+  "views_year": 0,
+  "views_all": 0,
+  "number_favourited": 0,
+  "created_at": {
+    "$date": "2023-06-01T09:46:05.722Z"
+  },
+  "updated_at": {
+    "$date": "2023-06-01T09:46:05.722Z"
+  }
+}]

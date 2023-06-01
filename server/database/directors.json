@@ -1,0 +1,277 @@
+[{
+  "_id": {
+    "$oid": "6463def7846fb45a2dac16e9"
+  },
+  "director_movies": [
+    "ho-den-tu-than"
+  ],
+  "director_url": "christopher-nolan",
+  "director_name": "Christopher Nolan",
+  "director_thumbnail": "/public\\uploads\\directors\\christopher-nolan.jpg",
+  "director_description": "Christopher Nolan là một nhà làm phim nổi tiếng người Anh, sinh ngày 30 tháng 7 năm 1970. Ông được coi là một trong những nhà làm phim tài năng và ảnh hưởng nhất của thế hệ mới. Christopher Nolan nổi tiếng với phong cách đậm chất điện ảnh, những câu chuyện phức tạp và những hiệu ứng đặc biệt độc đáo.\r\nCông việc đáng chú ý của Nolan bao gồm các bộ phim nổi tiếng như \"Memento\" (2000), \"The Dark Knight Trilogy\" (2005-2012), \"Inception\" (2010), và \"Interstellar\" (2014). Ông đã nhận được nhiều lời khen ngợi về khả năng kịch bản, đạo diễn và sự đổi mới trong việc sử dụng kỹ thuật và cấu trúc câu chuyện. Các tác phẩm của Nolan thường có yếu tố trí tuệ, tạo động lực cho khán giả suy nghĩ và tranh luận về các khía cạnh văn hóa và tâm lý."
+},{
+  "_id": {
+    "$oid": "6464ff0d2f14bc306c7a1c5c"
+  },
+  "director_movies": [
+    "nhiem-vu-bat-kha-thi-nghiep-bao-phan-1"
+  ],
+  "director_url": "christopher-mcquarrie",
+  "director_name": "Christopher McQuarrie",
+  "director_thumbnail": "/public\\uploads\\directors\\christopher-mcquarrie.jpg",
+  "director_description": "Christopher McQuarrie, sinh ngày 25 tháng 10 năm 1968, là một đạo diễn, biên kịch và nhà sản xuất người Mỹ. Anh được biết đến với sự nghiệp thành công và đóng góp đáng kể cho ngành công nghiệp điện ảnh.\r\nChristopher McQuarrie có tài năng biên kịch xuất sắc và đã viết nhiều kịch bản nổi tiếng. Anh được biết đến nhiều nhất qua việc viết kịch bản cho bộ phim \"The Usual Suspects\" (1995), một tác phẩm được đánh giá cao và đã giành giải Oscar cho Kịch bản ban đầu xuất sắc nhất. Đó cũng là bộ phim mở đường cho sự nổi tiếng của McQuarrie trong ngành.\r\nNgoài công việc biên kịch, Christopher McQuarrie cũng đã trở thành một đạo diễn tài năng. Anh đã đạo diễn và đồng biên kịch cho nhiều bộ phim thành công, bao gồm \"Jack Reacher\" (2012), \"Mission: Impossible - Rogue Nation\" (2015), \"Mission: Impossible - Fallout\" (2018) và \"Top Gun: Maverick\" (đang trong quá trình sản xuất)."
+},{
+  "_id": {
+    "$oid": "64660838dc8c352dd8980b72"
+  },
+  "director_movies": [
+    "transformers-quai-thu-troi-day"
+  ],
+  "director_url": "steven-caple-jr",
+  "director_name": "Steven Caple Jr.",
+  "director_thumbnail": "/public\\uploads\\directors\\steven-caple-jr.jpg",
+  "director_description": "Steven Caple Jr. là một đạo diễn và biên kịch người Mỹ. Sinh ngày 11 tháng 10 năm 1988, ông đã gây ấn tượng với công chúng và nhận được đánh giá cao trong lĩnh vực điện ảnh.\r\nSteven Caple Jr. đã nổi danh qua việc đạo diễn bộ phim \"Creed II\" (2018), tiếp nối thành công của phần đầu tiên \"Creed\" (2015). Với sự tài năng và tầm nhìn độc đáo, ông đã đem lại sự sáng tạo và cảm xúc cho câu chuyện về võ sĩ quyền Anh Adonis Creed. Bộ phim đã nhận được đánh giá tích cực và trở thành một trong những phim thành công về mặt thương mại và nghệ thuật.\r\nTrước khi nổi tiếng với \"Creed II\", Steven Caple Jr. đã làm việc trên các dự án độc lập và truyền hình. Ông đã thực hiện các bộ phim ngắn và làm việc trong các loạt phim truyền hình như \"Grown-ish\" và \"Class\". Sự sáng tạo và tầm nhìn của ông đã thu hút sự chú ý của ngành công nghiệp điện ảnh."
+},{
+  "_id": {
+    "$oid": "646e3793701518319c5a52fd"
+  },
+  "director_movies": [
+    "the-gioi-khung-long"
+  ],
+  "director_url": "colin-trevorrow",
+  "director_name": "Colin Trevorrow",
+  "director_thumbnail": "/public\\uploads\\directors\\colin-trevorrow.jpg",
+  "director_description": "Colin T. Trevorrow( sinh ngày 13 tháng 9 năm 1976) là một đạo diễn và biên kịch điện ảnh người Mỹ. Ông đạo diễn bộ phim độc lập Safety Not Guaranteed (2012) và phim bom tấn Jurassic World (2015), mà ông cũng đồng sáng tác."
+},{
+  "_id": {
+    "$oid": "646f1524482f412260d3d7e5"
+  },
+  "director_movies": [
+    "Bong-Ma-Anh-Quoc"
+  ],
+  "director_url": "tim-mielants",
+  "director_name": "Tim Mielants",
+  "director_thumbnail": "/public\\uploads\\directors\\tim-mielants.jpg",
+  "director_description": "Tim Mielants sinh ra ở Mortsel vào ngày 11 tháng 12 năm 1979, học tại Campus Sint-Lukas ở Brussels và ban đầu bắt đầu sự nghiệp với vai trò đạo diễn của nhiều bộ phim truyền hình Flemish như Super 8 (2009), Code 37, phát sóng trên VTM (2011) -2012), Zingaburia (2012-2013), Cordon (2014) và Giáo sư T (2015). Sau đó, anh làm việc ở nước ngoài trong The Tunnel (2016), toàn bộ loạt phim thứ ba của Peaky Blinders (2016), Legion (2017), The Terror (2018), Tales from the Loop (2020) và đạo diễn thử nghiệm của The Replyer (2022)."
+},{
+  "_id": {
+    "$oid": "6475563772958e2d70992704"
+  },
+  "director_movies": [
+    "bao-boi-tu-than"
+  ],
+  "director_url": "david-yates",
+  "director_name": "David Yates",
+  "director_thumbnail": "/public\\uploads\\directors\\david-yates.jpg",
+  "director_description": "David Yates là một đạo diễn, nhà sản xuất và biên kịch phim người Anh, người đã chỉ đạo các bộ phim truyện, phim ngắn và sản phẩm truyền hình. Ông được biết đến nhiều nhất với vai trò đạo diễn bốn bộ phim cuối cùng trong loạt phim Harry Potter và ba bộ phim của loạt phim tiền truyện, Fantastic Beasts."
+},{
+  "_id": {
+    "$oid": "64758aeb72958e2d70992714"
+  },
+  "director_movies": [
+    "qua-nhanh-qua-nguy-hiem-5",
+    "qua-nhanh-qua-nguy-hiem",
+    "qua-nhanh-qua-nguy-hiem-3",
+    "qua-nhanh-qua-nguy-hiem-6",
+    "qua-nhanh-qua-nguy-hiem-ngoai-truyen"
+  ],
+  "director_url": "justin-lin",
+  "director_name": "Justin Lin",
+  "director_thumbnail": "/public\\uploads\\directors\\justin-lin.jpg",
+  "director_description": "Lâm Nghệ Bân hay có tên tiếng Anh là Justin Lin là một đạo diễn phim người Mỹ gốc Đài Loan. Anh được biết đến nhiều nhất qua các bộ phim Better Luck Tomorrow, The Fast and the Furious 3–6 và loạt chương trình truyền hình Community."
+},{
+  "_id": {
+    "$oid": "64758e5b72958e2d70992718"
+  },
+  "director_movies": [
+    "qua-nhanh-qua-nguy-hiem-2"
+  ],
+  "director_url": "rob-cohen",
+  "director_name": "Rob Cohen",
+  "director_thumbnail": "/public\\uploads\\directors\\rob-cohen.jpg",
+  "director_description": "Rob Cohen là một đạo diễn phim, nhà sản xuất và biên kịch người Mỹ. Cohen bắt đầu sự nghiệp của mình là nhà sản xuất, trước khi tập trung toàn thời gian làm đạo diễn từ năm 1990, với bộ phim hành động như XXX và Dragon: The Bruce Lee Story, cùng với bộ phim giả tưởng như Dragonheart và Xác ướp: Mộ hoàng đế rồng"
+},{
+  "_id": {
+    "$oid": "647595ff72958e2d70992729"
+  },
+  "director_movies": [
+    "qua-nhanh-qua-nguy-hiem-8"
+  ],
+  "director_url": "f-gary-gray",
+  "director_name": "F. Gary Gray",
+  "director_thumbnail": "/public\\uploads\\directors\\f-gary-gray.jpg",
+  "director_description": "Felix Gary Gray là một đạo diễn phim, nhà sản xuất phim, đạo diễn video ca nhạc và diễn viên người Mỹ.Grey bắt đầu sự nghiệp đạo diễn của mình với nhiều video ca nhạc được giới phê bình đánh giá cao và đoạt giải thưởng, bao gồm \"It Was a Good Day\" của Ice Cube, \"Natural Born Killaz\" của Dr"
+},{
+  "_id": {
+    "$oid": "6475977372958e2d7099272b"
+  },
+  "director_movies": [
+    "qua-nhanh-qua-nguy-hiem-7"
+  ],
+  "director_url": "james-wan",
+  "director_name": "James Wan",
+  "director_thumbnail": "/public\\uploads\\directors\\james-wan.jpg",
+  "director_description": "Ôn Tử Nhân, thường được biết đến với nghệ danh James Wan, là một nam đạo diễn, nhà biên kịch kiêm nhà sản xuất điện ảnh người Úc gốc Malaysia."
+},{
+  "_id": {
+    "$oid": "6475988b72958e2d7099272e"
+  },
+  "director_movies": [
+    "qua-nhanh-qua-nguy-hiem-10"
+  ],
+  "director_url": "louis-leterrier",
+  "director_name": "Louis Leterrier",
+  "director_thumbnail": "/public\\uploads\\directors\\louis-leterrier.jpg",
+  "director_description": "Louis Leterrier là nam đạo diễn phim người Pháp. Anh từng đạo diễn hai phần phim Transporter đầu tiên, Unleashed, The Incredible Hulk, Clash of the Titans và Now You See Me."
+},{
+  "_id": {
+    "$oid": "647599e472958e2d70992732"
+  },
+  "director_movies": [
+    "xac-song-phan1",
+    "xac-song-phan2",
+    "xac-song-phan3",
+    "xac-song-phan5"
+  ],
+  "director_url": " frank-darabont",
+  "director_name": " Frank Darabont",
+  "director_thumbnail": "/public\\uploads\\directors\\ frank-darabont.jpg",
+  "director_description": "Frank Árpád Darabont là một đạo diễn, nhà biên kịch và nhà sản xuất phim người Mỹ gốc Hungary, người đã được đề cử ba giải Oscar và một giải Quả cầu vàng. Trong sự nghiệp ban đầu của mình, ông chủ yếu là nhà biên kịch cho các bộ phim kinh dị như A Nightmare on Elm Street 3: Dream Warriors, The Blob và The Fly II."
+},{
+  "_id": {
+    "$oid": "64759d4c72958e2d7099273a"
+  },
+  "director_movies": [
+    "xac-song-phan4"
+  ],
+  "director_url": "greg-nicotero",
+  "director_name": "Greg Nicotero",
+  "director_thumbnail": "/public\\uploads\\directors\\greg-nicotero.jpg",
+  "director_description": "Được dịch từ tiếng Anh-Gregory Nicotero là một nhà sáng tạo hiệu ứng trang điểm đặc biệt, nhà sản xuất truyền hình và đạo diễn người Mỹ. Công việc chính đầu tiên của anh ấy trong lĩnh vực trang điểm hiệu ứng đặc biệt là trong bộ phim George A. Romero Day of the Dead , dưới sự hướng dẫn của Romero và chuyên gia trang điểm kỳ cựu Tom Savini."
+},{
+  "_id": {
+    "$oid": "64759d8272958e2d7099273b"
+  },
+  "director_movies": [
+    "xac-song-phan4"
+  ],
+  "director_url": "guy-ferland",
+  "director_name": "Guy Ferland",
+  "director_thumbnail": "/public\\uploads\\directors\\guy-ferland.jpg",
+  "director_description": "Guy Ferland là một đạo diễn phim và truyền hình người Mỹ"
+},{
+  "_id": {
+    "$oid": "6475a0a172958e2d70992742"
+  },
+  "director_movies": [
+    "vuon-sao-bang"
+  ],
+  "director_url": "kim-ki-sang",
+  "director_name": "kim Ki Sang",
+  "director_thumbnail": "/public\\uploads\\directors\\kim-ki-sang.jpg",
+  "director_description": "Jeon Ki Sang, 59 tuổi, đạo diễn \"Vườn sao băng\", bộ phim làm nên tên tuổi Lee Min Ho, Goo Hye Sun, Kim Hyun Joong..., "
+},{
+  "_id": {
+    "$oid": "6475a2f172958e2d70992748"
+  },
+  "director_movies": [
+    "tuyet-dinh-kungfu"
+  ],
+  "director_url": "chau-tinh-tri",
+  "director_name": "Châu Tinh Trì",
+  "director_thumbnail": "/public\\uploads\\directors\\chau-tinh-tri.jpg",
+  "director_description": "Châu Tinh Trì là một nam diễn viên, đạo diễn, nhà biên kịch, nhà sản xuất người Hồng Kông. Ngoài ra ông còn là cố vấn chính trị của Hội nghị Hiệp thương Chính trị Nhân dân Trung Quốc"
+},{
+  "_id": {
+    "$oid": "6475a93372958e2d7099274f"
+  },
+  "director_movies": [
+    "tro-choi-con-muc"
+  ],
+  "director_url": "hwang-dong-hyuk",
+  "director_name": "Hwang Dong-hyuk",
+  "director_thumbnail": "/public\\uploads\\directors\\hwang-dong-hyuk.jpg",
+  "director_description": "Hwang Dong-hyuk là một đạo diễn, nhà sản xuất và biên kịch phim người Hàn Quốc. Ông được biết đến với vai trò đạo diễn bộ phim truyền hình tội phạm Sự im lặng năm 2011 và phim truyền hình sinh tồn năm 2021 Trò chơi con mực của Netflix. Time vinh danh ông là một trong 100 người có ảnh hưởng nhất thế giới năm 2022"
+},{
+  "_id": {
+    "$oid": "6475b0d472958e2d70992754"
+  },
+  "director_movies": [
+    "bong-ma-anh-quoc-phan-1"
+  ],
+  "director_url": "otto-bathurst",
+  "director_name": "Otto Bathurst",
+  "director_thumbnail": "/public\\uploads\\directors\\otto-bathurst.jpg",
+  "director_description": "Được dịch từ tiếng Anh-Otto Benjamin Charles Bathurst là một đạo diễn phim và truyền hình người Anh. Năm 2014, anh đã giành được BAFTA cho tác phẩm của mình trên bộ phim truyền hình Peaky Blinders của BBC. Trước đây anh ấy cũng đã được đề cử BAFTA cho tác phẩm của mình trên BBC loạt phim Công lý hình sự và Năm ngày."
+},{
+  "_id": {
+    "$oid": "6475b29b72958e2d70992759"
+  },
+  "director_movies": [
+    "bong-ma-anh-quoc-phan-2"
+  ],
+  "director_url": "colm-mccarthy",
+  "director_name": "Colm McCarthy",
+  "director_thumbnail": "/public\\uploads\\directors\\colm-mccarthy.jpg",
+  "director_description": "Colm McCarthy là một đạo diễn truyền hình người Scotland, từng đạo diễn một số tác phẩm chính kịch của BBC"
+},{
+  "_id": {
+    "$oid": "6475b3b672958e2d7099275b"
+  },
+  "director_movies": [
+    "bong-ma-anh-quoc-phan-4"
+  ],
+  "director_url": "david-caffrey",
+  "director_name": "David Caffrey",
+  "director_thumbnail": "/public\\uploads\\directors\\david-caffrey.jpg",
+  "director_description": "avid Caffrey là một đạo diễn phim người Ireland. Bộ phim gần đây nhất của anh là Grand Theft Parsons với sự tham gia của Johnny Knoxville và Christina Applegate. Bộ phim kể về một huyền thoại đô thị về cái chết của huyền thoại nhạc rock đồng quê, Gram Parsons."
+},{
+  "_id": {
+    "$oid": "6475b49972958e2d7099275d"
+  },
+  "director_movies": [
+    "bong-ma-anh-quoc-phan-5",
+    "bong-ma-anh-quoc-phan-6"
+  ],
+  "director_url": "anthony-byrne",
+  "director_name": "Anthony Byrne",
+  "director_thumbnail": "/public\\uploads\\directors\\anthony-byrne.jpg",
+  "director_description": "Anthony Byrne was born on 9 September 1975 in Dublin, Ireland. He is a director and producer, known for Peaky Blinders (2013), Butterfly (2018) and Ripper Street (2012)."
+},{
+  "_id": {
+    "$oid": "6475b65a72958e2d70992760"
+  },
+  "director_movies": [
+    "sieu-di-nhan"
+  ],
+  "director_url": "scott-buck",
+  "director_name": "Scott Buck",
+  "director_thumbnail": "/public\\uploads\\directors\\scott-buck.jpg",
+  "director_description": "Được dịch từ tiếng Anh-Scott Randall Buck là một nhà văn truyền hình người Mỹ. Buck đã viết cho một số phim truyền hình bao gồm Six Feet Under, Rome, Showtime's Dexter, Everybody Loves Raymond, Coach, Inhumans, The Oblongs và Iron Fist"
+},{
+  "_id": {
+    "$oid": "6475b85c72958e2d70992768"
+  },
+  "director_movies": [
+    "loai-nguoi-nhan-tao"
+  ],
+  "director_url": "lewis-arnold",
+  "director_name": "Lewis Arnold",
+  "director_thumbnail": "/public\\uploads\\directors\\lewis-arnold.jpg",
+  "director_description": "Lewis Arnold là một đạo diễn người Anh làm việc trong lĩnh vực truyền hình. Anh được biết đến với các chương trình Time, Humans, Broadchurch và Des. Arnold học tại Đại học Gloucestershire và tốt nghiệp năm 2007 với bằng Danh dự hạng 1 về Sản xuất video"
+},{
+  "_id": {
+    "$oid": "64785fc511ee0647843fe0a3"
+  },
+  "director_movies": [
+    "thanh-guom-diet-quy-phan-lang-ren-kiem",
+    "dau-pha-thuong-khung-phan-5",
+    "hoc-vien-anh-hung-6",
+    "tham-tu-lung-danh-conan-vien-dan-do",
+    "jujutsu-kaisen-0-chu-thuat-hoi-chien"
+  ],
+  "director_url": "haruo-sotozaki",
+  "director_name": "Haruo Sotozaki",
+  "director_thumbnail": "/public\\uploads\\directors\\haruo-sotozaki.jpg",
+  "director_description": "Haruo Sotozaki là một hoạt họa và đạo diễn người Nhật nổi tiếng với công việc trong ngành công nghiệp anime. Ông sinh ngày 4 tháng 9 năm 1968 tại tỉnh Miyagi, Nhật Bản. Sotozaki được biết đến đặc biệt qua sự tham gia của mình trong series anime \"Demon Slayer: Kimetsu no Yaiba\".\r\nSotozaki bắt đầu sự nghiệp của mình trong ngành công nghiệp anime làm hoạt họa viên và đã làm việc trên nhiều dự án khác nhau trong những năm 1990 và 2000. Ông nhận được sự công nhận với công việc hoạt họa trên các series như \"One Piece\", \"Tales of Symphonia\" và \"Naruto Shippuden\". Kỹ năng và tài năng hoạt họa của Sotozaki sau đó đã giúp ông đảm nhận vai trò đạo diễn.\r\nNăm 2019, Sotozaki đạo diễn series anime truyền hình được khen ngợi cao là \"Demon Slayer: Kimetsu no Yaiba\", dựa trên manga của Koyoharu Gotouge. Series này đã đạt được sự phổ biến toàn cầu với cốt truyện hấp dẫn, hoạt họa động đầy sức sống và những nhân vật đáng yêu. Sự đạo diễn và khả năng kể chuyện hình ảnh của Sotozaki đã nhận được sự khen ngợi rộng rãi, đặc biệt là khả năng mang đến những phân đoạn hành động hồi hộp.\r\nTiếp theo thành công của \"Demon Slayer: Kimetsu no Yaiba\", Sotozaki tiếp tục đạo diễn bộ phim hoạt hình dựa trên series này có tựa đề \"Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train\", được ra mắt vào năm 2020. Bộ phim đã trở thành một bom tấn tại các rạp chiếu phim ở Nhật Bản, phá vỡ nhiều kỷ lục và cũng làm tăng thêm danh tiếng của Sotozaki là một đạo diễn tài năng."
+}]
