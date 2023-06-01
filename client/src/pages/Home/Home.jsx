@@ -18,7 +18,7 @@ export default function Home(props) {
             if (index === 0) {
                 return <div className="large" key={index}>
                     <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
-                        <img src={film.thumbnail} alt="" />
+                        <img src={film.cover_image} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>
                     </NavLink>
@@ -26,7 +26,7 @@ export default function Home(props) {
             } else {
                 return <div className="small" key={index}>
                     <NavLink title={film.primary_title} to={`/info/${film.url_name}`}>
-                        <img src={film.thumbnail} alt="" />
+                        <img src={film.cover_image} alt="" />
                         <span className='label'>HD-Vietsub</span>
                         <p>{film.primary_title}</p>
                     </NavLink>

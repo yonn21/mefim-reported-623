@@ -88,7 +88,7 @@ export default function Header(props) {
                             </div>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/phim-chieu-rap">PHIM CHIẾU RẠP</NavLink>
+                            <NavLink className="nav-link" to="/the-loai/phim-chieu-rap">PHIM CHIẾU RẠP</NavLink>
                         </li>
                     </ul>
                     <form className="header-form form-inline my-2 my-lg-0">

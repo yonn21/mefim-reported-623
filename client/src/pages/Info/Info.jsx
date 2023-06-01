@@ -33,12 +33,12 @@ export default function Info({ match }) {
                 <p className='m-0 mr-2 pt-2 pb-2'>{filmInfo.primary_title}</p>
             </div>
             <div className="film-info">
-                <div className="banner" style={{ backgroundImage: `url(${filmInfo.thumbnail})` }}>
-                    <img className='avatar' src={`${filmInfo.thumbnail}`} alt="" />
+                <div className="banner" style={{ backgroundImage: `url(${filmInfo.cover_image})` }}>
+                    <img className='avatar' src={`${filmInfo.cover_image}`} alt="" />
                 </div>
                 <div className="text">
                     <h1>{filmInfo.primary_title}</h1>
-                    <button type="button" className="btn btn-danger"><i className="fa fa-play-circle"></i> Xem Phim</button>
+                    <NavLink type="button" className="btn btn-danger" to={`/xem-phim/${filmInfo.url_name}`}><i className="fa fa-play-circle"></i> Xem Phim</NavLink>
                 </div>
             </div>
             <div className="film-des container-fluid">
@@ -49,11 +49,11 @@ export default function Info({ match }) {
                     </div>
                     <div className="col-4">
                         <p>Năm Phát Hành:</p>
-                        <span> {filmInfo.year}</span>
+                        <NavLink to={`/nam-phat-hanh/${filmInfo.year}`}> {filmInfo.year}</NavLink>
                     </div>
                     <div className="col-4">
                         <p>Quốc gia:</p>
-                        <span> {filmInfo.country}</span>
+                        <NavLink to={`/quoc-gia/${filmInfo.country_url}`}> {filmInfo.country}</NavLink>
                     </div>
                     <div className="col-4">
                         <p>Thể loại: </p>
@@ -68,3 +68,5 @@ export default function Info({ match }) {
         </div>
     )
 }
+
+

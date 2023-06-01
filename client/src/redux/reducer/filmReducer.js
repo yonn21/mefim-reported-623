@@ -9,7 +9,9 @@ const initialState = {
   listPhimChieuRapTheoNam: [],
   filmInfo: {},
   genres: {},
-  country: [],
+  country: {},
+  releaseYear: {},
+  type: {},
 }
 
 const filmReducer = createSlice({
@@ -27,6 +29,12 @@ const filmReducer = createSlice({
     },
     getMovieByCountryApiAction: (state, action) => {
       state.country = action.payload;
+    },
+    getMovieByYearApiAction: (state, action) => {
+      state.releaseYear = action.payload;
+    },
+    getMovieByTypeApiAction: (state, action) => {
+      state.type = action.payload;
     },
     getPhimLeTheoTheLoai: (state, action) => {
       const gettheloai = action.payload;
@@ -62,7 +70,7 @@ const filmReducer = createSlice({
   }
 });
 
-export const { getAllMovieApiAction, getMovieApiAction, getMovieByGenresApiAction, getMovieByCountryApiAction } = filmReducer.actions
+export const { getMovieByTypeApiAction, getAllMovieApiAction, getMovieApiAction, getMovieByGenresApiAction, getMovieByCountryApiAction, getMovieByYearApiAction } = filmReducer.actions
 
 export default filmReducer.reducer
 
@@ -119,6 +127,36 @@ export const getMovieByCountryApi = (country_url) => {
         method: 'GET'
       });
       const action = getMovieByCountryApiAction(result.data);
+      dispatch(action);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
+export const getMovieByYearApi = (year_url) => {
+  return async (dispatch, getState) => {
+    try {
+      const result = await axios({
+        url: `http://localhost:6969/nam-phat-hanh/${year_url}`,
+        method: 'GET'
+      });
+      const action = getMovieByYearApiAction(result.data);
+      dispatch(action);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
+export const getMovieByTypeApi = (type_url) => {
+  return async (dispatch, getState) => {
+    try {
+      const result = await axios({
+        url: `http://localhost:6969/${type_url}`,
+        method: 'GET'
+      });
+      const action = getMovieByTypeApiAction(result.data);
       dispatch(action);
     } catch (err) {
       console.log(err)
